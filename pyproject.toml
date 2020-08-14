@@ -1,0 +1,25 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "mawek"
+author = "Pradyun Gedam"
+author-email = "mail@pradyunsg.me"
+home-page = "https://github.com/pradyunsg/mawek"
+description-file = "README.md"
+requires-python = ">=3.5"
+
+[tool.flit.metadata.requires-extra]
+test = [
+  "pytest",
+  "pytest-cov",
+  "pytest-xdist",
+]
+doc = ["sphinx"]
+
+[tool.flit.entrypoints]
+"sphinx.html_themes" = {mawek = "mawek"}
+
+[tool.flit.sdist]
+exclude = ["src/mawek/scss"]

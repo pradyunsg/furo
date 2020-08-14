@@ -1,0 +1,11 @@
+{%- import "!partials/_variables.jinja" as theme with context -%}
+
+<!doctype html>
+<html class="no-js">
+  <head>
+    {%- include "!partials/_head.html" -%}
+  </head>
+  <body dir="{{ direction }}">
+    {% block body %}{% endblock %}
+  </body>
+</html>
