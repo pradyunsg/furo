@@ -4,6 +4,16 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 #
+# -- sys.path preparation ----------------------------------------------------
+#
+
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent / "demo"))
+
+
+#
 # -- Project information -----------------------------------------------------
 #
 
