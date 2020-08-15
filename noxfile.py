@@ -96,7 +96,7 @@ def lint(session):
     session.run("pre-commit", "run", "--all-files", *args)
 
 
-@nox.session(python="3.8")
+@nox.session(python="3.6")
 def test(session):
     _install_this_project_with_flit(session, extras=["test"])
 
