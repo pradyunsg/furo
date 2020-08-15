@@ -1,0 +1,7 @@
+{% if theme_home_layout == "default" %}
+  {%- include "layouts/content.html" with context -%}
+{% elif theme_home_layout == "blocks" %}
+  {%- include "layouts/home-blocks.html" with context -%}
+{% else %}
+  {%- include "layouts/invalid.html" with context -%}
+{% endif %}

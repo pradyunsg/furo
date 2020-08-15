@@ -1,0 +1,53 @@
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay navigation-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<header>
+  <label class="header-left nav-overlay-icon" for="__navigation">
+    {% include "icons/hamburger.svg" %}
+  </label>
+  <div class="header-center"><div class="brand">{{ docstitle }}</div></div>
+  <div class="header-right"></div>
+</header>
+<div class="page">
+  <aside class="navigation-drawer">
+    <div class="navigation">
+      {% block left_sidebar %}
+      <div class="navigation-scroll">
+        <div class="brand">{{ docstitle }}</div>
+        <div class="navigation-tree">
+          {{ mawek_navigation_tree }}
+        </div>
+      </div>
+      {% endblock left_sidebar %}
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article>
+        <label class="toc-overlay-icon" for="__toc">
+          {% include "icons/toc.svg" %}
+        </label>
+        {{ body }}
+      </article>
+      {# TODO: next/prev #}
+      {# TODO: footer w/ next/prev + copyright #}
+    </div>
+    <aside class="toc-drawer">
+      {% block right_sidebar %}
+      <div class="toc-scroll">
+        <div class="toc-icon">
+          {% include "icons/toc.svg" %}
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree">
+          {{ toc }}
+        </div>
+      </div>
+      {% endblock right_sidebar %}
+    </aside>
+  </main>
+</div>

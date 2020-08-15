@@ -1,4 +1,4 @@
-"""I still have to figure out what this would be."""
+"""A clean customizable Sphinx documentation theme."""
 
 __version__ = "0.1.0.dev0"
 

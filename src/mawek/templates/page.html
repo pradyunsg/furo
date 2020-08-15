@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
 {% block body -%}
-  {{ content }}
+  {%- if page_name == master_doc -%}
+    {%- include "layouts/home.html" with context -%}
+  {%- else -%}
+    {%- include "layouts/content.html" with context -%}
+  {%- endif -%}
 {%- endblock %}

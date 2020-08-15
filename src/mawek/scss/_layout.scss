@@ -1,0 +1,197 @@
+// Layout element sizes
+$content-padding: 2rem;
+$content-width: 44rem;
+$sidebar-width: 18rem;
+$full-width: $content-width + 2 * ($content-padding + $sidebar-width);
+$header-height: 3rem;
+
+////////////////////////////////////////////////////////////////////////////////
+// Page Layout
+//   This is a mobile-last design based off "max-width" rather than "min-width"
+////////////////////////////////////////////////////////////////////////////////
+.page {
+  display: flex;
+  min-height: 100vh;  // fill the viewport for pages with little content.
+}
+header {
+  width: 100vw;
+  height: $header-height;
+  background-color: white;
+  // We don't show the header on large screens.
+  display: none;
+}
+.main {
+  display: flex;
+}
+
+// Navigation sidebar (left) also covers the entire left portion of screen.
+.navigation-drawer {
+  display: flex;
+  justify-content: flex-end;
+  // These next two lines took me two days to figure out.
+  width: calc((100% - #{$full-width}) / 2 + #{$sidebar-width});
+  min-width: $sidebar-width;
+}
+
+// Scroll-along sidebars
+.navigation, .toc-drawer {
+  width: $sidebar-width;
+}
+.navigation-scroll, .toc-scroll {
+  position: sticky;
+  top: 0;
+  // Limit the height of sidebars to that of the viewport.
+  // NOTE: this can mean that we have some content that cannot be scrolled to
+  //       if the sidebar is not fully scrollable, but we'll have JS for that.
+  overflow: auto;
+  max-height: 100vh;
+}
+
+// Central items.
+.content {
+  padding: 0 $content-padding;
+  width: $content-width;
+}
+
+// TODO: figure out what could cause content to flow "out" of .content and
+//       add an overflow-x on it.
+
+////////////////////////////////////////////////////////////////////////////////
+// Toggles for elements
+////////////////////////////////////////////////////////////////////////////////
+.toc-overlay-icon {
+  display: none;
+  float: right;
+}
+.sidebar-toggle {
+  position: absolute;
+  display: none;
+}
+.sidebar-toggle[name="__toc"] {
+  left: 20px;
+}
+.sidebar-toggle:checked {
+  left: 40px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 0;
+
+  z-index: 1;
+
+  transition: width 0ms, height 0ms, opacity 250ms;
+
+  opacity: 0;
+  background-color: rgba(0,0,0,.54);
+}
+
+// Keep things smooth.
+.navigation-drawer {
+  transition: left 250ms;
+}
+.toc-drawer {
+  transition: right 250ms;
+}
+
+// Show the navigation sidebar
+#__navigation:checked {
+  & ~ .navigation-overlay {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  & ~ .page {
+    .navigation-drawer {
+      z-index: 2;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+// Show the toc sidebar
+#__toc:checked {
+  & ~ .toc-overlay {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  & ~ .page {
+    .toc-drawer {
+      z-index: 2;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Responsive layouting
+////////////////////////////////////////////////////////////////////////////////
+@media (max-width: $full-width) {
+  // Collapse "toc" into the icon.
+  .toc-overlay-icon {
+    display: block;
+  }
+
+  .navigation-drawer {
+      width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width});
+  }
+  .toc-drawer {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: -$sidebar-width;
+  }
+}
+
+@media (max-width: $full-width - $sidebar-width) {
+  // Collapse "navigation".
+  .navigation-drawer {
+    position: fixed;
+    height: 100vh;
+    width: $sidebar-width;
+
+    top: 0;
+    left: -$sidebar-width;
+  }
+  // Show the header.
+  header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-overlay-icon {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header-left, .header-right {
+      height: $header-height;
+      width: $header-height;
+    }
+  }
+  // Center the page, and accommodate for the header.
+  .page {
+    min-height: calc(100vh - #{$header-height});
+    justify-content: center;
+  }
+  .content {
+    margin-top: $header-height;
+  }
+}
+@media (max-width: $content-width + 2*$content-padding) {
+  // Content should respect window limits.
+  .content {
+    width: 100vw;
+    padding: 0;
+    overflow-x: auto;
+  }
+  article {
+    padding: 0 $content-padding;
+  }
+}
