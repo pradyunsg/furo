@@ -22,7 +22,7 @@ templates_path = ["_templates"]
 # -- Options for HTML output -------------------------------------------------
 #
 
-html_theme = "alabaster"
+html_theme = "mawek"
 
 html_static_path = ["_static"]
 html_title = "mawek"
