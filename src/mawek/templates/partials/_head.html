@@ -1,0 +1,67 @@
+{%- block site_meta -%}
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+{%- if meta %}{{ meta }}{% endif -%}
+
+{%- block linktags %}
+    {%- if hasdoc('about') %}
+    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+    {%- endif %}
+    {%- if hasdoc('genindex') %}
+    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+    {%- endif %}
+    {%- if hasdoc('search') %}
+    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+    {%- endif %}
+    {%- if hasdoc('copyright') %}
+    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+    {%- endif %}
+    {%- if next %}
+    <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+    {%- endif %}
+    {%- if prev %}
+    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+    {%- endif %}
+{%- endblock %}
+
+{# Favicon #}
+{%- if favicon -%}
+  <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+{%- endif -%}
+
+{#- Generator banner -#}
+<meta name="generator" content="sphinx-{{ sphinx_version }}, materialize theme"/>
+
+{%- endblock site_meta -%}
+
+{#- Site title -#}
+{%- block htmltitle -%}
+  <title>{{ title }}</title>
+{%- endblock -%}
+
+{#- Theme-related stylesheets -#}
+{%- block styles -%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous">
+<link rel="stylesheet" href="{{ pathto('_static/stylesheets/default.css', 1) }}">
+{%- endblock -%}
+
+{# JavaScript libraries #}
+{%- block js_libs -%}{%- endblock -%}
+
+{# Progressive Web App Manifest #}
+{%- if pwa_manifest -%}
+<link rel="manifest" href="{{ pwa_manifest }}" crossorigin="use-credentials">
+{%- endif -%}
+
+{# Custom stylesheets, might contain media query after URL #}
+{%- block extracss -%}
+  {%- for path in extra_css -%}
+  <link rel="stylesheet" href="{{ pathto(path, 1) }}" />
+  {%- endfor -%}
+{%- endblock -%}
+
+{#- Custom front matter #}
+{%- block extrahead -%}{%- endblock -%}
