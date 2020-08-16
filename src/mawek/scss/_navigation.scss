@@ -1,0 +1,55 @@
+.navigation-tree {
+  ul {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    list-style: none;
+
+    background-color: var(--red);
+  }
+  li {
+    background-color: var(--green);
+
+    position: relative;
+    margin: 0;
+
+    > ul {
+      margin-left: 1rem;
+    }
+  }
+  .reference {
+    background-color: var(--orange);
+    border-top: 1px solid var(--teal);
+
+    // Fill the parent.
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    line-height: 1.5rem;
+  }
+  label {
+    background-color: var(--blue);
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 1.5rem;
+  }
+}
+.toctree-checkbox {
+  position: absolute;
+  display: none;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Togglable expand/collapse
+////////////////////////////////////////////////////////////////////////////////
+.toctree-checkbox ~ ul {
+  display: none;
+}
+.toctree-checkbox:checked ~ ul {
+  display: block;
+}
