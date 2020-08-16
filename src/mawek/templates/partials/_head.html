@@ -5,24 +5,24 @@
 {%- if meta %}{{ meta }}{% endif -%}
 
 {%- block linktags %}
-    {%- if hasdoc('about') %}
-    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
-    {%- endif %}
-    {%- if hasdoc('genindex') %}
-    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
-    {%- endif %}
-    {%- if hasdoc('search') %}
-    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
-    {%- endif %}
-    {%- if hasdoc('copyright') %}
-    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
-    {%- endif %}
-    {%- if next %}
-    <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
-    {%- endif %}
-    {%- if prev %}
-    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
-    {%- endif %}
+    {%- if hasdoc('about') -%}
+      <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+    {%- endif -%}
+    {%- if hasdoc('genindex') -%}
+      <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+    {%- endif -%}
+    {%- if hasdoc('search') -%}
+      <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+    {%- endif -%}
+    {%- if hasdoc('copyright') -%}
+      <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+    {%- endif -%}
+    {%- if next -%}
+      <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+    {%- endif -%}
+    {%- if prev -%}
+      <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+    {%- endif -%}
 {%- endblock %}
 
 {# Favicon #}
@@ -31,7 +31,7 @@
 {%- endif -%}
 
 {#- Generator banner -#}
-<meta name="generator" content="sphinx-{{ sphinx_version }}, materialize theme"/>
+<meta name="generator" content="sphinx-{{ sphinx_version }}, mawek"/>
 
 {%- endblock site_meta -%}
 
@@ -41,24 +41,28 @@
 {%- endblock -%}
 
 {#- Theme-related stylesheets -#}
-{%- block styles -%}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-      crossorigin="anonymous">
+{%- block theme_styles -%}
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous">
   <link rel="stylesheet"
         href="{{ pathto('_static/stylesheets/default.css', 1) }}">
   {% include "partials/_head_colors.html" with context %}
 {%- endblock -%}
 
-{# JavaScript libraries #}
-{%- block js_libs -%}{%- endblock -%}
+{# Theme-related JavaScript libraries #}
+{%- block theme_js -%}
+{%- endblock -%}
 
-{# Progressive Web App Manifest #}
-{%- if pwa_manifest -%}
-<link rel="manifest" href="{{ pwa_manifest }}" crossorigin="use-credentials">
-{%- endif -%}
+{# Custom JS #}
+{%- block extrajs -%}
+  {%- for path in extra_js -%}
+    <script src="{{ pathto(path, 1) }}"></script>
+  {%- endfor -%}
+{%- endblock -%}
 
-{# Custom stylesheets, might contain media query after URL #}
+{# Custom stylesheets #}
 {%- block extracss -%}
   {%- for path in extra_css -%}
   <link rel="stylesheet" href="{{ pathto(path, 1) }}" />
