@@ -1,0 +1,10 @@
+<style>
+  :root {
+  {% for name, value in theme.named_colors.items() %}
+    --{{ name }}: {{ value }};
+  {% endfor %}
+  {% for name, value in theme.css_colors.items() %}
+    --color-{{ name }}: {{ value }};
+  {% endfor %}
+  }
+</style>
