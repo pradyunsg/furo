@@ -9,6 +9,9 @@ author-email = "mail@pradyunsg.me"
 home-page = "https://github.com/pradyunsg/mawek"
 description-file = "README.md"
 requires-python = ">=3.5"
+requires = [
+  "beautifulsoup4"
+]
 
 [tool.flit.metadata.requires-extra]
 test = [
