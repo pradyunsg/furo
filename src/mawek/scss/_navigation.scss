@@ -14,6 +14,7 @@ $navigation-expander-width: $navigation-item-height;  // Look square
   flex-direction: column;
 
   padding: $navigation-item-padding-vertical $navigation-item-padding-horizontal;
+  text-decoration: none;
 }
 
 .navigation-brand-text {
