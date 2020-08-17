@@ -47,21 +47,21 @@
   {% include "partials/_head_colors.html" with context %}
 {%- endblock -%}
 
+{# Custom stylesheets #}
+{%- block extracss -%}
+  {%- for path in extra_css -%}
+  <link rel="stylesheet" href="{{ pathto(path, 1) }}" />
+  {%- endfor -%}
+{%- endblock -%}
+
 {# Theme-related JavaScript libraries #}
-{%- block theme_js -%}
+{%- block theme_scripts -%}
 {%- endblock -%}
 
 {# Custom JS #}
 {%- block extrajs -%}
   {%- for path in extra_js -%}
     <script src="{{ pathto(path, 1) }}"></script>
-  {%- endfor -%}
-{%- endblock -%}
-
-{# Custom stylesheets #}
-{%- block extracss -%}
-  {%- for path in extra_css -%}
-  <link rel="stylesheet" href="{{ pathto(path, 1) }}" />
   {%- endfor -%}
 {%- endblock -%}
 
