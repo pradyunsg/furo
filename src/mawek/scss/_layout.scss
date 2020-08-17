@@ -9,6 +9,9 @@ $header-height: 3rem;
 // Page Layout
 //   This is a mobile-last design based off "max-width" rather than "min-width"
 ////////////////////////////////////////////////////////////////////////////////
+body {
+  overflow-y: scroll;  // always have the scrollbar
+}
 .page {
   display: flex;
   min-height: 100vh;  // fill the viewport for pages with little content.
