@@ -1,3 +1,5 @@
+{% include "partials/icons.html" %}
+
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
 <label class="overlay navigation-overlay" for="__navigation"></label>
@@ -5,7 +7,7 @@
 
 <header>
   <label class="header-left nav-overlay-icon" for="__navigation">
-    {% include "icons/hamburger.svg" %}
+    <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
   </label>
   <div class="header-center"><div class="brand">{{ docstitle }}</div></div>
   <div class="header-right"></div>
@@ -27,7 +29,7 @@
     <div class="content">
       <article>
         <label class="toc-overlay-icon" for="__toc">
-          {% include "icons/toc.svg" %}
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         {{ body }}
       </article>
@@ -38,7 +40,7 @@
       {% block right_sidebar %}
       <div class="toc-scroll">
         <div class="toc-icon">
-          {% include "icons/toc.svg" %}
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           <span class="toc-title">
             Contents
           </span>
