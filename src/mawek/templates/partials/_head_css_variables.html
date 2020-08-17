@@ -1,0 +1,13 @@
+{#
+  This is where theme_css_variables or html_theme_options["css_variables"] gets
+  converted to actual CSS variables.
+#}
+{% if theme_css_variables %}
+<style>
+  :root {
+  {% for name, value in theme_css_variables.items() %}
+    --{{ name }}: {{ value }};
+  {% endfor %}
+  }
+</style>
+{% endif %}
