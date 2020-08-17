@@ -4,16 +4,17 @@ mawek
 I still have to figure out what this would be.
 
 .. toctree::
-   :caption: What does the caption say?
    :hidden:
+   :caption: User Guide
 
-   getting-started
+   installation
    customisation
-   GitHub <https://github.com>
+   changelog
+   license
 
 .. toctree::
-   :caption: Demo stuff
-   :maxdepth: 2
    :hidden:
+   :caption: Development
 
+   contributing
    demo/index
