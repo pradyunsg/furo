@@ -1,5 +1,5 @@
-// This file defines all the knobs that can be tweaked by end users through
-// a separate stylesheet.
+// This file defines all the knobs that can be tweaked by end users.
+
 :root {
   //////////////////////////////////////////////////////////////////////////////
   // Overall Layout Variables
@@ -44,7 +44,10 @@
   --color-accent: #0074D9;
 
   //////////////////////////////////////////////////////////////////////////////
-  // Everything below this should be defined using var(...)
+  // Everything below this should be one of:
+  // - var(...)
+  // - *-gradient(...)
+  // - special literal values (eg: transparent, none)
   //////////////////////////////////////////////////////////////////////////////
 
   // Navigation sidebar (left)
