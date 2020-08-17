@@ -21,7 +21,29 @@
 
 {# These will become CSS variables #}
 {% set css_colors = {
-  "sidebar-background": "#f5f6fa",
+  "text": "black",
+  "muted-text": "#5c5962",
+  "navigation-background": "#f8f9fb",
+  "navigation-border": "#eeebee",
+  "navigation-item-background": (
+    "var(--color-navigation-background)"
+  ),
+  "navigation-item-background--current": (
+    "var(--color-navigation-item-background)"
+  ),
+  "navigation-item-background--hover": (
+    "linear-gradient("
+      "-90deg,"
+      "rgba(239,239,244,1) 0%,"
+      "rgba(235,237,245,0.8) 90%,"
+      "rgba(235,237,245,0) 100%"
+    ")"
+  ),
+  "navigation-item-expander-background--hover": "rgba(239,239,244,1)",
+
+  "navigation-caption-text": "var(--color-muted-text)",
+  "navigation-top-level-link-text": "#7253ed",
+  "navigation-link-text": "var(--color-muted-text)",
 } %}
 {% if theme_colors %}
   {% set css_colors = css_colors.update(theme_colors) or css_colors %}

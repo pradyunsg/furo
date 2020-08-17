@@ -17,7 +17,9 @@
     <div class="navigation">
       {% block left_sidebar %}
       <div class="navigation-scroll">
-        <div class="brand">{{ docstitle }}</div>
+        <div class="navigation-brand">
+          <span class="navigation-brand-text">{{ docstitle }}</span>
+        </div>
         <div class="navigation-tree">
           {{ mawek_navigation_tree }}
         </div>

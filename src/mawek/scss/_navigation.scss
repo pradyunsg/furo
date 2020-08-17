@@ -1,4 +1,32 @@
+$navigation-item-line-height: 1rem;
+$navigation-item-padding-vertical: 0.4rem;
+$navigation-item-padding-horizontal: 1rem;
+$navigation-tree-margin-top: 2rem;
+$navigation-caption-margin-top: 1rem;
+$navigation-item-height: $navigation-item-line-height + 2*$navigation-item-padding-vertical;
+$navigation-expander-width: $navigation-item-height;  // Look square
+
+////////////////////////////////////////////////////////////////////////////////
+// Brand on top of the scrollable tree.
+////////////////////////////////////////////////////////////////////////////////
+.navigation-brand {
+  display: flex;
+  flex-direction: column;
+
+  padding: $navigation-item-padding-vertical $navigation-item-padding-horizontal;
+}
+
+.navigation-brand-text {
+  padding: $navigation-item-padding-vertical 0;  // some extra vertical spacing
+  font-size: 1.5rem;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Structure/Skeleton of the navigation tree (left)
+////////////////////////////////////////////////////////////////////////////////
 .navigation-tree {
+  margin: $navigation-tree-margin-top 0 $navigation-item-padding-vertical;
+
   ul {
     padding: 0;
     margin-top: 0;
@@ -8,12 +36,8 @@
     flex-direction: column;
 
     list-style: none;
-
-    background-color: var(--red);
   }
   li {
-    background-color: var(--green);
-
     position: relative;
     margin: 0;
 
@@ -22,23 +46,58 @@
     }
   }
   .reference {
-    background-color: var(--orange);
-    border-top: 1px solid var(--teal);
-
     // Fill the parent.
     display: inline-block;
+    line-height: $navigation-item-line-height;
+
     height: 100%;
-    width: 100%;
-    line-height: 1.5rem;
+    width: calc(100% - #{$navigation-item-padding-horizontal});
+
+    padding-left: $navigation-item-padding-horizontal;
+    padding-top: $navigation-item-padding-vertical;
+    padding-bottom: $navigation-item-padding-vertical;
+    padding-right: 0;
+
+    // Add a nice little "external-link" arrow here.
+    &.external::after {
+      content: url("data:image/svg+xml,%3Csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23607D8B' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5' /%3E%3Cline x1='10' y1='14' x2='20' y2='4' /%3E%3Cpolyline points='15 4 20 4 20 9' /%3E%3C/svg%3E");
+      margin: 0 0.25rem;
+      vertical-align: text-bottom;
+    }
   }
+
+  // Make the current page reference bold.
+  .current-page > .reference {
+    font-weight: bold;
+  }
+
   label {
-    background-color: var(--blue);
     position: absolute;
+    top: 0;
     right: 0;
-    height: 100%;
-    width: 1.5rem;
+    height: $navigation-item-height;
+    width: $navigation-expander-width;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .caption {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    margin: $navigation-caption-margin-top 0 0 0;
+
+    padding-top: $navigation-item-padding-vertical;
+    padding-bottom: $navigation-item-padding-vertical;
+    padding-left: $navigation-item-padding-horizontal;
+    padding-right: 0;
   }
 }
+
 .toctree-checkbox {
   position: absolute;
   display: none;
@@ -47,9 +106,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Togglable expand/collapse
 ////////////////////////////////////////////////////////////////////////////////
-.toctree-checkbox ~ ul {
-  display: none;
+.toctree-checkbox {
+  ~ ul {
+    display: none;
+  }
+  ~ label .icon svg {
+    transform: rotate(90deg);
+  }
 }
-.toctree-checkbox:checked ~ ul {
-  display: block;
+.toctree-checkbox:checked {
+  ~ ul {
+    display: block;
+  }
+  ~ label .icon svg {
+    transform: rotate(-90deg);
+  }
 }

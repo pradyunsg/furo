@@ -1,0 +1,53 @@
+body {
+  color: var(--color-text);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Colorize the contents of the page
+////////////////////////////////////////////////////////////////////////////////
+.navigation-drawer {
+  border-right: 1px solid var(--color-navigation-border);
+  background: var(--color-navigation-background);
+}
+
+.navigation-brand {
+  border-bottom: 1px solid var(--color-navigation-border);
+}
+
+.navigation-tree {
+  font-size: 0.875rem;
+
+  .icon {
+    color: var(--color-navigation-link-text);
+  }
+
+  .reference {
+    text-decoration: none;  // No need for underlines here.
+    color: var(--color-navigation-link-text);
+    &:hover {
+      background: var(--color-navigation-item-background--hover);
+    }
+    &.external::after {
+      color: var(--color-navigation-link-text);
+    }
+  }
+  .caption {
+    color: var(--color-navigation-caption-text);
+  }
+  label {
+    &:hover {
+      background: var(--color-navigation-item-expander-background--hover);
+    }
+  }
+  .toctree-l1 {
+    & > .reference, & > label .icon {
+      color: var(--color-navigation-top-level-link-text);
+    }
+  }
+  .current > .reference {
+    background: var(--color-navigation-item-background--current);
+    &:hover {
+      background: var(--color-navigation-item-background--hover);
+    }
+  }
+}
