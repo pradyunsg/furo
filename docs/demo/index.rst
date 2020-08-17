@@ -7,8 +7,8 @@ based on Sphinx ReadTheDocs Theme's "DEMO DOCUMENTATION" section.
 
 .. toctree::
 
-   api
    demo
    lists_tables
+   api
    long
    structure
