@@ -1,0 +1,70 @@
+// This file defines all the knobs that can be tweaked by end users through
+// a separate stylesheet.
+:root {
+  //////////////////////////////////////////////////////////////////////////////
+  // Overall Layout Variables
+  //////////////////////////////////////////////////////////////////////////////
+  // Full page
+  --content-padding: 2rem;
+  --content-width: 39rem;
+  --sidebar-width: 15rem;
+  --header-height: calc(var(--navigation-item-line-height) + 4*#{var(--navigation-item-padding-vertical)});
+  --full-width: calc(var(--content-width) + 2 * (var(--content-padding) + var(--sidebar-width)));
+
+  // Navigation
+  --navigation-tree-margin-top: 2rem;
+  --navigation-caption-margin-top: 1rem;
+
+  --navigation-item-line-height: 1rem;
+  --navigation-item-padding-vertical: 0.4rem;
+  --navigation-item-padding-horizontal: 1rem;
+  --navigation-item-height: calc(var(--navigation-item-line-height) + 2*#{var(--navigation-item-padding-vertical)});
+
+  --navigation-expander-width: var(--navigation-item-height);  // be square
+
+  //////////////////////////////////////////////////////////////////////////////
+  // Overall Colors
+  //     To give the user more control, avoid using these colors directly
+  //     outside of this file. Instead, try to define more variables here that
+  //     based on these, and use them in the actual stylesheets.
+  //////////////////////////////////////////////////////////////////////////////
+  --color-foreground:        black;    // for main text and headings
+  --color-foreground-muted:  #5C5962;  // for muted text
+  --color-foreground-border: #888888;  // for borders in content
+
+  --color-background:        white;    // used for content + ToC
+  --color-background-two:    #F8F9FB;  // used for navigation
+  --color-background-three:   rgba(239, 239, 244, 1);     // for hover in navigation
+  --color-background-three--80: rgba(239, 239, 244, 0.8); // for hover in navigation
+  --color-background-three--0:  rgba(239, 239, 244, 0);   // for hover in navigation
+
+  --color-background-border: #EEEBEE;
+
+  --color-primary: #7253ED;
+  --color-accent: #0074D9;
+
+  //////////////////////////////////////////////////////////////////////////////
+  // Everything below this should be defined using var(...)
+  //////////////////////////////////////////////////////////////////////////////
+
+  // Navigation sidebar (left)
+  --color-navigation-background: var(--color-background-two);
+  --color-navigation-background-border: var(--color-background-border);
+
+  --color-navigation-brand-text: var(--color-foreground);
+  --color-navigation-caption-text: var(--color-foreground-muted);
+  --color-navigation-link-text: var(--color-foreground-muted);
+  --color-navigation-link-text--top-level: var(--color-primary);
+
+  --color-navigation-item-background: var(--color-navigation-background);
+  --color-navigation-item-background--current: var(--color-navigation-item-background);
+  --color-navigation-item-background--hover: linear-gradient(
+      -90deg,
+      var(--color-background-three) 0%,
+      var(--color-background-three--80) 90%,
+      var(--color-background-three--0) 100%
+    );
+
+  --color-navigation-item-expander-background: transparent;
+  --color-navigation-item-expander-background--hover: var(--color-background-three);
+}

@@ -1,18 +1,18 @@
 body {
-  color: var(--color-text);
+  color: var(--color-foreground);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // Colorize the contents of the page
 ////////////////////////////////////////////////////////////////////////////////
 .navigation-drawer {
-  border-right: 1px solid var(--color-navigation-border);
+  border-right: 1px solid var(--color-navigation-background-border);
   background: var(--color-navigation-background);
 }
 
 .navigation-brand {
   color: var(--color-navigation-brand-text);
-  border-bottom: 1px solid var(--color-navigation-border);
+  border-bottom: 1px solid var(--color-navigation-background-border);
 }
 
 .navigation-tree {
@@ -29,20 +29,24 @@ body {
       background: var(--color-navigation-item-background--hover);
     }
     &.external::after {
+      // make sure the icon looks like other boring links
       color: var(--color-navigation-link-text);
     }
   }
   .caption {
     color: var(--color-navigation-caption-text);
   }
-  label {
-    &:hover {
-      background: var(--color-navigation-item-expander-background--hover);
-    }
-  }
+  // Colorize the top-level list items and icon.
   .toctree-l1 {
     & > .reference, & > label .icon {
-      color: var(--color-navigation-top-level-link-text);
+      color: var(--color-navigation-link-text--top-level);
+    }
+  }
+  // Color changes on hover
+  label {
+    background: var(--color-navigation-item-expander-background);
+    &:hover {
+      background: var(--color-navigation-item-expander-background--hover);
     }
   }
   .current > .reference {

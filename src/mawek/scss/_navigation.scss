@@ -1,11 +1,3 @@
-$navigation-item-line-height: 1rem;
-$navigation-item-padding-vertical: 0.4rem;
-$navigation-item-padding-horizontal: 1rem;
-$navigation-tree-margin-top: 2rem;
-$navigation-caption-margin-top: 1rem;
-$navigation-item-height: $navigation-item-line-height + 2*$navigation-item-padding-vertical;
-$navigation-expander-width: $navigation-item-height;  // Look square
-
 ////////////////////////////////////////////////////////////////////////////////
 // Brand on top of the scrollable tree.
 ////////////////////////////////////////////////////////////////////////////////
@@ -13,12 +5,12 @@ $navigation-expander-width: $navigation-item-height;  // Look square
   display: flex;
   flex-direction: column;
 
-  padding: $navigation-item-padding-vertical $navigation-item-padding-horizontal;
+  padding: var(--navigation-item-padding-vertical) var(--navigation-item-padding-horizontal);
   text-decoration: none;
 }
 
 .navigation-brand-text {
-  padding: $navigation-item-padding-vertical 0;  // some extra vertical spacing
+  padding: var(--navigation-item-padding-vertical) 0;  // some extra vertical spacing
   font-size: 1.5rem;
 }
 
@@ -26,7 +18,7 @@ $navigation-expander-width: $navigation-item-height;  // Look square
 // Structure/Skeleton of the navigation tree (left)
 ////////////////////////////////////////////////////////////////////////////////
 .navigation-tree {
-  margin: $navigation-tree-margin-top 0 $navigation-item-padding-vertical;
+  margin: var(--navigation-tree-margin-top) 0 var(--navigation-item-padding-vertical);
 
   ul {
     padding: 0;
@@ -49,14 +41,14 @@ $navigation-expander-width: $navigation-item-height;  // Look square
   .reference {
     // Fill the parent.
     display: inline-block;
-    line-height: $navigation-item-line-height;
+    line-height: var(--navigation-item-line-height);
 
     height: 100%;
-    width: calc(100% - #{$navigation-item-padding-horizontal});
+    width: calc(100% - #{var(--navigation-item-padding-horizontal)});
 
-    padding-left: $navigation-item-padding-horizontal;
-    padding-top: $navigation-item-padding-vertical;
-    padding-bottom: $navigation-item-padding-vertical;
+    padding-left: var(--navigation-item-padding-horizontal);
+    padding-top: var(--navigation-item-padding-vertical);
+    padding-bottom: var(--navigation-item-padding-vertical);
     padding-right: 0;
 
     // Add a nice little "external-link" arrow here.
@@ -76,8 +68,8 @@ $navigation-expander-width: $navigation-item-height;  // Look square
     position: absolute;
     top: 0;
     right: 0;
-    height: $navigation-item-height;
-    width: $navigation-expander-width;
+    height: var(--navigation-item-height);
+    width: var(--navigation-expander-width);
 
     cursor: pointer;
 
@@ -90,11 +82,11 @@ $navigation-expander-width: $navigation-item-height;  // Look square
     font-weight: bold;
     text-transform: uppercase;
 
-    margin: $navigation-caption-margin-top 0 0 0;
+    margin: var(--navigation-caption-margin-top) 0 0 0;
 
-    padding-top: $navigation-item-padding-vertical;
-    padding-bottom: $navigation-item-padding-vertical;
-    padding-left: $navigation-item-padding-horizontal;
+    padding-top: var(--navigation-item-padding-vertical);
+    padding-bottom: var(--navigation-item-padding-vertical);
+    padding-left: var(--navigation-item-padding-horizontal);
     padding-right: 0;
   }
 }
