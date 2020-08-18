@@ -50,9 +50,9 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   //     outside of this file. Instead, try to define more variables here that
   //     based on these, and use them in the actual stylesheets.
   //////////////////////////////////////////////////////////////////////////////
-  --color-foreground:        black;    // for main text and headings
-  --color-foreground-muted:  #5C5962;  // for muted text
-  --color-foreground-border: #888888;  // for borders in content
+  --color-foreground: black;              // for main text and headings
+  --color-foreground-secondary: #5C5962;  // for secondary text
+  --color-foreground-border: #888888;     // for muted text, borders in content
 
   --color-background:        white;    // used for content + ToC
   --color-background-two:    #F8F9FB;  // used for navigation
@@ -77,8 +77,8 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   --color-navigation-background-border: var(--color-background-border);
 
   --color-navigation-brand-text: var(--color-foreground);
-  --color-navigation-caption-text: var(--color-foreground-muted);
-  --color-navigation-link-text: var(--color-foreground-muted);
+  --color-navigation-caption-text: var(--color-foreground-secondary);
+  --color-navigation-link-text: var(--color-foreground-secondary);
   --color-navigation-link-text--top-level: var(--color-primary);
 
   --color-navigation-item-background: var(--color-navigation-background);
