@@ -45,12 +45,9 @@
     line-height: var(--navigation-item-line-height);
 
     height: 100%;
-    width: calc(100% - #{var(--navigation-item-padding-horizontal)});
+    width: calc(100% - 2*#{var(--navigation-item-padding-horizontal)});
 
-    padding-left: var(--navigation-item-padding-horizontal);
-    padding-top: var(--navigation-item-padding-vertical);
-    padding-bottom: var(--navigation-item-padding-vertical);
-    padding-right: 0;
+    padding: var(--navigation-item-padding-vertical) var(--navigation-item-padding-horizontal);
 
     // Add a nice little "external-link" arrow here.
     &.external::after {
@@ -86,10 +83,7 @@
 
     margin: var(--navigation-caption-margin-top) 0 0 0;
 
-    padding-top: var(--navigation-item-padding-vertical);
-    padding-bottom: var(--navigation-item-padding-vertical);
-    padding-left: var(--navigation-item-padding-horizontal);
-    padding-right: 0;
+    padding: var(--navigation-item-padding-vertical) var(--navigation-item-padding-horizontal);
   }
 }
 
