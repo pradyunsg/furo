@@ -32,6 +32,13 @@ function setupScrollHandler() {
 
 function setup() {
   setupScrollHandler();
+
+  // Scrollspy -- highlight table on contents, based on scroll
+  let spy = new Gumshoe(".toc-tree a", {
+    reflow: true,
+    recursive: true,
+    navClass: "scroll-current",
+  });
 }
 
 document.addEventListener("DOMContentLoaded", function main(params) {
