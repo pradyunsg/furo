@@ -53,10 +53,17 @@ def _background_process(session, cmd):
 #
 @nox.session(name="docs-live", python="3.8")
 def docs_live(session):
+    if session.posargs:
+        docs_dir = session.posargs[0]
+        additional_dependencies = session.posargs[1:]
+    else:
+        docs_dir = "docs/"
+        additional_dependencies = ()
+
     # Auto compile SCSS files, on change
     # Auto generate documentation, on change, in src/ or docs/
     _install_this_project_with_flit(session, extras=["doc"], editable=True)
-    session.install("sphinx-autobuild", "boussole")
+    session.install("sphinx-autobuild", "boussole", *additional_dependencies)
 
     boussle_args = ["--config", ".boussole.json"]
     session.run("boussole", "compile", *boussle_args)
@@ -70,7 +77,7 @@ def docs_live(session):
             "src/",
             "--open-browser",
             "-a",
-            "docs/",
+            docs_dir,
             "build/docs/",
         )
 
