@@ -70,7 +70,6 @@ def docs_live(session):
             "src/",
             "--open-browser",
             "-a",
-            "-q",
             "docs/",
             "build/docs/",
         )
