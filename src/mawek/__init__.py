@@ -5,6 +5,7 @@ __version__ = "0.1.0.dev0"
 from pathlib import Path
 
 from .navigation import get_navigation_tree
+from .toc import should_hide_toc
 
 
 def sphinx_html_page_context(app, pagename, templatename, context, doctree):
@@ -16,6 +17,12 @@ def sphinx_html_page_context(app, pagename, templatename, context, doctree):
         collapse=False, titles_only=True, maxdepth=-1, includehidden=True
     )
     context["mawek_navigation_tree"] = get_navigation_tree(toctree_html)
+
+    # Custom "should hide ToC" logic
+    context["mawek_hide_toc"] = should_hide_toc(context.get("toc", ""))
+    # Allow for hiding toc via ToC in page-wide metadata.
+    if "hide-toc" in (context.get("meta", None) or {}):
+        context["mawek_hide_toc"] = True
 
 
 def setup(app):
