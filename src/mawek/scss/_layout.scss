@@ -13,6 +13,12 @@ header {
   width: 100vw;
   height: var(--header-height);
   background-color: white;
+
+  // Add shadow when scrolled
+  &.scrolled {
+    box-shadow: 0 0 .2rem rgba(0,0,0,.1),0 .2rem .4rem rgba(0,0,0,.2)
+  }
+
   // We don't show the header on large screens.
   display: none;
 }
@@ -140,6 +146,7 @@ header {
   // Collapse "toc" into the icon.
   .toc-overlay-icon {
     display: block;
+    cursor: pointer;
   }
 
   .navigation-drawer {

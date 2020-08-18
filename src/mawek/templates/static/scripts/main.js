@@ -1,0 +1,40 @@
+var header = undefined;
+
+function scrollHandler(positionY) {
+  //
+  // Header Shadow and "fade-away" content
+  //
+  if (positionY == 0) {
+    header.classList.remove("scrolled");
+  } else {
+    header.classList.add("scrolled");
+  }
+}
+
+function setupScrollHandler() {
+  // Taken from https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event
+  let last_known_scroll_position = 0;
+  let ticking = false;
+
+  window.addEventListener('scroll', function(e) {
+    last_known_scroll_position = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        scrollHandler(last_known_scroll_position);
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
+}
+
+function setup() {
+  setupScrollHandler();
+}
+
+document.addEventListener("DOMContentLoaded", function main(params) {
+  header = document.querySelector("header");
+  setup();
+});
