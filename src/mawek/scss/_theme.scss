@@ -54,3 +54,24 @@ body {
     }
   }
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// Table of contents
+////////////////////////////////////////////////////////////////////////////////
+.toc-drawer {
+  background: var(--color-toc-background);
+}
+
+.toc-title {
+  color: var(--color-toc-title-text);
+}
+
+.toc-tree {
+  .reference {
+    text-decoration: none;  // No need for underlines here.
+    color: var(--color-toc-item-text);
+  }
+  .scroll-current > .reference {
+    color: var(--color-toc-item-text--active);
+  }
+}

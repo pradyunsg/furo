@@ -30,7 +30,7 @@
   <main class="main">
     <div class="content">
       <article>
-        <label class="toc-overlay-icon" for="__toc">
+        <label class="toc-overlay-icon{% if mawek_hide_toc %} no-toc{% endif %}" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         {{ body }}
@@ -38,11 +38,11 @@
       {# TODO: next/prev #}
       {# TODO: footer w/ next/prev + copyright #}
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer{% if mawek_hide_toc %} no-toc{% endif %}">
       {% block right_sidebar %}
+      {% if not mawek_hide_toc %}
       <div class="toc-scroll">
-        <div class="toc-icon">
-          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <div class="toc-title-container">
           <span class="toc-title">
             Contents
           </span>
@@ -51,6 +51,7 @@
           {{ toc }}
         </div>
       </div>
+      {% endif %}
       {% endblock right_sidebar %}
     </aside>
   </main>

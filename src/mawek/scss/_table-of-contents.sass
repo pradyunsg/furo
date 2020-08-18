@@ -1,0 +1,45 @@
+.toc-title-container
+  padding: var(--toc-title-padding)
+
+.toc-title
+  font-size: var(--toc-title-font-size)
+  padding-left: var(--toc-padding-horizontal)
+  text-transform: uppercase
+
+// If the ToC is not present, hide these elements coz they're not relevant.
+.no-toc
+  display: none
+
+.toc-tree
+  font-size: var(--toc-font-size)
+  padding-left: calc(var(--toc-padding-horizontal) - var(--toc-item-padding-horizontal));
+
+  // Hide the "top level" bullet.
+  > ul > li
+    padding-top: 0
+    & > ul
+      padding-left: 0
+    & > a
+      display: none
+
+  ul
+    list-style-type: none
+    margin-top: 0
+    padding-left: var(--toc-item-padding-horizontal)
+  li
+    padding-top: var(--toc-item-padding-vertical)
+
+    .reference
+      text-decoration: none
+
+    &.scroll-current >.reference
+      font-weight: bold
+
+.toc-scroll
+  max-height: calc(100vh - var(--toc-scroll-margin-top)
+  margin-top: var(--toc-scroll-margin-top)
+
+  // Hide scrollbar until hover
+  overflow-y: hidden
+  &:hover
+    overflow-y: auto
