@@ -7,7 +7,7 @@ I still have to figure out what this would be.
    :hidden:
    :caption: User Guide
 
-   installation
+   getting-started
    customisation
    changelog
    license
