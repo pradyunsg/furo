@@ -1,15 +1,18 @@
 // This file defines all the knobs that can be tweaked by end users.
 
+//////////////////////////////////////////////////////////////////////////////
+// Overall Layout Variables
+//    These are set here, since CSS variables can't be used in media queries,
+//    which is where these would be used.
+//////////////////////////////////////////////////////////////////////////////
+$content-padding: 2rem;
+$content-width: 39rem;
+$sidebar-width: 15rem;
+$full-width: $content-width + 2 * ($content-padding + $sidebar-width);
+
 :root {
-  //////////////////////////////////////////////////////////////////////////////
-  // Overall Layout Variables
-  //////////////////////////////////////////////////////////////////////////////
-  // Full page
-  --content-padding: 2rem;
-  --content-width: 39rem;
-  --sidebar-width: 15rem;
-  --header-height: calc(var(--navigation-item-line-height) + 4*#{var(--navigation-item-padding-vertical)});
-  --full-width: calc(var(--content-width) + 2 * (var(--content-padding) + var(--sidebar-width)));
+  // Layout-related
+  --header-height: calc(var(--navigation-item-line-height) + 4 * #{var(--navigation-item-padding-vertical)});
 
   // Navigation
   --navigation-tree-margin-top: 2rem;

@@ -1,12 +1,3 @@
-:root {
-  // Layout element sizes
-  --content-padding: 2rem;
-  --content-width: 39rem;
-  --sidebar-width: 15rem;
-  --full-width: calc(var(--content-width) + 2 * (var(--content-padding) + var(--sidebar-width)));
-  --header-height: 3.4rem;
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 // Page Layout
 //   This is a mobile-last design based off "max-width" rather than "min-width"
@@ -34,13 +25,13 @@ header {
   display: flex;
   justify-content: flex-end;
   // These next two lines took me two days to figure out.
-  width: calc((100% - #{var(--full-width)}) / 2 + #{var(--sidebar-width)});
-  min-width: var(--sidebar-width);
+  width: calc((100% - #{$full-width}) / 2 + #{$sidebar-width});
+  min-width: $sidebar-width;
 }
 
 // Scroll-along sidebars
 .navigation, .toc-drawer {
-  width: var(--sidebar-width);
+  width: $sidebar-width;
 }
 .navigation-scroll, .toc-scroll {
   position: sticky;
@@ -54,8 +45,8 @@ header {
 
 // Central items.
 .content {
-  padding: 0 var(--content-padding);
-  width: var(--content-width);
+  padding: 0 $content-padding;
+  width: $content-width;
 }
 
 .icon {
@@ -145,32 +136,32 @@ header {
 ////////////////////////////////////////////////////////////////////////////////
 // Responsive layouting
 ////////////////////////////////////////////////////////////////////////////////
-@media (max-width: var(--full-width)) {
+@media (max-width: $full-width) {
   // Collapse "toc" into the icon.
   .toc-overlay-icon {
     display: block;
   }
 
   .navigation-drawer {
-      width: calc((100% - #{var(--full-width) - var(--sidebar-width)}) / 2 + #{var(--sidebar-width)});
+      width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width});
   }
   .toc-drawer {
     position: fixed;
     height: 100vh;
     top: 0;
-    right: -var(--sidebar-width);
+    right: -$sidebar-width;
   }
 }
 
-@media (max-width: var(--full-width) - var(--sidebar-width)) {
+@media (max-width: $full-width - $sidebar-width) {
   // Collapse "navigation".
   .navigation-drawer {
     position: fixed;
     height: 100vh;
-    width: var(--sidebar-width);
+    width: $sidebar-width;
 
     top: 0;
-    left: -var(--sidebar-width);
+    left: -$sidebar-width;
   }
   // Show the header.
   header {
@@ -199,7 +190,7 @@ header {
     margin-top: var(--header-height);
   }
 }
-@media (max-width: var(--content-width) + 2*#{var(--content-padding)}) {
+@media (max-width: $content-width + 2 * $content-padding) {
   // Content should respect window limits.
   .content {
     width: 100vw;
@@ -207,12 +198,12 @@ header {
     overflow-x: auto;
   }
   article {
-    padding: 0 var(--content-padding);
+    padding: 0 $content-padding;
   }
 }
 
 // Make things a bit bigger on bigger screens.
-@media (min-width: var(--full-width) + var(--sidebar-width)) {
+@media (min-width: $full-width + $sidebar-width) {
   html {
     font-size: 110%;
   }
