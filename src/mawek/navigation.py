@@ -23,6 +23,9 @@ def get_navigation_tree(toctree_html):
     Adds a checkbox + corresponding label to <li>s that contain a <ul> tag, to enable
     the I-spent-too-much-time-making-this-CSS-only collapsing sidebar tree.
     """
+    if not toctree_html:
+        return toctree_html
+
     soup = BeautifulSoup(toctree_html, "html.parser")
 
     toctree_checkbox_count = 0
