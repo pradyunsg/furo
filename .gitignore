@@ -3,3 +3,6 @@
 /build
 /dist
 __pycache__
+
+# Generated CSS file
+src/**/stylesheets/default.css
