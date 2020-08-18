@@ -1,6 +1,4 @@
 html {
   // Seems to be the best "system UI font stack" as on Aug 2020.
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-              "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
-              "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--font-stack);
 }

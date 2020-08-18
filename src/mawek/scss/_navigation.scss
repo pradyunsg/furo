@@ -18,6 +18,7 @@
 // Structure/Skeleton of the navigation tree (left)
 ////////////////////////////////////////////////////////////////////////////////
 .navigation-tree {
+  font-size: var(--navigation-item-font-size);
   margin: var(--navigation-tree-margin-top) 0 var(--navigation-item-padding-vertical);
 
   ul {
@@ -35,7 +36,7 @@
     margin: 0;
 
     > ul {
-      margin-left: 1rem;
+      margin-left: var(--navigation-item-padding-horizontal);
     }
   }
   .reference {
@@ -78,7 +79,8 @@
     align-items: center;
   }
   .caption {
-    font-size: 0.75rem;
+    font-size: var(--navigation-caption-font-size);
+
     font-weight: bold;
     text-transform: uppercase;
 
