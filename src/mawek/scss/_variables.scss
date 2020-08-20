@@ -6,6 +6,7 @@
 //    which is where these would be used.
 ////////////////////////////////////////////////////////////////////////////////
 $content-padding: 2rem;
+$content-padding--small: 1rem;
 $content-width: 39rem;
 $sidebar-width: 15rem;
 $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
@@ -20,17 +21,17 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   --font-size: 1rem;
-  --font-size--small: 0.8125rem;
-  --font-size--smaller: 0.75rem;
-  --font-size--smallest: 0.625rem;
+  --font-size--small: 0.875rem;
+  --font-size--smaller: 0.8125rem;
+  --font-size--smallest: 0.75rem;
 
   // Navigation
   --navigation-caption-font-size: var(--font-size--smaller);
   --navigation-item-font-size: var(--font-size--small);
 
   // Table of Contents
-  --toc-font-size: var(--font-size--smaller);
-  --toc-title-font-size: var(--font-size--smallest);
+  --toc-font-size: var(--font-size--small);
+  --toc-title-font-size: var(--font-size--smaller);
 
   //////////////////////////////////////////////////////////////////////////////
   // Spacing
@@ -74,7 +75,7 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 
   --color-background-border: #EEEBEE;
 
-  --color-primary: #4262ff;
+  --color-primary: #2962ff;
   --color-accent: #39CCCC;
 
   //////////////////////////////////////////////////////////////////////////////
