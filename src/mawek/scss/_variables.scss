@@ -44,7 +44,7 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   --navigation-caption-margin-top: 1rem;
 
   --navigation-item-line-height: 1rem;
-  --navigation-item-padding-vertical: 0.4rem;
+  --navigation-item-padding-vertical: 0.5rem;
   --navigation-item-padding-horizontal: 1rem;
   --navigation-item-height: calc(var(--navigation-item-line-height) + 2*#{var(--navigation-item-padding-vertical)});
 
