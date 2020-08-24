@@ -2,6 +2,9 @@ html {
   // Seems to be the best "system UI font stack" as on Aug 2020.
   font-family: var(--font-stack);
 }
+pre, code, kbd, samp {
+  font-family: var(--font-stack--monospace);
+}
 
 // Line height from Bootstrap 4.1
 article {
