@@ -5,7 +5,6 @@ See ``_templates/home.html`` for the actual homepage HTML. This file only serves
 
 .. toctree::
    :hidden:
-   :caption: User Guide
 
    getting-started
    customisation
