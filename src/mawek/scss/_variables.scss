@@ -11,6 +11,21 @@ $content-width: 46rem;
 $sidebar-width: 15rem;
 $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 
+// Structure of these: (color, key-in-$icons)
+$admonition-default: #651fff "abstract";
+$admonitions: (
+  // Each of these has an reST directives for it.
+  "caution":   #ff9100 "spark",
+  "warning":   #ff9100 "warning",
+  "danger":    #ff5252 "spark",
+  "attention": #ff5252 "warning",
+  "error":     #ff5252 "failure",
+  "hint":      #00bfa5 "question",
+  "important": #00c852 "flame",
+  "note":      #00b0ff "pencil",
+  "tip":       #64dd17 "info",
+);
+
 :root {
   //////////////////////////////////////////////////////////////////////////////
   // Fonts
@@ -34,6 +49,10 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   // Table of Contents
   --toc-font-size: var(--font-size--small--3);
   --toc-title-font-size: var(--font-size--small--4);
+
+  // Admonitions
+  --admonition-font-size: var(--font-size--small--2);
+  --admonition-title-font-size: var(--font-size--small--1);
 
   //////////////////////////////////////////////////////////////////////////////
   // Spacing
@@ -65,6 +84,7 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   @each $name, $glyph in $icons {
     --icon-#{$name}: #{$glyph};
   }
+  --icon-admonition-default: var(--icon-#{nth($admonition-default, 2)});
 
   //////////////////////////////////////////////////////////////////////////////
   // Overall Colors
@@ -87,6 +107,15 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   // Brand colors
   --color-brand-primary: #2962ff;
   --color-brand-content: #2b5be0;
+
+  // Admonitions!
+  --color-admonition:            #{nth($admonition-default, 1)};
+  --color-admonition-background: #{rgba(nth($admonition-default, 1), 0.1)};
+
+  @each $name, $values in $admonitions {
+    --color-admonition--#{$name}: #{nth($values, 1)};
+    --color-admonition-background--#{$name}: #{rgba(nth($values, 1), 0.1)};
+  }
 
   //////////////////////////////////////////////////////////////////////////////
   // Everything below this should be one of:
