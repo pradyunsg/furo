@@ -1,5 +1,6 @@
 body {
   color: var(--color-foreground);
+  background: var(--color-background);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -67,6 +68,7 @@ body {
 }
 
 .toc-tree {
+  border-left: 1px solid var(--color-background-border);
   .reference {
     text-decoration: none;  // No need for underlines here.
     color: var(--color-toc-item-text);
@@ -74,4 +76,12 @@ body {
   .scroll-current > .reference {
     color: var(--color-toc-item-text--active);
   }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Contents
+////////////////////////////////////////////////////////////////////////////////
+article {
+  color: var(--color-content-foreground);
+  background: var(--color-content-background);
 }
