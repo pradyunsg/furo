@@ -51,7 +51,7 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   --navigation-expander-width: var(--navigation-item-height);  // be square
 
   // Table of Contents
-  --toc-scroll-margin-top: calc(var(--header-height) + var(--toc-item-padding-vertical) - var(--toc-title-padding-top));
+  --toc-scroll-margin-top: 4rem;
   --toc-title-padding-top: 1rem;
   --toc-title-padding: var(--toc-title-padding-top) 0 0.25rem;
   --toc-padding-horizontal: 1.5rem;
