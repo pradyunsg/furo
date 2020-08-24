@@ -2,3 +2,53 @@ html {
   // Seems to be the best "system UI font stack" as on Aug 2020.
   font-family: var(--font-stack);
 }
+
+//
+// Headings
+//
+h1, h2, h3, h4, h5, h6 {
+  // Only show permalink indicator on hover.
+  .headerlink {
+    display: none;
+  }
+  &:hover .headerlink {
+    display: inline-block;
+    font-weight: 100;
+    margin-left: 0.5rem;
+  }
+}
+
+// Main headings
+h1, h2, h3 {
+  font-weight: 300;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+// You're in-too-deep headings
+h4, h5, h6 {
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+h4 {
+  font-weight: 500;
+}
+h5, h6 {
+  font-weight: 700;
+}
+
+// Paragraphs
+p {
+  margin-top: 0;
+}
+
+
+// Horizontal rules
+hr.docutils {
+  height: 1px;
+  padding: 0;
+  margin: 2rem 0;
+  background-color: #eeebee;
+  border: 0;
+}
