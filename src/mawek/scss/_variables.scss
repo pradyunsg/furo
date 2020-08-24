@@ -113,4 +113,8 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   --color-toc-item-text: var(--color-foreground-secondary);
   --color-toc-item-text--hover: var(--color-foreground);
   --color-toc-item-text--active: var(--color-primary);
+
+  // Actual page contents
+  --color-content-foreground: var(--color-foreground);
+  --color-content-background: transparent;
 }
