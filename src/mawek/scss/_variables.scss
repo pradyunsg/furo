@@ -78,7 +78,7 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   --color-background-border: #EEEBEE;
 
   --color-primary: #2962ff;
-  --color-accent: #39CCCC;
+  --color-accent: #2b5be0;
 
   //////////////////////////////////////////////////////////////////////////////
   // Everything below this should be one of:
@@ -119,8 +119,8 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   --color-content-foreground: var(--color-foreground);
   --color-content-background: transparent;
 
-  --color-link: var(--color-primary);
-  --color-link--hover: var(--color-primary);
+  --color-link: var(--color-accent);
+  --color-link--hover: var(--color-accent);
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
 }
