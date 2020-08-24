@@ -60,6 +60,13 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   --toc-item-padding-horizontal: 1rem;
 
   //////////////////////////////////////////////////////////////////////////////
+  // Icons
+  //////////////////////////////////////////////////////////////////////////////
+  @each $name, $glyph in $icons {
+    --icon-#{$name}: #{$glyph};
+  }
+
+  //////////////////////////////////////////////////////////////////////////////
   // Overall Colors
   //     To give the user more control, avoid using these colors directly
   //     outside of this file. Instead, try to define more variables here that
