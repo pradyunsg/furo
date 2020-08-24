@@ -14,6 +14,25 @@ article {
 //
 // Headings
 //
+h1 {
+  font-size: calc(var(--font-size) * 2.25);
+}
+h2 {
+  font-size: calc(var(--font-size) * 1.75);
+}
+h3 {
+  font-size: calc(var(--font-size) * 1.25);
+}
+h4 {
+  font-size: calc(var(--font-size) * 1);
+}
+h5 {
+  font-size: calc(var(--font-size) * 0.875);
+}
+h6 {
+  font-size: calc(var(--font-size) * 0.75);
+}
+
 h1, h2, h3, h4, h5, h6 {
   // Only show permalink indicator on hover.
   .headerlink {
@@ -27,10 +46,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Main headings
-h1, h2, h3 {
-  font-weight: 300;
+h1, h2 {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 // You're in-too-deep headings
@@ -38,11 +63,6 @@ h4, h5, h6 {
   text-transform: uppercase;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
-}
-h4 {
-  font-weight: 500;
-}
-h5, h6 {
   font-weight: 700;
 }
 
