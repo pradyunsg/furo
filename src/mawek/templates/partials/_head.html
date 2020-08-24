@@ -42,18 +42,16 @@
 
 {#- Theme-related stylesheets -#}
 {%- block theme_styles -%}
-  <link rel="stylesheet"
-        href="{{ pathto('_static/stylesheets/default.css', 1) }}">
-  <link rel="stylesheet"
-        href="{{ pathto('_static/pygments.css', 1) }}">
-  {% include "partials/_head_css_variables.html" with context %}
+<link rel="stylesheet" href="{{ pathto('_static/stylesheets/default.css', 1) }}">
+<link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
+{% include "partials/_head_css_variables.html" with context %}
 {%- endblock -%}
 
 {# Custom stylesheets #}
 {%- block extracss -%}
-  {%- for path in extra_css -%}
-  <link rel="stylesheet" href="{{ pathto(path, 1) }}" />
-  {%- endfor -%}
+{%- for path in css_files -%}
+<link rel="stylesheet" href="{{ pathto(path, 1) }}" />
+{% endfor -%}
 {%- endblock -%}
 
 {# Theme-related JavaScript libraries #}
@@ -64,9 +62,12 @@
 
 {# Custom JS #}
 {%- block extrajs -%}
-  {%- for path in extra_js -%}
+{%- for path in script_files -%}
+  {# We don't want Sphinx's hard-coded scripts #}
+  {%- if path not in ["_static/jquery.js", "_static/underscore.js", "_static/doctools.js", "_static/language_data.js"] -%}
     <script src="{{ pathto(path, 1) }}"></script>
-  {%- endfor -%}
+  {%- endif -%}
+{% endfor -%}
 {%- endblock -%}
 
 {#- Custom front matter #}
