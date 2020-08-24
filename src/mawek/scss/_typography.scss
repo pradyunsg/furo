@@ -3,6 +3,11 @@ html {
   font-family: var(--font-stack);
 }
 
+// Line height from Bootstrap 4.1
+article {
+  line-height: 1.5;
+}
+
 //
 // Headings
 //
@@ -51,4 +56,11 @@ hr.docutils {
   margin: 2rem 0;
   background-color: #eeebee;
   border: 0;
+}
+
+//
+// Links
+//
+a {
+  text-decoration: none;
 }
