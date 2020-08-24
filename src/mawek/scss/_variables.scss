@@ -1,17 +1,20 @@
 // This file defines all the knobs that can be tweaked by end users.
 
-////////////////////////////////////////////////////////////////////////////////
 // Overall Layout Variables
-//    These are set here, since CSS variables can't be used in media queries,
-//    which is where these would be used.
-////////////////////////////////////////////////////////////////////////////////
+//
+// These are set here, since CSS variables can't be used in media queries,
+// which is where these would be used.
 $content-padding: 4rem;
 $content-padding--small: 1rem;
 $content-width: 46rem;
 $sidebar-width: 15rem;
 $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 
-// Structure of these: (color, key-in-$icons)
+// Admonitions
+//
+// Structure of these: (color, key-in-$icons).
+// The colors are translated into CSS variables below, and icons are used for
+// the declarations.
 $admonition-default: #651fff "abstract";
 $admonitions: (
   // Each of these has an reST directives for it.
