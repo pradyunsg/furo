@@ -85,3 +85,14 @@ article {
   color: var(--color-content-foreground);
   background: var(--color-content-background);
 }
+a {
+  text-decoration: underline;
+
+  color: var(--color-link);
+  text-decoration-color: var(--color-link-underline);
+
+  &:hover {
+    color: var(--color-link--hover);
+    text-decoration-color: var(--color-link-underline--hover);
+  }
+}

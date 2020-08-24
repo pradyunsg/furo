@@ -117,4 +117,9 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   // Actual page contents
   --color-content-foreground: var(--color-foreground);
   --color-content-background: transparent;
+
+  --color-link: var(--color-primary);
+  --color-link--hover: var(--color-primary);
+  --color-link-underline: var(--color-background-border);
+  --color-link-underline--hover: var(--color-foreground-border);
 }
