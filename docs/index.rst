@@ -15,5 +15,6 @@ See ``_templates/home.html`` for the actual homepage HTML. This file only serves
    :hidden:
    :caption: Development
 
+   GitHub Repository <https://github.com/pradyunsg/mawek>
    contributing
    demo/index
