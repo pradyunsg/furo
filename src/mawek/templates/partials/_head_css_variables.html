@@ -2,12 +2,14 @@
   This is where theme_css_variables or html_theme_options["css_variables"] gets
   converted to actual CSS variables.
 #}
-{% if theme_css_variables %}
 <style>
   :root {
+    --color-code-background: {{ mawek_pygments.background }};
+    --color-code-foreground: {{ mawek_pygments.foreground }};
+  {% if theme_css_variables %}
   {% for name, value in theme_css_variables.items() %}
     --{{ name }}: {{ value }};
   {% endfor %}
+  {% endif %}
   }
 </style>
-{% endif %}

@@ -1,16 +1,14 @@
 """A clean customizable Sphinx documentation theme."""
 
 __version__ = "0.1.0.dev0"
-
 from pathlib import Path
 
+from .code import get_pygments_style_colors
 from .navigation import get_navigation_tree
 from .toc import should_hide_toc
 
 
-def sphinx_html_page_context(app, pagename, templatename, context, doctree):
-    """Handler for Sphinx's `html-page-context` event."""
-
+def _html_page_context(app, pagename, templatename, context, doctree):
     # Custom Navigation Tree (adds checkboxes and labels)
     toctree = context.get("toctree", lambda **kwargs: "")
     toctree_html = toctree(
@@ -24,10 +22,20 @@ def sphinx_html_page_context(app, pagename, templatename, context, doctree):
     if "hide-toc" in (context.get("meta", None) or {}):
         context["mawek_hide_toc"] = True
 
+    # Inject information about styles
+    colors = get_pygments_style_colors(
+        app.builder.highlighter.formatter_args["style"],
+        fallbacks={
+            "foreground": "#000000",
+            "background": "#FFFFFF",
+        }
+    )
+    context["mawek_pygments"] = colors
+
 
 def setup(app):
     """Entry point for sphinx theming."""
     theme_path = (Path(__file__).parent / "templates").resolve()
     app.add_html_theme("mawek", str(theme_path))
 
-    app.connect("html-page-context", sphinx_html_page_context)
+    app.connect("html-page-context", _html_page_context)

@@ -1,0 +1,95 @@
+//
+// Figures
+//
+article {
+  .figure {
+    border-radius: 0.2rem;
+    background-color: var(--color-background-two);
+
+    padding: 0.5rem;
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+  .align-right {
+    float: right;
+    margin: 0.5rem;
+  }
+  .align-center {
+    text-align: center;
+  }
+}
+
+//
+// Blockquote
+//
+blockquote {
+  border-left: 1px solid var(--color-foreground-border);
+  font-style: italic;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+//
+// Code and Literal Blocks
+//
+// Inspired by mkdocs-material's design.
+$code-font-size: 0.875rem;
+$code-spacing-vertical: $code-font-size;
+$code-spacing-horizontal: $code-font-size;
+
+article {
+  // Wraps every literal block + line numbers.
+  div[class*=' highlight-'],div[class^='highlight-'] {
+    margin: 1em 0;
+
+    line-height: 1.4;
+    font-size: $code-font-size;
+
+    border-radius: 0.2rem;
+  }
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+}
+
+// All code is always contained in a pre
+.highlight {
+  overflow: auto;
+  pre {
+    padding: $code-spacing-vertical $code-spacing-horizontal;
+  }
+}
+// Added when there's line numbers associated with a literal block.
+.highlighttable {
+  width: 100%;
+  display: block;
+  tbody {
+    display: block;
+  }
+  tr {
+    display: flex;
+  }
+  // Line numbers
+  td.linenos {
+    background-color: var(--color-code-background);
+    color: var(--color-code-foreground);
+    padding: $code-spacing-vertical $code-spacing-horizontal;
+    padding-right: 0;
+  }
+  .linenodiv {
+    padding-right: .5rem;
+    box-shadow: -1px 0 var(--color-code-foreground) inset;
+    opacity: 0.5;  // I hate myself.
+  }
+  // Actual code
+  td.code {
+    padding: 0;
+    display: block;
+    flex: 1;
+    overflow: hidden;
+  }
+}
