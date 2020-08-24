@@ -1,8 +1,7 @@
 """Table of Contents-related Sphinx-context logic."""
+from functools import lru_cache
 
 from bs4 import BeautifulSoup
-
-from functools import lru_cache
 
 
 @lru_cache
