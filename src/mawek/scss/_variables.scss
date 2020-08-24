@@ -77,8 +77,9 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 
   --color-background-border: #EEEBEE;
 
-  --color-primary: #2962ff;
-  --color-accent: #2b5be0;
+  // Brand colors
+  --color-brand-primary: #2962ff;
+  --color-brand-content: #2b5be0;
 
   //////////////////////////////////////////////////////////////////////////////
   // Everything below this should be one of:
@@ -94,7 +95,7 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   --color-navigation-brand-text: var(--color-foreground);
   --color-navigation-caption-text: var(--color-foreground-secondary);
   --color-navigation-link-text: var(--color-foreground-secondary);
-  --color-navigation-link-text--top-level: var(--color-primary);
+  --color-navigation-link-text--top-level: var(--color-brand-primary);
 
   --color-navigation-item-background: var(--color-navigation-background);
   --color-navigation-item-background--current: var(--color-navigation-item-background);
@@ -113,14 +114,14 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
   --color-toc-title-text: var(--color-foreground-border);
   --color-toc-item-text: var(--color-foreground-secondary);
   --color-toc-item-text--hover: var(--color-foreground);
-  --color-toc-item-text--active: var(--color-primary);
+  --color-toc-item-text--active: var(--color-brand-primary);
 
   // Actual page contents
   --color-content-foreground: var(--color-foreground);
   --color-content-background: transparent;
 
-  --color-link: var(--color-accent);
-  --color-link--hover: var(--color-accent);
+  --color-link: var(--color-brand-content);
+  --color-link--hover: var(--color-brand-content);
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
 }
