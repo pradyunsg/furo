@@ -21,26 +21,26 @@ article {
 // Headings
 //
 h1 {
-  font-size: calc(var(--font-size) * 2.25);
+  font-size: 2.25rem;
 }
 h2 {
-  font-size: calc(var(--font-size) * 1.75);
+  font-size: 1.75rem;
 }
 h3 {
-  font-size: calc(var(--font-size) * 1.25);
+  font-size: 1.25rem;
 }
 h4 {
-  font-size: calc(var(--font-size) * 1);
+  font-size: 1rem;
 }
 h5 {
-  font-size: calc(var(--font-size) * 0.875);
+  font-size: 0.875rem;
 }
 h6 {
-  font-size: calc(var(--font-size) * 0.75);
+  font-size: 0.75rem;
 }
 
+// Only show permalink indicator on hover.
 h1, h2, h3, h4, h5, h6 {
-  // Only show permalink indicator on hover.
   .headerlink {
     display: none;
   }
