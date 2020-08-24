@@ -1,9 +1,15 @@
 html {
-  // Seems to be the best "system UI font stack" as on Aug 2020.
   font-family: var(--font-stack);
 }
 pre, code, kbd, samp {
   font-family: var(--font-stack--monospace);
+}
+
+// Make fonts look slightly nicer.
+body {
+  font-feature-settings: "kern", "liga";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // Line height from Bootstrap 4.1
