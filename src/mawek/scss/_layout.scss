@@ -95,7 +95,7 @@ header {
   width: 0;
   height: 0;
 
-  z-index: 1;
+  z-index: 2;
 
   transition: width 0ms, height 0ms, opacity 250ms;
 
@@ -120,7 +120,7 @@ header {
   }
   & ~ .page {
     .navigation-drawer {
-      z-index: 2;
+      z-index: 3;
       top: 0;
       left: 0;
     }
@@ -135,7 +135,7 @@ header {
   }
   & ~ .page {
     .toc-drawer {
-      z-index: 2;
+      z-index: 3;
       top: 0;
       right: 0;
     }
