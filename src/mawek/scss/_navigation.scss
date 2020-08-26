@@ -85,6 +85,14 @@
 
     padding: var(--navigation-item-padding-vertical) var(--navigation-item-padding-horizontal);
   }
+  // If it has children, add a bit more padding to wrap the content to avoid
+  // overlapping with the <label>
+  li.has-children {
+    > .reference {
+      width: calc(100% - #{var(--navigation-item-padding-horizontal)} - #{var(--navigation-expander-width)});
+      padding-right: var(--navigation-expander-width);
+    }
+  }
 }
 
 .toctree-checkbox {
