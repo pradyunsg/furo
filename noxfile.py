@@ -3,6 +3,7 @@
 import os
 import re
 import subprocess
+import tempfile
 from contextlib import contextmanager
 from glob import glob
 from pathlib import Path
@@ -69,17 +70,18 @@ def docs_live(session):
     session.run("boussole", "compile", *boussle_args)
 
     with _background_process(session, ["boussole", "watch"] + boussle_args):
-        session.run(
-            "sphinx-autobuild",
-            "--port",
-            "0",
-            "--watch",
-            "src/",
-            "--open-browser",
-            "-a",
-            docs_dir,
-            "build/docs/",
-        )
+        with tempfile.TemporaryDirectory() as destination:
+            session.run(
+                "sphinx-autobuild",
+                "--port",
+                "0",
+                "--watch",
+                "src/",
+                "--open-browser",
+                "-a",
+                docs_dir,
+                destination,
+            )
 
 
 @nox.session(python="3.8")
