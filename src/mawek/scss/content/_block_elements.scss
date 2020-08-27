@@ -85,7 +85,7 @@ pre {
   }
   .linenodiv {
     padding-right: .5rem;
-    box-shadow: -1px 0 var(--color-code-foreground) inset;
+    box-shadow: -0.0625rem 0 var(--color-code-foreground) inset;
     opacity: 0.5;  // I hate myself.
   }
   // Actual code
