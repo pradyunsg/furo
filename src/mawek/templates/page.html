@@ -2,8 +2,8 @@
 
 {% block body -%}
   {%- if page_name == master_doc -%}
-    {%- include "layouts/home.html" with context -%}
+    {%- include "home.html" with context -%}
   {%- else -%}
-    {%- include "layouts/content.html" with context -%}
+    {%- include "content.html" with context -%}
   {%- endif -%}
 {%- endblock %}
