@@ -16,7 +16,9 @@ ul, ol {
       margin-bottom: 0.5rem;
     }
   }
-  &.simple li {
+}
+.simple, .toctree-wrapper {
+  li {
     > ul, > ol {
       margin-top: 0;
       margin-bottom: 0;
