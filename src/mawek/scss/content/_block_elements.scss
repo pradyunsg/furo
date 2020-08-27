@@ -18,6 +18,10 @@ article {
   .align-center {
     text-align: center;
   }
+
+  .figure.align-default {
+    @extend .align-center;
+  }
 }
 
 //
