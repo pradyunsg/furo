@@ -16,9 +16,11 @@ article {
   }
   .align-center {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .figure.align-default {
+  .figure.align-default, .legend .align-default {
     @extend .align-center;
   }
 }
