@@ -18,3 +18,13 @@ kbd {
     margin: 0;
   }
 }
+
+code.literal {
+  background: var(--color-background-two);
+  border: 1px solid var(--color-background-border);
+  border-radius: 0.2rem;
+  // Make the font smaller, and use padding to recover.
+  font-size: var(--font-size--small--3);
+  padding: 0.1rem 0.2rem;
+}
+
