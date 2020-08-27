@@ -4,17 +4,25 @@ mawek
 See ``_templates/home.html`` for the actual homepage HTML. This file only serves to provide the correct toctree to Sphinx.
 
 .. toctree::
+   :caption: Getting Started
    :hidden:
 
-   getting-started
+   introduction
+   features
    customisation
    changelog
-   license
 
 .. toctree::
-   :hidden:
    :caption: Development
+   :hidden:
 
-   GitHub Repository <https://github.com/pradyunsg/mawek>
    contributing
+   GitHub <https://github.com/pradyunsg/mawek>
+
+.. toctree::
+   :caption: Other
+   :hidden:
+
+   recommendations
+   license
    demo/index
