@@ -1,3 +1,4 @@
+// Keyboard / Mouse "instructions"
 kbd {
   margin: 0 0.2rem;
   padding: 0 0.2rem;
@@ -19,6 +20,7 @@ kbd {
   }
 }
 
+// Inline code
 code.literal {
   background: var(--color-background-two);
   border: 1px solid var(--color-background-border);
