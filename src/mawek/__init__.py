@@ -3,6 +3,7 @@
 __version__ = "0.1.0.dev0"
 from pathlib import Path
 
+from .body import wrap_tables
 from .code import get_pygments_style_colors
 from .navigation import get_navigation_tree
 from .toc import should_hide_toc
@@ -31,6 +32,10 @@ def _html_page_context(app, pagename, templatename, context, doctree):
         }
     )
     context["mawek_pygments"] = colors
+
+    # Patch the content
+    if "body" in context:
+        context["body"] = wrap_tables(context["body"])
 
 
 def setup(app):
