@@ -43,26 +43,36 @@ $code-spacing-horizontal: 0.875rem;
 
 article {
   // Wraps every literal block + line numbers.
-  div[class*=' highlight-'],div[class^='highlight-'] {
+  div[class*=' highlight-'], div[class^='highlight-'] {
     margin: 1em 0;
-
     font-size: var(--code-font-size);
-
-    border-radius: 0.2rem;
+    display: flex;
   }
 }
 
 pre {
   margin: 0;
   padding: 0;
+
+  &.literal-block, .highlight & {
+    padding: $code-spacing-vertical $code-spacing-horizontal;
+  }
+  // Make it look like all the other blocks.
+  &.literal-block {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    border-radius: 0.2rem;
+    font-size: var(--code-font-size);
+    background-color: var(--color-code-background);
+  }
 }
 
 // All code is always contained in a pre
 .highlight {
+  flex-grow: 1;
+  border-radius: 0.2rem;
   overflow: auto;
-  pre {
-    padding: $code-spacing-vertical $code-spacing-horizontal;
-  }
 }
 // Added when there's line numbers associated with a literal block.
 .highlighttable {
