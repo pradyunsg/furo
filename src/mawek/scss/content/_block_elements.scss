@@ -38,16 +38,15 @@ blockquote {
 // Code and Literal Blocks
 //
 // Inspired by mkdocs-material's design.
-$code-font-size: 0.875rem;
-$code-spacing-vertical: $code-font-size;
-$code-spacing-horizontal: $code-font-size;
+$code-font-size: var(--font-size--small--3);
+$code-spacing-vertical: 0.875rem;
+$code-spacing-horizontal: 0.875rem;
 
 article {
   // Wraps every literal block + line numbers.
   div[class*=' highlight-'],div[class^='highlight-'] {
     margin: 1em 0;
 
-    line-height: 1.4;
     font-size: $code-font-size;
 
     border-radius: 0.2rem;
