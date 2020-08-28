@@ -22,6 +22,7 @@ body {
   }
   &::before {
     background-color: var(--color-sidebar-search-icon);
+    -webkit-mask-image: var(--icon-search);
     mask-image: var(--icon-search);
   }
 }
