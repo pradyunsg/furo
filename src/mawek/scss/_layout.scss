@@ -97,18 +97,20 @@ header {
 
   z-index: 2;
 
-  transition: width 0ms, height 0ms, opacity 250ms;
+  transition: width 0ms, height 0ms, opacity 250ms ease-out;
 
   opacity: 0;
   background-color: rgba(0,0,0,.54);
 }
 
-// Keep things smooth.
+// Keep things on top and smooth.
 .navigation-drawer {
-  transition: left 250ms;
+  z-index: 3;
+  transition: left 250ms ease-in-out;
 }
 .toc-drawer {
-  transition: right 250ms;
+  z-index: 3;
+  transition: right 250ms ease-in-out;
 }
 
 // Show the navigation sidebar
@@ -120,7 +122,6 @@ header {
   }
   & ~ .page {
     .navigation-drawer {
-      z-index: 3;
       top: 0;
       left: 0;
     }
@@ -135,7 +136,6 @@ header {
   }
   & ~ .page {
     .toc-drawer {
-      z-index: 3;
       top: 0;
       right: 0;
     }
