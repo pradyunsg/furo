@@ -20,6 +20,9 @@
         <a class="navigation-brand" href="{{ pathto(master_doc) }}">
           <span class="navigation-brand-text">{{ docstitle }}</span>
         </a>
+        <form class="navigation-search-container" method="get" action="../search.html">
+          <input class="navigation-search" placeholder="Search" name="term">
+        </form>
         <div class="navigation-tree">
           {{ mawek_navigation_tree }}
         </div>
@@ -33,7 +36,7 @@
         <label class="toc-overlay-icon{% if mawek_hide_toc %} no-toc{% endif %}" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        {{ body }}
+        {% block content %}{{ body }}{% endblock %}
       </article>
       {# TODO: next/prev #}
       {# TODO: footer w/ next/prev + copyright #}
