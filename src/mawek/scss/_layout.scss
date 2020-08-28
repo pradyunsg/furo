@@ -89,12 +89,14 @@ header {
   position: absolute;
   display: none;
 }
+// <debugging things>
 .sidebar-toggle[name="__toc"] {
   left: 20px;
 }
 .sidebar-toggle:checked {
   left: 40px;
 }
+// </debugging things>
 .overlay {
   position: fixed;
   top: 0;
