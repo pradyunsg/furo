@@ -31,7 +31,7 @@
 }
 
 .sidebar-search {
-  height: var(--sidebar-search-input-height);
+  box-sizing: border-box;
 
   padding-top: var(--sidebar-search-input-padding-vertical);
   padding-bottom: var(--sidebar-search-input-padding-vertical);
@@ -42,12 +42,7 @@
     var(--sidebar-search-icon-size)
   );
 
-  width: calc(
-    100% -
-    var(--sidebar-item-padding-horizontal) -
-    2*var(--sidebar-search-input-padding-horizontal) -
-    var(--sidebar-search-icon-size)
-  );
+  width: 100%;
 
   background: transparent;
   z-index: 1;
@@ -85,12 +80,13 @@
     }
   }
   .reference {
+    box-sizing: border-box;
     // Fill the parent.
     display: inline-block;
     line-height: var(--sidebar-item-line-height);
 
     height: 100%;
-    width: calc(100% - 2*#{var(--sidebar-item-padding-horizontal)});
+    width: 100%;
 
     padding: var(--sidebar-item-padding-vertical) var(--sidebar-item-padding-horizontal);
 
@@ -134,7 +130,6 @@
   // overlapping with the <label>
   li.has-children {
     > .reference {
-      width: calc(100% - #{var(--sidebar-item-padding-horizontal)} - #{var(--sidebar-expander-width)});
       padding-right: var(--sidebar-expander-width);
     }
   }

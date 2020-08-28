@@ -32,6 +32,8 @@ header {
 
 // Sidebar (left) also covers the entire left portion of screen.
 .sidebar-drawer {
+  box-sizing: border-box;
+
   display: flex;
   justify-content: flex-end;
   // These next two lines took me two days to figure out.
