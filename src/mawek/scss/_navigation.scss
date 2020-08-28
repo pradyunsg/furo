@@ -20,21 +20,13 @@
 .sidebar-search-container {
   display: flex;
   align-items: center;
-  background: var(--color-sidebar-search-background);
-  &:hover, &:focus-within {
-    background: var(--color-sidebar-search-background--focus);
-  }
 
-  // padding: var(--sidebar-item-padding-vertical) var(--sidebar-item-padding-horizontal);
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     left: var(--sidebar-item-padding-horizontal);
     width: var(--sidebar-search-icon-size);
     height: var(--sidebar-search-icon-size);
-
-    background-color: var(--color-sidebar-search-icon);
-    mask-image: var(--icon-search);
   }
 }
 
@@ -59,8 +51,6 @@
 
   background: transparent;
   z-index: 1;
-  border: none;
-  border-bottom: 1px solid var(--color-sidebar-search-border);
 
   &:focus { outline: none; }
 

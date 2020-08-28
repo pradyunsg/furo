@@ -16,6 +16,21 @@ body {
   border-bottom: 1px solid var(--color-sidebar-background-border);
 }
 
+.sidebar-search-container {
+  background: var(--color-sidebar-search-background);
+  &:hover, &:focus-within {
+    background: var(--color-sidebar-search-background--focus);
+  }
+  &::before {
+    background-color: var(--color-sidebar-search-icon);
+    mask-image: var(--icon-search);
+  }
+}
+.sidebar-search {
+  border: none;
+  border-bottom: 1px solid var(--color-sidebar-search-border);
+}
+
 .sidebar-tree {
   .icon {
     color: var(--color-sidebar-link-text);
