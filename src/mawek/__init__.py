@@ -10,6 +10,9 @@ from .toc import should_hide_toc
 
 
 def _html_page_context(app, pagename, templatename, context, doctree):
+    if app.config.html_theme != "mawek":
+        return
+
     # Custom Navigation Tree (adds checkboxes and labels)
     toctree = context.get("toctree", lambda **kwargs: "")
     toctree_html = toctree(
