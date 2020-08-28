@@ -1,14 +1,14 @@
-article {
-  .sidebar {
-    float: right;
-    width: 30%;
-    border-radius: 0.2rem;
-    background-color: var(--color-background-two);
-    border: var(--color-background-border) 1px solid;
-    padding: 1rem;
-    margin-left: 1rem;
-    margin-right: -3rem;
-  }
+article .sidebar {
+  float: right;
+  width: 30%;
+
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-right: -3rem;
+
+  border-radius: 0.2rem;
+  background-color: var(--color-background-two);
+  border: var(--color-background-border) 1px solid;
 }
 // TODO: title
 // TODO: dedicated variables.
