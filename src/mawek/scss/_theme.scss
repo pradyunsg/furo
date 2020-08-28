@@ -13,7 +13,6 @@ body {
 
 .sidebar-brand {
   color: var(--color-sidebar-brand-text);
-  border-bottom: 1px solid var(--color-sidebar-background-border);
 }
 
 .sidebar-search-container {
@@ -28,6 +27,7 @@ body {
 }
 .sidebar-search {
   border: none;
+  border-top: 1px solid var(--color-sidebar-search-border);
   border-bottom: 1px solid var(--color-sidebar-search-border);
 }
 
