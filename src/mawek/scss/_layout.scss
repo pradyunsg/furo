@@ -166,11 +166,6 @@ header {
     cursor: pointer;
   }
 
-  // No more negative shenenigans
-  article div.sidebar {
-    margin-right: 0;
-  }
-
   .sidebar-drawer {
       width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width});
   }
@@ -229,11 +224,5 @@ header {
   }
   article {
     padding: 0 $content-padding--small;
-  }
-
-  article div.sidebar {
-    margin-left: 0;
-    width: auto;
-    float: none;
   }
 }

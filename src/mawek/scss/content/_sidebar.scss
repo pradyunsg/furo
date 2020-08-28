@@ -1,14 +1,27 @@
 article .sidebar {
   float: right;
+  clear: right;
   width: 30%;
 
-  padding: 1rem;
   margin-left: 1rem;
-  margin-right: -3rem;
+  margin-right: 0;
 
   border-radius: 0.2rem;
   background-color: var(--color-background-two);
   border: var(--color-background-border) 1px solid;
+
+  > * {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .sidebar-title {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border-bottom: var(--color-background-border) 1px solid;
+
+    font-weight: 500;
+  }
 }
 // TODO: title
 // TODO: dedicated variables.
