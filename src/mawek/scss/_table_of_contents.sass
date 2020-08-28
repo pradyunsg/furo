@@ -1,5 +1,6 @@
 .toc-title-container
   padding: var(--toc-title-padding)
+  padding-top: var(--toc-padding-vertical)
 
 .toc-title
   font-size: var(--toc-title-font-size)
@@ -12,7 +13,8 @@
 
 .toc-tree
   font-size: var(--toc-font-size)
-  padding-left: calc(var(--toc-padding-horizontal) - var(--toc-item-padding-horizontal));
+  padding-left: calc(var(--toc-padding-horizontal) - var(--toc-item-padding-horizontal))
+  margin-bottom: var(--toc-padding-vertical)
 
   // Hide the "top level" bullet.
   > ul > li
