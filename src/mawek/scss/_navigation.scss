@@ -1,80 +1,80 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Brand on top of the scrollable tree.
 ////////////////////////////////////////////////////////////////////////////////
-.navigation-brand {
+.sidebar-brand {
   display: flex;
   flex-direction: column;
 
-  padding: var(--navigation-item-padding-vertical) var(--navigation-item-padding-horizontal);
+  padding: var(--sidebar-item-padding-vertical) var(--sidebar-item-padding-horizontal);
   text-decoration: none;
 }
 
-.navigation-brand-text {
-  padding: var(--navigation-item-padding-vertical) 0;  // some extra vertical spacing
+.sidebar-brand-text {
+  padding: var(--sidebar-item-padding-vertical) 0;  // some extra vertical spacing
   font-size: 1.5rem;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // Search
 ////////////////////////////////////////////////////////////////////////////////
-.navigation-search-container {
+.sidebar-search-container {
   display: flex;
   align-items: center;
-  background: var(--color-navigation-search-background);
+  background: var(--color-sidebar-search-background);
   &:hover, &:focus-within {
-    background: var(--color-navigation-search-background--focus);
+    background: var(--color-sidebar-search-background--focus);
   }
 
-  // padding: var(--navigation-item-padding-vertical) var(--navigation-item-padding-horizontal);
+  // padding: var(--sidebar-item-padding-vertical) var(--sidebar-item-padding-horizontal);
   &:before {
     content: "";
     position: absolute;
-    left: var(--navigation-item-padding-horizontal);
-    width: var(--navigation-search-icon-size);
-    height: var(--navigation-search-icon-size);
+    left: var(--sidebar-item-padding-horizontal);
+    width: var(--sidebar-search-icon-size);
+    height: var(--sidebar-search-icon-size);
 
-    background-color: var(--color-navigation-search-icon);
+    background-color: var(--color-sidebar-search-icon);
     mask-image: var(--icon-search);
   }
 }
 
-.navigation-search {
-  height: var(--navigation-search-input-height);
+.sidebar-search {
+  height: var(--sidebar-search-input-height);
 
-  padding-top: var(--navigation-search-input-padding-vertical);
-  padding-bottom: var(--navigation-search-input-padding-vertical);
-  padding-right: var(--navigation-search-input-padding-horizontal);
+  padding-top: var(--sidebar-search-input-padding-vertical);
+  padding-bottom: var(--sidebar-search-input-padding-vertical);
+  padding-right: var(--sidebar-search-input-padding-horizontal);
   padding-left: calc(
-    var(--navigation-item-padding-horizontal) +
-    var(--navigation-search-input-padding-horizontal) +
-    var(--navigation-search-icon-size)
+    var(--sidebar-item-padding-horizontal) +
+    var(--sidebar-search-input-padding-horizontal) +
+    var(--sidebar-search-icon-size)
   );
 
   width: calc(
     100% -
-    var(--navigation-item-padding-horizontal) -
-    2*var(--navigation-search-input-padding-horizontal) -
-    var(--navigation-search-icon-size)
+    var(--sidebar-item-padding-horizontal) -
+    2*var(--sidebar-search-input-padding-horizontal) -
+    var(--sidebar-search-icon-size)
   );
 
   background: transparent;
   z-index: 1;
   border: none;
-  border-bottom: 1px solid var(--color-navigation-search-border);
+  border-bottom: 1px solid var(--color-sidebar-search-border);
 
   &:focus { outline: none; }
 
   &::placeholder {
-    font-size: var(--navigation-search-input-font-size);
+    font-size: var(--sidebar-search-input-font-size);
   }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // Structure/Skeleton of the navigation tree (left)
 ////////////////////////////////////////////////////////////////////////////////
-.navigation-tree {
-  font-size: var(--navigation-item-font-size);
-  margin: var(--navigation-tree-margin-top) 0 var(--navigation-item-padding-vertical);
+.sidebar-tree {
+  font-size: var(--sidebar-item-font-size);
+  margin: var(--sidebar-tree-margin-top) 0 var(--sidebar-item-padding-vertical);
 
   ul {
     padding: 0;
@@ -91,18 +91,18 @@
     margin: 0;
 
     > ul {
-      margin-left: var(--navigation-item-padding-horizontal);
+      margin-left: var(--sidebar-item-padding-horizontal);
     }
   }
   .reference {
     // Fill the parent.
     display: inline-block;
-    line-height: var(--navigation-item-line-height);
+    line-height: var(--sidebar-item-line-height);
 
     height: 100%;
-    width: calc(100% - 2*#{var(--navigation-item-padding-horizontal)});
+    width: calc(100% - 2*#{var(--sidebar-item-padding-horizontal)});
 
-    padding: var(--navigation-item-padding-vertical) var(--navigation-item-padding-horizontal);
+    padding: var(--sidebar-item-padding-vertical) var(--sidebar-item-padding-horizontal);
 
     // Add a nice little "external-link" arrow here.
     &.external::after {
@@ -121,8 +121,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: var(--navigation-item-height);
-    width: var(--navigation-expander-width);
+    height: var(--sidebar-item-height);
+    width: var(--sidebar-expander-width);
 
     cursor: pointer;
 
@@ -131,21 +131,21 @@
     align-items: center;
   }
   .caption {
-    font-size: var(--navigation-caption-font-size);
+    font-size: var(--sidebar-caption-font-size);
 
     font-weight: bold;
     text-transform: uppercase;
 
-    margin: var(--navigation-caption-margin-top) 0 0 0;
+    margin: var(--sidebar-caption-margin-top) 0 0 0;
 
-    padding: var(--navigation-item-padding-vertical) var(--navigation-item-padding-horizontal);
+    padding: var(--sidebar-item-padding-vertical) var(--sidebar-item-padding-horizontal);
   }
   // If it has children, add a bit more padding to wrap the content to avoid
   // overlapping with the <label>
   li.has-children {
     > .reference {
-      width: calc(100% - #{var(--navigation-item-padding-horizontal)} - #{var(--navigation-expander-width)});
-      padding-right: var(--navigation-expander-width);
+      width: calc(100% - #{var(--sidebar-item-padding-horizontal)} - #{var(--sidebar-expander-width)});
+      padding-right: var(--sidebar-expander-width);
     }
   }
 }

@@ -2,7 +2,7 @@
 
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay navigation-overlay" for="__navigation"></label>
+<label class="overlay sidebar-overlay" for="__navigation"></label>
 <label class="overlay toc-overlay" for="__toc"></label>
 
 <header>
@@ -13,10 +13,10 @@
   <div class="header-right"></div>
 </header>
 <div class="page">
-  <aside class="navigation-drawer">
+  <aside class="sidebar-drawer">
     <div class="navigation">
       {% block left_sidebar %}
-      <div class="navigation-scroll">
+      <div class="sidebar-scroll">
         {%- for sidebartemplate in sidebars %}
           {%- include sidebartemplate %}
         {%- endfor %}

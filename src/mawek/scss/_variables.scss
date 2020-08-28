@@ -45,9 +45,9 @@ $admonitions: (
   --font-size--small--4: 62.5%;
 
   // Navigation
-  --navigation-caption-font-size: var(--font-size--small--2);
-  --navigation-item-font-size: var(--font-size--small);
-  --navigation-search-input-font-size: var(--font-size--small);
+  --sidebar-caption-font-size: var(--font-size--small--2);
+  --sidebar-item-font-size: var(--font-size--small);
+  --sidebar-search-input-font-size: var(--font-size--small);
 
   // Table of Contents
   --toc-font-size: var(--font-size--small--3);
@@ -63,23 +63,23 @@ $admonitions: (
   //////////////////////////////////////////////////////////////////////////////
   // Spacing
   //////////////////////////////////////////////////////////////////////////////
-  --header-height: calc(var(--navigation-item-line-height) + 4 * #{var(--navigation-item-padding-vertical)});
+  --header-height: calc(var(--sidebar-item-line-height) + 4 * #{var(--sidebar-item-padding-vertical)});
 
   // Navigation
-  --navigation-tree-margin-top: 2rem;
-  --navigation-caption-margin-top: 1rem;
+  --sidebar-tree-margin-top: 2rem;
+  --sidebar-caption-margin-top: 1rem;
 
-  --navigation-item-line-height: 1rem;
-  --navigation-item-padding-vertical: 0.5rem;
-  --navigation-item-padding-horizontal: 1rem;
-  --navigation-item-height: calc(var(--navigation-item-line-height) + 2*#{var(--navigation-item-padding-vertical)});
+  --sidebar-item-line-height: 1rem;
+  --sidebar-item-padding-vertical: 0.5rem;
+  --sidebar-item-padding-horizontal: 1rem;
+  --sidebar-item-height: calc(var(--sidebar-item-line-height) + 2*#{var(--sidebar-item-padding-vertical)});
 
-  --navigation-expander-width: var(--navigation-item-height);  // be square
+  --sidebar-expander-width: var(--sidebar-item-height);  // be square
 
-  --navigation-search-input-padding-vertical: 0.5rem;
-  --navigation-search-input-padding-horizontal: 0.5rem;
-  --navigation-search-input-height: 1rem;
-  --navigation-search-icon-size: var(--navigation-search-input-height);
+  --sidebar-search-input-padding-vertical: 0.5rem;
+  --sidebar-search-input-padding-horizontal: 0.5rem;
+  --sidebar-search-input-height: 1rem;
+  --sidebar-search-icon-size: var(--sidebar-search-input-height);
 
   // Table of Contents
   --toc-scroll-margin-top: 4rem;
@@ -137,31 +137,31 @@ $admonitions: (
   // - special literal values (eg: transparent, none)
   //////////////////////////////////////////////////////////////////////////////
 
-  // Navigation sidebar (left)
-  --color-navigation-background: var(--color-background-two);
-  --color-navigation-background-border: var(--color-background-border);
+  // Sidebar (left)
+  --color-sidebar-background: var(--color-background-two);
+  --color-sidebar-background-border: var(--color-background-border);
 
-  --color-navigation-brand-text: var(--color-foreground);
-  --color-navigation-caption-text: var(--color-foreground-secondary);
-  --color-navigation-link-text: var(--color-foreground-secondary);
-  --color-navigation-link-text--top-level: var(--color-brand-primary);
+  --color-sidebar-brand-text: var(--color-foreground);
+  --color-sidebar-caption-text: var(--color-foreground-secondary);
+  --color-sidebar-link-text: var(--color-foreground-secondary);
+  --color-sidebar-link-text--top-level: var(--color-brand-primary);
 
-  --color-navigation-item-background: var(--color-navigation-background);
-  --color-navigation-item-background--current: var(--color-navigation-item-background);
-  --color-navigation-item-background--hover: linear-gradient( \
+  --color-sidebar-item-background: var(--color-sidebar-background);
+  --color-sidebar-item-background--current: var(--color-sidebar-item-background);
+  --color-sidebar-item-background--hover: linear-gradient( \
       -90deg, \
       var(--color-background-three) 0%, \
       var(--color-background-three--80) 90%, \
       var(--color-background-three--0) 100% \
     );
 
-  --color-navigation-item-expander-background: transparent;
-  --color-navigation-item-expander-background--hover: var(--color-background-three);
+  --color-sidebar-item-expander-background: transparent;
+  --color-sidebar-item-expander-background--hover: var(--color-background-three);
 
-  --color-navigation-search-background: var(--color-background-two);
-  --color-navigation-search-background--focus: var(--color-background);
-  --color-navigation-search-border: var(--color-background-border);
-  --color-navigation-search-icon: var(--color-foreground-border);
+  --color-sidebar-search-background: var(--color-background-two);
+  --color-sidebar-search-background--focus: var(--color-background);
+  --color-sidebar-search-border: var(--color-background-border);
+  --color-sidebar-search-icon: var(--color-foreground-border);
 
   // Table of Contents
   --color-toc-background: var(--color-background);
