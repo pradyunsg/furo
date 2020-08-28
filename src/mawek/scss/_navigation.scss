@@ -20,6 +20,7 @@
 .sidebar-search-container {
   display: flex;
   align-items: center;
+  margin-top: var(--sidebar-search-margin-top);
 
   &::before {
     content: "";

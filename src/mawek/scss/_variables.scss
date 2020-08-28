@@ -66,7 +66,7 @@ $admonitions: (
   --header-height: calc(var(--sidebar-item-line-height) + 4 * #{var(--sidebar-item-padding-vertical)});
 
   // Navigation
-  --sidebar-tree-margin-top: 2rem;
+  --sidebar-tree-margin-top: 1.5rem;
   --sidebar-caption-margin-top: 1rem;
 
   --sidebar-item-line-height: 1rem;
@@ -76,6 +76,7 @@ $admonitions: (
 
   --sidebar-expander-width: var(--sidebar-item-height);  // be square
 
+  --sidebar-search-margin-top: 0.5rem;
   --sidebar-search-input-padding-vertical: 0.5rem;
   --sidebar-search-input-padding-horizontal: 0.5rem;
   --sidebar-search-input-height: 1rem;
