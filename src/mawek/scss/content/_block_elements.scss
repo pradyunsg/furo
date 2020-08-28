@@ -106,3 +106,19 @@ pre {
     overflow: hidden;
   }
 }
+
+dt {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 500;
+
+  .classifier::before {
+    content: ":";
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
+}
+dd p {
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+}
