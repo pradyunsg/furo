@@ -32,8 +32,9 @@
         </label>
         {% block content %}{{ body }}{% endblock %}
       </article>
-      {# TODO: next/prev #}
-      {# TODO: footer w/ next/prev + copyright #}
+      <footer>
+        {% include "partials/content-footer.html" %}
+      </footer>
     </div>
     <aside class="toc-drawer{% if mawek_hide_toc %} no-toc{% endif %}">
       {% block right_sidebar %}
