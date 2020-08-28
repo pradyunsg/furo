@@ -47,6 +47,7 @@ $admonitions: (
   // Navigation
   --navigation-caption-font-size: var(--font-size--small--2);
   --navigation-item-font-size: var(--font-size--small);
+  --navigation-search-input-font-size: var(--font-size--small);
 
   // Table of Contents
   --toc-font-size: var(--font-size--small--3);
@@ -74,6 +75,11 @@ $admonitions: (
   --navigation-item-height: calc(var(--navigation-item-line-height) + 2*#{var(--navigation-item-padding-vertical)});
 
   --navigation-expander-width: var(--navigation-item-height);  // be square
+
+  --navigation-search-input-padding-vertical: 0.5rem;
+  --navigation-search-input-padding-horizontal: 0.5rem;
+  --navigation-search-input-height: 1rem;
+  --navigation-search-icon-size: var(--navigation-search-input-height);
 
   // Table of Contents
   --toc-scroll-margin-top: 4rem;
@@ -151,6 +157,11 @@ $admonitions: (
 
   --color-navigation-item-expander-background: transparent;
   --color-navigation-item-expander-background--hover: var(--color-background-three);
+
+  --color-navigation-search-background: var(--color-background-two);
+  --color-navigation-search-background--focus: var(--color-background);
+  --color-navigation-search-border: var(--color-background-border);
+  --color-navigation-search-icon: var(--color-foreground-border);
 
   // Table of Contents
   --color-toc-background: var(--color-background);

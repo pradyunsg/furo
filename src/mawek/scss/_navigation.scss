@@ -15,6 +15,61 @@
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// Search
+////////////////////////////////////////////////////////////////////////////////
+.navigation-search-container {
+  display: flex;
+  align-items: center;
+  background: var(--color-navigation-search-background);
+  &:hover, &:focus-within {
+    background: var(--color-navigation-search-background--focus);
+  }
+
+  // padding: var(--navigation-item-padding-vertical) var(--navigation-item-padding-horizontal);
+  &:before {
+    content: "";
+    position: absolute;
+    left: var(--navigation-item-padding-horizontal);
+    width: var(--navigation-search-icon-size);
+    height: var(--navigation-search-icon-size);
+
+    background-color: var(--color-navigation-search-icon);
+    mask-image: var(--icon-search);
+  }
+}
+
+.navigation-search {
+  height: var(--navigation-search-input-height);
+
+  padding-top: var(--navigation-search-input-padding-vertical);
+  padding-bottom: var(--navigation-search-input-padding-vertical);
+  padding-right: var(--navigation-search-input-padding-horizontal);
+  padding-left: calc(
+    var(--navigation-item-padding-horizontal) +
+    var(--navigation-search-input-padding-horizontal) +
+    var(--navigation-search-icon-size)
+  );
+
+  width: calc(
+    100% -
+    var(--navigation-item-padding-horizontal) -
+    2*var(--navigation-search-input-padding-horizontal) -
+    var(--navigation-search-icon-size)
+  );
+
+  background: transparent;
+  z-index: 1;
+  border: none;
+  border-bottom: 1px solid var(--color-navigation-search-border);
+
+  &:focus { outline: none; }
+
+  &::placeholder {
+    font-size: var(--navigation-search-input-font-size);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // Structure/Skeleton of the navigation tree (left)
 ////////////////////////////////////////////////////////////////////////////////
 .navigation-tree {
