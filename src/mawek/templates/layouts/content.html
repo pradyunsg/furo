@@ -17,15 +17,9 @@
     <div class="navigation">
       {% block left_sidebar %}
       <div class="navigation-scroll">
-        <a class="navigation-brand" href="{{ pathto(master_doc) }}">
-          <span class="navigation-brand-text">{{ docstitle }}</span>
-        </a>
-        <form class="navigation-search-container" method="get" action="../search.html">
-          <input class="navigation-search" placeholder="Search" name="term">
-        </form>
-        <div class="navigation-tree">
-          {{ mawek_navigation_tree }}
-        </div>
+        {%- for sidebartemplate in sidebars %}
+          {%- include sidebartemplate %}
+        {%- endfor %}
       </div>
       {% endblock left_sidebar %}
     </div>
