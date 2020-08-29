@@ -211,7 +211,6 @@ header {
   }
   // Center the page, and accommodate for the header.
   .page {
-    min-height: calc(100vh - #{var(--header-height)});
     justify-content: center;
   }
   .content {
