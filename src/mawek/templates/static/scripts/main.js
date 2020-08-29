@@ -1,5 +1,5 @@
-var header = undefined;
-var tocScroll = undefined;
+var header = null;
+var tocScroll = null;
 
 function scrollHandler(positionY) {
   if (positionY == 0) {
@@ -8,7 +8,7 @@ function scrollHandler(positionY) {
     header.classList.add("scrolled");
   }
 
-  if (tocScroll === undefined) { return; }
+  if (tocScroll === null) { return; }
 
   if (positionY == 0) {
     tocScroll.scrollTo(0, 0);
@@ -38,6 +38,10 @@ function setupScrollHandler() {
 
 function setup() {
   setupScrollHandler();
+
+  if (tocScroll === null) { return; }
+
+  console.log(tocScroll);
 
   // Scrollspy -- highlight table on contents, based on scroll
   let spy = new Gumshoe(".toc-tree a", {
