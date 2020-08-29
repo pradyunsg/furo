@@ -42,6 +42,8 @@ function setup() {
 }
 
 document.addEventListener("DOMContentLoaded", function main(params) {
+  document.body.parentNode.classList.remove("no-js");
+
   header = document.querySelector("header");
   setup();
 });
