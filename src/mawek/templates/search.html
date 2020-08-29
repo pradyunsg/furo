@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+{%- block extrajs -%}
+<script id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+{%- for path in script_files -%}
+  {# We want Sphinx's hard-coded scripts, since they're needed for
+     search to work. #}
+  <script src="{{ pathto(path, 1) }}"></script>
+{% endfor -%}
+<script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+{%- endblock extrajs-%}
+
 {% block body -%}
 {% include "layouts/search.html" with context %}
-{%- endblock %}
+<script src="{{ pathto('searchindex.js', 1) }}" defer></script>
+{%- endblock body %}

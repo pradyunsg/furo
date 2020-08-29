@@ -1,3 +1,13 @@
 {% extends "layouts/content.html" %}
 
-{% block content %}WIP: search page{% endblock %}
+{% block content %}
+<div id="fallback" class="admonition error">
+  <p class="admonition-title">{% trans %}Error{% endtrans %}</p>
+  <p>
+    {% trans %}Please activate JavaScript to enable the search functionality.{% endtrans %}
+  </p>
+</div>
+<script>$('#fallback').hide();</script>
+
+<div id="search-results"></div>
+{% endblock %}
