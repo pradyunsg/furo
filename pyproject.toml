@@ -25,4 +25,4 @@ doc = ["sphinx"]
 "sphinx.html_themes" = {mawek = "mawek"}
 
 [tool.flit.sdist]
-exclude = ["src/mawek/scss"]
+exclude = ["src/mawek/assets"]

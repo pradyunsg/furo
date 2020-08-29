@@ -4,5 +4,5 @@
 /dist
 __pycache__
 
-# Generated CSS file
-src/**/stylesheets/default.css
+# Generated files
+src/*/theme/static/styles
