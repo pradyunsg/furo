@@ -53,6 +53,7 @@ header {
   //       if the sidebar is not fully scrollable, but we'll have JS for that.
   overflow: auto;
   max-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 // Central items.
