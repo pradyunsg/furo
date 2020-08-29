@@ -1,6 +1,5 @@
 {
-    "SOURCES_PATH": "src/mawek/scss",
-    "TARGET_PATH": "src/mawek/templates/static/stylesheets",
+    "TARGET_PATH": "src/mawek/theme/static/stylesheets",
     "LIBRARY_PATHS": [],
     "OUTPUT_STYLES": "compressed",
     "SOURCE_COMMENTS": false,

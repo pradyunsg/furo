@@ -43,7 +43,7 @@ def _html_page_context(app, pagename, templatename, context, doctree):
 
 def setup(app):
     """Entry point for sphinx theming."""
-    theme_path = (Path(__file__).parent / "templates").resolve()
+    theme_path = (Path(__file__).parent / "theme").resolve()
     app.add_html_theme("mawek", str(theme_path))
 
     app.connect("html-page-context", _html_page_context)
