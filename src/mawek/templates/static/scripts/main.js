@@ -1,13 +1,19 @@
 var header = undefined;
+var tocScroll = undefined;
 
 function scrollHandler(positionY) {
-  //
-  // Header Shadow and "fade-away" content
-  //
   if (positionY == 0) {
     header.classList.remove("scrolled");
   } else {
     header.classList.add("scrolled");
+  }
+
+  if (tocScroll === undefined) { return; }
+
+  if (positionY == 0) {
+    tocScroll.scrollTo(0, 0);
+  } else if (Math.ceil(window.innerHeight + positionY) >= document.body.offsetHeight) {
+    tocScroll.scrollTo(0, tocScroll.scrollHeight);
   }
 }
 
@@ -45,5 +51,6 @@ document.addEventListener("DOMContentLoaded", function main(params) {
   document.body.parentNode.classList.remove("no-js");
 
   header = document.querySelector("header");
+  tocScroll = document.querySelector(".toc-scroll");
   setup();
 });
