@@ -1,9 +1,9 @@
 """Get information about the under-use pygments theme."""
-from pygments.style import Style
 from pygments.token import Text
 
 
 def get_pygments_style_colors(style, *, fallbacks):
+    """Get background/foreground colors for given pygments style."""
     background = style.background_color
     text_colors = style.style_for_token(Text)
     foreground = text_colors["color"]

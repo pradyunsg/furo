@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 
 def wrap_tables(content):
+    """Wrap <table> elements in <div class="table-wrapper">."""
     soup = BeautifulSoup(content, "html.parser")
 
     for table in soup.find_all("table"):
