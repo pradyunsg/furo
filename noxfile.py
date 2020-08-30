@@ -13,7 +13,6 @@ import nox
 
 PACKAGE_NAME = "mawek"
 nox.options.sessions = ["lint", "test"]
-nox.options.reuse_existing_virtualenvs = True
 
 
 #
@@ -84,15 +83,15 @@ def docs_live(session):
             )
 
 
-@nox.session(python="3.8")
+@nox.session(python="3.8", reuse_venv=True)
 def docs(session):
-    _install_this_project_with_flit(session, extras=["doc"], editable=True)
+    _install_this_project_with_flit(session, extras=["doc"], editable=False)
 
     # Generate documentation into `build/docs`
     session.run("sphinx-build", "-b", "html", "-v", "docs/", "build/docs")
 
 
-@nox.session(python="3.8")
+@nox.session(python="3.8", reuse_venv=True)
 def lint(session):
     session.install("pre-commit")
 
