@@ -1,7 +1,6 @@
 """Get information about the under-use pygments theme."""
-
-from pygments.token import Text
 from pygments.style import Style
+from pygments.token import Text
 
 
 def get_pygments_style_colors(style, *, fallbacks):

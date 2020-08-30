@@ -8,11 +8,15 @@ function scrollHandler(positionY) {
     header.classList.add("scrolled");
   }
 
-  if (tocScroll === null) { return; }
+  if (tocScroll === null) {
+    return;
+  }
 
   if (positionY == 0) {
     tocScroll.scrollTo(0, 0);
-  } else if (Math.ceil(window.innerHeight + positionY) >= document.body.offsetHeight) {
+  } else if (
+    Math.ceil(window.innerHeight + positionY) >= document.body.offsetHeight
+  ) {
     tocScroll.scrollTo(0, tocScroll.scrollHeight);
   }
 }
@@ -22,11 +26,11 @@ function setupScrollHandler() {
   let last_known_scroll_position = 0;
   let ticking = false;
 
-  window.addEventListener('scroll', function(e) {
+  window.addEventListener("scroll", function (e) {
     last_known_scroll_position = window.scrollY;
 
     if (!ticking) {
-      window.requestAnimationFrame(function() {
+      window.requestAnimationFrame(function () {
         scrollHandler(last_known_scroll_position);
         ticking = false;
       });
@@ -39,7 +43,9 @@ function setupScrollHandler() {
 function setup() {
   setupScrollHandler();
 
-  if (tocScroll === null) { return; }
+  if (tocScroll === null) {
+    return;
+  }
 
   console.log(tocScroll);
 

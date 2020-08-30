@@ -29,10 +29,7 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     # Inject information about styles
     colors = get_pygments_style_colors(
         app.builder.highlighter.formatter_args["style"],
-        fallbacks={
-            "foreground": "#000000",
-            "background": "#FFFFFF",
-        }
+        fallbacks={"foreground": "#000000", "background": "#FFFFFF"},
     )
     context["mawek_pygments"] = colors
 
