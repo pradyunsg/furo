@@ -34,9 +34,9 @@ $admonitions: (
   // Fonts
   //////////////////////////////////////////////////////////////////////////////
   // This seems to be the best "system UI font stack" as on Aug 2020.
-  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, monospace;
 
   --font-size--small: 87.5%;
@@ -165,10 +165,10 @@ $admonitions: (
     --color-sidebar-item-background
   );
   --color-sidebar-item-background--hover: linear-gradient(
-    \-90deg,
-    \var(--color-background-three) 0%,
-    \var(--color-background-three--80) 90%,
-    \var(--color-background-three--0) 100% \
+    -90deg,
+    var(--color-background-three) 0%,
+    var(--color-background-three--80) 90%,
+    var(--color-background-three--0) 100%
   );
 
   --color-sidebar-item-expander-background: transparent;
