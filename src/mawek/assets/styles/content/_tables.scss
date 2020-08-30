@@ -10,13 +10,15 @@ table.docutils {
   border-radius: 0.2rem;
   border-spacing: 0;
 
-  box-shadow: 0 .2rem .5rem rgba(0,0,0,.05), 0 0 0.0625rem rgba(0,0,0,.1);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
+    0 0 0.0625rem rgba(0, 0, 0, 0.1);
 
   th {
     background: var(--color-background-two);
   }
 
-  td, th {
+  td,
+  th {
     // Space things out properly
     padding: 0 0.25rem;
     p {
@@ -32,7 +34,8 @@ table.docutils {
     }
   }
   tbody tr:last-child {
-    td, th {
+    td,
+    th {
       border-bottom: none;
     }
   }

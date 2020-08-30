@@ -31,7 +31,8 @@ footer {
       text-decoration-color: var(--color-link-underline);
     }
 
-    svg, svg>use {
+    svg,
+    svg > use {
       color: var(--color-foreground-border);
 
       width: 0.75rem;

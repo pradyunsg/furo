@@ -1,7 +1,10 @@
 html {
   font-family: var(--font-stack);
 }
-pre, code, kbd, samp {
+pre,
+code,
+kbd,
+samp {
   font-family: var(--font-stack--monospace);
 }
 
@@ -39,7 +42,12 @@ h6 {
 }
 
 // Only show permalink indicator on hover.
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   .headerlink {
     display: none;
   }
@@ -51,7 +59,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Main headings
-h1, h2 {
+h1,
+h2 {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 300;
@@ -64,7 +73,9 @@ h3 {
 }
 
 // You're in-too-deep headings
-h4, h5, h6 {
+h4,
+h5,
+h6 {
   text-transform: uppercase;
   margin-top: 1rem;
   margin-bottom: 0.5rem;

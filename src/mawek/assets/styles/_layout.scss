@@ -3,11 +3,11 @@
 //   This is a mobile-last design based off "max-width" rather than "min-width"
 ////////////////////////////////////////////////////////////////////////////////
 body {
-  overflow-y: scroll;  // always have the scrollbar
+  overflow-y: scroll; // always have the scrollbar
 }
 .page {
   display: flex;
-  min-height: 100vh;  // fill the viewport for pages with little content.
+  min-height: 100vh; // fill the viewport for pages with little content.
 }
 header {
   width: 100vw;
@@ -20,7 +20,8 @@ header {
 
   // Add shadow when scrolled
   &.scrolled {
-    box-shadow: 0 0 .2rem rgba(0,0,0,.1),0 .2rem .4rem rgba(0,0,0,.2)
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1),
+      0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
   }
 
   // We don't show the header on large screens.
@@ -42,10 +43,12 @@ header {
 }
 
 // Scroll-along sidebars
-.navigation, .toc-drawer {
+.navigation,
+.toc-drawer {
   width: $sidebar-width;
 }
-.sidebar-scroll, .toc-scroll {
+.sidebar-scroll,
+.toc-scroll {
   position: sticky;
   top: 0;
   // Limit the height of sidebars to that of the viewport.
@@ -109,7 +112,7 @@ header {
   transition: width 0ms, height 0ms, opacity 250ms ease-out;
 
   opacity: 0;
-  background-color: rgba(0,0,0,.54);
+  background-color: rgba(0, 0, 0, 0.54);
 }
 
 // Keep things on top and smooth.
@@ -151,7 +154,6 @@ header {
   }
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Responsive layouting
 ////////////////////////////////////////////////////////////////////////////////
@@ -170,7 +172,9 @@ header {
   }
 
   .sidebar-drawer {
-      width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width});
+    width: calc(
+      (100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width}
+    );
   }
   .toc-drawer {
     position: fixed;
@@ -204,7 +208,8 @@ header {
       justify-content: center;
       align-items: center;
     }
-    .header-left, .header-right {
+    .header-left,
+    .header-right {
       height: var(--header-height);
       width: var(--header-height);
     }

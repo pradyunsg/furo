@@ -20,7 +20,8 @@ article {
     margin-right: auto;
   }
 
-  .figure.align-default, .legend .align-default {
+  .figure.align-default,
+  .legend .align-default {
     @extend .align-center;
   }
 }
@@ -45,7 +46,8 @@ $code-spacing-horizontal: 0.875rem;
 
 article {
   // Wraps every literal block + line numbers.
-  div[class*=' highlight-'], div[class^='highlight-'] {
+  div[class*=" highlight-"],
+  div[class^="highlight-"] {
     margin: 1em 0;
     font-size: var(--code-font-size);
     display: flex;
@@ -56,7 +58,8 @@ pre {
   margin: 0;
   padding: 0;
 
-  &.literal-block, .highlight & {
+  &.literal-block,
+  .highlight & {
     padding: $code-spacing-vertical $code-spacing-horizontal;
   }
   // Make it look like all the other blocks.
@@ -94,9 +97,9 @@ pre {
     padding-right: 0;
   }
   .linenodiv {
-    padding-right: .5rem;
+    padding-right: 0.5rem;
     box-shadow: -0.0625rem 0 var(--color-code-foreground) inset;
-    opacity: 0.5;  // I hate myself.
+    opacity: 0.5; // I hate myself.
   }
   // Actual code
   td.code {

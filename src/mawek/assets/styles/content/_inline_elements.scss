@@ -10,7 +10,8 @@ kbd {
   font-size: var(--font-size--small--3);
   display: inline-block;
 
-  box-shadow: 0 0.0625rem 0 rgba(0,0,0,0.2), inset 0 0 0 0.125rem var(--color-background);
+  box-shadow: 0 0.0625rem 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 0.125rem var(--color-background);
   text-shadow: 0 1px 0 #fff;
 
   background-color: var(--color-background-two);
@@ -47,10 +48,16 @@ dl.footnote {
       margin-left: 0.25rem;
     }
 
-    &:after { content: ":" }
+    &:after {
+      content: ":";
+    }
     .brackets {
-      &:before {content: "["}
-      &:after  {content: "]"}
+      &:before {
+        content: "[";
+      }
+      &:after {
+        content: "]";
+      }
     }
   }
 }

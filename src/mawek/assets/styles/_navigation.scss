@@ -5,12 +5,13 @@
   display: flex;
   flex-direction: column;
 
-  padding: var(--sidebar-item-padding-vertical) var(--sidebar-item-padding-horizontal);
+  padding: var(--sidebar-item-padding-vertical)
+    var(--sidebar-item-padding-horizontal);
   text-decoration: none;
 }
 
 .sidebar-brand-text {
-  padding: var(--sidebar-item-padding-vertical) 0;  // some extra vertical spacing
+  padding: var(--sidebar-item-padding-vertical) 0; // some extra vertical spacing
   font-size: 1.5rem;
 }
 
@@ -39,8 +40,8 @@
   padding-right: var(--sidebar-search-input-padding-horizontal);
   padding-left: calc(
     var(--sidebar-item-padding-horizontal) +
-    var(--sidebar-search-input-padding-horizontal) +
-    var(--sidebar-search-icon-size)
+      var(--sidebar-search-input-padding-horizontal) +
+      var(--sidebar-search-icon-size)
   );
 
   width: 100%;
@@ -48,7 +49,9 @@
   background: transparent;
   z-index: 1;
 
-  &:focus { outline: none; }
+  &:focus {
+    outline: none;
+  }
 
   &::placeholder {
     font-size: var(--sidebar-search-input-font-size);
@@ -89,7 +92,8 @@
     height: 100%;
     width: 100%;
 
-    padding: var(--sidebar-item-padding-vertical) var(--sidebar-item-padding-horizontal);
+    padding: var(--sidebar-item-padding-vertical)
+      var(--sidebar-item-padding-horizontal);
 
     // Add a nice little "external-link" arrow here.
     &.external::after {
@@ -125,7 +129,8 @@
 
     margin: var(--sidebar-caption-margin-top) 0 0 0;
 
-    padding: var(--sidebar-item-padding-vertical) var(--sidebar-item-padding-horizontal);
+    padding: var(--sidebar-item-padding-vertical)
+      var(--sidebar-item-padding-horizontal);
   }
   // If it has children, add a bit more padding to wrap the content to avoid
   // overlapping with the <label>

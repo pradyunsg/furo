@@ -18,15 +18,15 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 $admonition-default: #651fff "abstract";
 $admonitions: (
   // Each of these has an reST directives for it.
-  "caution":   #ff9100 "spark",
-  "warning":   #ff9100 "warning",
-  "danger":    #ff5252 "spark",
+  "caution": #ff9100 "spark",
+  "warning": #ff9100 "warning",
+  "danger": #ff5252 "spark",
   "attention": #ff5252 "warning",
-  "error":     #ff5252 "failure",
-  "hint":      #00bfa5 "question",
+  "error": #ff5252 "failure",
+  "hint": #00bfa5 "question",
   "important": #00c852 "flame",
-  "note":      #00b0ff "pencil",
-  "tip":       #64dd17 "info",
+  "note": #00b0ff "pencil",
+  "tip": #64dd17 "info"
 );
 
 :root {
@@ -34,14 +34,14 @@ $admonitions: (
   // Fonts
   //////////////////////////////////////////////////////////////////////////////
   // This seems to be the best "system UI font stack" as on Aug 2020.
-  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", \
-                Roboto, "Helvetica Neue", Arial, sans-serif, \
-                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    \Roboto, "Helvetica Neue", Arial, sans-serif, \"Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
   --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, monospace;
 
   --font-size--small: 87.5%;
   --font-size--small--2: 81.2%;
-  --font-size--small--3: 75.0%;
+  --font-size--small--3: 75%;
   --font-size--small--4: 62.5%;
 
   // Navigation
@@ -63,7 +63,9 @@ $admonitions: (
   //////////////////////////////////////////////////////////////////////////////
   // Spacing
   //////////////////////////////////////////////////////////////////////////////
-  --header-height: calc(var(--sidebar-item-line-height) + 4 * #{var(--sidebar-item-padding-vertical)});
+  --header-height: calc(
+    var(--sidebar-item-line-height) + 4 * #{var(--sidebar-item-padding-vertical)}
+  );
 
   // Navigation
   --sidebar-tree-margin-top: 1.5rem;
@@ -72,9 +74,11 @@ $admonitions: (
   --sidebar-item-line-height: 1rem;
   --sidebar-item-padding-vertical: 0.5rem;
   --sidebar-item-padding-horizontal: 1rem;
-  --sidebar-item-height: calc(var(--sidebar-item-line-height) + 2*#{var(--sidebar-item-padding-vertical)});
+  --sidebar-item-height: calc(
+    var(--sidebar-item-line-height) + 2 *#{var(--sidebar-item-padding-vertical)}
+  );
 
-  --sidebar-expander-width: var(--sidebar-item-height);  // be square
+  --sidebar-expander-width: var(--sidebar-item-height); // be square
 
   --sidebar-search-margin-top: 0.5rem;
   --sidebar-search-input-padding-vertical: 0.5rem;
@@ -105,24 +109,34 @@ $admonitions: (
   //////////////////////////////////////////////////////////////////////////////
   --color-problematic: red;
 
-  --color-foreground: black;              // for main text and headings
-  --color-foreground-secondary: #5C5962;  // for secondary text
-  --color-foreground-border: #888888;     // for muted text, borders in content
+  --color-foreground: black; // for main text and headings
+  --color-foreground-secondary: #5c5962; // for secondary text
+  --color-foreground-border: #888888; // for muted text, borders in content
 
-  --color-background:        white;    // used for content + ToC
-  --color-background-two:    #F8F9FB;  // used for navigation
-  --color-background-three:   rgba(239, 239, 244, 1);     // for hover in navigation
-  --color-background-three--80: rgba(239, 239, 244, 0.8); // for hover in navigation
-  --color-background-three--0:  rgba(239, 239, 244, 0);   // for hover in navigation
+  --color-background: white; // used for content + ToC
+  --color-background-two: #f8f9fb; // used for navigation
+  --color-background-three: rgba(239, 239, 244, 1); // for hover in navigation
+  --color-background-three--80: rgba(
+    239,
+    239,
+    244,
+    0.8
+  ); // for hover in navigation
+  --color-background-three--0: rgba(
+    239,
+    239,
+    244,
+    0
+  ); // for hover in navigation
 
-  --color-background-border: #EEEBEE;
+  --color-background-border: #eeebee;
 
   // Brand colors
   --color-brand-primary: #2962ff;
   --color-brand-content: #2b5be0;
 
   // Admonitions!
-  --color-admonition:            #{nth($admonition-default, 1)};
+  --color-admonition: #{nth($admonition-default, 1)};
   --color-admonition-background: #{rgba(nth($admonition-default, 1), 0.1)};
 
   @each $name, $values in $admonitions {
@@ -147,16 +161,20 @@ $admonitions: (
   --color-sidebar-link-text--top-level: var(--color-brand-primary);
 
   --color-sidebar-item-background: var(--color-sidebar-background);
-  --color-sidebar-item-background--current: var(--color-sidebar-item-background);
-  --color-sidebar-item-background--hover: linear-gradient( \
-      -90deg, \
-      var(--color-background-three) 0%, \
-      var(--color-background-three--80) 90%, \
-      var(--color-background-three--0) 100% \
-    );
+  --color-sidebar-item-background--current: var(
+    --color-sidebar-item-background
+  );
+  --color-sidebar-item-background--hover: linear-gradient(
+    \-90deg,
+    \var(--color-background-three) 0%,
+    \var(--color-background-three--80) 90%,
+    \var(--color-background-three--0) 100% \
+  );
 
   --color-sidebar-item-expander-background: transparent;
-  --color-sidebar-item-expander-background--hover: var(--color-background-three);
+  --color-sidebar-item-expander-background--hover: var(
+    --color-background-three
+  );
 
   --color-sidebar-search-background: var(--color-background-two);
   --color-sidebar-search-background--focus: var(--color-background);

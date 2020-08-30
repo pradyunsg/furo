@@ -1,4 +1,5 @@
-ul, ol {
+ul,
+ol {
   padding-left: 1.2rem;
 
   // Space lists out like paragraphs
@@ -11,15 +12,18 @@ ul, ol {
       margin-top: 0.125rem;
       margin-bottom: 0.125rem;
     }
-    > ul, > ol {
+    > ul,
+    > ol {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
     }
   }
 }
-.simple, .toctree-wrapper {
+.simple,
+.toctree-wrapper {
   li {
-    > ul, > ol {
+    > ul,
+    > ol {
       margin-top: 0;
       margin-bottom: 0;
     }
