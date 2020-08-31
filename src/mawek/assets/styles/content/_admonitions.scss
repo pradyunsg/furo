@@ -42,7 +42,6 @@
       // color: var(--color-admonition);
       background-color: var(--color-admonition);
 
-      -webkit-mask-image: var(--icon-admonition-default);
       mask-image: var(--icon-admonition-default);
       mask-repeat: no-repeat;
     }
@@ -58,7 +57,6 @@
         background-color: var(--color-admonition-background--#{$type});
         &::before {
           background-color: var(--color-admonition--#{$type});
-          -webkit-mask-image: var(--icon-#{nth($value, 2)});
           mask-image: var(--icon-#{nth($value, 2)});
         }
       }
