@@ -52,7 +52,7 @@ def docs_live(session):
             "--port=0",
             "--watch=src/",
             f"--pre-build={boussole_command}",
-            "--re-ignore=src/.*/theme/static/.*\.(css|js)",  # ignore the generated files
+            r"--re-ignore=src/.*/theme/static/.*\.(css|js)",  # ignore the generated files
             "--open-browser",
             # for sphinx
             "-a",
