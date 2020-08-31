@@ -1,3 +1,6 @@
+# npm stuff
+node_modules
+
 # Python stuff
 .nox
 /build
