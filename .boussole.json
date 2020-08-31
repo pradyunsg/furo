@@ -1,8 +1,0 @@
-{
-  "SOURCES_PATH": "src/mawek/assets/styles",
-  "TARGET_PATH": "src/mawek/theme/static/styles",
-  "LIBRARY_PATHS": [],
-  "OUTPUT_STYLES": "compressed",
-  "SOURCE_COMMENTS": false,
-  "EXCLUDES": []
-}

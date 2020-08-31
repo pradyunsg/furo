@@ -41,9 +41,9 @@ def docs_live(session):
         docs_dir = "docs/"
         additional_dependencies = ()
 
-    boussole_command = "boussole compile --config=.boussole.json"
+    build_command = "gulp build"
     _install_this_project_with_flit(session, extras=["doc"], editable=True)
-    session.install("sphinx-autobuild", "boussole", *additional_dependencies)
+    session.install("sphinx-autobuild", *additional_dependencies)
 
     with tempfile.TemporaryDirectory() as destination:
         session.run(
@@ -51,7 +51,7 @@ def docs_live(session):
             # for sphinx-autobuild
             "--port=0",
             "--watch=src/",
-            f"--pre-build={boussole_command}",
+            f"--pre-build={build_command}",
             r"--re-ignore=src/.*/theme/static/.*\.(css|js)",  # ignore the generated files
             "--open-browser",
             # for sphinx
