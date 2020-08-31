@@ -5,4 +5,5 @@
 __pycache__
 
 # Generated files
+src/*/theme/static/scripts
 src/*/theme/static/styles
