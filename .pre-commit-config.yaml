@@ -45,4 +45,4 @@ repos:
     rev: 2.1.1
     hooks:
       - id: prettier
-        files: src/furo/assets/.*
+        exclude: src/furo/theme/.*
