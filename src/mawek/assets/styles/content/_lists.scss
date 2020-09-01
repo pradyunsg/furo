@@ -19,6 +19,7 @@ ol {
     }
   }
 }
+// Don't space lists out when they're "simple" or in a `.. toctree::`
 .simple,
 .toctree-wrapper {
   li {
