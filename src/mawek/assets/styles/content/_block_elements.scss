@@ -70,6 +70,7 @@ pre {
     border-radius: 0.2rem;
     font-size: var(--code-font-size);
     background-color: var(--color-code-background);
+    color: var(--color-code-foreground);
   }
 }
 
@@ -95,6 +96,8 @@ pre {
     color: var(--color-code-foreground);
     padding: $code-spacing-vertical $code-spacing-horizontal;
     padding-right: 0;
+    border-top-left-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
   }
   .linenodiv {
     padding-right: 0.5rem;
@@ -107,6 +110,11 @@ pre {
     display: block;
     flex: 1;
     overflow: hidden;
+
+    .highlight {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
   }
 }
 
