@@ -17,4 +17,4 @@ an absolutely essential reference for how to do things well.
 
 The folks at ReadTheDocs are doing really important work. [TODO: say something about how ethical ads as awesome, and call-to-action pointing to RTD's sustainability page]
 
-[Sphinx ReadTheDocs Theme]: https://sphinx-rtd-theme.readthedocs.io/en/stable/
+[sphinx readthedocs theme]: https://sphinx-rtd-theme.readthedocs.io/en/stable/
