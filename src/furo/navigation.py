@@ -18,7 +18,7 @@ def _get_navigation_expand_image(soup):
 
 @functools.lru_cache
 def get_navigation_tree(toctree_html):
-    """Modify the given navigation tree, with mawek-specific elements.
+    """Modify the given navigation tree, with furo-specific elements.
 
     Adds a checkbox + corresponding label to <li>s that contain a <ul> tag, to enable
     the I-spent-too-much-time-making-this-CSS-only collapsing sidebar tree.

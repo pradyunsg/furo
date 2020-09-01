@@ -10,7 +10,7 @@ from .toc import should_hide_toc
 
 
 def _html_page_context(app, pagename, templatename, context, doctree):
-    if app.config.html_theme != "mawek":
+    if app.config.html_theme != "furo":
         return
 
     # Custom Navigation Tree (adds checkboxes and labels)
@@ -18,20 +18,20 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     toctree_html = toctree(
         collapse=False, titles_only=True, maxdepth=-1, includehidden=True
     )
-    context["mawek_navigation_tree"] = get_navigation_tree(toctree_html)
+    context["furo_navigation_tree"] = get_navigation_tree(toctree_html)
 
     # Custom "should hide ToC" logic
-    context["mawek_hide_toc"] = should_hide_toc(context.get("toc", ""))
+    context["furo_hide_toc"] = should_hide_toc(context.get("toc", ""))
     # Allow for hiding toc via ToC in page-wide metadata.
     if "hide-toc" in (context.get("meta", None) or {}):
-        context["mawek_hide_toc"] = True
+        context["furo_hide_toc"] = True
 
     # Inject information about styles
     colors = get_pygments_style_colors(
         app.builder.highlighter.formatter_args["style"],
         fallbacks={"foreground": "#000000", "background": "#FFFFFF"},
     )
-    context["mawek_pygments"] = colors
+    context["furo_pygments"] = colors
 
     # Patch the content
     if "body" in context:
@@ -41,6 +41,6 @@ def _html_page_context(app, pagename, templatename, context, doctree):
 def setup(app):
     """Entry point for sphinx theming."""
     theme_path = (Path(__file__).parent / "theme").resolve()
-    app.add_html_theme("mawek", str(theme_path))
+    app.add_html_theme("furo", str(theme_path))
 
     app.connect("html-page-context", _html_page_context)

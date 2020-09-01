@@ -14,6 +14,6 @@ license
 ```{toctree}
 :caption: Kitchen Sink
 
-GitHub Repository <https://github.com/pradyunsg/mawek>
+GitHub Repository <https://github.com/pradyunsg/furo>
 demo/index
 ```

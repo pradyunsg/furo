@@ -27,7 +27,7 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon{% if mawek_hide_toc %} no-toc{% endif %}" for="__toc">
+        <label class="toc-overlay-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         {% block content %}{{ body }}{% endblock %}
@@ -63,14 +63,14 @@
           <span class="copyright">Copyright &copy; {{ copyright }}</span> |
           Built with <a href="https://sphinx-doc.org/">Sphinx</a> using
           <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/mawek">unnamed theme</a>.
+          <a href="https://github.com/pradyunsg/furo">furo theme</a>.
         </div>
         {% endblock footer %}
       </footer>
     </div>
-    <aside class="toc-drawer{% if mawek_hide_toc %} no-toc{% endif %}">
+    <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
       {% block right_sidebar %}
-      {% if not mawek_hide_toc %}
+      {% if not furo_hide_toc %}
       <div class="toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">

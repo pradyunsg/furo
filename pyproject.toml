@@ -3,10 +3,10 @@ requires = ["flit_core >=2,<4"]
 build-backend = "flit_core.buildapi"
 
 [tool.flit.metadata]
-module = "mawek"
+module = "furo"
 author = "Pradyun Gedam"
 author-email = "mail@pradyunsg.me"
-home-page = "https://github.com/pradyunsg/mawek"
+home-page = "https://github.com/pradyunsg/furo"
 description-file = "README.md"
 requires-python = ">=3.5"
 requires = [
@@ -22,7 +22,7 @@ test = [
 doc = ["sphinx", "myst-parser"]
 
 [tool.flit.entrypoints]
-"sphinx.html_themes" = {mawek = "mawek"}
+"sphinx.html_themes" = {furo = "furo"}
 
 [tool.flit.sdist]
-exclude = ["src/mawek/assets"]
+exclude = ["src/furo/assets"]

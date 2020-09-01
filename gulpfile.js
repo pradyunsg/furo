@@ -20,8 +20,8 @@ var plugins = [
   autoprefixer(),
   cssnano(),
 ];
-var src_path = "./src/mawek/assets/";
-var dest_path = "./src/mawek/theme/static";
+var src_path = "./src/furo/assets/";
+var dest_path = "./src/furo/theme/static";
 
 
 function css() {
