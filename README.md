@@ -1,3 +1,3 @@
 # furo
 
-I still have to figure out what this would be.
+A clean documentation theme for Sphinx.
