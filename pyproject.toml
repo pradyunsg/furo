@@ -25,4 +25,14 @@ doc = ["sphinx", "myst-parser"]
 "sphinx.html_themes" = {furo = "furo"}
 
 [tool.flit.sdist]
-exclude = ["src/furo/assets"]
+include = [
+  # Generated assets
+  "src/furo/theme/static/*/*",
+]
+exclude = [
+  "src/furo/assets",
+  # JS stuff
+  "gulpfile.js", "package.json", "package-lock.json",
+  # Linting stuff
+  ".flake8", ".isort.cfg", ".pre-commit-config.yaml",
+]
