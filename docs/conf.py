@@ -25,7 +25,7 @@ author = "Pradyun Gedam"
 # -- General configuration ---------------------------------------------------
 #
 
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.mathjax"]
+extensions = ["sphinx.ext.autodoc", "sphinx.ext.mathjax", "myst_parser"]
 templates_path = ["_templates"]
 
 #

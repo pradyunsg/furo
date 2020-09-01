@@ -19,7 +19,7 @@ test = [
   "pytest-cov",
   "pytest-xdist",
 ]
-doc = ["sphinx"]
+doc = ["sphinx", "myst-parser"]
 
 [tool.flit.entrypoints]
 "sphinx.html_themes" = {mawek = "mawek"}
