@@ -1,15 +1,11 @@
 """Development automation
 """
 import os
-import re
-import subprocess
 import tempfile
-from glob import glob
-from pathlib import Path
-from time import time
 
 import nox
 
+PACKAGE_NAME = "furo"
 nox.options.sessions = ["lint", "test"]
 
 
