@@ -10,7 +10,6 @@ from time import time
 
 import nox
 
-PACKAGE_NAME = "mawek"
 nox.options.sessions = ["lint", "test"]
 
 
