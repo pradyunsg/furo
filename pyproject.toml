@@ -30,7 +30,7 @@ include = [
   "src/furo/theme/static/*/*",
 ]
 exclude = [
-  "src/furo/assets",
+  "docs/", "src/furo/assets",
   # JS stuff
   "gulpfile.js", "package.json", "package-lock.json",
   # Linting stuff
