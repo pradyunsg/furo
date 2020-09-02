@@ -17,7 +17,7 @@ sys.path.append(str(Path(__file__).parent / "demo"))
 # -- Project information -----------------------------------------------------
 #
 
-project = "Demo"
+project = "furo"
 copyright = "2020, Pradyun Gedam"
 author = "Pradyun Gedam"
 
@@ -33,5 +33,6 @@ templates_path = ["_templates"]
 #
 
 html_theme = "furo"
+html_title = "Furo"
 
 html_static_path = ["_static"]
