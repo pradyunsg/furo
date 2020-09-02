@@ -21,7 +21,7 @@ var dest_path = "./src/furo/theme/static";
 
 function css() {
   return gulp
-    .src(src_path + "styles/[!_]*.scss")
+    .src(src_path + "styles/[!_]*.scss", { since: gulp.lastRun(css) })
     .pipe(sass({ fiber: Fiber }).on("error", sass.logError))
     .pipe(postcss(plugins))
     .pipe(rename({ dirname: "styles", extname: ".css" }))
@@ -30,7 +30,7 @@ function css() {
 
 function javascript(cb) {
   return gulp
-    .src(src_path + "scripts/[!_]*.js")
+    .src(src_path + "scripts/[!_]*.js", { since: gulp.lastRun(javascript) })
     .pipe(concat("scripts/main.js"))
     .pipe(uglify())
     .pipe(gulp.dest(dest_path));
