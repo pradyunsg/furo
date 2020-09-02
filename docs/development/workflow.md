@@ -13,7 +13,7 @@ This project uses the [GitHub Flow] for collaboration. The codebase contains Pyt
 
 ## Initial Setup
 
-To work on this project, you need to have a git 2.17+, Python 3.6+ and NodeJS 12.
+To work on this project, you need to have git 2.17+, Python 3.6+ and NodeJS 12.
 
 * Clone this project using git:
 
