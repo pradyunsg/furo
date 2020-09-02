@@ -4,10 +4,10 @@
 //
 // These are set here, since CSS variables can't be used in media queries,
 // which is where these would be used.
-$content-padding: 4rem;
-$content-padding--small: 1rem;
-$content-width: 46rem;
-$sidebar-width: 15rem;
+$content-padding: 4em;
+$content-padding--small: 1em;
+$content-width: 46em;
+$sidebar-width: 15em;
 $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 
 // Admonitions
