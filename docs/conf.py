@@ -33,6 +33,6 @@ templates_path = ["_templates"]
 #
 
 html_theme = "furo"
-html_title = "Furo"
+html_title = "furo"
 
 html_static_path = ["_static"]
