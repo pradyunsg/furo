@@ -29,6 +29,11 @@ extensions = ["sphinx.ext.autodoc", "sphinx.ext.mathjax", "myst_parser"]
 templates_path = ["_templates"]
 
 #
+# -- Options for Markdown files ----------------------------------------------
+#
+myst_admonition_enable = True
+
+#
 # -- Options for HTML output -------------------------------------------------
 #
 
