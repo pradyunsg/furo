@@ -15,7 +15,7 @@ design-goals
 ```
 
 [Workflow](./workflow)
-: Describes the development workflow. Start here if you're a new contributor.
+: Describes how to work on this project. Start here if you're a new contributor.
 
 [Internals](./internals)
 : Describes how this theme is built and how the various parts of it work.
