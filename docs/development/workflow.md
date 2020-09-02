@@ -4,10 +4,10 @@ This page describes the tooling used during development of this project. It also
 
 ## Overview
 
-This project uses the [GitHub Flow] for collaboration. The codebase contains Python code, [Jinja2]-based HTML pages, [SASS] stylesheets and Javascript code.
+This project uses the [GitHub Flow] for collaboration. The codebase contains Python code, [Jinja2]-based HTML pages, [Sass] stylesheets and Javascript code.
 
 - [nox] is used for automating development tasks.
-- [Gulp]-based build pipeline is used to process the [SASS] and Javascript files.
+- [Gulp]-based build pipeline is used to process the Sass and Javascript files.
 - [sphinx-autobuild] is used to provide live-reloading pages when working on the theme.
 - [pre-commit] is used for running the linters.
 
