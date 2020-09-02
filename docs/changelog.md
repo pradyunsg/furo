@@ -4,6 +4,6 @@ hide-toc: true
 
 # Changelog
 
-## unreleased
+## 2020.9.2.beta1
 
 Initial release.
