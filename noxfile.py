@@ -60,6 +60,7 @@ def docs_live(session):
 def docs(session):
     _install_this_project_with_flit(session, extras=["doc"], editable=False)
 
+    session.run("gulp", "build", external=True)
     # Generate documentation into `build/docs`
     session.run("sphinx-build", "-b", "html", "-v", "docs/", "build/docs")
 
