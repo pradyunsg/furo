@@ -32,6 +32,7 @@ templates_path = ["_templates"]
 # -- Options for Markdown files ----------------------------------------------
 #
 myst_admonition_enable = True
+myst_deflist_enable = True
 
 #
 # -- Options for HTML output -------------------------------------------------
