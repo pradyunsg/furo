@@ -19,11 +19,6 @@ jobs:
     - name: Generate documentation
       run: nox -s docs
 
-    # This helps ensure the generated files are included by the action
-    # in the next step.
-    - name: Remove generated files from .gitignore
-      run: sed -n '/# Generated files/q;p' .gitignore > .gitignore
-
     - name: Upload to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:

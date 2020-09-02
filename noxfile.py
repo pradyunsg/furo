@@ -58,9 +58,11 @@ def docs_live(session):
 
 @nox.session(python="3.8", reuse_venv=True)
 def docs(session):
+    # Generate relevant files prior to installation
+    session.run("gulp", "build", external=True)
+
     _install_this_project_with_flit(session, extras=["doc"], editable=False)
 
-    session.run("gulp", "build", external=True)
     # Generate documentation into `build/docs`
     session.run("sphinx-build", "-b", "html", "-v", "docs/", "build/docs")
 
