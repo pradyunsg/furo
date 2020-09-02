@@ -5,7 +5,7 @@ documentation is layed out.
 
 ```{toctree}
 :maxdepth: 1
-getting-started
+workflow
 internals
 design-goals
 ```
@@ -13,5 +13,4 @@ design-goals
 TODO: provide information about:
 
 - CoC
-- @pradyunsg is the BDFL.
 - open to making changes? Yes, even drastic ones if there's a strong case.
