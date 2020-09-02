@@ -1,11 +1,11 @@
-name: Deploy Documentation
+name: Deploy
 on:
   push:
     branches: [master]
 
 jobs:
-  build:
-    name: Build
+  docs:
+    name: Documentation
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
