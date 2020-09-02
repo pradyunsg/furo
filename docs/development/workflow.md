@@ -15,14 +15,14 @@ This project uses the [GitHub Flow] for collaboration. The codebase contains Pyt
 
 To work on this project, you need to have git 2.17+, Python 3.6+ and NodeJS 12.
 
-* Clone this project using git:
+- Clone this project using git:
 
-    ```
-    git clone https://github.com/pradyunsg/furo.git
-    cd furo
-    ```
+  ```
+  git clone https://github.com/pradyunsg/furo.git
+  cd furo
+  ```
 
-* Install the project's dependencies:
+- Install the project's dependencies:
 
   ```
   npm install
@@ -54,13 +54,13 @@ The server also watches for changes made to the documentation (`docs/`) or theme
 :::{tip}
 My workflow, when I'm working on this theme, is along the lines of:
 
-* Run this command, and wait from the browser window to open.
-* <kbd>alt</kbd>+<kbd>tab</kbd> gets me back to my text editor.
-* Make changes to some files and save those changes.
-* <kbd>alt</kbd>+<kbd>tab</kbd> switches to the browser.
-* After a small delay, the change is reflected in the browser.
-* If I want to make more changes, <kbd>alt</kbd>+<kbd>tab</kbd> and I'm back to my text editor.
-* Repeat the last 4 steps until happy.
+- Run this command, and wait from the browser window to open.
+- <kbd>alt</kbd>+<kbd>tab</kbd> gets me back to my text editor.
+- Make changes to some files and save those changes.
+- <kbd>alt</kbd>+<kbd>tab</kbd> switches to the browser.
+- After a small delay, the change is reflected in the browser.
+- If I want to make more changes, <kbd>alt</kbd>+<kbd>tab</kbd> and I'm back to my text editor.
+- Repeat the last 4 steps until happy.
 
 \- @pradyunsg
 :::
@@ -79,23 +79,23 @@ Generate the documentation for furo into the `build/docs` folder. This (mostly) 
 There are plans to automate this entire flow, with a `nox -s release` command.
 ```
 
-* Checkout the current master, and ensure the working directory is clean
-* Remove build/ and dist/ -- `rm -r build/ dist/` on *nix
-* Bump the version in `src/furo/__init__.py`
-* Update the changelog
-* Run `flit build`
-* Run `twine check dist/*`
-* Commit changes and create a tag.
-* Run `twine upload dist/*`
-* Bump the version in `src/furo/__init__.py`
-* Update the changelog
-* Commit changes
-* Push it all
+- Checkout the current master, and ensure the working directory is clean
+- Remove build/ and dist/ -- `rm -r build/ dist/` on \*nix
+- Bump the version in `src/furo/__init__.py`
+- Update the changelog
+- Run `flit build`
+- Run `twine check dist/*`
+- Commit changes and create a tag.
+- Run `twine upload dist/*`
+- Bump the version in `src/furo/__init__.py`
+- Update the changelog
+- Commit changes
+- Push it all
 
-[GitHub Flow]: https://guides.github.com/introduction/flow/
+[github flow]: https://guides.github.com/introduction/flow/
 [nox]: https://nox.readthedocs.io/en/stable/
-[Jinja2]: https://jinja.palletsprojects.com
-[SASS]: https://sass-lang.com
-[Gulp]: https://gulpjs.com
+[jinja2]: https://jinja.palletsprojects.com
+[sass]: https://sass-lang.com
+[gulp]: https://gulpjs.com
 [sphinx-autobuild]: https://github.com/executablebooks/sphinx-autobuild
 [pre-commit]: https://pre-commit.com/

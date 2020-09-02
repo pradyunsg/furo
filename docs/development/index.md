@@ -31,6 +31,6 @@ furo's [Code of Conduct] that applies within all community spaces. If you are no
 
 [@pradyunsg] serves as the [BDFL] for this project.
 
-[Code of Conduct]: https://github.com/pradyunsg/furo/blob/master/CODE_OF_CONDUCT.md
+[code of conduct]: https://github.com/pradyunsg/furo/blob/master/CODE_OF_CONDUCT.md
 [@pradyunsg]: https://github.com/pradyunsg
-[BDFL]: https://en.wikipedia.org/wiki/Benevolent_dictator_for_life
+[bdfl]: https://en.wikipedia.org/wiki/Benevolent_dictator_for_life
