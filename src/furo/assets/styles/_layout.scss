@@ -9,7 +9,6 @@ body {
   display: flex;
   // fill the viewport for pages with little content.
   min-height: calc(100vh - (100vh - 100%));
-  min-height: 100vh;
 }
 header {
   width: 100vw;
