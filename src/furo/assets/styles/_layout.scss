@@ -5,10 +5,13 @@
 body {
   overflow-y: scroll; // always have the scrollbar
 }
+html, body {
+  height: 100%;
+}
 .page {
   display: flex;
   // fill the viewport for pages with little content.
-  min-height: calc(100vh - (100vh - 100%));
+  min-height: 100%;
 }
 header {
   width: 100vw;
