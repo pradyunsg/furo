@@ -1,3 +1,8 @@
 <a class="sidebar-brand" href="{{ pathto(master_doc) }}">
+  {%- if logo %}
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo centered" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+  </div>
+  {%- endif %}
   <span class="sidebar-brand-text">{{ docstitle }}</span>
 </a>
