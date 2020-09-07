@@ -38,6 +38,7 @@ myst_deflist_enable = True
 # -- Options for HTML output -------------------------------------------------
 #
 
+html_logo = "_static/logo.png"
 html_theme = "furo"
 html_title = "furo"
 
