@@ -4,6 +4,10 @@ hide-toc: true
 
 # Changelog
 
+## 2020.9.8.beta4
+
+- More fixes for Python 3.7 support.
+
 ## 2020.9.8.beta3
 
 - Add support for `sphinx.ext.todo`.
