@@ -48,3 +48,9 @@ html_theme = "furo"
 html_title = "furo"
 
 html_static_path = ["_static"]
+html_theme_options = {
+    "sidebar_hide_name": True,
+    "announcement": (
+        "Furo is under active development, and this documentation is not written yet!"
+    )
+}
