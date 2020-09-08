@@ -1,8 +1,10 @@
-<a class="sidebar-brand" href="{{ pathto(master_doc) }}">
+<a class="sidebar-brand{% if logo %} centered{% endif %}" href="{{ pathto(master_doc) }}">
   {%- if logo %}
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo centered" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+    <img class="sidebar-logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
   </div>
   {%- endif %}
+  {% if not theme_sidebar_hide_name %}
   <span class="sidebar-brand-text">{{ docstitle }}</span>
+  {%- endif %}
 </a>
