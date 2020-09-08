@@ -11,17 +11,18 @@
 }
 
 .sidebar-brand-text {
-  padding: var(--sidebar-item-padding-vertical) 0; // some extra vertical spacing
+  margin: var(--sidebar-item-padding-vertical) 0;
   font-size: 1.5rem;
 }
 
-.sidebar-logo {
-  display: block;
-  max-width: 100%;
+.sidebar-logo-container {
+  margin: var(--sidebar-item-padding-vertical) 0;
 }
 
-.sidebar-logo.centered {
+.sidebar-logo {
   margin: 0 auto;
+  display: block;
+  max-width: 100%;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
