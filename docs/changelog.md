@@ -4,7 +4,7 @@ hide-toc: true
 
 # Changelog
 
-## unreleased
+## 2020.9.8.beta3
 
 - Add support for `sphinx.ext.todo`.
 - Add support for hiding name in sidebar.
