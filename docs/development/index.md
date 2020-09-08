@@ -25,7 +25,7 @@ design-goals
 
 ## Code of Conduct
 
-furo's [Code of Conduct] that applies within all community spaces. If you are not familiar with our Code of Conduct policy, take a minute to read the policy before starting with your first contribution.
+furo's [Code of Conduct] applies within all community spaces. If you are not familiar with our Code of Conduct policy, take a minute to read the policy before starting with your first contribution.
 
 ## Decision Making
 
