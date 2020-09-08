@@ -1,4 +1,4 @@
-"""A clean customizable Sphinx documentation theme."""
+"""A clean customisable Sphinx documentation theme."""
 
 __version__ = "2020.9.8.beta2"
 

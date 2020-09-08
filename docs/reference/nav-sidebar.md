@@ -1,3 +1,3 @@
 # Navigation Sidebar
 
-TODO: provides a reference to how to customize the sidebar and it's contents.
+TODO: provides a reference to how to customise the sidebar and it's contents.

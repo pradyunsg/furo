@@ -1,3 +1,3 @@
 # Admonitions
 
-TODO: provides a reference to how to customize the admonitions, and how to add custom admonitions.
+TODO: provides a reference to how to customise the admonitions, and how to add custom admonitions.

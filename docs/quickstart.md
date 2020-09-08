@@ -1,6 +1,6 @@
 # Quickstart
 
-furo is available on [PyPI]. It provides a single customizable HTML theme for Sphinx-based documentation sets.
+furo is available on [PyPI]. It provides a single customisable HTML theme for Sphinx-based documentation sets.
 
 - Install furo in documentation's build environment.
 
