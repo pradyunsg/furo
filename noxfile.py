@@ -36,7 +36,7 @@ def docs_live(session):
         docs_dir = "docs/"
         additional_dependencies = ()
 
-    build_command = "gulp build"
+    build_command = "./node_modules/.bin/gulp build"
     _install_this_project_with_flit(session, extras=["doc"], editable=True)
     session.install("sphinx-autobuild", *additional_dependencies)
 
