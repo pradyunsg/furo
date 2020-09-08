@@ -34,6 +34,7 @@ header {
 }
 .main {
   display: flex;
+  flex: 1;
 }
 
 // Sidebar (left) also covers the entire left portion of screen.
@@ -86,6 +87,29 @@ header {
 
 // TODO: figure out what could cause content to flow "out" of .content and
 //       add an overflow-x on it.
+
+//
+// Accommodate announcement banner
+//
+.announcement {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+}
+.announcement + .page {
+  min-height: calc(100% - var(--header-height));
+  .sidebar-scroll, .toc-scroll {
+    max-height: calc(100vh - var(--header-height));
+  }
+}
+.announcement-content {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  min-width: 100%;
+  white-space: nowrap;
+  text-align: center;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Toggles for elements
@@ -207,7 +231,8 @@ header {
 
   // Show the header.
   header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -226,10 +251,8 @@ header {
   }
   // Center the page, and accommodate for the header.
   .page {
+    flex-direction: column;
     justify-content: center;
-  }
-  .content {
-    margin-top: var(--header-height);
   }
 }
 @media (max-width: $content-width + 2 * $content-padding) {

@@ -5,14 +5,21 @@
 <label class="overlay sidebar-overlay" for="__navigation"></label>
 <label class="overlay toc-overlay" for="__toc"></label>
 
-<header>
-  <label class="header-left nav-overlay-icon" for="__navigation">
-    <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
-  </label>
-  <div class="header-center"><div class="brand">{{ docstitle }}</div></div>
-  <div class="header-right"></div>
-</header>
+{% if theme_announcement -%}
+<div class="announcement">
+  <aside class="announcement-content">
+    {{ theme_announcement }}
+  </aside>
+</div>
+{%- endif %}
 <div class="page">
+  <header>
+    <label class="header-left nav-overlay-icon" for="__navigation">
+      <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+    </label>
+    <div class="header-center"><div class="brand">{{ docstitle }}</div></div>
+    <div class="header-right"></div>
+  </header>
   <aside class="sidebar-drawer">
     <div class="navigation">
       {% block left_sidebar %}
