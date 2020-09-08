@@ -12,6 +12,7 @@ hide-toc: true
 - Tweak font size for admonitions.
 - Tweak spacing for contents sidebar.
 - Tweak styling of inline code.
+- Fix support for Python < 3.8.
 
 ## 2020.9.8.beta2
 
