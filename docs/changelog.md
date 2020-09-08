@@ -6,7 +6,12 @@ hide-toc: true
 
 ## unreleased
 
-Nothing.
+- Add support for `sphinx.ext.todo`.
+- Add support for hiding name in sidebar.
+- Add reference to deployed documentation in README.
+- Tweak font size for admonitions.
+- Tweak spacing for contents sidebar.
+- Tweak styling of inline code.
 
 ## 2020.9.8.beta2
 
@@ -17,7 +22,7 @@ Nothing.
 - Tweak line height in contents, to accommodate for code literals.
 - Use `em` as the unit for layout sizes.
 - Start writing theme's documentation.
-- Deploy documentation on https://pradyunsg.me/furo/.
+- Deploy documentation on <https://pradyunsg.me/furo/>.
 
 ## 2020.9.2.beta1
 
