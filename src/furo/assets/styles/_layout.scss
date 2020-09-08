@@ -92,6 +92,11 @@ header {
 .toc-overlay-icon {
   display: none;
   float: right;
+
+  height: 2rem;
+  width: 1.5rem;
+  align-items: center;
+  justify-content: right;
 }
 .sidebar-toggle {
   position: absolute;
@@ -171,7 +176,7 @@ header {
 @media (max-width: $full-width) {
   // Collapse "toc" into the icon.
   .toc-overlay-icon {
-    display: block;
+    display: flex;
     cursor: pointer;
   }
 
