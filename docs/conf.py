@@ -25,8 +25,13 @@ author = "Pradyun Gedam"
 # -- General configuration ---------------------------------------------------
 #
 
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.mathjax", "myst_parser"]
+extensions = ["sphinx.ext.autodoc", "sphinx.ext.mathjax", "sphinx.ext.todo", "myst_parser"]
 templates_path = ["_templates"]
+
+#
+# -- Options for TODOs -------------------------------------------------------
+#
+todo_include_todos = True
 
 #
 # -- Options for Markdown files ----------------------------------------------
