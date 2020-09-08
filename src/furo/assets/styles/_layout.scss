@@ -16,7 +16,7 @@ html, body {
 header {
   width: 100vw;
   height: var(--header-height);
-  background-color: white;
+  background-color: var(--color-header-background);
 
   // Looks like sub-script/super-script have this, and we need this to
   // be "on top" of those.

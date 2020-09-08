@@ -152,6 +152,9 @@ $admonitions: (
   // - special literal values (eg: transparent, none)
   //////////////////////////////////////////////////////////////////////////////
 
+  // Header
+  --color-header-background: var(--color-background-two);
+
   // Sidebar (left)
   --color-sidebar-background: var(--color-background-two);
   --color-sidebar-background-border: var(--color-background-border);
