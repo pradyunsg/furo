@@ -4,7 +4,7 @@ from functools import lru_cache
 from bs4 import BeautifulSoup
 
 
-@lru_cache
+@lru_cache(maxsize=None)
 def should_hide_toc(toc):
     """Determine whether toc has content beyond the initial heading."""
     if not toc:
