@@ -13,10 +13,6 @@
   overflow: hidden;
   page-break-inside: avoid;
 
-  p {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
   // Last item should have no margin, since we'll control that w/ padding
   > :last-child {
     margin-bottom: 0;
