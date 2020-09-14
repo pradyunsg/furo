@@ -1,6 +1,12 @@
 //
 // Figures
 //
+img {
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+}
+
 article {
   .figure {
     border-radius: 0.2rem;
