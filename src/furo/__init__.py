@@ -4,7 +4,7 @@ __version__ = "2020.09.08.beta5"
 
 from pathlib import Path
 
-from .body import wrap_tables
+from .body import wrap_elements_that_can_get_too_wide
 from .code import get_pygments_style_colors
 from .navigation import get_navigation_tree
 from .toc import should_hide_toc
@@ -36,7 +36,7 @@ def _html_page_context(app, pagename, templatename, context, doctree):
 
     # Patch the content
     if "body" in context:
-        context["body"] = wrap_tables(context["body"])
+        context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
 
 
 def setup(app):
