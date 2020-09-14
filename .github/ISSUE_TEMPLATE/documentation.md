@@ -1,10 +1,9 @@
 ---
 name: Documentation
 about: Report missing or inaccurate content in the documentation
-title: ''
+title: ""
 labels: documentation
-assignees: ''
-
+assignees: ""
 ---
 
 **URL**: [The URL at which the content is missing or inaccurate]

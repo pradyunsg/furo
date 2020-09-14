@@ -8,19 +8,19 @@ jobs:
     name: Documentation
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
 
-    - name: Install dependencies
-      run: |
-        pip install nox
-        npm install
+      - name: Install dependencies
+        run: |
+          pip install nox
+          npm install
 
-    - name: Generate documentation
-      run: nox -s docs
+      - name: Generate documentation
+        run: nox -s docs
 
-    - name: Upload to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build/docs/
+      - name: Upload to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/docs/

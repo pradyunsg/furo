@@ -12,7 +12,6 @@ furo can be customized in many ways.
   - the sidebar's contents
   - selectively hide UI elements/TOC on a certain pages
 
-
 ```{toctree}
 :caption: Reference for various elements
 :maxdepth: 1
@@ -23,7 +22,6 @@ nav-sidebar
 toc-sidebar
 admonitions
 ```
-
 
 ## Theme options
 
@@ -41,10 +39,7 @@ furo's stylesheet makes extensive use of [CSS variables][css-variables]. It is p
 
 ```python
 html_theme_options = {
-  "css_variables": {
-    "color-brand-primary": "red",
-    "color-brand-content": "#CC3333",
-  }
+    "css_variables": {"color-brand-primary": "red", "color-brand-content": "#CC3333",}
 }
 ```
 
@@ -58,7 +53,7 @@ Controls whether you see the project's name in the sidebar of the documentation.
 
 ```python
 html_theme_options = {
-  "sidebar_hide_name": True,
+    "sidebar_hide_name": True,
 }
 ```
 
@@ -90,6 +85,7 @@ Markdown:
 ---
 hide-toc: true
 ---
+
 ```
 
 reST:

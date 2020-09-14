@@ -12,7 +12,8 @@
 body {
   overflow-y: scroll; // always have the scrollbar
 }
-html, body {
+html,
+body {
   height: 100%;
 }
 .page {
@@ -106,7 +107,8 @@ header {
 }
 .announcement + .page {
   min-height: calc(100% - var(--header-height));
-  .sidebar-scroll, .toc-scroll {
+  .sidebar-scroll,
+  .toc-scroll {
     max-height: calc(100vh - var(--header-height));
   }
 }

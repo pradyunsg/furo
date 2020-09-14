@@ -9,12 +9,12 @@ hide-toc: true
 - Add CSS variables for header foreground and background.
 - Add styling for captions.
 - Add styling for correctly handling permalinks.
-- Correctly stylize *only* definition lists with the rules intended for them.
+- Correctly stylize _only_ definition lists with the rules intended for them.
 - Fix next/prev links flowing into one-another by limiting width to 50%.
 - Fix positioning of collapsed contents sidebar icon.
 - Fix shrinking arrows in next/prev links.
-- Include ``basic`` theme's JS files unconditionally. This should help with compatibility with various Sphinx extensions and ReadTheDocs.
-- Make ``math`` elements scrollable, when wider than the page.
+- Include `basic` theme's JS files unconditionally. This should help with compatibility with various Sphinx extensions and ReadTheDocs.
+- Make `math` elements scrollable, when wider than the page.
 - Tweak images to be responsive.
 - Tweak spacing of paragraphs.
 - Tweak location of ReadTheDocs' injected version helper.

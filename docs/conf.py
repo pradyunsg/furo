@@ -25,7 +25,12 @@ author = "Pradyun Gedam"
 # -- General configuration ---------------------------------------------------
 #
 
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.mathjax", "sphinx.ext.todo", "myst_parser"]
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.todo",
+    "myst_parser",
+]
 templates_path = ["_templates"]
 
 #
@@ -52,5 +57,5 @@ html_theme_options = {
     "sidebar_hide_name": True,
     "announcement": (
         "Furo is under active development, and this documentation is not written yet!"
-    )
+    ),
 }
