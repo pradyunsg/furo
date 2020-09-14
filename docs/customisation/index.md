@@ -12,6 +12,21 @@ furo can be customized in many ways.
   - the sidebar's contents
   - selectively hide UI elements/TOC on a certain pages
 
+
+```{toctree}
+:caption: Reference for various elements
+:maxdepth: 1
+
+colors
+fonts
+landing-page
+announcement
+admonitions
+nav-sidebar
+toc-sidebar
+```
+
+
 ## Theme options
 
 furo utilizes [`html_theme_options`][sphinx-html-theme-options] key in `conf.py` for customization of the overall theme.
@@ -38,8 +53,6 @@ html_theme_options = {
 ```{note}
 Typos in the `css_variables` dictionary are silently ignored, and do not raise any errors or warnings. Double check that your spellings and values are correct and valid.
 ```
-
-The [Reference](reference/index) section describes the various elements that can be used in your documentation and which CSS variables they utilize.
 
 ### `sidebar_hide_name`
 
