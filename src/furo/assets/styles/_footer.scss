@@ -43,13 +43,18 @@ footer {
       margin: 0 0.5rem;
     }
     &.next-page {
+      max-width: 50%;
+
       float: right;
       clear: right;
       text-align: right;
     }
     &.prev-page {
+      max-width: 50%;
+
       float: left;
       clear: left;
+
       svg {
         transform: rotate(180deg);
       }
