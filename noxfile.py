@@ -86,3 +86,56 @@ def test(session):
 
     args = session.posargs or ["-n", "auto", "--cov", PACKAGE_NAME]
     session.run("pytest", *args)
+
+
+@nox.session
+def release(session):
+    package_name = "furo"
+    version_file = f"src/{package_name}/__init__.py"
+    allowed_upstreams = ["git@github.com:pradyunsg/furo.git"]
+
+    release_version, next_version = session.posargs  # expect exactly 2 arguments!
+
+    session.install("flit", "twine")
+    session.run("flit", "install", "--deps=production", silent=True)
+
+    # Sanity Checks
+    session.run("release-helper", "version-check-validity", release_version)
+    session.run("release-helper", "version-check-validity", next_version)
+    session.run("release-helper", "directory-check-empty", "dest")
+
+    session.run("release-helper", "git-check-branch", "master")
+    session.run("release-helper", "git-check-clean")
+    session.run("release-helper", "git-check-tag", release_version, "--does-not-exist")
+    session.run("release-helper", "git-check-remote", "origin", *allowed_upstreams)
+
+    # Prepare release commit
+    session.run("release-helper", "version-bump", version_file, release_version)
+    session.run("git", "add", version_file, external=True)
+
+    session.run(
+        "git", "commit", "-m", f"Prepare release: {release_version}", external=True
+    )
+
+    # Build the package
+    session.run("flit", "build")
+    session.run("twine", "check", *glob.glob("dist/*"))
+
+    # Tag the commit
+    session.run(
+        # fmt: off
+        "git", "tag", release_version, "-m", f"Release {release_version}", "-s",
+        external=True,
+        # fmt: on
+    )
+
+    # Prepare back-to-development commit
+    session.run("release-helper", "version-bump", version_file, next_version)
+    session.run("git", "add", version_file, external=True)
+    session.run("git", "commit", "-m", "Back to development", external=True)
+
+    # Push the commits and tag.
+    session.run("git", "push", "origin", "master", release_version, external=True)
+
+    # Upload the distributions.
+    session.run("twine", "upload", *glob.glob("dist/*"))
