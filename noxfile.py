@@ -102,7 +102,7 @@ def release(session):
     # Sanity Checks
     session.run("release-helper", "version-check-validity", release_version)
     session.run("release-helper", "version-check-validity", next_version)
-    session.run("release-helper", "directory-check-empty", "dest")
+    session.run("release-helper", "directory-check-empty", "dist")
 
     session.run("release-helper", "git-check-branch", "master")
     session.run("release-helper", "git-check-clean")
