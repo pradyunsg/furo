@@ -1,3 +1,9 @@
+// This is where the theming and coloring of all the elements is done. This file
+// needs to be broken out to let all the styles for each of the components live
+// with the rest of the component's styling.
+
+// TODO: break this out into relevant files.
+
 body {
   color: var(--color-foreground);
   background: var(--color-background);

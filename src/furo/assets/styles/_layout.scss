@@ -1,7 +1,14 @@
-////////////////////////////////////////////////////////////////////////////////
-// Page Layout
-//   This is a mobile-last design based off "max-width" rather than "min-width"
-////////////////////////////////////////////////////////////////////////////////
+// This file contains the styles for the overall layouting of the documentation
+// skeleton, including the responsive changes as well as sidebar toggles.
+//
+// This is implemented as a mobile-last design, which isn't ideal, but it is
+// reasonably good-enough and I got pretty tired by the time I'd finished this
+// to move the rules around to fix this. Shouldn't take more than 3-4 hours,
+// if you know what you're doing tho.
+
+//
+// Overalls
+//
 body {
   overflow-y: scroll; // always have the scrollbar
 }
@@ -49,7 +56,7 @@ header {
 }
 
 // Scroll-along sidebars
-.navigation,
+.sidebar-container,
 .toc-drawer {
   width: $sidebar-width;
 }
