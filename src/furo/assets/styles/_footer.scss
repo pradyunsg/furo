@@ -36,6 +36,8 @@ footer {
 
     svg,
     svg > use {
+      flex-shrink: 0;
+
       color: var(--color-foreground-border);
 
       width: 0.75rem;
