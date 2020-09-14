@@ -74,3 +74,9 @@ h1, h2, h3, h4, h5, h6, dl dt, p.caption, table > caption, .code-block-caption {
     visibility: visible;
   }
 }
+
+// Captions
+article p.caption, table > caption, .code-block-caption {
+  font-size: var(--font-size--small);
+  text-align: center;
+}
