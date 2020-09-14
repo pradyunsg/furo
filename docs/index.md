@@ -6,7 +6,12 @@ See `_templates/layouts/home.html` for the actual homepage HTML. This file only 
 quickstart
 usage/index
 customisation/index
-development/index
+```
+
+```{toctree}
+:caption: Development
+
+contributing/index
 changelog
 license
 ```

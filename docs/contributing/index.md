@@ -1,10 +1,8 @@
-# Development
+# Contributing
 
 Thank you for your interest in furo! ✨
 
 furo is a volunteer maintained open source project, and we welcome contributions of all forms. This section of the furo's documentation serves as a resource to help you to contribute to the project.
-
-## Overview
 
 ```{toctree}
 :hidden:
