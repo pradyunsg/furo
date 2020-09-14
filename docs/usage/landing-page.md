@@ -1,4 +1,4 @@
-# Landing Page
+# Custom Landing Page
 
 ```{todo}
 Describe the ways to add your own custom landing page when using furo.

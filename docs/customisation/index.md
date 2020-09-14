@@ -19,11 +19,9 @@ furo can be customized in many ways.
 
 colors
 fonts
-landing-page
-announcement
-admonitions
 nav-sidebar
 toc-sidebar
+admonitions
 ```
 
 
