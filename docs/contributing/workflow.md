@@ -75,22 +75,9 @@ Generate the documentation for furo into the `build/docs` folder. This (mostly) 
 
 ## Release process
 
-```{note}
-There are plans to automate this entire flow, with a `nox -s release` command.
-```
-
-- Checkout the current master, and ensure the working directory is clean
-- Remove build/ and dist/ -- `rm -r build/ dist/` on \*nix
-- Bump the version in `src/furo/__init__.py`
 - Update the changelog
-- Run `flit build`
-- Run `twine check dist/*`
-- Commit changes and create a tag.
-- Run `twine upload dist/*`
-- Bump the version in `src/furo/__init__.py`
-- Update the changelog
-- Commit changes
-- Push it all
+- Run `nox -s release -r -- <release version> <next version>`
+- Once that command succeeds, you're done!
 
 [github flow]: https://guides.github.com/introduction/flow/
 [nox]: https://nox.readthedocs.io/en/stable/
