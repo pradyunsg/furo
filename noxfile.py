@@ -96,8 +96,7 @@ def release(session):
 
     release_version, next_version = session.posargs  # expect exactly 2 arguments!
 
-    session.install("flit", "twine")
-    session.run("flit", "install", "--deps=production", silent=True)
+    session.install("flit", "twine", "release-helper")
 
     # Sanity Checks
     session.run("release-helper", "version-check-validity", release_version)
