@@ -41,23 +41,6 @@ h6 {
   font-size: 0.75rem;
 }
 
-// Only show permalink indicator on hover.
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  .headerlink {
-    display: none;
-  }
-  &:hover .headerlink {
-    display: inline-block;
-    font-weight: 100;
-    margin-left: 0.5rem;
-  }
-}
-
 // Main headings
 h1,
 h2 {
