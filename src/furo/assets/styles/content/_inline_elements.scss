@@ -30,35 +30,10 @@ code.literal {
   padding: 0.1em 0.2em;
 }
 
-// Footnotes
+// Footnote References
 .footnote-reference {
   font-size: var(--font-size--small--4);
   vertical-align: super;
-}
-dl.footnote {
-  font-size: var(--font-size--small);
-  color: var(--color-foreground-secondary);
-
-  display: grid;
-  grid-template-columns: max-content auto;
-  dt {
-    margin: 0;
-    > .fn-backref {
-      margin-left: 0.25rem;
-    }
-
-    &:after {
-      content: ":";
-    }
-    .brackets {
-      &:before {
-        content: "[";
-      }
-      &:after {
-        content: "]";
-      }
-    }
-  }
 }
 
 // Permalinks
