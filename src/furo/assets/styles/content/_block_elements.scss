@@ -124,18 +124,21 @@ pre {
   }
 }
 
-dt {
-  display: inline-block;
-  margin-top: 0.25rem;
-  font-weight: 500;
+.field-list, .option-list {
+  dt {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-weight: 500;
 
-  .classifier::before {
-    content: ":";
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
+    .classifier::before {
+      content: ":";
+      margin-left: 0.2rem;
+      margin-right: 0.2rem;
+    }
   }
-}
-dd p {
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem;
+
+  dd p {
+    margin-top: 0.125rem;
+    margin-bottom: 0.125rem;
+  }
 }
