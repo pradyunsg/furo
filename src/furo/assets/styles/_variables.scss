@@ -45,7 +45,7 @@ $admonitions: (
   --font-size--small--3: 75%;
   --font-size--small--4: 62.5%;
 
-  // Navigation
+  // Sidebar
   --sidebar-caption-font-size: var(--font-size--small--2);
   --sidebar-item-font-size: var(--font-size--small);
   --sidebar-search-input-font-size: var(--font-size--small);
@@ -68,7 +68,7 @@ $admonitions: (
     var(--sidebar-item-line-height) + 4 * #{var(--sidebar-item-padding-vertical)}
   );
 
-  // Navigation
+  // Sidebar
   --sidebar-tree-margin-top: 1.5rem;
   --sidebar-caption-margin-top: 1rem;
 
