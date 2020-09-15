@@ -70,6 +70,8 @@ pre {
   }
   // Make it look like all the other blocks.
   &.literal-block {
+    overflow: auto;
+
     margin-top: 1rem;
     margin-bottom: 1rem;
 
