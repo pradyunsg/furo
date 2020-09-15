@@ -43,13 +43,6 @@
       <title>{{ title }}</title>
     {%- endblock -%}
 
-    {#- Theme-related stylesheets -#}
-    {%- block theme_styles -%}
-    <link rel="stylesheet" href="{{ pathto('_static/styles/default.css', 1) }}">
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
-    {% include "partials/_head_css_variables.html" with context %}
-    {%- endblock -%}
-
     {# Custom stylesheets #}
     {%- block extracss -%}
     {%- for path in css_files -%}
@@ -57,9 +50,11 @@
     {% endfor -%}
     {%- endblock -%}
 
-    {# Theme-related JavaScript libraries #}
-    {%- block theme_scripts -%}
-    <script src="{{ pathto('_static/scripts/main.js', 1) }}"></script>
+    {#- Theme-related stylesheets -#}
+    {%- block theme_styles -%}
+    <link rel="stylesheet" href="{{ pathto('_static/styles/default.css', 1) }}">
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
+    {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
 
     {# Custom JS #}
@@ -76,6 +71,11 @@
         <script src="{{ pathto(path, 1) }}"></script>
       {%- endif -%}
     {% endfor -%}
+    {%- endblock -%}
+
+    {# Theme-related JavaScript libraries #}
+    {%- block theme_scripts -%}
+    <script src="{{ pathto('_static/scripts/main.js', 1) }}"></script>
     {%- endblock -%}
 
     {#- Custom front matter #}
