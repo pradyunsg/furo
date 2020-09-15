@@ -1,5 +1,6 @@
 """Development automation
 """
+import datetime
 import glob
 import os
 import tempfile
@@ -89,13 +90,32 @@ def test(session):
     session.run("pytest", *args)
 
 
+def get_release_versions(version_file):
+    marker = "__version__ = "
+
+    with open(version_file) as f:
+        for line in f:
+            if line.startswith(marker):
+                version = line[len(marker)+1:-2]
+                current_number = int(version.split(".dev")[-1])
+                break
+        else:
+            raise RuntimeError("Could not find current version.")
+
+    today = datetime.date.today()
+    release_version = today.strftime(f"%Y.%m.%d.beta{current_number}")
+    next_version = today.strftime(f"%Y.%m.%d.dev{current_number+1}")
+
+    return release_version, next_version
+
+
 @nox.session
 def release(session):
     package_name = "furo"
     version_file = f"src/{package_name}/__init__.py"
     allowed_upstreams = ["git@github.com:pradyunsg/furo.git"]
 
-    release_version, next_version = session.posargs  # expect exactly 2 arguments!
+    release_version, next_version = get_release_versions(version_file)
 
     session.install("flit", "twine", "release-helper")
 
