@@ -4,7 +4,17 @@ hide-toc: true
 
 # Changelog
 
-## 2020.09.14.beta5
+## 2020.09.15.beta6
+
+- Tweak header on small screens.
+- Tweak spacing for small screens.
+- Place "sidebar" directive's contents inline, on small screens.
+
+## 2020.08.14.beta5
+
+```{important}
+This release was not correctly versioned and is not installed preferentially over beta4.
+```
 
 - Add CSS variables for header foreground and background.
 - Add styling for captions.
