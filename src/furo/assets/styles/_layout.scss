@@ -255,6 +255,11 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
+      .icon {
+        color: var(--color-foreground-two);
+        height: 1.25rem;
+        width: 1.25rem;
+      }
     }
     .header-left,
     .header-right {
