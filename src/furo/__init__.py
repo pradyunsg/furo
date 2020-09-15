@@ -38,6 +38,8 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     if "body" in context:
         context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
 
+    context["furo_version"] = __version__
+
 
 def setup(app):
     """Entry point for sphinx theming."""
