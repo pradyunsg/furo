@@ -22,7 +22,7 @@ body {
   min-height: 100%;
 }
 header {
-  width: 100vw;
+  width: 100%;
   height: var(--header-height);
   background-color: var(--color-header-background);
   color: var(--color-header-text);
@@ -280,7 +280,7 @@ header {
 @media (max-width: $content-width + 2* $content-padding) {
   // Content should respect window limits.
   .content {
-    width: 100vw;
+    width: 100%;
     overflow-x: auto;
   }
 }
