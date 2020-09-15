@@ -4,6 +4,11 @@ hide-toc: true
 
 # Changelog
 
+## 2020.09.15.beta7
+
+- Automate version management
+- Use correct width for elements on small screens (100% instead of 100vw)
+
 ## 2020.09.15.beta6
 
 - Tweak header on small screens.
