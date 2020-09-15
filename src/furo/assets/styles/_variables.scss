@@ -157,7 +157,8 @@ $admonitions: (
   //////////////////////////////////////////////////////////////////////////////
 
   // Header
-  --color-header-background: var(--color-background-two);
+  --color-header-background: var(--color-background);
+  --color-header-border: var(--color-background-border);
   --color-header-text: var(--color-foreground);
 
   // Sidebar (left)
