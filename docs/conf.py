@@ -30,6 +30,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
     "myst_parser",
+    "sphinx_panels",
 ]
 templates_path = ["_templates"]
 

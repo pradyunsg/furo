@@ -75,24 +75,23 @@ It is possible to tell furo to hide certain elements in a single page, using [Fi
 
 When set, furo will not include the "contents" sidebar on that page.
 
-```{todo}
-Add support for some kind of tabbed UI, to make it nicer to show markdown/reST examples.
-```
-
-Markdown:
-
+````{tabbed} MyST (Markdown)
 ```yaml
 ---
 hide-toc: true
 ---
 
+[page contents]
 ```
+````
 
-reST:
-
+````{tabbed} reStructuredText
 ```rst
 :hide-toc:
+
+[page contents]
 ```
+````
 
 [css-variables]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 [sphinx-html-theme-options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
