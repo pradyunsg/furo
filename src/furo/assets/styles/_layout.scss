@@ -270,14 +270,15 @@ header {
     margin-right: auto;
   }
 }
-@media (max-width: $content-width + 2 * $content-padding) {
+@media (max-width: $content-width + 2* $content-padding) {
   // Content should respect window limits.
   .content {
     width: 100vw;
-    padding: 0;
     overflow-x: auto;
   }
-  article {
+}
+@media (max-width: $content-width) {
+  .content {
     padding: 0 $content-padding--small;
   }
   // Don't float sidebars to the right.
