@@ -66,3 +66,14 @@ table > caption,
   font-size: var(--font-size--small);
   text-align: center;
 }
+
+.toctree-wrapper.compound {
+  .caption {
+    text-align: initial;
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  > ul {
+    margin-top: 0;
+  }
+}
