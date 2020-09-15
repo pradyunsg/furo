@@ -3,10 +3,10 @@
   var tocScroll = null;
 
   function scrollHandler(positionY) {
-    if (positionY == 0) {
-      header.classList.remove("scrolled");
-    } else {
+    if (header.getBoundingClientRect().top == 0) {
       header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
     }
 
     if (tocScroll === null) {
@@ -39,6 +39,7 @@
         ticking = true;
       }
     });
+    window.scroll();
   }
 
   function setup() {
