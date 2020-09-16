@@ -149,6 +149,13 @@ $admonitions: (
     --color-admonition-background--#{$name}: #{rgba(nth($values, 1), 0.1)};
   }
 
+  // API documentation
+  --color-api-overall: #666666;
+  --color-api-name: var(--color-brand-content);
+  --color-api-pre-name: #484848;
+  --color-api-paren: #333333;
+  --color-api-keyword: var(--color-problematic);
+
   //////////////////////////////////////////////////////////////////////////////
   // Everything below this should be one of:
   // - var(...)
