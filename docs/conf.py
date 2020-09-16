@@ -29,6 +29,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
+    "sphinx.ext.viewcode",
     "myst_parser",
     "sphinx_panels",
 ]
