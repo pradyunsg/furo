@@ -4,7 +4,7 @@
 This entire page is still a work-in-progress.
 ```
 
-Furo can be customized in many ways.
+Furo can be customised in many ways.
 
 - provides a lot of points for customising the generated documentation
 - is possible to tweak:
@@ -25,7 +25,7 @@ admonitions
 
 ## Theme options
 
-Furo utilizes [`html_theme_options`][sphinx-html-theme-options] key in `conf.py` for customization of the overall theme.
+Furo utilizes [`html_theme_options`][sphinx-html-theme-options] key in `conf.py` for customisation of the overall theme.
 
 ### `css_variables`
 
