@@ -50,3 +50,10 @@
   overflow-y: hidden
   &:hover
     overflow-y: auto
+
+// Be very annoying when someone includes the table of contents
+.contents
+  color: var(--color-problematic)
+  background: rgba(255, 0, 0, 0.25)
+  &::before
+    content: "ERROR: Adding a table of contents in Furo-based documentation is unnecessary, and does not work well with existing styling."
