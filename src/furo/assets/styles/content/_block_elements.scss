@@ -143,9 +143,11 @@ dl.footnote {
     }
   }
 
-  dd p {
-    margin-top: 0.125rem;
-    margin-bottom: 0.125rem;
+  dd {
+    p, ul {
+      margin-top: 0.125rem;
+      margin-bottom: 0.125rem;
+    }
   }
 }
 
