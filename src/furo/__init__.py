@@ -43,6 +43,8 @@ def _html_page_context(app, pagename, templatename, context, doctree):
 
 def setup(app):
     """Entry point for sphinx theming."""
+    app.require_sphinx("3.0")
+
     theme_path = (Path(__file__).parent / "theme").resolve()
     app.add_html_theme("furo", str(theme_path))
 
