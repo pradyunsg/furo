@@ -1,4 +1,4 @@
-# furo
+# Furo
 
 A clean customisable documentation theme for Sphinx.
 

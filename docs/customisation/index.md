@@ -4,7 +4,7 @@
 This entire page is still a work-in-progress.
 ```
 
-furo can be customized in many ways.
+Furo can be customized in many ways.
 
 - provides a lot of points for customising the generated documentation
 - is possible to tweak:
@@ -25,7 +25,7 @@ admonitions
 
 ## Theme options
 
-furo utilizes [`html_theme_options`][sphinx-html-theme-options] key in `conf.py` for customization of the overall theme.
+Furo utilizes [`html_theme_options`][sphinx-html-theme-options] key in `conf.py` for customization of the overall theme.
 
 ### `css_variables`
 
@@ -33,9 +33,9 @@ furo utilizes [`html_theme_options`][sphinx-html-theme-options] key in `conf.py`
 This needs rewriting, and more... "prominence".
 ```
 
-furo's stylesheet makes extensive use of [CSS variables][css-variables]. It is possible to change look and feel of the documentation.
+Furo's stylesheet makes extensive use of [CSS variables][css-variables]. It is possible to change look and feel of the documentation.
 
-`css_variables` provides an easy way to override furo's default values for these variables.
+`css_variables` provides an easy way to override Furo's default values for these variables.
 
 ```python
 html_theme_options = {
@@ -58,7 +58,7 @@ html_theme_options = {
 ```
 
 ```{important}
-The configuration options that are inherited from the built-in `basic` Sphinx theme are *not* supported in furo.
+The configuration options that are inherited from the built-in `basic` Sphinx theme are *not* supported in Furo.
 ```
 
 ## Custom CSS files
@@ -69,11 +69,11 @@ ReadTheDocs has an excellent explanation on [how to add custom CSS files][sphinx
 
 ## Page specific tweaks
 
-It is possible to tell furo to hide certain elements in a single page, using [File-Wide metadata][sphinx-file-wide-metadata].
+It is possible to tell Furo to hide certain elements in a single page, using [File-Wide metadata][sphinx-file-wide-metadata].
 
 ### `hide-toc`
 
-When set, furo will not include the "contents" sidebar on that page.
+When set, Furo will not include the "contents" sidebar on that page.
 
 ````{tabbed} MyST (Markdown)
 ```yaml

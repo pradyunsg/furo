@@ -71,7 +71,7 @@ My workflow, when I'm working on this theme, is along the lines of:
 nox -s docs
 ```
 
-Generate the documentation for furo into the `build/docs` folder. This (mostly) does the same thing as `nox -s docs`, except it invokes `sphinx-build` instead of [sphinx-autobuild].
+Generate the documentation for Furo into the `build/docs` folder. This (mostly) does the same thing as `nox -s docs-live`, except it invokes `sphinx-build` instead of [sphinx-autobuild].
 
 ## Release process
 
