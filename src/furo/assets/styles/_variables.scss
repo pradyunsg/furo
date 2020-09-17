@@ -150,9 +150,9 @@ $admonitions: (
   }
 
   // API documentation
-  --color-api-overall: #666666;
+  --color-api-overall: #555555;
   --color-api-name: var(--color-brand-content);
-  --color-api-pre-name: #484848;
+  --color-api-pre-name: var(--color-brand-content);
   --color-api-paren: #333333;
   --color-api-keyword: var(--color-problematic);
 
