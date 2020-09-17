@@ -10,7 +10,7 @@ def wrap_elements_that_can_get_too_wide(content):
     - [class=math]
 
     """
-    soup = BeautifulSoup(content, "html.parser")
+    soup = BeautifulSoup(content, "lxml")
 
     for table in soup.find_all("table"):
         table_wrapper = soup.new_tag("div", attrs={"class": "table-wrapper"})

@@ -26,7 +26,7 @@ def get_navigation_tree(toctree_html):
     if not toctree_html:
         return toctree_html
 
-    soup = BeautifulSoup(toctree_html, "html.parser")
+    soup = BeautifulSoup(toctree_html, "lxml")
 
     toctree_checkbox_count = 0
     last_element_with_current = None
