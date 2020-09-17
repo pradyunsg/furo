@@ -154,12 +154,16 @@ header {
   width: 0;
   height: 0;
 
-  z-index: 2;
-
   transition: width 0ms, height 0ms, opacity 250ms ease-out;
 
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.54);
+}
+.sidebar-overlay {
+  z-index: 2;
+}
+.toc-overlay {
+  z-index: 4;
 }
 
 // Keep things on top and smooth.
@@ -168,7 +172,7 @@ header {
   transition: left 250ms ease-in-out;
 }
 .toc-drawer {
-  z-index: 3;
+  z-index: 5;
   transition: right 250ms ease-in-out;
 }
 
