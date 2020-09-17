@@ -156,6 +156,10 @@ $admonitions: (
   --color-api-paren: #333333;
   --color-api-keyword: var(--color-problematic);
 
+  // Highlighted text (search)
+  --color-highlighted-background: #ddeeff;
+  --color-highlighted-text: var(--color-foreground);
+
   //////////////////////////////////////////////////////////////////////////////
   // Everything below this should be one of:
   // - var(...)
