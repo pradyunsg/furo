@@ -96,7 +96,7 @@ def get_release_versions(version_file):
     with open(version_file) as f:
         for line in f:
             if line.startswith(marker):
-                version = line[len(marker)+1:-2]
+                version = line[len(marker) + 1 : -2]
                 current_number = int(version.split(".dev")[-1])
                 break
         else:
