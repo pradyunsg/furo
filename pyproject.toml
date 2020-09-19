@@ -10,8 +10,7 @@ home-page = "https://github.com/pradyunsg/furo"
 description-file = "README.md"
 requires-python = ">=3.5"
 requires = [
-  "beautifulsoup4",
-  "lxml",
+  "beautifulsoup4"
 ]
 
 [tool.flit.metadata.requires-extra]

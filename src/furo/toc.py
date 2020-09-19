@@ -10,7 +10,7 @@ def should_hide_toc(toc):
     if not toc:
         return True
 
-    soup = BeautifulSoup(toc, "lxml")
+    soup = BeautifulSoup(toc, "html.parser")
     if len(soup.find_all("li")) == 1:
         return True
 
