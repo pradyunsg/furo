@@ -22,8 +22,8 @@ article {
   }
   .align-center {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 50%;
+    transform: translate(-50%);
   }
 
   .figure.align-default,
