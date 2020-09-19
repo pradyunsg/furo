@@ -41,7 +41,7 @@ $admonitions: (
   --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, monospace;
 
   --font-size--small: 87.5%;
-  --font-size--small--2: 81.2%;
+  --font-size--small--2: 81.25%;
   --font-size--small--3: 75%;
   --font-size--small--4: 62.5%;
 
@@ -55,8 +55,8 @@ $admonitions: (
   --toc-title-font-size: var(--font-size--small--4);
 
   // Admonitions
-  --admonition-font-size: var(--font-size--small);
-  --admonition-title-font-size: var(--font-size--small);
+  --admonition-font-size: var(--font-size--small--2);
+  --admonition-title-font-size: 1em;
 
   // Code
   --code-font-size: var(--font-size--small--2);
