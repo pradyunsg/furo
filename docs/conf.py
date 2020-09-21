@@ -32,6 +32,7 @@ extensions = [
     "sphinx.ext.viewcode",
     "myst_parser",
     "sphinx_panels",
+    "furo.sphinxext",  # only meant for Furo's own documentation.
 ]
 templates_path = ["_templates"]
 
