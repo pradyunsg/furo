@@ -233,6 +233,9 @@ header {
     top: 0;
     right: -$sidebar-width;
   }
+  .toc-tree {
+    font-size: var(--toc-font-size--mobile);
+  }
 }
 
 @media (max-width: $full-width - $sidebar-width) {
