@@ -7,11 +7,13 @@ ol {
   margin-bottom: 1rem;
   // reduce margins within li.
   li {
-    > p {
-      // unless they're nested
-      margin-top: 0.125rem;
-      margin-bottom: 0.125rem;
+    > p:first-child {
+      margin-bottom: 0.25rem;
     }
+    > p:last-child {
+      margin-top: 0.25rem;
+    }
+
     > ul,
     > ol {
       margin-top: 0.5rem;
