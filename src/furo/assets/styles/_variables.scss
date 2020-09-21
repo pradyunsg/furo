@@ -41,6 +41,7 @@ $admonitions: (
     "Segoe UI Symbol";
   --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, monospace;
 
+  --font-size--normal: 100%;
   --font-size--small: 87.5%;
   --font-size--small--2: 81.25%;
   --font-size--small--3: 75%;
@@ -57,7 +58,7 @@ $admonitions: (
 
   // Admonitions
   --admonition-font-size: var(--font-size--small--2);
-  --admonition-title-font-size: 1em;
+  --admonition-title-font-size: var(--font-size--normal);
 
   // Code
   --code-font-size: var(--font-size--small--2);
