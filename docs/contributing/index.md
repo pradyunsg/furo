@@ -4,6 +4,8 @@ Thank you for your interest in Furo! ✨
 
 Furo is a volunteer maintained open source project, and we welcome contributions of all forms. This section of Furo's documentation serves as a resource to help you to contribute to the project.
 
+The [Code of Conduct] applies within all community spaces. If you are not familiar with our Code of Conduct policy, take a minute to read the policy before starting with your first contribution.
+
 ```{toctree}
 :hidden:
 
@@ -21,14 +23,4 @@ design-goals
 [Design Goals](./design-goals)
 : Describes the priorities for this theme's design.
 
-## Code of Conduct
-
-Furo's [Code of Conduct] applies within all community spaces. If you are not familiar with our Code of Conduct policy, take a minute to read the policy before starting with your first contribution.
-
-## Decision Making
-
-[@pradyunsg] serves as the [BDFL] for this project.
-
 [code of conduct]: https://github.com/pradyunsg/furo/blob/master/CODE_OF_CONDUCT.md
-[@pradyunsg]: https://github.com/pradyunsg
-[bdfl]: https://en.wikipedia.org/wiki/Benevolent_dictator_for_life
