@@ -1,7 +1,3 @@
----
-hide-toc: true
----
-
 # Changelog
 
 ## 2020.09.15.beta7
