@@ -1,24 +1,19 @@
 # Quickstart
 
-Furo is available on [PyPI]. It provides a single customisable HTML theme for Sphinx-based documentation sets.
+Furo is distributed on [PyPI]. To use the theme in your Sphinx project:
 
-- Install Furo in documentation's build environment.
+1. Install Furo in documentation's build environment.
 
-  ```
-  pip install furo
-  ```
+   ```
+   pip install furo
+   ```
 
-- Update the `html_theme` in `conf.py`.
+2. Update the `html_theme` in `conf.py`.
 
-  ```py
-  html_theme = "furo"
-  ```
+   ```py
+   html_theme = "furo"
+   ```
 
-- Your Sphinx documentation's HTML pages will now be generated with this theme! 🎉
-
-```{note}
-If you don't have a Sphinx documentation set to use this theme on, look at [Sphinx's Getting Started] for instructions on how to create one.
-```
+3. Your Sphinx documentation's HTML pages will now be generated with this theme! 🎉
 
 [pypi]: https://pypi.org/project/furo/
-[sphinx's getting started]: https://www.sphinx-doc.org/en/master/usage/quickstart.html
