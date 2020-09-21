@@ -14,11 +14,5 @@ customisation/index
 contributing/index
 changelog
 license
-```
-
-```{toctree}
-:caption: Kitchen Sink
-
 GitHub Repository <https://github.com/pradyunsg/furo>
-demo/index
 ```
