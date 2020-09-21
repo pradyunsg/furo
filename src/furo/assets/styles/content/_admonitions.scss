@@ -28,6 +28,8 @@
     font-size: var(--admonition-title-font-size);
     background-color: var(--color-admonition-background);
 
+    line-height: 1.3;
+
     // Our fancy icon
     &::before {
       content: "";
