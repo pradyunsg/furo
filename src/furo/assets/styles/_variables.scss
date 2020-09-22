@@ -176,10 +176,10 @@ $admonitions: (
     --color-sidebar-item-background
   );
   --color-sidebar-item-background--hover: linear-gradient(
-    -90deg,
-    var(--color-background-three) 0%,
-    var(--color-background-three) 90%,
-    transparent 100%
+    90deg,
+    transparent 0%,
+    var(--color-background-three) var(--sidebar-item-spacing-horizontal),
+    var(--color-background-three) 100%
   );
 
   --color-sidebar-item-expander-background: transparent;
