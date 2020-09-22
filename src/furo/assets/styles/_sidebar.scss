@@ -76,7 +76,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 .sidebar-tree {
   font-size: var(--sidebar-item-font-size);
-  margin: var(--sidebar-tree-space-above) 0 var(--sidebar-item-spacing-vertical);
+  margin-top: var(--sidebar-tree-space-above);
+  margin-bottom: var(--sidebar-item-spacing-vertical);
 
   ul {
     padding: 0;

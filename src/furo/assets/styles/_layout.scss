@@ -63,15 +63,21 @@ header {
 .toc-drawer {
   width: $sidebar-width;
 }
-.sidebar-scroll,
-.toc-scroll {
+.sidebar-sticky,
+.toc-sticky {
   position: sticky;
   top: 0;
-  // Limit the height of sidebars to that of the viewport.
-  // NOTE: this can mean that we have some content that cannot be scrolled to
-  //       if the sidebar is not fully scrollable, but we'll have JS for that.
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-scroll,
+.toc-scroll {
+  flex-shrink: 1;
+
   overflow: auto;
-  max-height: 100vh;
   scroll-behavior: smooth;
 }
 
@@ -109,10 +115,6 @@ header {
 }
 .announcement + .page {
   min-height: calc(100% - var(--header-height));
-  .sidebar-scroll,
-  .toc-scroll {
-    max-height: calc(100vh - var(--header-height));
-  }
 }
 .announcement-content {
   box-sizing: border-box;

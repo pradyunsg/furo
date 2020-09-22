@@ -23,7 +23,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       {% block left_sidebar %}
-      <div class="sidebar-scroll">
+      <div class="sidebar-sticky">
         {%- for sidebartemplate in sidebars %}
           {%- include sidebartemplate %}
         {%- endfor %}
@@ -46,7 +46,7 @@
             <a class="next-page" href="{{ next.link }}">
               <div class="page-info">
                 <div class="context">
-                  <span>Next</span>
+                  <span>{{ _("Next") }}</span>
                 </div>
                 <div class="title">{{ next.title }}</div>
               </div>
@@ -58,7 +58,7 @@
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
-                  <span>Previous</span>
+                  <span>{{ _("Previous") }}</span>
                 </div>
                 <div class="title">{{ prev.title }}</div>
               </div>
@@ -67,10 +67,10 @@
         </div>
 
         <div class="related-information">
-          <span class="copyright">Copyright &copy; {{ copyright }}</span> |
+          <span class="copyright">{{ _("Copyright") }} &copy; {{ copyright }}</span> |
           Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using
           <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">furo theme</a>.
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
         </div>
         {% endblock footer %}
       </footer>
@@ -78,10 +78,10 @@
     <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
       {% block right_sidebar %}
       {% if not furo_hide_toc %}
-      <div class="toc-scroll">
+      <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            {{ _("Contents") }}
           </span>
         </div>
         <div class="toc-tree">
