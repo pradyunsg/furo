@@ -13,15 +13,21 @@ Furo can be customised in many ways.
   - selectively hide UI elements/TOC on a certain pages
 
 ```{toctree}
-:caption: Reference for various elements
-:maxdepth: 1
+:hidden:
 
+logo
+landing-page
 colors
 fonts
+toc
+```
+
+colors-and-fonts
 nav-sidebar
 toc-sidebar
+announcement
+landing-page
 admonitions
-```
 
 ## Theme options
 
@@ -69,31 +75,6 @@ ReadTheDocs has an excellent explanation on [how to add custom CSS files][sphinx
 
 ## Page specific tweaks
 
-It is possible to tell Furo to hide certain elements in a single page, using [File-Wide metadata][sphinx-file-wide-metadata].
-
-### `hide-toc`
-
-When set, Furo will not include the "contents" sidebar on that page.
-
-````{tabbed} MyST (Markdown)
-```yaml
----
-hide-toc: true
----
-
-[page contents]
-```
-````
-
-````{tabbed} reStructuredText
-```rst
-:hide-toc:
-
-[page contents]
-```
-````
-
 [css-variables]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 [sphinx-html-theme-options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
 [sphinx-custom-css]: https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html
-[sphinx-file-wide-metadata]: https://www.sphinx-doc.org/en/master/usage/restructuredtext/field-lists.html#metadata
