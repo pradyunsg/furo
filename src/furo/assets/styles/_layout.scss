@@ -21,7 +21,7 @@ body {
   // fill the viewport for pages with little content.
   min-height: 100%;
 }
-header {
+.mobile-header {
   width: 100%;
   height: var(--header-height);
   background-color: var(--color-header-background);
@@ -252,7 +252,7 @@ header {
   }
 
   // Show the header.
-  header {
+  .mobile-header {
     position: sticky;
     top: 0;
     display: flex;
