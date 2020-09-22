@@ -1,11 +1,23 @@
-{% extends "base.html" %}
+{% extends "page.html" %}
 
 {%- block extrajs -%}
 {{ super() }}
 <script src="{{ pathto('_static/searchtools.js', 1) }}" defer></script>
 {%- endblock extrajs-%}
 
+{% block content %}
+<div id="fallback" class="admonition error">
+  <p class="admonition-title">{% trans %}Error{% endtrans %}</p>
+  <p>
+    {% trans %}Please activate JavaScript to enable the search functionality.{% endtrans %}
+  </p>
+</div>
+<script>$('#fallback').hide();</script>
+
+<div id="search-results"></div>
+{% endblock %}
+
 {% block body -%}
-{% include "layouts/search.html" with context %}
+{{ super() }}
 <script src="{{ pathto('searchindex.js', 1) }}" defer></script>
 {%- endblock body %}
