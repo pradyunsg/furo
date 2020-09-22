@@ -119,20 +119,7 @@ $admonitions: (
 
   --color-background: white; // used for content + ToC
   --color-background-two: #f8f9fb; // used for navigation
-  --color-background-three: rgba(239, 239, 244, 1); // for hover in navigation
-  --color-background-three--80: rgba(
-    239,
-    239,
-    244,
-    0.8
-  ); // for hover in navigation
-  --color-background-three--0: rgba(
-    239,
-    239,
-    244,
-    0
-  ); // for hover in navigation
-
+  --color-background-three: rgba(239, 239, 244, 1); // for navigation-item hover
   --color-background-border: #eeebee;
 
   // Announcements
@@ -191,8 +178,8 @@ $admonitions: (
   --color-sidebar-item-background--hover: linear-gradient(
     -90deg,
     var(--color-background-three) 0%,
-    var(--color-background-three--80) 90%,
-    var(--color-background-three--0) 100%
+    var(--color-background-three) 90%,
+    transparent 100%
   );
 
   --color-sidebar-item-expander-background: transparent;
