@@ -38,7 +38,7 @@
 
   &::before {
     content: "";
-    position: relative;
+    position: absolute;
     left: var(--sidebar-item-spacing-horizontal);
     width: var(--sidebar-search-icon-size);
     height: var(--sidebar-search-icon-size);
