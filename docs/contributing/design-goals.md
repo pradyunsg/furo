@@ -1,6 +1,8 @@
 # Design Goals
 
-TODO: Write this.
+```{todo}
+Write this.
+```
 
 - why I wrote this.
   - good navigational capabilities in sidebar
