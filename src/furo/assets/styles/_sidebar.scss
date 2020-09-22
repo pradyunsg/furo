@@ -8,18 +8,18 @@
   display: flex;
   flex-direction: column;
 
-  padding: var(--sidebar-item-padding-vertical)
-    var(--sidebar-item-padding-horizontal);
+  padding: var(--sidebar-item-spacing-vertical)
+    var(--sidebar-item-spacing-horizontal);
   text-decoration: none;
 }
 
 .sidebar-brand-text {
-  margin: var(--sidebar-item-padding-vertical) 0;
+  margin: var(--sidebar-item-spacing-vertical) 0;
   font-size: 1.5rem;
 }
 
 .sidebar-logo-container {
-  margin: var(--sidebar-item-padding-vertical) 0;
+  margin: var(--sidebar-item-spacing-vertical) 0;
 }
 
 .sidebar-logo {
@@ -34,12 +34,12 @@
 .sidebar-search-container {
   display: flex;
   align-items: center;
-  margin-top: var(--sidebar-search-margin-top);
+  margin-top: var(--sidebar-search-space-above);
 
   &::before {
     content: "";
-    position: absolute;
-    left: var(--sidebar-item-padding-horizontal);
+    position: relative;
+    left: var(--sidebar-item-spacing-horizontal);
     width: var(--sidebar-search-icon-size);
     height: var(--sidebar-search-icon-size);
   }
@@ -48,12 +48,12 @@
 .sidebar-search {
   box-sizing: border-box;
 
-  padding-top: var(--sidebar-search-input-padding-vertical);
-  padding-bottom: var(--sidebar-search-input-padding-vertical);
-  padding-right: var(--sidebar-search-input-padding-horizontal);
+  padding-top: var(--sidebar-search-input-spacing-vertical);
+  padding-bottom: var(--sidebar-search-input-spacing-vertical);
+  padding-right: var(--sidebar-search-input-spacing-horizontal);
   padding-left: calc(
-    var(--sidebar-item-padding-horizontal) +
-      var(--sidebar-search-input-padding-horizontal) +
+    var(--sidebar-item-spacing-horizontal) +
+      var(--sidebar-search-input-spacing-horizontal) +
       var(--sidebar-search-icon-size)
   );
 
@@ -76,7 +76,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 .sidebar-tree {
   font-size: var(--sidebar-item-font-size);
-  margin: var(--sidebar-tree-margin-top) 0 var(--sidebar-item-padding-vertical);
+  margin: var(--sidebar-tree-space-above) 0 var(--sidebar-item-spacing-vertical);
 
   ul {
     padding: 0;
@@ -93,7 +93,7 @@
     margin: 0;
 
     > ul {
-      margin-left: var(--sidebar-item-padding-horizontal);
+      margin-left: var(--sidebar-item-spacing-horizontal);
     }
   }
   .reference {
@@ -105,8 +105,8 @@
     height: 100%;
     width: 100%;
 
-    padding: var(--sidebar-item-padding-vertical)
-      var(--sidebar-item-padding-horizontal);
+    padding: var(--sidebar-item-spacing-vertical)
+      var(--sidebar-item-spacing-horizontal);
 
     // Add a nice little "external-link" arrow here.
     &.external::after {
@@ -140,10 +140,10 @@
     font-weight: bold;
     text-transform: uppercase;
 
-    margin: var(--sidebar-caption-margin-top) 0 0 0;
+    margin: var(--sidebar-caption-space-above) 0 0 0;
 
-    padding: var(--sidebar-item-padding-vertical)
-      var(--sidebar-item-padding-horizontal);
+    padding: var(--sidebar-item-spacing-vertical)
+      var(--sidebar-item-spacing-horizontal);
   }
   // If it has children, add a bit more padding to wrap the content to avoid
   // overlapping with the <label>

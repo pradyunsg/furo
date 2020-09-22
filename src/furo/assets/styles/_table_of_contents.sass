@@ -3,11 +3,11 @@
 
 .toc-title-container
   padding: var(--toc-title-padding)
-  padding-top: var(--toc-padding-vertical)
+  padding-top: var(--toc-spacing-vertical)
 
 .toc-title
   font-size: var(--toc-title-font-size)
-  padding-left: var(--toc-padding-horizontal)
+  padding-left: var(--toc-spacing-horizontal)
   text-transform: uppercase
 
 // If the ToC is not present, hide these elements coz they're not relevant.
@@ -18,8 +18,8 @@
   font-size: var(--toc-font-size)
   line-height: 1.3
 
-  padding-left: calc(var(--toc-padding-horizontal) - var(--toc-item-padding-horizontal))
-  margin-bottom: var(--toc-padding-vertical)
+  padding-left: calc(var(--toc-spacing-horizontal) - var(--toc-item-spacing-horizontal))
+  margin-bottom: var(--toc-spacing-vertical)
 
   // Hide the "top level" bullet.
   > ul > li
@@ -33,9 +33,9 @@
     list-style-type: none
     margin-top: 0
     margin-bottom: 0
-    padding-left: var(--toc-item-padding-horizontal)
+    padding-left: var(--toc-item-spacing-horizontal)
   li
-    padding-top: var(--toc-item-padding-vertical)
+    padding-top: var(--toc-item-spacing-vertical)
 
     .reference
       text-decoration: none
