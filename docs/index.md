@@ -4,8 +4,8 @@ See `_templates/layouts/home.html` for the actual homepage HTML. This file only 
 
 ```{toctree}
 quickstart
-usage/index
 customisation/index
+reference/index
 ```
 
 ```{toctree}
