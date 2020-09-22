@@ -12,7 +12,7 @@ Flesh this section out.
 
 Furo's build process uses Gulp. Running `gulp build` in the repository root will compile the theme's CSS and JS assets (`src/furo/assets/`) into the correct final files (inside `src/furo/theme/static`).
 
-When building the distributions for upload, `gulp build` is run once and the `src/furo/assets/` directory is excluded for the final distribution. Thus, *both* the source distribution and wheel distribution do not contain the original source code for Furo and only contain the compiled SCSS and JS files.
+When building the distributions for upload, `gulp build` is run once and the `src/furo/assets/` directory is excluded for the final distribution. Thus, _both_ the source distribution and wheel distribution do not contain the original source code for Furo and only contain the compiled SCSS and JS files.
 
 ```{note}
 It is not ideal that the version-controlled source tree is not installable using pip directly. There is a need for a `gulp build` command to be run between the clone and installation.

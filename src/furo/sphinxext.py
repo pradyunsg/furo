@@ -13,10 +13,9 @@ This provides a single `furo-demo` directive, which:
     {lines-of-reStructuredText}
 
 """
-
 import sys
-
 from textwrap import indent
+
 from docutils import nodes
 from docutils.statemachine import StringList
 from sphinx.directives import SphinxDirective
@@ -90,4 +89,4 @@ class FuroDemoDirective(SphinxDirective):
 
 
 def setup(app):
-    app.add_directive('furo-demo', FuroDemoDirective)
+    app.add_directive("furo-demo", FuroDemoDirective)

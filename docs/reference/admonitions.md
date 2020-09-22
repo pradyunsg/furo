@@ -54,7 +54,6 @@ Maaa! I made it look the same by setting the class.
 
 ````
 
-
 ## Supported types
 
 `admonition`

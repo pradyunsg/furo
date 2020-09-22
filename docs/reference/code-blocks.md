@@ -23,7 +23,7 @@ print("And with the triple backticks syntax, you can have syntax highlighting.")
 print("Or disable all syntax highlighting.")
 ```
 
-There's a lot of power hidden underneath the triple backticks in MyST Markdown, 
+There's a lot of power hidden underneath the triple backticks in MyST Markdown,
 as seen in <https://myst-parser.readthedocs.io/en/latest/using/intro.html#block-level-directives-with-myst-markdown>.
 
 +++

@@ -19,4 +19,4 @@ Flesh this out.
 ```
 
 [myst-markdown]: https://myst-parser.readthedocs.io/en/latest/
-[reStructuredText]: https://docutils.sourceforge.io/docs/user/rst/quickref.html
+[restructuredtext]: https://docutils.sourceforge.io/docs/user/rst/quickref.html
