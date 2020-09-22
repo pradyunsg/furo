@@ -64,7 +64,7 @@
     {%- for path in script_files -%}
       {# We want Sphinx's hard-coded scripts to be loaded synchronously #}
       {%- if path in ["_static/jquery.js", "_static/underscore.js"] -%}
-        <script src="{{ pathto(path, 1) }}" async></script>
+        <script src="{{ pathto(path, 1) }}"></script>
       {% elif path in ["_static/doctools.js", "_static/language_data.js"] %}
         <script src="{{ pathto(path, 1) }}" defer></script>
       {% else %}
