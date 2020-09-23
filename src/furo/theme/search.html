@@ -5,6 +5,10 @@
 <script src="{{ pathto('_static/searchtools.js', 1) }}" defer></script>
 {%- endblock extrajs-%}
 
+{%- block htmltitle -%}
+<title>{{ _("Search") }} - {{ docstitle }}</title>
+{%- endblock htmltitle -%}
+
 {% block content %}
 <div id="fallback" class="admonition error">
   <p class="admonition-title">{% trans %}Error{% endtrans %}</p>
