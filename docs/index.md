@@ -1,8 +1,12 @@
-# Home
+# Furo
 
-See `_templates/layouts/home.html` for the actual homepage HTML. This file only serves to provide the correct toctree to Sphinx.
+```{todo}
+Write this.
+```
 
 ```{toctree}
+:hidden:
+
 quickstart
 customisation/index
 reference/index
@@ -10,6 +14,7 @@ reference/index
 
 ```{toctree}
 :caption: Development
+:hidden:
 
 contributing/index
 changelog
