@@ -16,9 +16,15 @@ article {
       margin-bottom: 0;
     }
   }
+  .align-left {
+    float: left;
+    clear: left;
+    margin: 0 1rem 1rem;
+  }
   .align-right {
     float: right;
-    margin: 0.5rem;
+    clear: right;
+    margin: 0 1rem 1rem;
   }
   .align-center {
     text-align: center;
