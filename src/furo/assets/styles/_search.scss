@@ -1,3 +1,6 @@
+//
+// Search Page Listing
+//
 ul.search {
   padding-left: 0;
   list-style: none;
@@ -8,6 +11,9 @@ ul.search {
   }
 }
 
+//
+// Highlighted by links in search page
+//
 .highlighted {
   background-color: var(--color-highlighted-background);
   color: var(--color-highlighted-text);
