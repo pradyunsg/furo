@@ -276,6 +276,12 @@ body {
       width: var(--header-height);
     }
   }
+
+  // Add a scroll margin for the content
+  :target {
+    scroll-margin-top: var(--header-height);
+  }
+
   // Center the page, and accommodate for the header.
   .page {
     flex-direction: column;
