@@ -40,7 +40,11 @@
 
     {#- Site title -#}
     {%- block htmltitle -%}
-      <title>{{ title }}</title>
+      {% if pagename == master_doc %}
+        <title>{{ _("Home") }} - {{ docstitle }}</title>
+      {% else %}
+        <title>{{ title }} - {{ docstitle }}</title>
+      {% endif %}
     {%- endblock -%}
 
     {# Custom stylesheets #}
