@@ -67,7 +67,7 @@ body {
 .toc-sticky {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: calc(100vh - (100vh - 100%));
 
   display: flex;
   flex-direction: column;
