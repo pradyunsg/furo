@@ -150,9 +150,11 @@ dl.footnote {
   }
 
   dd {
-    p,
+    p:first-child,
     ul {
       margin-top: 0.125rem;
+    }
+    ul {
       margin-bottom: 0.125rem;
     }
   }
