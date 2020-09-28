@@ -9,6 +9,7 @@ basic
 ```{toctree}
 :maxdepth: 1
 
+api
 admonitions
 code-blocks
 tables
