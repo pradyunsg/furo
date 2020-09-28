@@ -150,7 +150,7 @@ dl.footnote {
   }
 
   dd {
-    p:first-child,
+    > p:first-child,
     ul {
       margin-top: 0.125rem;
     }
