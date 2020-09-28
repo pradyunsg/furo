@@ -70,8 +70,8 @@ def translate_into_tabbed_demo(block_text):
 
     string_list = StringList()
 
-    string_list.extend(_md_demo(md))
     string_list.extend(_rst_demo(rst))
+    string_list.extend(_md_demo(md))
 
     return string_list
 
