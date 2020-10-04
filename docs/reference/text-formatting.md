@@ -1,37 +1,34 @@
 # Text Formatting
 
+Text formatting is an important aspect of written text. Sphinx provides support for several ways to apply specific formatting.
+
 ```{furo-demo}
 Content can have inline markup like *emphasis*, **strong emphasis**,
-`inline literals`, {sub}`subscript`, {sup}`superscript` and more!
-You can even reference {pep}`13`. Yes, this is Markdown.
+`inline literals`, {sub}`subscript`, {sup}`superscript` and so much more.
+Providing a reference to {pep}`8` is straightforward. You can also include
+abbreviations like {abbr}`HTML (Hyper Text Markup Language)`.
 
-Hyperlinks can take various forms, so here's a list of them:
+It is possible to have multiple paragraphs of text, which get separated
+from each other visually. When stronger visual separation is desired, a
+horizontal separator can be used (3 or more punctuation characters on a line).
 
-- standalone hyperlink: <https://python.org/>
-- hyperlink using references: [link][markdown-external-hyperlink]
-- hyperlink with inline URL: [link](https://python.org/)
-- hyperlink to a different page: [link](../quickstart)
-- hyperlink to a specific API element: {class}`pathlib.Path`
+---
 
-You can even have abbreviations like {abbr}`HTML (Hyper Text Markup Language)`.
-
-[markdown-external-hyperlink]: https://python.org/
+This is written in Markdown.
 
 +++
 
 Content can have inline markup like *emphasis*, **strong emphasis**,
-``inline literals``, :sub:`subscript`, :sup:`superscript` and more!
-You can even reference :pep:`13`. Yes, this is reStructuredText.
+``inline literals``, :sub:`subscript`, :sup:`superscript` and so much more.
+Providing a reference to :pep:`8` is straightforward. You can also include
+abbreviations like :abbr:`HTML (Hyper Text Markup Language)`.
 
-Hyperlinks can take various forms, so here's a list of them:
+It is possible to have multiple paragraphs of text, which get separated
+from each other visually. When stronger visual separation is desired, a
+horizontal separator can be used (4 or more punctuation characters on a line).
 
-- standalone hyperlink: https://python.org/
-- hyperlink using references: link_ (this is borked due to a MyST bug)
-- hyperlink with inline URL: `link <https://python.org/>`_
-- hyperlink to a different page: :any:`link <../quickstart>`
-- hyperlink to a specific API element: :class:`pathlib.Path`
+----
 
-You can even have abbreviations like :abbr:`HTML (Hyper Text Markup Language)`.
+This is written in reStructuredText.
 
-.. _link: https://python.org/
 ```
