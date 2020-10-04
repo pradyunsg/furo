@@ -9,6 +9,7 @@ text-formatting
 admonitions
 api
 code-blocks
+hyperlinks
 images
 lists
 tables
