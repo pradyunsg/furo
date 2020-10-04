@@ -3,16 +3,13 @@
 Furo supports everything you can do with standard Sphinx, as well as few recommended third-party Sphinx extensions. This section showcases the various elements you can use with Furo. The syntax for all the elements is presented in both [reStructuredText] and [Markdown (MyST)][myst-markdown].
 
 ```{toctree}
-basic
-```
-
-```{toctree}
 :maxdepth: 1
 
 text-formatting
 admonitions
 api
 code-blocks
+images
 lists
 tables
 ```
