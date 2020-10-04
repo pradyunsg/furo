@@ -1,5 +1,33 @@
 # Changelog
 
+## unreleased
+
+- Improve handling of non-default zoom levels in admonitions.
+
+## 2020.10.05.beta9
+
+- Add per-build hashes to asset URLs, to simplify cache invalidation.
+- Tweak spacing in API documentation.
+
+## 2020.09.28.beta8
+
+- Require Sphinx 3.
+- Add styling for API documentation.
+- Add styling for abbreviations.
+- Add `clear` CSS property for left/right aligned content.
+- Add styling to tweak the look of tabs.
+- Drop the complexities introduced for custom homepages.
+- Tweak color of problematic content.
+- Tweak font-size handling for code-blocks.
+- Tweak font-size handling for admonitions.
+- Tweak spacing around code-blocks.
+- Tweak how pages look with announcement and shorter-than-viewport content.
+- Tweak styling for lists.
+- Fix overlays to correctly show on top of content.
+- Restructure sidebar scrolling, to correctly fill viewport.
+- Change JS from the basic theme to use blocking network requests.
+- Change inline table of contents to look like an error, nudging toward to not using it.
+
 ## 2020.09.15.beta7
 
 - Automate version management
