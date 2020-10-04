@@ -1,19 +1,5 @@
 # Basic Markup
 
-## Code
-
-````{furo-demo}
-```python
-print("Hello from Markdown")
-```
-
-+++
-
-.. code-block:: python
-
-    print("Hello from reStructuredText")
-````
-
 ## Images
 
 ```{furo-demo}
