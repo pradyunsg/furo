@@ -12,6 +12,7 @@ basic
 admonitions
 api
 code-blocks
+lists
 tables
 text-formatting
 ```
