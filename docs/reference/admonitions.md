@@ -1,6 +1,6 @@
 # Admonitions
 
-Admonitions, also known as call-outs, are an excellent choice for including side content without significantly interrupting the document flow. Sphinx provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content.
+Admonitions are a great way to include side content, without significantly interrupting the document flow. Sphinx provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content.
 
 ## Basic Usage
 
