@@ -1,6 +1,6 @@
 """A clean customisable Sphinx documentation theme."""
 
-__version__ = "2020.10.05.beta9"
+__version__ = "2020.10.05.dev10"
 
 import secrets
 from pathlib import Path
