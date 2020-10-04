@@ -9,12 +9,12 @@ basic
 ```{toctree}
 :maxdepth: 1
 
+text-formatting
 admonitions
 api
 code-blocks
 lists
 tables
-text-formatting
 ```
 
 ```{todo}
