@@ -2,6 +2,7 @@
 
 __version__ = "2020.09.28.dev9"
 
+import secrets
 from pathlib import Path
 
 from .body import wrap_elements_that_can_get_too_wide
@@ -39,6 +40,9 @@ def _html_page_context(app, pagename, templatename, context, doctree):
         context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
 
     context["furo_version"] = __version__
+
+    # Include a hash to ensure the assets get refreshed.
+    context["furo_asset_hash"] = secrets.token_hex(12)
 
 
 def setup(app):

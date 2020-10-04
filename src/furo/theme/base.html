@@ -56,8 +56,8 @@
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles -%}
-    <link rel="stylesheet" href="{{ pathto('_static/styles/default.css', 1) }}">
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
+    <link rel="stylesheet" href="{{ pathto('_static/styles/default.css', 1) }}?{{ furo_asset_hash }}">
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}?{{ furo_asset_hash }}">
     {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
 
@@ -79,7 +79,7 @@
 
     {# Theme-related JavaScript libraries #}
     {%- block theme_scripts -%}
-    <script src="{{ pathto('_static/scripts/main.js', 1) }}"></script>
+    <script src="{{ pathto('_static/scripts/main.js', 1) }}?{{ furo_asset_hash }}"></script>
     {%- endblock -%}
 
     {#- Custom front matter #}
