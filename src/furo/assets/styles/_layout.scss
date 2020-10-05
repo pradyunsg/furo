@@ -30,7 +30,7 @@ body {
 
   // Looks like sub-script/super-script have this, and we need this to
   // be "on top" of those.
-  z-index: 100;
+  z-index: 10;
 
   // Add shadow when scrolled
   &.scrolled {
@@ -163,19 +163,19 @@ body {
   background-color: rgba(0, 0, 0, 0.54);
 }
 .sidebar-overlay {
-  z-index: 200;
+  z-index: 20;
 }
 .toc-overlay {
-  z-index: 400;
+  z-index: 40;
 }
 
 // Keep things on top and smooth.
 .sidebar-drawer {
-  z-index: 300;
+  z-index: 30;
   transition: left 250ms ease-in-out;
 }
 .toc-drawer {
-  z-index: 500;
+  z-index: 50;
   transition: right 250ms ease-in-out;
 }
 
