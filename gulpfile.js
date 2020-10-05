@@ -6,6 +6,7 @@ var concat = require("gulp-concat");
 var postcss = require("gulp-postcss");
 var rename = require("gulp-rename");
 var sass = require("gulp-sass");
+var sourcemaps = require("gulp-sourcemaps");
 var uglify = require("gulp-uglify");
 
 var Fiber = require("fibers");
@@ -22,17 +23,21 @@ var dest_path = "./src/furo/theme/static";
 function css() {
   return gulp
     .src(src_path + "styles/[!_]*.scss", { since: gulp.lastRun(css) })
+    .pipe(sourcemaps.init())
     .pipe(sass({ fiber: Fiber }).on("error", sass.logError))
     .pipe(postcss(plugins))
     .pipe(rename({ dirname: "styles", extname: ".css" }))
+    .pipe(sourcemaps.write(""))
     .pipe(gulp.dest(dest_path));
 }
 
 function javascript(cb) {
   return gulp
     .src(src_path + "scripts/[!_]*.js", { since: gulp.lastRun(javascript) })
+    .pipe(sourcemaps.init())
     .pipe(concat("scripts/main.js"))
     .pipe(uglify())
+    .pipe(sourcemaps.write(""))
     .pipe(gulp.dest(dest_path));
 }
 
