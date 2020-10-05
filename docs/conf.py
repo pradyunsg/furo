@@ -27,6 +27,7 @@ author = "Pradyun Gedam"
 
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
@@ -35,6 +36,14 @@ extensions = [
     "furo.sphinxext",  # only meant for Furo's own documentation.
 ]
 templates_path = ["_templates"]
+
+#
+# -- Options for intersphinx -------------------------------------------------------
+#
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'sphinx': ('https://www.sphinx-doc.org/', None),
+}
 
 #
 # -- Options for TODOs -------------------------------------------------------
