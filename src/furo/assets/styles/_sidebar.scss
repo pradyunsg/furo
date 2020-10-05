@@ -7,6 +7,7 @@
 .sidebar-brand {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 
   padding: var(--sidebar-item-spacing-vertical)
     var(--sidebar-item-spacing-horizontal);
