@@ -1,7 +1,7 @@
-# Furo
-
-A clean customizable theme for [Sphinx](https://www.sphinx-doc.org/).
-
+<h1 align="center">Furo</h1>
+<p align="center">
+  A clean customizable theme for <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+</p>
 <a href="https://pradyunsg.me/furo/">
   <img align="center" src="./docs/_static/demo.png" alt="Demo image">
 </a>
