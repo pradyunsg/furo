@@ -1,16 +1,10 @@
 # Customisation
 
 ```{todo}
-This entire page is still a work-in-progress.
+This entire section is still a work-in-progress.
 ```
 
-Furo can be customised in many ways.
-
-- provides a lot of points for customising the generated documentation
-- is possible to tweak:
-  - the overall theme's look
-  - the sidebar's contents
-  - selectively hide UI elements/TOC on a certain pages
+Furo supports customisation of the overall theme's look, as well as control of certain elements on a page-by-page basis.
 
 ```{toctree}
 :hidden:
@@ -22,30 +16,23 @@ fonts
 toc
 ```
 
-colors-and-fonts
-nav-sidebar
-toc-sidebar
-announcement
-landing-page
-admonitions
-
 ## Theme options
 
 Furo utilizes [`html_theme_options`][sphinx-html-theme-options] key in `conf.py` for customisation of the overall theme.
 
 ### `css_variables`
 
-```{todo}
-This needs rewriting, and more... "prominence".
-```
+Furo makes extensive use of [CSS variables][css-variables]. These are used for nearly all elements of the page, allowing them to be overridden by the user.
 
-Furo's stylesheet makes extensive use of [CSS variables][css-variables]. It is possible to change look and feel of the documentation.
-
-`css_variables` provides an easy way to override Furo's default values for these variables.
+The `css_variables` theme option is the recommended mechanism to override Furo's default values for these variables.
 
 ```python
 html_theme_options = {
-    "css_variables": {"color-brand-primary": "red", "color-brand-content": "#CC3333",}
+    "css_variables": {
+        "color-brand-primary": "red",
+        "color-brand-content": "#CC3333",
+        "color-admonition-background": "orange",
+    }
 }
 ```
 
