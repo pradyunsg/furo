@@ -13,6 +13,11 @@
   overflow: hidden;
   page-break-inside: avoid;
 
+
+  // First element should have no margin, since the title has it.
+  > :nth-child(2) {
+    margin-top: 0;
+  }
   // Last item should have no margin, since we'll control that w/ padding
   > :last-child {
     margin-bottom: 0;
