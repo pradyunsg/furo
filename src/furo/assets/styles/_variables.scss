@@ -128,8 +128,8 @@ $admonitions: (
   --color-announcement-text: #eeebee;
 
   // Brand colors
-  --color-brand-primary: #2962ff;
-  --color-brand-content: #2b5be0;
+  --color-brand-primary: hsl(224, 100%, 58%);
+  --color-brand-content: hsl(224, 74%, 52%);
 
   // Admonitions!
   --color-admonition-background: transparent;
@@ -214,10 +214,10 @@ $admonitions: (
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-brand-primary: hsl(215, 70%, 50%);
-    --color-brand-content: hsl(215, 60%, 50%);
+    --color-brand-primary: hsl(210, 100%, 55%);
+    --color-brand-content: hsl(210, 85%, 55%);
 
-    --color-foreground: rgba(255, 255, 255, 0.8);
+    --color-foreground: rgba(255, 255, 255, 0.85);
     --color-foreground-secondary: hsl(215, 5%, 63%);
     --color-foreground-border: hsl(215, 1%, 47%);
 
