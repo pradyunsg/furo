@@ -64,6 +64,17 @@ table > caption,
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  :target > &:first-child > .headerlink {
+    visibility: visible;
+  }
+}
+
 // Captions
 article p.caption,
 table > caption,
