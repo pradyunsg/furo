@@ -1,5 +1,9 @@
 # Changelog
 
+## 2020.10.13.beta12
+
+- Fix image link in README, to show up correctly on PyPI.
+
 ## 2020.10.13.beta11
 
 - Tweak colors for dark mode.
