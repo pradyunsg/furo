@@ -66,14 +66,7 @@
     {# This is *exactly* how `basic` handles this file. #}
     <script id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
     {%- for path in script_files -%}
-      {# We want Sphinx's hard-coded scripts to be loaded synchronously #}
-      {%- if path in ["_static/jquery.js", "_static/underscore.js"] -%}
-        <script src="{{ pathto(path, 1) }}"></script>
-      {% elif path in ["_static/doctools.js", "_static/language_data.js"] %}
-        <script src="{{ pathto(path, 1) }}" defer></script>
-      {% else %}
-        <script src="{{ pathto(path, 1) }}"></script>
-      {%- endif -%}
+      {{ js_tag(path) }}
     {% endfor -%}
     {%- endblock -%}
 
