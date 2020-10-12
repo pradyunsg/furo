@@ -13,7 +13,7 @@ This provides a single `furo-demo` directive, which:
     {lines-of-reStructuredText}
 
 """
-import sys
+
 from textwrap import indent
 
 from docutils import nodes
@@ -65,7 +65,7 @@ def _rst_demo(block):
     return StringList(lines)
 
 
-def translate_into_tabbed_demo(block_text):
+def _translate_into_tabbed_demo(block_text):
     md, rst = _split_by_language(block_text)
 
     string_list = StringList()
@@ -76,17 +76,18 @@ def translate_into_tabbed_demo(block_text):
     return string_list
 
 
-class FuroDemoDirective(SphinxDirective):
+class _FuroDemoDirective(SphinxDirective):
     has_content = True
 
     def run(self):
         self.assert_has_content()
 
         container = nodes.container()
-        transated_content = translate_into_tabbed_demo(self.block_text)
+        transated_content = _translate_into_tabbed_demo(self.block_text)
         self.state.nested_parse(transated_content, 0, container)
         return [container]
 
 
 def setup(app):
-    app.add_directive("furo-demo", FuroDemoDirective)
+    """For setting up the directive."""
+    app.add_directive("furo-demo", _FuroDemoDirective)
