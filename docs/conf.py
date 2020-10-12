@@ -27,6 +27,7 @@ author = "Pradyun Gedam"
 
 extensions = [
     "sphinx.ext.autodoc",
+    "sphinx.ext.extlinks",
     "sphinx.ext.intersphinx",
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
@@ -38,11 +39,18 @@ extensions = [
 templates_path = ["_templates"]
 
 #
-# -- Options for intersphinx -------------------------------------------------------
+# -- Options for extlinks ----------------------------------------------------
+#
+extlinks = {
+    "pypi": ("https://pypi.org/project/%s/", ""),
+}
+
+#
+# -- Options for intersphinx -------------------------------------------------
 #
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3', None),
-    'sphinx': ('https://www.sphinx-doc.org/', None),
+    "python": ("https://docs.python.org/3", None),
+    "sphinx": ("https://www.sphinx-doc.org/", None),
 }
 
 #
@@ -55,6 +63,7 @@ todo_include_todos = True
 #
 myst_admonition_enable = True
 myst_deflist_enable = True
+myst_heading_anchors = 3
 
 #
 # -- Options for HTML output -------------------------------------------------
