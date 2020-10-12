@@ -132,12 +132,13 @@ $admonitions: (
   --color-brand-content: #2b5be0;
 
   // Admonitions!
-  --color-admonition: #{nth($admonition-default, 1)};
-  --color-admonition-background: #{rgba(nth($admonition-default, 1), 0.1)};
+  --color-admonition-background: transparent;
+  --color-admonition-title: #{nth($admonition-default, 1)};
+  --color-admonition-title-background: #{rgba(nth($admonition-default, 1), 0.1)};
 
   @each $name, $values in $admonitions {
-    --color-admonition--#{$name}: #{nth($values, 1)};
-    --color-admonition-background--#{$name}: #{rgba(nth($values, 1), 0.1)};
+    --color-admonition-title--#{$name}: #{nth($values, 1)};
+    --color-admonition-title-background--#{$name}: #{rgba(nth($values, 1), 0.1)};
   }
 
   // API documentation
