@@ -13,6 +13,6 @@ html_additional_pages = {
 You'll need to write HTML for the page in `_templates/your-custom-landing-page.html`, if you use the above example as-is.
 ```
 
-In case you're curious, this works because Sphinx allows overwriting existing files when generating the website and processes `html_additional_pages` *after* processing the pages normally. These two behaviours combined mean that we can overwrite the page generated with the default layout by specifying the same document with a different template in `html_additional_pages`.
+In case you're curious, this works because Sphinx allows overwriting existing files when generating the website and processes `html_additional_pages` _after_ processing the pages normally. These two behaviours combined mean that we can overwrite the page generated with the default layout by specifying the same document with a different template in `html_additional_pages`.
 
 [additional-pages]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_additional_pages
