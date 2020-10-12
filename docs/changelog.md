@@ -1,5 +1,10 @@
 # Changelog
 
+## 2020.10.13.beta11
+
+- Tweak colors for dark mode.
+- Tweak presentation of `<kbd>`, to look better in dark mode.
+
 ## 2020.10.13.beta10
 
 - Add dark mode support, based on `prefers-color-scheme`! 🎉
