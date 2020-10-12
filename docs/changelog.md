@@ -2,7 +2,14 @@
 
 ## unreleased
 
-- Improve handling of non-default zoom levels in admonitions.
+- Add dark mode support, based on `prefers-color-scheme`! 🎉
+- Add more information in the documentation (reference and customisation).
+- Add sourcemaps in the generated distribution.
+- Add support for glossary lists.
+- Drop the custom ReadTheDocs-specific CSS.
+- Fix bad transparency handling for sidebar hover on Safari.
+- Fix shrinking of sidebar brand image on Safari.
+- Tweak spacing in admonitions.
 
 ## 2020.10.05.beta9
 
