@@ -29,7 +29,7 @@ def _install_this_project_with_flit(session, *, extras=None, editable=False):
 #
 # Development Sessions
 #
-@nox.session(name="docs-live", python="3.8")
+@nox.session(name="docs-live", python="3.8", reuse_venv=True)
 def docs_live(session):
     if session.posargs:
         docs_dir = session.posargs[0]
