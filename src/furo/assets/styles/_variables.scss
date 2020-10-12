@@ -211,3 +211,22 @@ $admonitions: (
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-brand-primary: hsl(215, 70%, 50%);
+    --color-brand-content: hsl(215, 60%, 50%);
+
+    --color-foreground: rgba(255, 255, 255, 0.8);
+    --color-foreground-secondary: hsl(215, 5%, 63%);
+    --color-foreground-border: hsl(215, 1%, 47%);
+
+    --color-background: #131416;
+    --color-background-two: #1a1c1e;
+    --color-background-three: rgba(30, 33, 36, 1);
+    --color-background-three--transparent: rgba(30, 33, 36, 0);
+    --color-background-border: hsl(215, 5%, 15%);
+
+    --color-admonition-background: #18181a;
+    }
+}

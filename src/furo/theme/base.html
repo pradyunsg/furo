@@ -50,14 +50,17 @@
     {# Custom stylesheets #}
     {%- block extracss -%}
     {%- for path in css_files -%}
-    <link rel="stylesheet" href="{{ pathto(path, 1) }}" />
+    {% if not path.filename.startswith("pygments_dark") -%}
+      {{ css_tag(path) }}
+    {%- endif %}
     {% endfor -%}
     {%- endblock -%}
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles -%}
     <link rel="stylesheet" href="{{ pathto('_static/styles/default.css', 1) }}?{{ furo_asset_hash }}">
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}?{{ furo_asset_hash }}">
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
+    <link rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
     {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
 

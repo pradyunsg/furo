@@ -11,6 +11,13 @@ from .navigation import get_navigation_tree
 from .toc import should_hide_toc
 
 
+def _get_colors_for_codeblocks(highlighter, *, fg, bg):
+    return get_pygments_style_colors(
+        highlighter.formatter_args["style"],
+        fallbacks={"foreground": fg, "background": bg},
+    )
+
+
 def _html_page_context(app, pagename, templatename, context, doctree):
     if app.config.html_theme != "furo":
         return
@@ -29,11 +36,18 @@ def _html_page_context(app, pagename, templatename, context, doctree):
         context["furo_hide_toc"] = True
 
     # Inject information about styles
-    colors = get_pygments_style_colors(
-        app.builder.highlighter.formatter_args["style"],
-        fallbacks={"foreground": "#000000", "background": "#FFFFFF"},
-    )
-    context["furo_pygments"] = colors
+    context["furo_pygments"] = {
+        "light": _get_colors_for_codeblocks(
+            app.builder.highlighter,
+            fg="black",
+            bg="white",
+        ),
+        "dark": _get_colors_for_codeblocks(
+            app.builder.dark_highlighter,
+            fg="white",
+            bg="black",
+        ),
+    }
 
     # Patch the content
     if "body" in context:

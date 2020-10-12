@@ -1,15 +1,25 @@
 {#
-  This is where theme_css_variables or html_theme_options["css_variables"] gets
-  converted to actual CSS variables.
+  This is where user-provided CSS variables get converted into actual values.
 #}
 <style>
   :root {
-    --color-code-background: {{ furo_pygments.background }};
-    --color-code-foreground: {{ furo_pygments.foreground }};
+    --color-code-background: {{ furo_pygments.light.background }};
+    --color-code-foreground: {{ furo_pygments.light.foreground }};
   {% if theme_css_variables %}
   {% for name, value in theme_css_variables.items() %}
     --{{ name }}: {{ value }};
   {% endfor %}
   {% endif %}
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+    --color-code-background: {{ furo_pygments.dark.background }};
+    --color-code-foreground: {{ furo_pygments.dark.foreground }};
+      {% if theme_dark_css_variables %}
+      {% for name, value in theme_dark_css_variables.items() %}
+        --{{ name }}: {{ value }};
+      {% endfor %}
+      {% endif %}
+    }
   }
 </style>
