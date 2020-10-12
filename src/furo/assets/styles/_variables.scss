@@ -189,6 +189,7 @@ $admonitions: (
     --color-background-three
   );
 
+  --color-sidebar-search-text: var(--color-foreground);
   --color-sidebar-search-background: var(--color-background-two);
   --color-sidebar-search-background--focus: var(--color-background);
   --color-sidebar-search-border: var(--color-background-border);
