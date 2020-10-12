@@ -39,9 +39,9 @@ Furo is inspired by (and borrows elements from) some excellent technical documen
 We use [BrowserStack] to test on real devices and browsers. Shoutout to them for supporting OSS projects!
 
 [mkdocs-material]: https://squidfunk.github.io/mkdocs-material/
-[Just the Docs]: https://pmarsceill.github.io/just-the-docs/
-[GitBook]: https://www.gitbook.com/
-[BrowserStack]: https://browserstack.com/
+[just the docs]: https://pmarsceill.github.io/just-the-docs/
+[gitbook]: https://www.gitbook.com/
+[browserstack]: https://browserstack.com/
 
 ## License
 
