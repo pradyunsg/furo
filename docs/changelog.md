@@ -1,6 +1,6 @@
 # Changelog
 
-## unreleased
+## 2020.10.13.beta10
 
 - Add dark mode support, based on `prefers-color-scheme`! 🎉
 - Add more information in the documentation (reference and customisation).
