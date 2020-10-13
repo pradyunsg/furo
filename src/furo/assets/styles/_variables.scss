@@ -128,8 +128,8 @@ $admonitions: (
   --color-announcement-text: #eeebee;
 
   // Brand colors
-  --color-brand-primary: hsl(224, 100%, 58%);
-  --color-brand-content: hsl(224, 74%, 52%);
+  --color-brand-primary: #2962ff;
+  --color-brand-content: #2a5adf;
 
   // Admonitions!
   --color-admonition-background: transparent;
@@ -214,18 +214,18 @@ $admonitions: (
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-brand-primary: hsl(210, 85%, 55%);
-    --color-brand-content: hsl(210, 75%, 55%);
+    --color-brand-primary: #2b8cee;
+    --color-brand-content: #368ce2;
 
-    --color-foreground: rgba(255, 255, 255, 0.85);
-    --color-foreground-secondary: hsl(215, 5%, 63%);
-    --color-foreground-border: hsl(0, 0%, 27%);
+    --color-foreground: #ffffffd9;
+    --color-foreground-secondary: #9ca0a5;
+    --color-foreground-border: #454545;
 
     --color-background: #131416;
     --color-background-two: #1a1c1e;
     --color-background-three: rgba(30, 33, 36, 1);
     --color-background-three--transparent: rgba(30, 33, 36, 0);
-    --color-background-border: hsl(215, 5%, 15%);
+    --color-background-border: #242628;
 
     --color-admonition-background: #18181a;
     }
