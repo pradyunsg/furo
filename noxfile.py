@@ -111,9 +111,8 @@ def get_release_versions(version_file):
 
 @nox.session
 def release(session):
-    package_name = "furo"
-    version_file = f"src/{package_name}/__init__.py"
-    allowed_upstreams = ["git@github.com:pradyunsg/furo.git"]
+    version_file = f"src/{PACKAGE_NAME}/__init__.py"
+    allowed_upstreams = ["git@github.com:pradyunsg/{PACKAGE_NAME}.git"]
 
     release_version, next_version = get_release_versions(version_file)
 
