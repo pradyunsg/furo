@@ -1,38 +1,4 @@
-// This file contains styles to tweak the default styling provided by sphinx-panels
-// to better fit how Furo does things. :)
-
-// Re-colorize to match the rest of the site.
-:root
-  --tabs-color-label-active: var(--color-brand-content)
-  --tabs-color-label-inactive: var(--color-foreground-border)
-  --tabs-color-overline: var(--color-background-border)
-  --tabs-color-underline: transparent
-
-$tabs_bottom_width: 0.125rem
-
-// Tweaks as discussed in
-// https://github.com/executablebooks/sphinx-panels/pull/33
-.tabbed-set > label.tabbed-label
-  // Use a smaller font size
-  font-size: var(--font-size--small)
-  // Fix for the incorrect base unit
-  border-bottom-width: 0.125rem
-
-.tabbed-content
-  // Fix for the incorrect base unit
-  box-shadow: 0 -0.125rem var(--tabs-color-overline), 0 0.125rem var(--tabs-color-underline)
-
-// Rework the spacing on contents
-.tabbed-content
-  padding: 0
-  > p:first-child
-    margin-top: 0.75rem !important
-
-  // Don't have a radius on the top of code-blocks
-  > [class^="highlight-"]:first-child
-    .highlight
-      border-top-left-radius: 0
-      border-top-right-radius: 0
+// This file contains styles to tweak sphinx-panels to work well with Furo.
 
 // sphinx-panels includes Bootstrap 4, which uses .container which can conflict
 // with docutils' `.. container::` directive.
