@@ -16,6 +16,10 @@ toc
 
 [`html_theme_options`][sphinx-html-theme-options] in `conf.py` is used for customisations that affect the entire documentation. This is for stuff like fonts and colors.
 
+```{note}
+Note that only the configuration options list here are supported (not the ones inherited from the built-in `basic` Sphinx theme).
+```
+
 ### `css_variables`
 
 Furo makes extensive use of [CSS variables][css-variables]. These can be overridden by the user and are used for stylizing nearly all elements of the documentation.
@@ -38,11 +42,9 @@ Typos in the `css_variables` dictionary are silently ignored, and do not raise a
 
 ### `sidebar_hide_name`
 
-Controls whether you see the project's name in the sidebar of the documentation. This is useful when you only want to show your documentation's logo in the sidebar.
+Controls whether you see the project's name in the sidebar of the documentation. This is useful when you only want to show your documentation's logo in the sidebar. The default is `False`.
 
-```{code-block} python
-:linenos:
-
+```python
 html_theme_options = {
     "sidebar_hide_name": True,
 }
