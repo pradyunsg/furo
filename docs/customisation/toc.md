@@ -5,7 +5,7 @@ pages that don't have any inner headings.
 
 To explicitly hide it on a specific page, `hide-toc` can be set in the [File-Wide metadata][sphinx-file-wide-metadata] for that page.
 
-````{tabbed} reStructuredText
+````{tab} reStructuredText
 ```rst
 :hide-toc:
 
@@ -13,7 +13,7 @@ To explicitly hide it on a specific page, `hide-toc` can be set in the [File-Wid
 ```
 ````
 
-````{tabbed} Markdown (MyST)
+````{tab} Markdown (MyST)
 ```yaml
 ---
 hide-toc: true

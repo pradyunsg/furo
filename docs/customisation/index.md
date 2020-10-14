@@ -48,7 +48,7 @@ html_theme_options = {
 }
 ```
 
-```{details}
+```{note}
 The configuration options that are inherited from the built-in `basic` Sphinx theme are *not* supported in Furo.
 ```
 

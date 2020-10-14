@@ -3,7 +3,7 @@
 This provides a single `furo-demo` directive, which:
 
 - Only works when used in a MyST document.
-- Requires sphinx-panel's tabbed directive.
+- Requires sphinx-inline-tabs' tab directive.
 - Requires contents to be of the following format:
 
     {lines-of-markdown}
@@ -37,7 +37,7 @@ def _md_demo(block):
     if not block.strip("\n"):
         return StringList()
 
-    lines.append("`````{tabbed} Markdown (MyST)")
+    lines.append("`````{tab} Markdown (MyST)")
     lines.append("````md")
     lines.extend(block.splitlines())
     lines.append("````")
@@ -52,7 +52,7 @@ def _rst_demo(block):
     if not block.strip():
         return StringList()
 
-    lines.append("`````{tabbed} reStructuredText")
+    lines.append("`````{tab} reStructuredText")
     lines.append("````{eval-rst}")
     lines.append(".. code-block:: rest")
     lines.append("")
@@ -65,7 +65,7 @@ def _rst_demo(block):
     return StringList(lines)
 
 
-def _translate_into_tabbed_demo(block_text):
+def _translate_into_tab_demo(block_text):
     md, rst = _split_by_language(block_text)
 
     string_list = StringList()
@@ -83,7 +83,7 @@ class _FuroDemoDirective(SphinxDirective):
         self.assert_has_content()
 
         container = nodes.container()
-        transated_content = _translate_into_tabbed_demo(self.block_text)
+        transated_content = _translate_into_tab_demo(self.block_text)
         self.state.nested_parse(transated_content, 0, container)
         return [container]
 
