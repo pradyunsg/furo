@@ -10,7 +10,8 @@ home-page = "https://github.com/pradyunsg/furo"
 description-file = "README.md"
 requires-python = ">=3.5"
 requires = [
-  "beautifulsoup4"
+  "beautifulsoup4",
+  "sphinx",
 ]
 
 [tool.flit.metadata.requires-extra]
@@ -19,7 +20,7 @@ test = [
   "pytest-cov",
   "pytest-xdist",
 ]
-doc = ["sphinx", "myst-parser", "sphinx-panels"]
+doc = ["myst-parser", "sphinx-panels"]
 
 [tool.flit.entrypoints]
 "sphinx.html_themes" = {furo = "furo"}
