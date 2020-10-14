@@ -23,4 +23,4 @@ hide-toc: true
 ```
 ````
 
-[sphinx-file-wide-metadata]: https://www.sphinx-doc.org/en/master/usage/restructuredtext/field-lists.html#metadata
+[sphinx-file-wide-metadata]: https://www.sphinx-doc.org/en/main/usage/restructuredtext/field-lists.html#metadata

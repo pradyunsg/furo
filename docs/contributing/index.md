@@ -23,4 +23,4 @@ design-goals
 [Design Goals](./design-goals)
 : Describes the priorities for this theme's design.
 
-[code of conduct]: https://github.com/pradyunsg/furo/blob/master/CODE_OF_CONDUCT.md
+[code of conduct]: https://github.com/pradyunsg/furo/blob/main/CODE_OF_CONDUCT.md

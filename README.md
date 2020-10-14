@@ -3,7 +3,7 @@
   A clean customizable theme for <a href="https://www.sphinx-doc.org/">Sphinx</a>.
 </p>
 <a href="https://pradyunsg.me/furo/">
-  <img align="center" src="https://github.com/pradyunsg/furo/raw/master/docs/_static/demo.png" alt="Demo image">
+  <img align="center" src="https://github.com/pradyunsg/furo/raw/main/docs/_static/demo.png" alt="Demo image">
 </a>
 
 ## Quickstart

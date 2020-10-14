@@ -15,4 +15,4 @@ You'll need to write HTML for the page in `_templates/your-custom-landing-page.h
 
 In case you're curious, this works because Sphinx allows overwriting existing files when generating the website and processes `html_additional_pages` _after_ processing the pages normally. These two behaviours combined mean that we can overwrite the page generated with the default layout by specifying the same document with a different template in `html_additional_pages`.
 
-[additional-pages]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_additional_pages
+[additional-pages]: https://www.sphinx-doc.org/en/main/usage/configuration.html#confval-html_additional_pages
