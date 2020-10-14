@@ -217,6 +217,8 @@ $admonitions: (
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-problematic: #b81e1e;
+
     // Base Colors
     --color-foreground-primary: #ffffffd9; // for main text and headings
     --color-foreground-secondary: #9ca0a5; // for secondary text
