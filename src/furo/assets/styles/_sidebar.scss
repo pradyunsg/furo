@@ -54,8 +54,8 @@
   padding-right: var(--sidebar-search-input-spacing-horizontal);
   padding-left: calc(
     var(--sidebar-item-spacing-horizontal) +
-    var(--sidebar-search-input-spacing-horizontal) +
-    var(--sidebar-search-icon-size)
+      var(--sidebar-search-input-spacing-horizontal) +
+      var(--sidebar-search-icon-size)
   );
 
   width: 100%;
