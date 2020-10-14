@@ -1,5 +1,19 @@
 # Changelog
 
+## 2020.10.15.beta13
+
+- Add a direct dependency on Sphinx.
+- Add styling for "highlighted text" in dark mode.
+- Add support for sphinx-inline-tabs.
+- Change the default development branch name to `main`.
+- Drop customisations for sphinx-panel's tabs.
+- Rework the entire handling of background and foreground colours.
+- Tweak API documentation, when presented in dark mode.
+- Tweak Bootstrap 4 `.container` styling (comes from sphinx-panel).
+- Tweak borders on tables.
+- Tweak dark mode colors.
+- Tweak light mode colors.
+
 ## 2020.10.13.beta12
 
 - Fix image link in README, to show up correctly on PyPI.
