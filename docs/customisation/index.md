@@ -48,8 +48,14 @@ html_theme_options = {
 }
 ```
 
-```{note}
-The configuration options that are inherited from the built-in `basic` Sphinx theme are *not* supported in Furo.
+### `navigation_with_keys`
+
+Controls whether the user can navigate the documentation using the keyboard’s left and right arrows. The default is `False`.
+
+```python
+html_theme_options = {
+    "navigation_with_keys": True,
+}
 ```
 
 ## Page specific tweaks
