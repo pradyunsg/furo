@@ -35,11 +35,9 @@ $admonitions: (
   //////////////////////////////////////////////////////////////////////////////
   // Fonts
   //////////////////////////////////////////////////////////////////////////////
-  // This seems to be the best "system UI font stack" as on Aug 2020.
-  --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-  --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, monospace;
+  // These are adapted from https://systemfontstack.com/
+  --font-stack: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 
   --font-size--normal: 100%;
   --font-size--small: 87.5%;
