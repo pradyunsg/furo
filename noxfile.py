@@ -29,7 +29,7 @@ def _install_this_project_with_flit(session, *, extras=None, editable=False):
 #
 # Development Sessions
 #
-@nox.session(name="docs-live", python="3.8", reuse_venv=True)
+@nox.session(name="docs-live", reuse_venv=True)
 def docs_live(session):
     if session.posargs:
         docs_dir = session.posargs[0]
@@ -59,7 +59,7 @@ def docs_live(session):
         )
 
 
-@nox.session(python="3.8", reuse_venv=True)
+@nox.session(reuse_venv=True)
 def docs(session):
     # Generate relevant files prior to installation
     session.run("gulp", "build", external=True)
@@ -70,7 +70,7 @@ def docs(session):
     session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
 
 
-@nox.session(python="3.8", reuse_venv=True)
+@nox.session(reuse_venv=True)
 def lint(session):
     session.install("pre-commit")
 
@@ -82,7 +82,7 @@ def lint(session):
     session.run("pre-commit", "run", "--all-files", *args)
 
 
-@nox.session(python="3.6")
+@nox.session
 def test(session):
     _install_this_project_with_flit(session, extras=["test"])
 
