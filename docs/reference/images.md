@@ -5,13 +5,13 @@ Images can be a great supplement to technical documentation text. Sphinx provide
 ## Basic Usage
 
 ```{furo-demo}
-![](https://source.unsplash.com/200x200/daily?ferret)
+![](https://source.unsplash.com/200x200/daily?cute+animals)
 
 This is from Markdown.
 
 +++
 
-.. image:: https://source.unsplash.com/200x200/daily?ferret
+.. image:: https://source.unsplash.com/200x200/daily?cute+animals
 
 This is from reStructuredText.
 ```
@@ -19,7 +19,7 @@ This is from reStructuredText.
 ## Alignment
 
 ````{furo-demo}
-```{image} https://source.unsplash.com/200x200/daily?ferret
+```{image} https://source.unsplash.com/200x200/daily?cute+animals
 :align: center
 ```
 
@@ -27,7 +27,7 @@ This is from Markdown.
 
 +++
 
-.. image:: https://source.unsplash.com/200x200/daily?ferret
+.. image:: https://source.unsplash.com/200x200/daily?cute+animals
    :align: center
 
 This is from reStructuredText.
@@ -37,7 +37,7 @@ This is from reStructuredText.
 
 ````{furo-demo}
 
-```{figure} https://source.unsplash.com/200x200/daily?ferret
+```{figure} https://source.unsplash.com/200x200/daily?cute+animals
 This is a captioned image, which needs the "figure" directive.
 ```
 
@@ -45,7 +45,7 @@ This is from Markdown.
 
 +++
 
-.. figure:: https://source.unsplash.com/200x200/daily?ferret
+.. figure:: https://source.unsplash.com/200x200/daily?cute+animals
 
     This is a captioned image, which needs the "figure" directive.
 
