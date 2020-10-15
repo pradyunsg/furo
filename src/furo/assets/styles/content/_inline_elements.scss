@@ -57,6 +57,7 @@ table > caption,
     font-weight: 100;
     margin-left: 0.5rem;
     visibility: hidden;
+    text-decoration: none;
   }
   &:hover > .headerlink {
     visibility: visible;
