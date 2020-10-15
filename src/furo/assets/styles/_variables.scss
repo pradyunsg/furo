@@ -36,8 +36,10 @@ $admonitions: (
   // Fonts
   //////////////////////////////////////////////////////////////////////////////
   // These are adapted from https://systemfontstack.com/
-  --font-stack: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  --font-stack: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, Monaco,
+    Liberation Mono, Lucida Console, monospace;
 
   --font-size--normal: 100%;
   --font-size--small: 87.5%;
