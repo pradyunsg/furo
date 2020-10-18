@@ -76,7 +76,7 @@ Generate the documentation for Furo into the `build/docs` folder. This (mostly) 
 ## Release process
 
 - Update the changelog
-- Run `nox -s release -r -- <release version> <next version>`
+- Run `nox -s release`
 - Once that command succeeds, you're done!
 
 [github flow]: https://guides.github.com/introduction/flow/
