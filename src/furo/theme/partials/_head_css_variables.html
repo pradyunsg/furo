@@ -1,25 +1,23 @@
 {#
   This is where user-provided CSS variables get converted into actual values.
 #}
-<style>
-  :root {
-    --color-code-background: {{ furo_pygments.light.background }};
-    --color-code-foreground: {{ furo_pygments.light.foreground }};
-  {% if theme_css_variables %}
-  {% for name, value in theme_css_variables.items() %}
+{% macro declare_css_variables(user_customisations, pygments_theme) -%}
+  --color-code-background: {{ pygments_theme.background }};
+  --color-code-foreground: {{ pygments_theme.foreground }};
+  {% if user_customisations -%}
+  {% for name, value in user_customisations.items() -%}
     --{{ name }}: {{ value }};
   {% endfor %}
-  {% endif %}
+  {%- endif %}
+{%- endmacro %}
+
+<style>
+  :root {
+    {{ declare_css_variables(theme_css_variables, furo_pygments.light) }}
   }
   @media (prefers-color-scheme: dark) {
     :root {
-    --color-code-background: {{ furo_pygments.dark.background }};
-    --color-code-foreground: {{ furo_pygments.dark.foreground }};
-      {% if theme_dark_css_variables %}
-      {% for name, value in theme_dark_css_variables.items() %}
-        --{{ name }}: {{ value }};
-      {% endfor %}
-      {% endif %}
+      {{ declare_css_variables(theme_dark_css_variables, furo_pygments.dark) }}
     }
   }
 </style>
