@@ -13,11 +13,19 @@
 
 <style>
   :root {
-    {{ declare_css_variables(theme_css_variables, furo_pygments.light) }}
+    {{ declare_css_variables(theme_light_css_variables, furo_pygments.light) }}
   }
   @media (prefers-color-scheme: dark) {
     :root {
       {{ declare_css_variables(theme_dark_css_variables, furo_pygments.dark) }}
     }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    {{ declare_css_variables(theme_light_css_variables, furo_pygments.light) }}
+  }
+  .override-dark {
+    {{ declare_css_variables(theme_dark_css_variables, furo_pygments.dark) }}
   }
 </style>

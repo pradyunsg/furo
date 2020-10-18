@@ -20,15 +20,15 @@ toc
 Note that only the configuration options list here are supported (not the ones inherited from the built-in `basic` Sphinx theme).
 ```
 
-### `css_variables`
+### `light_css_variables`/`dark_css_variables`
 
 Furo makes extensive use of [CSS variables][css-variables]. These can be overridden by the user and are used for stylizing nearly all elements of the documentation.
 
-Setting `css_variables` is the recommended mechanism to override Furo's default values for these variables.
+Setting `*_css_variables` is the recommended mechanism to override Furo's default values for these variables.
 
 ```python
 html_theme_options = {
-    "css_variables": {
+    "light_css_variables": {
         "color-brand-primary": "red",
         "color-brand-content": "#CC3333",
         "color-admonition-background": "orange",
@@ -37,7 +37,7 @@ html_theme_options = {
 ```
 
 ```{caution}
-Typos in the `css_variables` dictionary are silently ignored, and do not raise any errors or warnings. Double check that your spellings and values are correct and valid.
+Typos in the `*_css_variables` dictionary are silently ignored, and do not raise any errors or warnings. Double check that your spellings and values are correct and valid.
 ```
 
 ### `sidebar_hide_name`
