@@ -15,10 +15,6 @@
 
     if (positionY == 0) {
       tocScroll.scrollTo(0, 0);
-    } else if (
-      Math.ceil(window.innerHeight + positionY) >= document.body.offsetHeight
-    ) {
-      tocScroll.scrollTo(0, tocScroll.scrollHeight);
     }
   }
 
