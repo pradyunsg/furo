@@ -67,7 +67,10 @@ def get_colors_for_codeblocks(highlighter, *, fg, bg):
     """Get background/foreground colors for given pygments style."""
     return get_pygments_style_colors(
         highlighter.formatter_args["style"],
-        fallbacks={"foreground": fg, "background": bg},
+        fallbacks={
+            "foreground": fg,
+            "background": bg,
+        },
     )
 
 
