@@ -97,7 +97,8 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     context["furo_navigation_tree"] = get_navigation_tree(toctree_html)
 
     # Should the table of contents be hidden?
-    if "hide-toc" in context.get("meta", {}):
+    file_meta = context.get("meta", None) or {}
+    if "hide-toc" in file_meta:
         context["furo_hide_toc"] = True
     elif "toc" not in context:
         context["furo_hide_toc"] = True
