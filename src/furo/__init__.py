@@ -13,10 +13,9 @@ from .navigation import get_navigation_tree
 
 
 @lru_cache(maxsize=None)
-def should_hide_toc(toc):
-    """Determine whether toc has content beyond the initial heading."""
-    if not toc:
-        return True
+def has_exactly_one_list_item(toc):
+    """Check if the toc has exactly one list item."""
+    assert toc
 
     soup = BeautifulSoup(toc, "html.parser")
     if len(soup.find_all("li")) == 1:
@@ -83,11 +82,15 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     )
     context["furo_navigation_tree"] = get_navigation_tree(toctree_html)
 
-    # Custom "should hide ToC" logic
-    context["furo_hide_toc"] = should_hide_toc(context.get("toc", ""))
-    # Allow for hiding toc via ToC in page-wide metadata.
-    if "hide-toc" in (context.get("meta", None) or {}):
+    # Should the table of contents be hidden?
+    if "hide-toc" in context.get("meta", {}):
         context["furo_hide_toc"] = True
+    elif "toc" not in context:
+        context["furo_hide_toc"] = True
+    elif not context["toc"]:
+        context["furo_hide_toc"] = True
+    else:
+        context["furo_hide_toc"] = has_exactly_one_list_item(context["toc"])
 
     # Inject information about styles
     context["furo_pygments"] = {
