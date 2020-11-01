@@ -75,6 +75,10 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     if app.config.html_theme != "furo":
         return
 
+    # Basic constants
+    context["furo_version"] = __version__
+    context["furo_asset_hash"] = secrets.token_hex(12)
+
     # Custom Navigation Tree (adds checkboxes and labels)
     if "toctree" in context:
         toctree = context["toctree"]
@@ -116,11 +120,6 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     # Patch the content
     if "body" in context:
         context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
-
-    context["furo_version"] = __version__
-
-    # Include a hash to ensure the assets get refreshed.
-    context["furo_asset_hash"] = secrets.token_hex(12)
 
 
 def setup(app):
