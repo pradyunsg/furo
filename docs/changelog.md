@@ -1,5 +1,21 @@
 # Changelog
 
+## 2020.11.01.beta14
+
+- Add classifiers to the theme.
+- Add friendly messages for users of `html_sidebars`.
+- Add link to homepage, in mobile header.
+- Add support for ethical ads in the sidebar.
+- Change `css_variables` to `light_css_variables`.
+- Change font stack to match to GitHub.
+- Change the color used for `<hr>` tags.
+- Change unsplash URLs to use cute+animal as cues
+- Document `navigation_with_keys`.
+- Drop logic that jumps toc-scroll to bottom-of-page.
+- Improve customisation documentation.
+- Remove text underline from headerlink.
+- Strip tags in title.
+
 ## 2020.10.15.beta13
 
 - Add a direct dependency on Sphinx.
