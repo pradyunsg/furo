@@ -76,10 +76,17 @@ def _html_page_context(app, pagename, templatename, context, doctree):
         return
 
     # Custom Navigation Tree (adds checkboxes and labels)
-    toctree = context.get("toctree", lambda **kwargs: "")
-    toctree_html = toctree(
-        collapse=False, titles_only=True, maxdepth=-1, includehidden=True
-    )
+    if "toctree" in context:
+        toctree = context["toctree"]
+        toctree_html = toctree(
+            collapse=False,
+            titles_only=True,
+            maxdepth=-1,
+            includehidden=True,
+        )
+    else:
+        toctree_html = ""
+
     context["furo_navigation_tree"] = get_navigation_tree(toctree_html)
 
     # Should the table of contents be hidden?
