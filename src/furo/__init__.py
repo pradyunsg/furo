@@ -63,6 +63,7 @@ def get_pygments_style_colors(style, *, fallbacks):
     return {"background": background, "foreground": foreground}
 
 
+@lru_cache(maxsize=2)
 def get_colors_for_codeblocks(highlighter, *, fg, bg):
     """Get background/foreground colors for given pygments style."""
     return get_pygments_style_colors(
@@ -74,15 +75,8 @@ def get_colors_for_codeblocks(highlighter, *, fg, bg):
     )
 
 
-def _html_page_context(app, pagename, templatename, context, doctree):
-    if app.config.html_theme != "furo":
-        return
-
-    # Basic constants
-    context["furo_version"] = __version__
-    context["furo_asset_hash"] = secrets.token_hex(12)
-
-    # Custom Navigation Tree (adds checkboxes and labels)
+def _compute_navigation_tree(context):
+    # The navigation tree, generated from the sphinx-provided ToC tree.
     if "toctree" in context:
         toctree = context["toctree"]
         toctree_html = toctree(
@@ -94,18 +88,33 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     else:
         toctree_html = ""
 
-    context["furo_navigation_tree"] = get_navigation_tree(toctree_html)
+    return get_navigation_tree(toctree_html)
 
+
+def _compute_hide_toc(context):
     # Should the table of contents be hidden?
     file_meta = context.get("meta", None) or {}
     if "hide-toc" in file_meta:
-        context["furo_hide_toc"] = True
+        return True
     elif "toc" not in context:
-        context["furo_hide_toc"] = True
+        return True
     elif not context["toc"]:
-        context["furo_hide_toc"] = True
-    else:
-        context["furo_hide_toc"] = has_exactly_one_list_item(context["toc"])
+        return True
+
+    return has_exactly_one_list_item(context["toc"])
+
+
+def _html_page_context(app, pagename, templatename, context, doctree):
+    if app.config.html_theme != "furo":
+        return
+
+    # Basic constants
+    context["furo_version"] = __version__
+    context["furo_asset_hash"] = secrets.token_hex(12)
+
+    # Values computed from page-level context.
+    context["furo_navigation_tree"] = _compute_navigation_tree(context)
+    context["furo_hide_toc"] = _compute_hide_toc(context)
 
     # Inject information about styles
     context["furo_pygments"] = {
