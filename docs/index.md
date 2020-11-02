@@ -10,6 +10,7 @@ Write this.
 quickstart
 customisation/index
 reference/index
+recommendations
 ```
 
 ```{toctree}
