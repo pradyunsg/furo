@@ -17,8 +17,29 @@ function scrollHandlerForTOC(positionY) {
     return;
   }
 
+  // top of page.
   if (positionY == 0) {
     tocScroll.scrollTo(0, 0);
+  } else if (
+    // bottom of page.
+    Math.ceil(positionY) ==
+    Math.ceil(document.documentElement.scrollHeight - window.innerHeight)
+  ) {
+    tocScroll.scrollTo(0, tocScroll.scrollHeight);
+  } else {
+    // somewhere in the middle.
+    const current = document.querySelector(".scroll-current");
+    if (current == null) {
+      return;
+    }
+
+    // scroll the currently "active" heading in toc, into view.
+    const rect = current.getBoundingClientRect();
+    if (0 > rect.top) {
+      current.scrollIntoView(true); // the argument is "alignTop"
+    } else if (rect.bottom > window.innerHeight) {
+      current.scrollIntoView(false);
+    }
   }
 }
 
