@@ -45,4 +45,4 @@ repos:
     rev: 2.1.2
     hooks:
       - id: prettier
-        exclude: src/furo/theme/.*|docs/reference/admonitions.md
+        exclude: src/furo/theme/.*|docs/(recommendations|reference/admonitions).md
