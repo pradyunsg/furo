@@ -14,7 +14,7 @@ toc
 
 ## Theme options
 
-[`html_theme_options`][sphinx-html-theme-options] in `conf.py` is used for customisations that affect the entire documentation. This is for stuff like fonts and colors.
+[`html_theme_options`][sphinx-html_theme_options] in `conf.py` is used for customisations that affect the entire documentation. This is for stuff like fonts and colors.
 
 ```{note}
 Note that only the configuration options list here are supported (not the ones inherited from the built-in `basic` Sphinx theme).
@@ -75,6 +75,6 @@ If you want more control than what is provided by the above theme options, you c
 ReadTheDocs has an excellent explanation on [how to add custom CSS files][sphinx-custom-css] to Sphinx-based documentation.
 
 [css-variables]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
-[sphinx-html-theme-options]: https://www.sphinx-doc.org/en/main/usage/configuration.html#confval-html_theme_options
+[sphinx-html_theme_options]: https://www.sphinx-doc.org/en/main/usage/configuration.html#confval-html_theme_options
 [sphinx-custom-css]: https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html
 [sphinx-file-wide-metadata]: https://www.sphinx-doc.org/en/main/usage/restructuredtext/field-lists.html#metadata
