@@ -54,13 +54,13 @@ The server also watches for changes made to the documentation (`docs/`) or theme
 :::{tip}
 My workflow, when I'm working on this theme, is along the lines of:
 
-- Run this command, and wait from the browser window to open.
+- Run this command, and wait for the browser window to open.
 - <kbd>alt</kbd>+<kbd>tab</kbd> gets me back to my text editor.
 - Make changes to some files and save those changes.
 - <kbd>alt</kbd>+<kbd>tab</kbd> switches to the browser.
 - After a small delay, the change is reflected in the browser.
 - If I want to make more changes, <kbd>alt</kbd>+<kbd>tab</kbd> and I'm back to my text editor.
-- Repeat the last 4 steps until happy.
+- Repeat the previous 4 steps until happy.
 
 \- @pradyunsg
 :::
