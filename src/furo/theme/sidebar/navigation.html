@@ -2,5 +2,14 @@
   <div class="sidebar-tree">
     {{ furo_navigation_tree }}
   </div>
-  <div id="ethical-ad-placement"></div>
+  {# Add the ethical ads div, when generating documentation on ReadTheDocs #}
+  {% if READTHEDOCS %}
+  <div
+    id="furo-sidebar-ad-placement"
+    class="flat"
+    data-ea-publisher="readthedocs"
+    data-ea-type="readthedocs-sidebar"
+    data-ea-manual="true"
+  ></div>
+  {% endif %}
 </div>
