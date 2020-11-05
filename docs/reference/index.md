@@ -15,6 +15,7 @@ hyperlinks
 images
 lists
 tables
+tabs
 really-long
 ```
 
