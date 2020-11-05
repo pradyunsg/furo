@@ -58,7 +58,7 @@
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles -%}
-    <link rel="stylesheet" href="{{ pathto('_static/styles/default.css', 1) }}?{{ furo_asset_hash }}">
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) | e }}?{{ furo_asset_hash }}">
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
     {% include "partials/_head_css_variables.html" with context %}
