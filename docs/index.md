@@ -1,8 +1,13 @@
+---
+hide-toc: true
+---
+
 # Furo
 
-```{todo}
-Write this.
-```
+A clean customisable Sphinx documentation theme.
+
+Furo is designed to be a fairly minimal theme that looks good, while providing a clear emphasis on content.
+It provides a nice navigation sidebar and a search page that doesn't look cobbled together.
 
 ```{toctree}
 :hidden:
