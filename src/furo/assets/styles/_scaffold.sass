@@ -1,0 +1,257 @@
+// This file contains the styles for the overall layouting of the documentation
+// skeleton, including the responsive changes as well as sidebar toggles.
+//
+// This is implemented as a mobile-last design, which isn't ideal, but it is
+// reasonably good-enough and I got pretty tired by the time I'd finished this
+// to move the rules around to fix this. Shouldn't take more than 3-4 hours,
+// if you know what you're doing tho.
+
+//
+// Overalls
+//
+body
+  overflow-y: scroll // always have the scrollbar
+html,
+body
+  height: 100%
+.page
+  display: flex
+  // fill the viewport for pages with little content.
+  min-height: 100%
+.mobile-header
+  width: 100%
+  height: var(--header-height)
+  background-color: var(--color-header-background)
+  color: var(--color-header-text)
+  border-bottom: 1px solid var(--color-header-border)
+
+  // Looks like sub-script/super-script have this, and we need this to
+  // be "on top" of those.
+  z-index: 10
+
+  // Add shadow when scrolled
+  &.scrolled
+    border-bottom: none
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2)
+
+  // We don't show the header on large screens.
+  display: none
+.main
+  display: flex
+  flex: 1
+
+// Sidebar (left) also covers the entire left portion of screen.
+.sidebar-drawer
+  box-sizing: border-box
+
+  display: flex
+  justify-content: flex-end
+  // These next two lines took me two days to figure out.
+  width: calc((100% - #{$full-width}) / 2 + #{$sidebar-width})
+  min-width: $sidebar-width
+
+// Scroll-along sidebars
+.sidebar-container,
+.toc-drawer
+  width: $sidebar-width
+.sidebar-sticky,
+.toc-sticky
+  position: sticky
+  top: 0
+  height: 100vh
+  height: min(100%, 100vh)
+
+  display: flex
+  flex-direction: column
+
+.sidebar-scroll,
+.toc-scroll
+  flex-shrink: 1
+
+  overflow: auto
+  scroll-behavior: smooth
+
+// Central items.
+.content
+  padding: 0 $content-padding
+  width: $content-width
+
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+.icon
+  display: inline-block
+  height: 1rem
+  width: 1rem
+  svg
+    width: 100%
+    height: 100%
+
+// TODO: figure out what could cause content to flow "out" of .content and
+//       add an overflow-x on it.
+
+//
+// Accommodate announcement banner
+//
+.announcement
+  height: var(--header-height)
+  display: flex
+  align-items: center
+  overflow-x: auto
+.announcement + .page
+  min-height: calc(100% - var(--header-height))
+.announcement-content
+  box-sizing: border-box
+  padding: 0.5rem
+  min-width: 100%
+  white-space: nowrap
+  text-align: center
+
+////////////////////////////////////////////////////////////////////////////////
+// Toggles for elements
+////////////////////////////////////////////////////////////////////////////////
+.toc-overlay-icon
+  display: none
+  float: right
+
+  height: 1.5rem
+  width: 1.5rem
+  margin-top: 1.5rem
+
+  align-items: center
+  justify-content: right
+.sidebar-toggle
+  position: absolute
+  display: none
+// <debugging things>
+.sidebar-toggle[name="__toc"]
+  left: 20px
+.sidebar-toggle:checked
+  left: 40px
+// </debugging things>
+.overlay
+  position: fixed
+  top: 0
+  width: 0
+  height: 0
+
+  transition: width 0ms, height 0ms, opacity 250ms ease-out
+
+  opacity: 0
+  background-color: rgba(0, 0, 0, 0.54)
+.sidebar-overlay
+  z-index: 20
+.toc-overlay
+  z-index: 40
+
+// Keep things on top and smooth.
+.sidebar-drawer
+  z-index: 30
+  transition: left 250ms ease-in-out
+.toc-drawer
+  z-index: 50
+  transition: right 250ms ease-in-out
+
+// Show the Sidebar
+#__navigation:checked
+  & ~ .sidebar-overlay
+    width: 100%
+    height: 100%
+    opacity: 1
+  & ~ .page
+    .sidebar-drawer
+      top: 0
+      left: 0
+      // Show the toc sidebar
+#__toc:checked
+  & ~ .toc-overlay
+    width: 100%
+    height: 100%
+    opacity: 1
+  & ~ .page
+    .toc-drawer
+      top: 0
+      right: 0
+
+////////////////////////////////////////////////////////////////////////////////
+// Responsive layouting
+////////////////////////////////////////////////////////////////////////////////
+// Make things a bit bigger on bigger screens.
+@media (min-width: $full-width + $sidebar-width)
+  html
+    font-size: 110%
+
+@media (max-width: $full-width)
+  // Collapse "toc" into the icon.
+  .toc-overlay-icon
+    display: flex
+    cursor: pointer
+
+  .sidebar-drawer
+    width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width})
+    .toc-drawer
+      position: fixed
+      height: 100vh
+      top: 0
+      right: -$sidebar-width
+    .toc-tree
+      font-size: var(--toc-font-size--mobile)
+
+@media (max-width: $full-width - $sidebar-width)
+
+  // Collapse "navigation".
+  .sidebar-drawer
+    position: fixed
+    height: 100vh
+    width: $sidebar-width
+
+    top: 0
+    left: -$sidebar-width
+
+  // Show the header.
+  .mobile-header
+    position: sticky
+    top: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .nav-overlay-icon
+      cursor: pointer
+      display: flex
+      justify-content: center
+      align-items: center
+      .icon
+        color: var(--color-foreground-secondary)
+        height: 1.25rem
+        width: 1.25rem
+    .header-left,
+    .header-right
+      height: var(--header-height)
+      width: var(--header-height)
+
+  // Add a scroll margin for the content
+  :target
+    scroll-margin-top: var(--header-height)
+
+  // Center the page, and accommodate for the header.
+  .page
+    flex-direction: column
+    justify-content: center
+  .content
+    margin-left: auto
+    margin-right: auto
+  @media (max-width: $content-width + 2* $content-padding)
+  // Content should respect window limits.
+  .content
+    width: 100%
+    overflow-x: auto
+@media (max-width: $content-width)
+  .content
+    padding: 0 $content-padding--small
+    // Don't float sidebars to the right.
+  article div.sidebar
+    float: none
+    width: 100%
+    margin: 1rem 0
