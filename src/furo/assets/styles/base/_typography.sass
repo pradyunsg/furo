@@ -1,0 +1,72 @@
+// This file contains the styling for making the content throughout the page,
+// including fonts, paragraphs, headings and spacing among these elements.
+
+html
+  font-family: var(--font-stack)
+pre,
+code,
+kbd,
+samp
+  font-family: var(--font-stack--monospace)
+
+// Make fonts look slightly nicer.
+body
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+// Line height from Bootstrap 4.1
+article
+  line-height: 1.5
+
+//
+// Headings
+//
+h1
+  font-size: 2.25rem
+h2
+  font-size: 1.75rem
+h3
+  font-size: 1.25rem
+h4
+  font-size: 1rem
+h5
+  font-size: 0.875rem
+h6
+  font-size: 0.75rem
+
+// Main headings
+h1,
+h2
+  margin-top: 1.5rem
+  margin-bottom: 1rem
+  font-weight: 300
+
+h3
+  margin-top: 1.5rem
+  margin-bottom: 0.75rem
+  font-weight: 400
+
+// You're in-too-deep headings
+h4,
+h5,
+h6
+  text-transform: uppercase
+  margin-top: 1rem
+  margin-bottom: 0.5rem
+  font-weight: 700
+
+// Paragraph
+p
+  margin-top: 0.75rem
+  margin-bottom: 0.75rem
+
+// Horizontal rules
+hr.docutils
+  height: 0.0625rem
+  padding: 0
+  margin: 2rem 0
+  background-color: var(--color-background-border)
+  border: 0
+
+.centered
+  text-align: center

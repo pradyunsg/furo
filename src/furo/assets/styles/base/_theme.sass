@@ -1,0 +1,128 @@
+// TODO: break this out into relevant files.
+
+// This is where the theming and coloring of all the elements is done. This file
+// needs to be broken out to let all the styles for each of the components live
+// with the rest of the component's styling.
+
+body
+  color: var(--color-foreground-primary)
+  background: var(--color-background-primary)
+
+  ////////////////////////////////////////////////////////////////////////////////
+// Header
+////////////////////////////////////////////////////////////////////////////////
+.mobile-header
+  .header-center
+    a
+      color: var(--color-header-text)
+      text-decoration: none
+
+////////////////////////////////////////////////////////////////////////////////
+// Announcements
+////////////////////////////////////////////////////////////////////////////////
+.announcement
+  background-color: var(--color-announcement-background)
+  color: var(--color-announcement-text)
+
+  ////////////////////////////////////////////////////////////////////////////////
+// Sidebar
+////////////////////////////////////////////////////////////////////////////////
+.sidebar-drawer
+  border-right: 1px solid var(--color-sidebar-background-border)
+  background: var(--color-sidebar-background)
+
+.sidebar-brand
+  color: var(--color-sidebar-brand-text)
+
+.sidebar-search-container
+  background: var(--color-sidebar-search-background)
+  &:hover,
+  &:focus-within
+    background: var(--color-sidebar-search-background--focus)
+
+  &::before
+    background-color: var(--color-sidebar-search-icon)
+    mask-image: var(--icon-search)
+
+.sidebar-search
+  border: none
+  border-top: 1px solid var(--color-sidebar-search-border)
+  border-bottom: 1px solid var(--color-sidebar-search-border)
+
+.sidebar-tree
+  .icon
+    color: var(--color-sidebar-link-text)
+  .reference
+    text-decoration: none // No need for underlines here.
+    color: var(--color-sidebar-link-text)
+    &:hover
+      background: var(--color-sidebar-item-background--hover)
+
+    &.external::after
+      // make sure the icon looks like other boring links
+      color: var(--color-sidebar-link-text)
+  .caption
+    color: var(--color-sidebar-caption-text)
+
+  // Colorize the top-level list items and icon.
+  .toctree-l1
+    & > .reference,
+    & > label .icon
+      color: var(--color-sidebar-link-text--top-level)
+
+  // Color changes on hover
+  label
+    background: var(--color-sidebar-item-expander-background)
+    &:hover
+      background: var(--color-sidebar-item-expander-background--hover)
+
+  .current > .reference
+    background: var(--color-sidebar-item-background--current)
+    &:hover
+      background: var(--color-sidebar-item-background--hover)
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Table of contents
+////////////////////////////////////////////////////////////////////////////////
+.toc-drawer
+  background: var(--color-toc-background)
+
+.toc-title
+  color: var(--color-toc-title-text)
+
+.toc-tree
+  border-left: 1px solid var(--color-background-border)
+
+  .reference
+    text-decoration: none // No need for underlines here.
+    color: var(--color-toc-item-text)
+
+  .scroll-current > .reference
+    color: var(--color-toc-item-text--active)
+
+////////////////////////////////////////////////////////////////////////////////
+// Contents
+////////////////////////////////////////////////////////////////////////////////
+article
+  color: var(--color-content-foreground)
+  background: var(--color-content-background)
+
+a
+  text-decoration: underline
+
+  color: var(--color-link)
+  text-decoration-color: var(--color-link-underline)
+
+  &:hover
+    color: var(--color-link--hover)
+    text-decoration-color: var(--color-link-underline--hover)
+  &.muted-link
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+      color: var(--color-link)
+      text-decoration-color: var(--color-link-underline)
+
+.problematic
+  color: var(--color-problematic)

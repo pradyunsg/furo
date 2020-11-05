@@ -1,0 +1,76 @@
+// This file contains the styles used for stylizing the footer that's shown
+// below the content.
+
+footer
+  font-size: var(--font-size--small)
+  display: flex
+  flex-direction: column
+
+  margin-top: 2rem
+
+// Bottom of page information
+.related-information
+  margin-top: 1rem
+
+  padding: 0.75rem
+  padding-bottom: 1rem
+
+  border-top: 1px solid var(--color-background-border)
+
+  line-height: 1.5
+  color: var(--color-foreground-secondary)
+
+// Next/Prev page information
+.related-pages
+  a
+    display: flex
+    align-items: center
+
+    text-decoration: none
+    &:hover .page-info .title
+      text-decoration: underline
+      color: var(--color-link)
+      text-decoration-color: var(--color-link-underline)
+
+    svg,
+    svg > use
+      flex-shrink: 0
+
+      color: var(--color-foreground-border)
+
+      width: 0.75rem
+      height: 0.75rem
+      margin: 0 0.5rem
+
+    &.next-page
+      max-width: 50%
+
+      float: right
+      clear: right
+      text-align: right
+
+    &.prev-page
+      max-width: 50%
+
+      float: left
+      clear: left
+
+      svg
+        transform: rotate(180deg)
+
+.page-info
+  display: flex
+  flex-direction: column
+
+  .next-page &
+    align-items: flex-end
+
+  .context
+    display: flex
+    align-items: center
+
+    padding-bottom: 0.1rem
+
+    color: var(--color-foreground-muted)
+    font-size: var(--font-size--small)
+    text-decoration: none

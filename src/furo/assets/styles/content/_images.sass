@@ -1,0 +1,34 @@
+//
+// Figures
+//
+img
+  box-sizing: border-box
+  max-width: 100%
+  height: auto
+
+article
+  .figure
+    border-radius: 0.2rem
+
+    padding: 0.5rem
+    :last-child
+      margin-bottom: 0
+
+  .align-left
+    float: left
+    clear: left
+    margin: 0 1rem 1rem
+
+  .align-right
+    float: right
+    clear: right
+    margin: 0 1rem 1rem
+
+  .align-center
+    text-align: center
+    margin-left: 50%
+    transform: translate(-50%)
+
+  .figure.align-default,
+  .legend .align-default
+    @extend .align-center

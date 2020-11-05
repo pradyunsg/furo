@@ -1,0 +1,29 @@
+// Adapted from Sphinx-RTD-theme's corresponding CSS
+// https://github.com/readthedocs/sphinx_rtd_theme/blob/1a32899b/src/sass/_theme_rst.sass#L201
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl dt,
+p.caption,
+table > caption,
+.code-block-caption
+  > .headerlink
+    font-weight: 100
+    margin-left: 0.5rem
+    visibility: hidden
+    text-decoration: none
+
+  &:hover > .headerlink
+    visibility: visible
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  :target > &:first-child > .headerlink
+    visibility: visible

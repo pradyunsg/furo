@@ -1,0 +1,25 @@
+// Inline Footnote Reference
+.footnote-reference
+  font-size: var(--font-size--small--4)
+  vertical-align: super
+
+// Definition list, listing the content of each note.
+dl.footnote
+  font-size: var(--font-size--small)
+  color: var(--color-foreground-secondary)
+
+  display: grid
+  grid-template-columns: max-content auto
+  dt
+    margin: 0
+    > .fn-backref
+      margin-left: 0.25rem
+
+    &:after
+      content: ":"
+
+    .brackets
+      &:before
+        content: "["
+      &:after
+        content: "]"

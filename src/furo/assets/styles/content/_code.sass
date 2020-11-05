@@ -1,0 +1,85 @@
+// Inline code
+code.literal
+  background: var(--color-background-secondary)
+  border-radius: 0.2em
+  // Make the font smaller, and use padding to recover.
+  font-size: var(--font-size--small--2)
+  padding: 0.1em 0.2em
+
+// Code and Literal Blocks
+$code-spacing-vertical: 0.625rem
+$code-spacing-horizontal: 0.875rem
+
+article
+  // Wraps every literal block + line numbers.
+  div[class*=" highlight-"],
+  div[class^="highlight-"]
+    margin: 1em 0
+    display: flex
+
+pre
+  margin: 0
+  padding: 0
+
+  // Needed to have more specificity than pygments' "pre" selector. :(
+  article &
+    line-height: 1.5
+
+  &.literal-block,
+  .highlight &
+    font-size: var(--code-font-size)
+    padding: $code-spacing-vertical $code-spacing-horizontal
+
+  // Make it look like all the other blocks.
+  &.literal-block
+    overflow: auto
+
+    margin-top: 1rem
+    margin-bottom: 1rem
+
+    border-radius: 0.2rem
+    background-color: var(--color-code-background)
+    color: var(--color-code-foreground)
+
+// All code is always contained in a pre
+.highlight
+  flex-grow: 1
+  border-radius: 0.2rem
+  overflow: auto
+
+// Added when there's line numbers associated with a literal block.
+.highlighttable
+  width: 100%
+  display: block
+  tbody
+    display: block
+
+  tr
+    display: flex
+
+  // Line numbers
+  td.linenos
+    background-color: var(--color-code-background)
+    color: var(--color-code-foreground)
+    padding: $code-spacing-vertical $code-spacing-horizontal
+    padding-right: 0
+    border-top-left-radius: 0.2rem
+    border-bottom-left-radius: 0.2rem
+
+  .linenodiv
+    font-size: var(--code-font-size)
+
+    padding-right: 0.5rem
+    box-shadow: -0.0625rem 0 var(--color-code-foreground) inset
+    opacity: 0.5 // I hate myself.
+
+  // Actual code
+  td.code
+    padding: 0
+    display: block
+    flex: 1
+    overflow: hidden
+
+    .highlight
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
