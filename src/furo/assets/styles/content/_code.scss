@@ -1,58 +1,13 @@
-//
-// Figures
-//
-img {
-  box-sizing: border-box;
-  max-width: 100%;
-  height: auto;
+// Inline code
+code.literal {
+  background: var(--color-background-secondary);
+  border-radius: 0.2em;
+  // Make the font smaller, and use padding to recover.
+  font-size: var(--font-size--small--2);
+  padding: 0.1em 0.2em;
 }
 
-article {
-  .figure {
-    border-radius: 0.2rem;
-
-    padding: 0.5rem;
-    :last-child {
-      margin-bottom: 0;
-    }
-  }
-  .align-left {
-    float: left;
-    clear: left;
-    margin: 0 1rem 1rem;
-  }
-  .align-right {
-    float: right;
-    clear: right;
-    margin: 0 1rem 1rem;
-  }
-  .align-center {
-    text-align: center;
-    margin-left: 50%;
-    transform: translate(-50%);
-  }
-
-  .figure.align-default,
-  .legend .align-default {
-    @extend .align-center;
-  }
-}
-
-//
-// Blockquote
-//
-blockquote {
-  border-left: 1px solid var(--color-foreground-border);
-  font-style: italic;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  padding: 0.5rem 1rem;
-}
-
-//
 // Code and Literal Blocks
-//
-// Inspired by mkdocs-material's design.
 $code-spacing-vertical: 0.625rem;
 $code-spacing-horizontal: 0.875rem;
 
@@ -134,61 +89,6 @@ pre {
     .highlight {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-    }
-  }
-}
-
-.field-list,
-.option-list,
-dl.simple,
-dl.footnote,
-dl.glossary {
-  dt {
-    display: inline-block;
-    margin-top: 0.25rem;
-    font-weight: 500;
-
-    .classifier::before {
-      content: ":";
-      margin-left: 0.2rem;
-      margin-right: 0.2rem;
-    }
-  }
-
-  dd {
-    > p:first-child,
-    ul {
-      margin-top: 0.125rem;
-    }
-    ul {
-      margin-bottom: 0.125rem;
-    }
-  }
-}
-
-// Footnotes
-dl.footnote {
-  font-size: var(--font-size--small);
-  color: var(--color-foreground-secondary);
-
-  display: grid;
-  grid-template-columns: max-content auto;
-  dt {
-    margin: 0;
-    > .fn-backref {
-      margin-left: 0.25rem;
-    }
-
-    &:after {
-      content: ":";
-    }
-    .brackets {
-      &:before {
-        content: "[";
-      }
-      &:after {
-        content: "]";
-      }
     }
   }
 }

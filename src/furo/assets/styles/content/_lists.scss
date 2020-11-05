@@ -33,3 +33,32 @@ ol {
     }
   }
 }
+
+// Definition Lists
+.field-list,
+.option-list,
+dl.simple,
+dl.footnote,
+dl.glossary {
+  dt {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-weight: 500;
+
+    .classifier::before {
+      content: ":";
+      margin-left: 0.2rem;
+      margin-right: 0.2rem;
+    }
+  }
+
+  dd {
+    > p:first-child,
+    ul {
+      margin-top: 0.125rem;
+    }
+    ul {
+      margin-bottom: 0.125rem;
+    }
+  }
+}

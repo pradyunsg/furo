@@ -1,0 +1,21 @@
+// Captions
+article p.caption,
+table > caption,
+.code-block-caption {
+  font-size: var(--font-size--small);
+  text-align: center;
+}
+
+// Caption above a TOCTree
+//   TODO: Figure out if I want to improve this in some way.
+.toctree-wrapper.compound {
+  .caption {
+    text-align: initial;
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  > ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

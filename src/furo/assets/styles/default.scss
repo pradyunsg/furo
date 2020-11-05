@@ -7,14 +7,18 @@
 @import "footer";
 @import "typography";
 
-@import "content/api";
 @import "content/admonitions";
-@import "content/inline_elements";
-@import "content/block_elements";
-@import "content/sidebar";
+@import "content/api";
+@import "content/captions";
+@import "content/code";
+@import "content/footnotes";
+@import "content/images";
 @import "content/lists";
-@import "content/tables";
 @import "content/math";
+@import "content/misc";
+@import "content/permalinks";
+@import "content/sidebar";
+@import "content/tables";
 
 @import "search";
 @import "sidebar";
