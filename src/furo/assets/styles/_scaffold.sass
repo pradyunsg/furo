@@ -14,10 +14,12 @@ body
 html,
 body
   height: 100%
+
 .page
   display: flex
   // fill the viewport for pages with little content.
   min-height: 100%
+
 .mobile-header
   width: 100%
   height: var(--header-height)
@@ -36,6 +38,7 @@ body
 
   // We don't show the header on large screens.
   display: none
+
 .main
   display: flex
   flex: 1
@@ -54,6 +57,7 @@ body
 .sidebar-container,
 .toc-drawer
   width: $sidebar-width
+
 .sidebar-sticky,
 .toc-sticky
   position: sticky
@@ -99,8 +103,9 @@ body
   display: flex
   align-items: center
   overflow-x: auto
-.announcement + .page
-  min-height: calc(100% - var(--header-height))
+  & + .page
+    min-height: calc(100% - var(--header-height))
+
 .announcement-content
   box-sizing: border-box
   padding: 0.5rem
@@ -199,7 +204,6 @@ body
       font-size: var(--toc-font-size--mobile)
 
 @media (max-width: $full-width - $sidebar-width)
-
   // Collapse "navigation".
   .sidebar-drawer
     position: fixed
@@ -242,11 +246,13 @@ body
   .content
     margin-left: auto
     margin-right: auto
-  @media (max-width: $content-width + 2* $content-padding)
+
+@media (max-width: $content-width + 2* $content-padding)
   // Content should respect window limits.
   .content
     width: 100%
     overflow-x: auto
+
 @media (max-width: $content-width)
   .content
     padding: 0 $content-padding--small
