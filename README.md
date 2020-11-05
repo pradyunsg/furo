@@ -1,6 +1,6 @@
 <h1 align="center">Furo</h1>
 <p align="center">
-  A clean customizable theme for <a href="https://www.sphinx-doc.org/">Sphinx</a>.
+  A clean customizable <a href="https://www.sphinx-doc.org/">Sphinx</a> documentation theme.
 </p>
 <a href="https://pradyunsg.me/furo/">
   <img align="center" src="https://github.com/pradyunsg/furo/raw/main/docs/_static/demo.png" alt="Demo image">
@@ -20,9 +20,9 @@ Update the `html_theme` in `conf.py`:
 html_theme = "furo"
 ```
 
-Your Sphinx documentation will now be generated with this theme! For more information, visit [Furo's documentation][docs].
+Your Sphinx documentation will now be generated with this theme! For more information, visit [Furo's documentation][quickstart-docs].
 
-[docs]: https://pradyunsg.me/furo/
+[quickstart-docs]: https://pradyunsg.me/furo/quickstart
 
 ## Contributing
 
