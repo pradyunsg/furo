@@ -195,13 +195,13 @@ body
 
   .sidebar-drawer
     width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width})
-    .toc-drawer
-      position: fixed
-      height: 100vh
-      top: 0
-      right: -$sidebar-width
-    .toc-tree
-      font-size: var(--toc-font-size--mobile)
+  .toc-drawer
+    position: fixed
+    height: 100vh
+    top: 0
+    right: -$sidebar-width
+  .toc-tree
+    font-size: var(--toc-font-size--mobile)
 
 @media (max-width: $full-width - $sidebar-width)
   // Collapse "navigation".
