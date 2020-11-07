@@ -116,16 +116,26 @@ body
 ////////////////////////////////////////////////////////////////////////////////
 // Toggles for elements
 ////////////////////////////////////////////////////////////////////////////////
-.toc-overlay-icon
+.toc-overlay-icon, .nav-overlay-icon
   display: none
-  float: right
+  cursor: pointer
 
+  .icon
+    color: var(--color-foreground-secondary)
+    height: 1.25rem
+    width: 1.25rem
+
+.toc-header-icon, .nav-overlay-icon
+  // for when we set display: flex
+  justify-content: center
+  align-items: center
+
+.toc-content-icon
   height: 1.5rem
   width: 1.5rem
   margin-top: 1.5rem
+  float: right
 
-  align-items: center
-  justify-content: right
 .sidebar-toggle
   position: absolute
   display: none
@@ -135,6 +145,7 @@ body
 .sidebar-toggle:checked
   left: 40px
 // </debugging things>
+
 .overlay
   position: fixed
   top: 0
@@ -189,22 +200,26 @@ body
 
 @media (max-width: $full-width)
   // Collapse "toc" into the icon.
-  .toc-overlay-icon
+  .toc-content-icon
     display: flex
-    cursor: pointer
-
-  .sidebar-drawer
-    width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width})
   .toc-drawer
     position: fixed
     height: 100vh
     top: 0
     right: -$sidebar-width
+    border-left: 1px solid var(--color-background-muted)
   .toc-tree
+    border-left: none
     font-size: var(--toc-font-size--mobile)
+
+  // Accomodate for a changed content width.
+  .sidebar-drawer
+    width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width})
 
 @media (max-width: $full-width - $sidebar-width)
   // Collapse "navigation".
+  .nav-overlay-icon
+    display: flex
   .sidebar-drawer
     position: fixed
     height: 100vh
@@ -212,6 +227,12 @@ body
 
     top: 0
     left: -$sidebar-width
+
+  // Swap which toc icon is used.
+  .toc-header-icon
+    display: flex
+  .toc-content-icon
+    display: none
 
   // Show the header.
   .mobile-header
@@ -221,19 +242,14 @@ body
     justify-content: space-between
     align-items: center
 
-    .nav-overlay-icon
-      cursor: pointer
-      display: flex
-      justify-content: center
-      align-items: center
-      .icon
-        color: var(--color-foreground-secondary)
-        height: 1.25rem
-        width: 1.25rem
     .header-left,
     .header-right
+      display: flex
       height: var(--header-height)
       width: var(--header-height)
+      label
+        height: 100%
+        width: 100%
 
   // Add a scroll margin for the content
   :target

@@ -1,11 +1,8 @@
 // This file contains the styles for the contents of the right sidebar, which
 // contains the table of contents for the current page.
-.toc-scroll
-  padding-top: var(--toc-spacing-vertical)
-  padding-bottom: var(--toc-spacing-vertical)
-
 .toc-title-container
   padding: var(--toc-title-padding)
+  padding-top: var(--toc-spacing-vertical)
 
 .toc-title
   font-size: var(--toc-title-font-size)
@@ -15,6 +12,9 @@
 // If the ToC is not present, hide these elements coz they're not relevant.
 .no-toc
   display: none
+
+.toc-tree-container
+  padding-bottom: var(--toc-spacing-vertical)
 
 .toc-tree
   font-size: var(--toc-font-size)
@@ -39,6 +39,7 @@
     padding-top: var(--toc-item-spacing-vertical)
 
     .reference
+      word-break: break-word
       text-decoration: none
 
     &.scroll-current >.reference
