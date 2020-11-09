@@ -27,10 +27,6 @@ html_theme_options = {
 
 The filenames must be relative to the [`html_static_path`][sphinx-html_static_path] folder.
 
-```{todo}
-Implement hiding of the not-this-mode logo.
-```
-
 ## Related Information
 
 It is also possible to [hide the name of the project in the sidebar](customisation/index.md#sidebar_hide_name), which might be desirable if the logo contains the project name.
