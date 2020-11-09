@@ -35,8 +35,8 @@
     <div class="sidebar-container">
       {% block left_sidebar %}
       <div class="sidebar-sticky">
-        {%- for sidebartemplate in sidebars %}
-          {%- include sidebartemplate %}
+        {%- for sidebar_section in ["brand", "search", "navigation"] %}
+          {%- include "sidebar/" + sidebar_section + ".html" %}
         {%- endfor %}
       </div>
       {% endblock left_sidebar %}
