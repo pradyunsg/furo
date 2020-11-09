@@ -1,5 +1,15 @@
 # Changelog
 
+## 2020.11.10.beta15
+
+- Add a recommendations page, for plugins
+- Add support for different logos in light and dark mode
+- Change location of TOC drawer icon on mobile
+- Drop support for `html_sidebars` based customisation.
+- Improve how the RTD ads work
+- Improve TOC sidebar auto-scroll functional
+- Significantly improve footer capabilities
+
 ## 2020.11.01.beta14
 
 - Add classifiers to the theme.
