@@ -127,14 +127,14 @@ a
 .problematic
   color: var(--color-problematic)
 
-// For the logos
+// For items that need to be hidden based on the active theme.
 .only-light
-  display: block
+  display: block !important
 .only-dark
-  display: none
+  display: none !important
 
 @media (prefers-color-scheme: dark)
   .only-light
-    display: none
+    display: none !important
   .only-dark
-    display: block
+    display: block !important
