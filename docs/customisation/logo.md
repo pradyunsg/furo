@@ -1,6 +1,6 @@
 # Adding a logo
 
-Logos are a point of recognition and an important part of branding. Furo support adding your project's logo at the top of the navigational (left) sidebar, like most other Sphinx themes.
+Logos are a point of recognition and an important part of branding. Furo supports adding your project's logo at the top of the navigational (left) sidebar, like most other Sphinx themes.
 
 ## Same logo for light and dark mode
 
