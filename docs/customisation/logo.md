@@ -31,6 +31,6 @@ The filenames must be relative to the [`html_static_path`][sphinx-html_static_pa
 
 It is also possible to [hide the name of the project in the sidebar](customisation/index.md#sidebar_hide_name), which might be desirable if the logo contains the project name.
 
-[sphinx-html_logo]: https://www.sphinx-doc.org/en/main/usage/configuration.html#confval-html_logo
-[sphinx-html_theme_options]: https://www.sphinx-doc.org/en/main/usage/configuration.html#confval-html_theme_options
-[sphinx-html_static_path]: https://www.sphinx-doc.org/en/main/usage/configuration.html#confval-html_static_path
+[sphinx-html_logo]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_logo
+[sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
+[sphinx-html_static_path]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_static_path
