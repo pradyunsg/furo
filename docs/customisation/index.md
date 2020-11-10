@@ -22,6 +22,8 @@ toc
 Note that only the configuration options list here are supported (not the ones inherited from the built-in `basic` Sphinx theme).
 ```
 
+(css-variables)=
+
 ### `light_css_variables`/`dark_css_variables`
 
 Furo makes extensive use of [CSS variables][css-variables]. These can be overridden by the user and are used for stylizing nearly all elements of the documentation.
@@ -34,7 +36,7 @@ html_theme_options = {
         "color-brand-primary": "red",
         "color-brand-content": "#CC3333",
         "color-admonition-background": "orange",
-    }
+    },
 }
 ```
 
