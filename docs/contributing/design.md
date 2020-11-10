@@ -16,7 +16,7 @@ Every existing theme either didn't check all of the boxes above, or tried to do 
 
 Furo's design follows a few of the ideas I've had discovered over the course of browsing the existing documentation themes across ecosystems and static site generators.
 
-- Focus *must* be on the content.
+- Focus _must_ be on the content.
 - More stuff is not more good.
 - Graceful degradation is important, so are niceties.
 - Simple and good enough, is more than sufficient.
