@@ -11,7 +11,7 @@ The [Code of Conduct] applies within all community spaces. If you are not famili
 
 workflow
 internals
-design-goals
+design
 ```
 
 [Workflow](./workflow)
@@ -20,7 +20,7 @@ design-goals
 [Internals](./internals)
 : Describes how this theme is built and how the various parts of it work.
 
-[Design Goals](./design-goals)
+[Design Goals](./design)
 : Describes the priorities for this theme's design.
 
 [code of conduct]: https://github.com/pradyunsg/furo/blob/main/CODE_OF_CONDUCT.md
