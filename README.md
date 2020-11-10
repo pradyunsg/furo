@@ -6,6 +6,20 @@
   <img align="center" src="https://github.com/pradyunsg/furo/raw/main/docs/_static/demo.png" alt="Demo image">
 </a>
 
+## Elevator pitch
+
+<!-- start elevator-pitch -->
+
+- **Intentionally minimal** --- the most important thing is the content, not the scaffolding around it.
+- **Responsive** --- adapting perfectly to the available screen space, to work on all sorts of devices.
+- **Customisable** --- change the color palette, font families, logo and more!
+- **Easy to navigate** --- with carefully-designed sidebar navigation and inter-page links.
+- **Good looking content** --- through clear typography and well-stylised elements.
+- **Good looking search** --- helps readers find what they want quickly.
+- **Built on Sphinx** --- a very robust static site generator, with a clear focus on documentation.
+
+<!-- end elevator-pitch -->
+
 ## Quickstart
 
 Furo can be installed using `pip`:
