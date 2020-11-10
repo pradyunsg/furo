@@ -1,6 +1,6 @@
 <h1 align="center">Furo</h1>
 <p align="center">
-  A clean customizable <a href="https://www.sphinx-doc.org/">Sphinx</a> documentation theme.
+  A clean customisable <a href="https://www.sphinx-doc.org/">Sphinx</a> documentation theme.
 </p>
 <a href="https://pradyunsg.me/furo/">
   <img align="center" src="https://github.com/pradyunsg/furo/raw/main/docs/_static/demo.png" alt="Demo image">
