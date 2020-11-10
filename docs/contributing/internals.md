@@ -6,7 +6,6 @@ Furo's internals contain an interesting mix of stupid-things-that-work and all k
 
 The repository layout is pretty standard for a Python project, with a few quirks due to the need for compiling Sass and JS files.
 
-
 - `CODE_OF_CONDUCT.md`
 - `LICENSE`
 - `README.md`
