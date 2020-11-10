@@ -5,7 +5,7 @@ var tocScroll = null;
 var header = null;
 
 function scrollHandlerForHeader() {
-  if (header.getBoundingClientRect().top == 0) {
+  if (Math.floor(header.getBoundingClientRect().top) == 0) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
