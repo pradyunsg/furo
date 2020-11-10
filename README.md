@@ -22,19 +22,29 @@
 
 ## Quickstart
 
-Furo can be installed using `pip`:
+<!-- start quickstart -->
 
-```
-pip install furo
-```
+Furo is distributed on [PyPI]. To use the theme in your Sphinx project:
 
-Update the `html_theme` in `conf.py`:
+1. Install Furo in documentation's build environment.
 
-```py
-html_theme = "furo"
-```
+   ```
+   pip install furo
+   ```
 
-Your Sphinx documentation will now be generated with this theme! For more information, visit [Furo's documentation][quickstart-docs].
+2. Update the `html_theme` in `conf.py`.
+
+   ```py
+   html_theme = "furo"
+   ```
+
+3. Your Sphinx documentation's HTML pages will now be generated with this theme! 🎉
+
+[pypi]: https://pypi.org/project/furo/
+
+<!-- end quickstart -->
+
+For more information, visit [Furo's documentation][quickstart-docs].
 
 [quickstart-docs]: https://pradyunsg.me/furo/quickstart
 
