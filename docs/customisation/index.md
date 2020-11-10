@@ -1,6 +1,8 @@
 # Customisation
 
-Furo supports customisation of the overall theme's look and feel.
+Furo supports customisation of the theme's overall look and feel (through theme options) as well as a few per-page tweaks.
+
+This section serves to guide the user with customising Furo-based documentation. This page lists all the theme-specific customisations, as provided by this theme. Other pages in this section provide guidance for making specific customisations when using Sphinx with Furo.
 
 ```{toctree}
 :hidden:
@@ -62,11 +64,11 @@ html_theme_options = {
 
 ## Page specific tweaks
 
-[File-Wide metadata][sphinx-file-wide-metadata] is used for per-page customisation, usually for controlling which UI elements are presented.
+[File-Wide metadata][sphinx-file-wide-metadata] is used for per-page customisation, primarily for controlling which UI elements are presented.
 
 ### `hide-toc`
 
-The “Contents” sidebar is automatically hidden for any pages that don’t have any inner headings. It is possible to hide it even when a page has inner headings, by setting `hide-toc` at the page level. See {any}`./toc` for an example.
+The “Contents” sidebar is automatically hidden for any pages that don’t have any inner headings. It is possible to hide it even when a page has inner headings, by setting `hide-toc` at the page level. See {doc}`./toc` for an example.
 
 ## Custom CSS files
 
