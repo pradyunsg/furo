@@ -4,9 +4,7 @@ Logos are a point of recognition and an important part of branding. Furo support
 
 ## Same logo for light and dark mode
 
-Furo supports the standard Sphinx mechanism to add your project's logo in the documentation.
-
-This is done by setting standard [`html_logo`][sphinx-html_logo] variable in `conf.py`.
+Furo supports the standard Sphinx mechanism to add your project's logo in the documentation, using the [`html_logo`][sphinx-html_logo] variable in `conf.py`.
 
 ```python
 html_logo = "logo.png"
