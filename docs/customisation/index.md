@@ -8,9 +8,9 @@ This section serves to guide the user with customising Furo-based documentation.
 :hidden:
 
 logo
-landing-page
 colors
 fonts
+landing-page
 toc
 ```
 
