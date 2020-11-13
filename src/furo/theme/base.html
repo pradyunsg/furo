@@ -47,14 +47,7 @@
       {% endif %}
     {%- endblock -%}
 
-    {# Custom stylesheets #}
-    {%- block extracss -%}
-    {%- for path in css_files -%}
-    {% if not path.filename.startswith("pygments_dark") -%}
-      {{ css_tag(path) }}
-    {%- endif %}
-    {% endfor -%}
-    {%- endblock -%}
+    {%- block styles -%}
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles -%}
@@ -63,6 +56,22 @@
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
     {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
+
+    {# Custom stylesheets #}
+    {%- block regular_styles -%}
+    {%- for path in css_files -%}
+    {% if not path.filename.startswith("pygments_dark") -%}
+      {{ css_tag(path) }}
+    {%- endif %}
+    {% endfor -%}
+    {%- endblock regular_styles -%}
+
+    {%- block extra_styles -%}
+    <link rel="stylesheet" href="{{ pathto('_static/styles/furo-extensions.css', 1) }}?state={{ furo_asset_hash }}">
+    {%- endblock -%}
+
+    {%- endblock styles -%}
+
 
     {# Custom JS #}
     {%- block extrajs -%}
