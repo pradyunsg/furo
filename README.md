@@ -16,7 +16,7 @@
 - **Easy to navigate** --- with carefully-designed sidebar navigation and inter-page links.
 - **Good looking content** --- through clear typography and well-stylised elements.
 - **Good looking search** --- helps readers find what they want quickly.
-- **Built on Sphinx** --- a very robust static site generator, with a clear focus on documentation.
+- **Biased for smaller docsets** --- intended for smaller documentation sets, where presenting the entire hierarchy in the sidebar is not overwhelming.
 
 <!-- end elevator-pitch -->
 
