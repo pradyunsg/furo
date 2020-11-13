@@ -1,5 +1,18 @@
 # Changelog
 
+## 2020.11.14.beta16
+
+- Add a separate file for CSS that affects other Sphinx extensions.
+- Add content to all the existing pages in documentation.
+- Clarify that Furo is biased toward smaller documentation sets.
+- Clarify that logo files need to be in `html_static_path`
+- Improve various explanations in documentation.
+- Tweak borders inside tables.
+- Tweak bottom spacing on right sidebar.
+- Tweak CSS and JS blocks in `base.html` template.
+- Tweak how captions for toctrees look.
+- Tweak spacing on sidebar ad on ReadTheDocs.
+
 ## 2020.11.10.beta15
 
 - Add a recommendations page, for plugins
