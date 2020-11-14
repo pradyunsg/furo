@@ -77,15 +77,19 @@
     {# Custom JS #}
     {%- block regular_scripts -%}
     {# This is *exactly* how `basic` handles this file. #}
-    <script id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
-    {%- for path in script_files -%}
-      {{ js_tag(path) }}
+    <script defer id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+    {% for path in script_files -%}
+      {% set tag = js_tag(path) -%}
+      {%- if tag.startswith("<script ") -%}
+        {%- set tag = tag[:7] + " defer" + tag[7:] -%}
+      {%- endif -%}
+      {{ tag }}
     {% endfor -%}
     {%- endblock regular_scripts -%}
 
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
-    <script src="{{ pathto('_static/scripts/main.js', 1) }}?state={{ furo_asset_hash }}"></script>
+    <script defer src="{{ pathto('_static/scripts/main.js', 1) }}?state={{ furo_asset_hash }}"></script>
     {%- endblock -%}
 
     {%- endblock scripts -%}
