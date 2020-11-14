@@ -1,5 +1,11 @@
 # Changelog
 
+## 2020.11.15.beta17
+
+- Add properly documented mechanisms for customising the sidebar.
+- Add dedicated styling for ethical ads.
+- Tweak how JS scripts are loaded.
+
 ## 2020.11.14.beta16
 
 - Add a separate file for CSS that affects other Sphinx extensions.
