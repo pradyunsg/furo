@@ -45,7 +45,7 @@ This is useful when you want to make drastic or major changes to the design of F
 Making changes using `html_sidebars` can break the layout. Please be mindful that Furo is not designed to accommodate for all potential sidebar designs.
 ```
 
-As an example, to make the *entire* sidebar scrollable, it is possible to set `sidebar/scroll-start.html` as the first fragment and `sidebar/scroll-end.html` as the last fragment.
+As an example, to make the _entire_ sidebar scrollable, it is possible to set `sidebar/scroll-start.html` as the first fragment and `sidebar/scroll-end.html` as the last fragment.
 
 ```py
 html_sidebars = [
