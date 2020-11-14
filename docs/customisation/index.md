@@ -11,6 +11,7 @@ logo
 colors
 fonts
 landing-page
+sidebar
 toc
 ```
 
