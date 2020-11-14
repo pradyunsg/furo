@@ -77,7 +77,7 @@
     {# Custom JS #}
     {%- block regular_scripts -%}
     {# This is *exactly* how `basic` handles this file. #}
-    <script defer id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+    <script id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
     {% for path in script_files -%}
       {% set tag = js_tag(path) -%}
       {%- if tag.startswith("<script ") -%}
