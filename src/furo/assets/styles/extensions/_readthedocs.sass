@@ -3,3 +3,16 @@
 
 #furo-sidebar-ad-placement
   padding: var(--sidebar-item-spacing-vertical) var(--sidebar-item-spacing-horizontal)
+  .ethical-sidebar
+    // Remove the border and box-shadow.
+    border: none
+    box-shadow: none
+    // Manage the background colors.
+    background: var(--color-background-secondary)
+    &:hover
+      background: var(--color-background-hover)
+    // Ensure the text is legible.
+    a
+      color: var(--color-foreground-primary)
+  .ethical-callout a
+      color: var(--color-foreground-secondary) !important
