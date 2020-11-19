@@ -1,5 +1,9 @@
 # Changelog
 
+## 2020.11.19.beta18
+
+- Fix search page becoming non-operations, due to earlier JS changes.
+
 ## 2020.11.15.beta17
 
 - Add properly documented mechanisms for customising the sidebar.
