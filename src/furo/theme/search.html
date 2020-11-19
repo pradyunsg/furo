@@ -1,9 +1,9 @@
 {% extends "page.html" %}
 
-{%- block extrajs -%}
+{%- block regular_scripts -%}
 {{ super() }}
 <script defer src="{{ pathto('_static/searchtools.js', 1) }}"></script>
-{%- endblock extrajs-%}
+{%- endblock regular_scripts-%}
 
 {%- block htmltitle -%}
 <title>{{ _("Search") }} - {{ docstitle }}</title>
@@ -16,12 +16,12 @@
     {% trans %}Please activate JavaScript to enable the search functionality.{% endtrans %}
   </p>
 </div>
-<script>$('#fallback').hide();</script>
+<script>document.getElementById('fallback').hidden = true;</script>
 
 <div id="search-results"></div>
 {% endblock %}
 
 {% block body -%}
 {{ super() }}
-<script src="{{ pathto('searchindex.js', 1) }}" defer></script>
+<script defer src="{{ pathto('searchindex.js', 1) }}"></script>
 {%- endblock body %}
