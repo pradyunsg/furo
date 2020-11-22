@@ -6,11 +6,22 @@
 // to move the rules around to fix this. Shouldn't take more than 3-4 hours,
 // if you know what you're doing tho.
 
+// HACK: Not all browsers account for the sidebar width in media queries.
+// This results in horizontal scrollbars in the breakpoint where we go
+// from displaying everything to hiding the ToC. We accomodate for this by
+// adding a bit of padding to the TOC drawer, disabling the horizontal
+// scrollbar and allowing the scrollbars to cover the padding.
+// https://www.456bereastreet.com/archive/201301/media_query_width_and_vertical_scrollbars/
+// HACK: Always having the scrollbar visible, prevents certain browsers from
+// causing the content to stutter horizontally between taller-than-viewport and
+// not-taller-than-viewport pages.
+html
+  overflow-x: hidden
+  overflow-y: scroll
+
 //
 // Overalls
 //
-body
-  overflow-y: scroll // always have the scrollbar
 html,
 body
   height: 100%
@@ -56,7 +67,11 @@ body
 // Scroll-along sidebars
 .sidebar-container,
 .toc-drawer
+  box-sizing: border-box
   width: $sidebar-width
+
+.toc-drawer
+  padding-right: 1rem
 
 .sidebar-sticky,
 .toc-sticky
