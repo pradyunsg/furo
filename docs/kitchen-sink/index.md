@@ -5,7 +5,6 @@ It is built upon an excellent base provided by Sphinx-RTD-Theme, as written by t
 
 The goal is to ensure that we're adding more content here that looks good, without breaking anything externally. :)
 
-
 ```{toctree}
 :titlesonly:
 
