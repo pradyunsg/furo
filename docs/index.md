@@ -25,6 +25,7 @@ recommendations
 :hidden:
 
 contributing/index
+kitchen-sink/index
 changelog
 license
 GitHub Repository <https://github.com/pradyunsg/furo>
