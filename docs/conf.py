@@ -73,8 +73,3 @@ html_theme = "furo"
 html_title = "Furo"
 
 html_static_path = ["_static"]
-html_theme_options = {
-    "announcement": (
-        "Furo is under active development, and this documentation is not written yet!"
-    ),
-}
