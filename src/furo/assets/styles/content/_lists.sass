@@ -35,9 +35,10 @@ dl.simple,
 dl.footnote,
 dl.glossary
   dt
-    display: inline-block
-    margin-top: 0.25rem
     font-weight: 500
+    margin-top: 0.25rem
+    + dt
+      margin-top: 0
 
     .classifier::before
       content: ":"
