@@ -1,4 +1,16 @@
+{#-
+
+Hi there!
+
+You might be interested in https://pradyunsg.me/furo/customisation/sidebar/
+
+Although if you're reading this, chances are that you're either familiar
+enough with Sphinx that you know what you're doing, or landed here from that
+documentation page.
+
+-#}
 <a class="sidebar-brand{% if logo %} centered{% endif %}" href="{{ pathto(master_doc) }}">
+  {% block brand_content %}
   {%- if logo %}
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
@@ -13,4 +25,5 @@
   {% if not theme_sidebar_hide_name %}
   <span class="sidebar-brand-text">{{ docstitle }}</span>
   {%- endif %}
+  {% endblock brand_content %}
 </a>
