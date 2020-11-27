@@ -2,7 +2,8 @@
 
 ## 2020.11.19.beta18
 
-- Fix search page becoming non-operations, due to earlier JS changes.
+- Fix search page. It had become non-operational, due to changes to JS
+  in the previous release.
 
 ## 2020.11.15.beta17
 
