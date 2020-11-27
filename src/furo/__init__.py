@@ -2,7 +2,7 @@
 
 __version__ = "2020.11.19.dev19"
 
-import secrets
+import hashlib
 from functools import lru_cache
 from pathlib import Path
 
@@ -104,13 +104,29 @@ def _compute_hide_toc(context):
     return has_exactly_one_list_item(context["toc"])
 
 
+@lru_cache(maxsize=None)
+def furo_asset_hash(path):
+    """Append a `?digest=` to an url based on the file content."""
+    _static = "_static/"
+    if _static not in path:
+        raise ValueError("furo_asset_hash expect a path with '_static' in it")
+
+    partial_path = path[path.find(_static) + len(_static) :]
+
+    file_path = Path(__file__).parent / "theme/static" / partial_path
+    with open(file_path, "rb") as f:
+        digest = hashlib.sha1(f.read()).hexdigest()
+
+    return path + f"?digest={digest}"
+
+
 def _html_page_context(app, pagename, templatename, context, doctree):
     if app.config.html_theme != "furo":
         return
 
     # Basic constants
     context["furo_version"] = __version__
-    context["furo_asset_hash"] = secrets.token_hex(12)
+    context["furo_asset_hash"] = furo_asset_hash
 
     # Values computed from page-level context.
     context["furo_navigation_tree"] = _compute_navigation_tree(context)
