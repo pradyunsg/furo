@@ -22,8 +22,8 @@ function scrollHandlerForTOC(positionY) {
     tocScroll.scrollTo(0, 0);
   } else if (
     // bottom of page.
-    Math.ceil(positionY) ==
-    Math.ceil(document.documentElement.scrollHeight - window.innerHeight)
+    Math.ceil(positionY) >=
+    Math.floor(document.documentElement.scrollHeight - window.innerHeight)
   ) {
     tocScroll.scrollTo(0, tocScroll.scrollHeight);
   } else {
