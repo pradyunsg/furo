@@ -2,6 +2,23 @@
 
 Furo supports customising the elements that show up in the navigational sidebar (left). This is to provide documentation authors who are willing to work with HTML/CSS to change and tweak how the sidebar looks.
 
+```{warning}
+Furo is not designed to accommodate for all potential custom sidebar designs. It is also possible to get suboptimal results (or even break the layout!) when overriding the default sidebar.
+```
+
+```{admonition} Info
+:class: tip
+
+The general expectation is that users who override the sidebar would also carefully consider how their documentation looks across various platforms (i.e. not take a "looks OK on my machine" approach) and would be willing to override Furo's styles to make it work with their sidebar design.
+
+Some things to consider when doing this are:
+
+- different OSs/browsers handle scrollbars and their widths differently,
+  with different effects on the layouting
+- end users can customise the look of their default scrollbars at an OS level(like overlay, hidden, visible-and-takes-space and maybe more?)
+- different viewport heights will differ across devices
+```
+
 ## Default design
 
 The following code snippet lists the fragments (HTML files from Furo's theme folder) that are used for the default sidebar design.
@@ -40,10 +57,6 @@ For the above example -- adding a tagline after the name/logo -- you'd want to a
 ### Using `html_sidebars`
 
 This is useful when you want to make drastic or major changes to the design of Furo's sidebar.
-
-```{attention}
-Making changes using `html_sidebars` can break the layout. Please be mindful that Furo is not designed to accommodate for all potential sidebar designs.
-```
 
 As an example, to make the _entire_ sidebar scrollable, it is possible to set `sidebar/scroll-start.html` as the first fragment and `sidebar/scroll-end.html` as the last fragment.
 
