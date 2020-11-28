@@ -87,7 +87,6 @@ I'm also a maintainer on the last two, so... that covers responsible disclosure.
 [pip]: https://pip.pypa.io/
 [packaging]: https://packaging.pypa.io/
 
-
 <!-- end used-by -->
 
 ## License
