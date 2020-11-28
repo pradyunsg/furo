@@ -6,7 +6,11 @@ This example uses {any}`sphinx.ext.autodoc` for generating the API documentation
 
 ````{furo-demo}
 ```{eval-rst}
-.. autoclass:: sphinx.ext.todo.TodoDomain
+.. autoclass:: urllib3.util.Retry
+    :members:
+    :noindex:
+
+.. autoclass:: urllib3.util.Timeout
     :members:
     :noindex:
 ```
@@ -15,7 +19,11 @@ This is a small example from Markdown.
 
 +++
 
-.. autoclass:: sphinx.ext.todo.TodoDomain
+.. autoclass:: urllib3.util.Retry
+    :members:
+    :noindex:
+
+.. autoclass:: urllib3.util.Timeout
     :members:
     :noindex:
 
