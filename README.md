@@ -67,6 +67,29 @@ We use [BrowserStack] to test on real devices and browsers. Shoutout to them for
 [gitbook]: https://www.gitbook.com/
 [browserstack]: https://browserstack.com/
 
+## Used By
+
+<!-- start used-by -->
+
+> I'm being told that mentioning who uses `$thing` is a good way to promote `$thing`.
+
+- [urllib3] -- THE first adopter of Furo.
+- [attrs] (also one of the early adopters!)
+- [psycopg3]
+- [pip]
+- [packaging]
+
+I'm also a maintainer on the last two, so... that covers responsible disclosure. :)
+
+[urllib3]: https://urllib3.readthedocs.io/
+[attrs]: https://www.attrs.org/
+[psycopg3]: https://www.psycopg.org/psycopg3/docs/
+[pip]: https://pip.pypa.io/
+[packaging]: https://packaging.pypa.io/
+
+
+<!-- end used-by -->
+
 ## License
 
 This project is licensed under the MIT License.
