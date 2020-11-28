@@ -111,7 +111,7 @@ $admonitions: (
   //     outside of this file. Instead, try to define more variables here that
   //     based on these, and use them in the actual stylesheets.
   //////////////////////////////////////////////////////////////////////////////
-  --color-problematic: #B30000;
+  --color-problematic: #b30000;
 
   // Base Colors
   --color-foreground-primary: black; // for main text and headings
@@ -219,7 +219,7 @@ $admonitions: (
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-problematic: #E25050;
+    --color-problematic: #e25050;
 
     // Base Colors
     --color-foreground-primary: #ffffffd9; // for main text and headings
