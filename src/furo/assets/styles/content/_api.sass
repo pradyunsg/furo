@@ -35,10 +35,20 @@ dl.py, dl.cpp, dl.c, dl.js
   > dt
     color: var(--color-api-overall)
 
-dl.class, dl.function, dl.method, dl.enum, dl.enum-class, dl.enum-struct, dl.type
-  > dt .property
-    color: var(--color-api-keyword)
-    padding-right: 0.25rem
+dl.class,
+dl.function,
+dl.method,
+dl.enum,
+dl.enum-class,
+dl.enum-struct,
+dl.type,
+dl.exception
+  > dt
+    padding-left: 3em
+    text-indent: -3em
+    .property
+      color: var(--color-api-keyword)
+      padding-right: 0.25rem
 
 .sig-name
   font-weight: bold
