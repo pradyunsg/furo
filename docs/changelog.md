@@ -1,5 +1,16 @@
 # Changelog
 
+## 2020.12.09.beta20
+
+- Clarify expectations around sidebar customisation.
+- Declare plugin information to pacify Sphinx's "are you parallel" check
+- Disable sidebar-follows-you-as-you-scroll Javascript.
+- Fix scrollbar styles affecting document body.
+- Tweak colors for problematic content.
+- Tweak how words wrap in sidebar title.
+- Tweak spacing in API documentation.
+- Tweak wrapping of text in API function/class signatures.
+
 ## 2020.11.27.beta19
 
 - Re-add our development documentation kitchen-sink.
