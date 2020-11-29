@@ -33,13 +33,14 @@ function scrollHandlerForTOC(positionY) {
       return;
     }
 
-    // scroll the currently "active" heading in toc, into view.
-    const rect = current.getBoundingClientRect();
-    if (0 > rect.top) {
-      current.scrollIntoView(true); // the argument is "alignTop"
-    } else if (rect.bottom > window.innerHeight) {
-      current.scrollIntoView(false);
-    }
+    // https://github.com/pypa/pip/issues/9159 This breaks scroll behaviours.
+    // // scroll the currently "active" heading in toc, into view.
+    // const rect = current.getBoundingClientRect();
+    // if (0 > rect.top) {
+    //   current.scrollIntoView(true); // the argument is "alignTop"
+    // } else if (rect.bottom > window.innerHeight) {
+    //   current.scrollIntoView(false);
+    // }
   }
 }
 
