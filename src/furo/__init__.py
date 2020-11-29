@@ -159,3 +159,9 @@ def setup(app):
     app.add_html_theme("furo", str(theme_path))
 
     app.connect("html-page-context", _html_page_context)
+
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+        "version": __version__,
+    }
