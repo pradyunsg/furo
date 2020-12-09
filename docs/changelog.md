@@ -1,9 +1,13 @@
 # Changelog
 
+## 2020.12.09.beta21
+
+- Rebuild theme assets, for main release.
+
 ## 2020.12.09.beta20
 
 - Clarify expectations around sidebar customisation.
-- Declare plugin information to pacify Sphinx's "are you parallel" check
+- Declare plugin information to pacify Sphinx's "are you parallel" check.
 - Disable sidebar-follows-you-as-you-scroll Javascript.
 - Fix scrollbar styles affecting document body.
 - Tweak colors for problematic content.
