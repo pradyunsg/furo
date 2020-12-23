@@ -65,6 +65,15 @@ html_theme_options = {
 }
 ```
 
+### `announcement`
+Allows to show a site-wide announcement at the top.
+
+```python
+html_theme_options = {
+    "announcement": "<em>Important</em> announcement!",
+}
+```
+
 ## Page specific tweaks
 
 [File-Wide metadata][sphinx-file-wide-metadata] is used for per-page customisation, primarily for controlling which UI elements are presented.
