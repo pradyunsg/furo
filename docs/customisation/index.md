@@ -66,6 +66,7 @@ html_theme_options = {
 ```
 
 ### `announcement`
+
 Allows to show a site-wide announcement at the top.
 
 ```python
