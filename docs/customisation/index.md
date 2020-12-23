@@ -20,7 +20,7 @@ toc
 [`html_theme_options`][sphinx-html_theme_options] in `conf.py` is used for customisations that affect the entire documentation. This is for stuff like fonts and colors.
 
 ```{note}
-Note that only the configuration options list here are supported (not the ones inherited from the built-in `basic` Sphinx theme).
+Note that only the configuration options listed here are supported (not the ones inherited from the built-in `basic` Sphinx theme).
 ```
 
 (css-variables)=
