@@ -8,15 +8,13 @@
 <label class="overlay sidebar-overlay" for="__navigation"></label>
 <label class="overlay toc-overlay" for="__toc"></label>
 
-{% block announcement %}
 {% if theme_announcement -%}
 <div class="announcement">
   <aside class="announcement-content">
-    {{ theme_announcement }}
+    {% block announcement %} {{ theme_announcement }} {% endblock announcement %}
   </aside>
 </div>
 {%- endif %}
-{% endblock announcement %}
 
 <div class="page">
   <header class="mobile-header">
