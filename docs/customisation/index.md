@@ -67,7 +67,7 @@ html_theme_options = {
 
 ### `announcement`
 
-Allows to show a site-wide announcement at the top.
+Adds a site-wide announcement, to the top of every page when set. This can contain HTML and is included as-is into the page.
 
 ```python
 html_theme_options = {
