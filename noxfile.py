@@ -52,6 +52,7 @@ def docs_live(session):
             r"--re-ignore=src/.*/theme/static/.*\.(css|js)",  # ignore the generated files
             "--open-browser",
             # for sphinx
+            "-v",
             "-b=dirhtml",
             "-a",
             docs_dir,
