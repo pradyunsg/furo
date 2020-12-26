@@ -12,6 +12,9 @@ from sphinx.builders.html import JavaScript
 
 from .navigation import get_navigation_tree
 
+_FURO_THEME_PATH = (Path(__file__).parent / "theme").resolve()
+_FURO_STATIC_PATH = _FURO_THEME_PATH / "static"
+
 
 @lru_cache(maxsize=None)
 def has_exactly_one_list_item(toc):
@@ -108,15 +111,8 @@ def _compute_hide_toc(context):
 @lru_cache(maxsize=None)
 def furo_asset_hash(path):
     """Append a `?digest=` to an url based on the file content."""
-    _static = "_static/"
-    if _static not in path:
-        raise ValueError("furo_asset_hash expect a path with '_static' in it")
-
-    partial_path = path[path.find(_static) + len(_static) :]
-
-    file_path = Path(__file__).parent / "theme/static" / partial_path
-    with open(file_path, "rb") as f:
-        digest = hashlib.sha1(f.read()).hexdigest()
+    file_path = _FURO_STATIC_PATH / path
+    digest = hashlib.sha1(file_path.read_bytes()).hexdigest()
 
     return path + f"?digest={digest}"
 
@@ -137,7 +133,6 @@ def _html_page_context(app, pagename, templatename, context, doctree):
 
     # Basic constants
     context["furo_version"] = __version__
-    context["furo_asset_hash"] = furo_asset_hash
 
     # Values computed from page-level context.
     context["furo_navigation_tree"] = _compute_navigation_tree(context)
@@ -161,13 +156,17 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     if "body" in context:
         context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
 
+    context["style"] = furo_asset_hash(context["style"])
+
 
 def setup(app):
     """Entry point for sphinx theming."""
     app.require_sphinx("3.0")
 
-    theme_path = (Path(__file__).parent / "theme").resolve()
-    app.add_html_theme("furo", str(theme_path))
+    app.add_html_theme("furo", str(_FURO_THEME_PATH))
+
+    app.add_css_file(furo_asset_hash("styles/furo-extensions.css"))
+    app.add_js_file(furo_asset_hash("scripts/main.js"))
 
     app.connect("html-page-context", _html_page_context)
 
