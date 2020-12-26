@@ -1,3 +1,4 @@
+{% from "basic/layout.html" import css, script with context %}
 <!doctype html>
 <html class="no-js">
   <head>
@@ -51,23 +52,15 @@
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles -%}
-    <link rel="stylesheet" href="{{ furo_asset_hash(pathto('_static/' + style, 1)) | e }}">
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
     {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
 
     {# Custom stylesheets #}
     {%- block regular_styles -%}
-    {%- for path in css_files -%}
-    {% if not path.filename.startswith("pygments_dark") -%}
-      {{ css_tag(path) }}
-    {%- endif %}
-    {% endfor -%}
+    {{- css() }}
     {%- endblock regular_styles -%}
 
     {%- block extra_styles -%}
-    <link rel="stylesheet" href="{{ furo_asset_hash(pathto('_static/styles/furo-extensions.css', 1)) }}">
     {%- endblock -%}
 
     {%- endblock styles -%}
@@ -76,16 +69,11 @@
 
     {# Custom JS #}
     {%- block regular_scripts -%}
-    {# This is *exactly* how `basic` handles this file. #}
-    <script id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
-    {% for path in script_files -%}
-      {{ js_tag(path) }}
-    {% endfor -%}
+    {{- script() }}
     {%- endblock regular_scripts -%}
 
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
-    <script defer src="{{ furo_asset_hash(pathto('_static/scripts/main.js', 1)) }}"></script>
     {%- endblock -%}
 
     {%- endblock scripts -%}
