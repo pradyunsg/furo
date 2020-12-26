@@ -79,11 +79,7 @@
     {# This is *exactly* how `basic` handles this file. #}
     <script id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
     {% for path in script_files -%}
-      {% set tag = js_tag(path) -%}
-      {%- if tag.startswith("<script ") -%}
-        {%- set tag = tag[:7] + " defer" + tag[7:] -%}
-      {%- endif -%}
-      {{ tag }}
+      {{ js_tag(path) }}
     {% endfor -%}
     {%- endblock regular_scripts -%}
 
