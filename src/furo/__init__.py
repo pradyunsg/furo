@@ -8,6 +8,7 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 from pygments.token import Text
+from sphinx.highlighting import PygmentsBridge
 from sphinx.builders.html import JavaScript
 
 from .navigation import get_navigation_tree
@@ -162,14 +163,26 @@ def _html_page_context(app, pagename, templatename, context, doctree):
         context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
 
 
+def _builder_inited(app):
+    if app.config.html_theme != "furo":
+        return
+
+    builder = app.builder
+    assert builder.dark_highlighter is None, "this shouldn't happen."
+    builder.dark_highlighter = PygmentsBridge('html', app.config.pygments_dark_style)
+
+
 def setup(app):
     """Entry point for sphinx theming."""
     app.require_sphinx("3.0")
+
+    app.add_config_value("pygments_dark_style", "native", "html", [str])
 
     theme_path = (Path(__file__).parent / "theme").resolve()
     app.add_html_theme("furo", str(theme_path))
 
     app.connect("html-page-context", _html_page_context)
+    app.connect("builder-inited", _builder_inited)
 
     return {
         "parallel_read_safe": True,
