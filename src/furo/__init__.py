@@ -157,6 +157,8 @@ def _html_page_context(app, pagename, templatename, context, doctree):
         context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
 
     context["style"] = furo_asset_hash(context["style"])
+    context["furo_extensions_style"] = furo_asset_hash("styles/furo-extensions.css")
+    context["furo_main_script"] = furo_asset_hash("scripts/main.js")
 
 
 def setup(app):
@@ -164,9 +166,6 @@ def setup(app):
     app.require_sphinx("3.0")
 
     app.add_html_theme("furo", str(_FURO_THEME_PATH))
-
-    app.add_css_file(furo_asset_hash("styles/furo-extensions.css"))
-    app.add_js_file(furo_asset_hash("scripts/main.js"))
 
     app.connect("html-page-context", _html_page_context)
 

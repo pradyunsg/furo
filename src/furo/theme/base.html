@@ -1,4 +1,3 @@
-{% from "basic/layout.html" import css, script with context %}
 <!doctype html>
 <html class="no-js">
   <head>
@@ -52,15 +51,20 @@
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles -%}
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css">
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) | e }}" type="text/css">
     {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
 
     {# Custom stylesheets #}
     {%- block regular_styles -%}
-    {{- css() }}
+    {%- for path in css_files -%}
+      {{ css_tag(path) }}
+    {% endfor -%}
     {%- endblock regular_styles -%}
 
     {%- block extra_styles -%}
+    <link rel="stylesheet" href="{{ pathto('_static/' + furo_extensions_style, 1) | e }}" type="text/css">
     {%- endblock -%}
 
     {%- endblock styles -%}
@@ -69,11 +73,16 @@
 
     {# Custom JS #}
     {%- block regular_scripts -%}
-    {{- script() }}
+    {# This is *exactly* how `basic` handles this file. #}
+    <script id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+    {% for path in script_files -%}
+      {{ js_tag(path) }}
+    {% endfor -%}
     {%- endblock regular_scripts -%}
 
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
+    <script defer src="{{ pathto('_static/' + furo_main_script, 1) | e }}"></script>
     {%- endblock -%}
 
     {%- endblock scripts -%}
