@@ -22,8 +22,8 @@
 
   padding-left: calc(var(--toc-spacing-horizontal) - var(--toc-item-spacing-horizontal))
 
-  // Hide the "top level" bullet.
-  > ul > li
+  // Hide the first "top level" bullet.
+  > ul > li:first-child
     padding-top: 0
     & > ul
       padding-left: 0
