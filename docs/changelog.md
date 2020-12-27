@@ -17,14 +17,14 @@
 
 ## 2020.11.27.beta19
 
-- Re-add our development documentation kitchen-sink.
-- Tweak styling for basic definition lists.
-- Fix styling for multi-term definition lists items.
-- Fix bottom-of-page JS conditional.
-- Tweak how ToC sidebar handles scrollbars.
-- Fix stability of resources hashes. (thanks [@dvarrazzo](https://github.com/dvarrazzo))
-- Add styling for scrollbars, to make them match the theme.
 - Add styling for rubrics.
+- Add styling for scrollbars, to make them match the theme.
+- Fix bottom-of-page JS conditional.
+- Fix stability of resources hashes. (thanks [@dvarrazzo](https://github.com/dvarrazzo))
+- Fix styling for multi-term definition lists items.
+- Re-add our development documentation kitchen-sink.
+- Tweak how ToC sidebar handles scrollbars.
+- Tweak styling for basic definition lists.
 
 ## 2020.11.19.beta18
 
