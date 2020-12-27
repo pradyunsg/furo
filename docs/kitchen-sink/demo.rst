@@ -225,7 +225,7 @@ Code with Sidebar
 
     With a sidebar on the right.
 
-.. literalinclude:: test_py_module/test.py
+.. literalinclude:: ../../src/furo/__init__.py
     :language: python
     :caption: Literal includes can also have captions.
     :linenos:
