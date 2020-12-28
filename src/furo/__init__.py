@@ -1,6 +1,6 @@
 """A clean customisable Sphinx documentation theme."""
 
-__version__ = "2020.12.28.beta22"
+__version__ = "2020.12.28.dev23"
 
 import hashlib
 from functools import lru_cache
