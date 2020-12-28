@@ -23,7 +23,7 @@ Some things to consider when doing this are:
 
 The following code snippet lists the fragments (HTML files from Furo's theme folder) that are used for the default sidebar design.
 
-```{literalinclude} ../../src/furo/theme/theme.conf
+```{literalinclude} ../../src/furo/theme/furo/theme.conf
 ---
 language: ini
 start-after: "# sidebar-start"

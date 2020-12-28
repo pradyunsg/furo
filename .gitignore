@@ -8,5 +8,5 @@ node_modules
 __pycache__
 
 # Generated files
-src/*/theme/static/scripts
-src/*/theme/static/styles
+src/*/theme/*/static/scripts
+src/*/theme/*/static/styles

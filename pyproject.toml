@@ -45,7 +45,7 @@ doc = ["myst-parser", "sphinx-inline-tabs"]
 [tool.flit.sdist]
 include = [
   # Generated assets
-  "src/furo/theme/static/*/*",
+  "src/furo/theme/furo/static/*/*",
 ]
 exclude = [
   "docs/", "src/furo/assets",

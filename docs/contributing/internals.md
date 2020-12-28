@@ -18,9 +18,10 @@ The repository layout is pretty standard for a Python project, with a few quirks
     - `navigation.py` -- Generates the sidebar navigation HTML.
     - `sphinxext.py` -- Defines the internal-only `furo-demo` directive.
     - `assets/` -- contains Sass and JS source code.
-    - `theme/` -- the actual folder that Sphinx looks inside.
-      - `static/` -- contains compiles CSS and JS code.
-      - everything else here -- the underlying HTML templates.
+    - `theme/` -- the folder that Sphinx adds to template lookup.
+      - `furo/` -- main Sphinx theme folder
+        - `static/` -- contains compiles CSS and JS code.
+        - everything else here -- the underlying HTML templates.
 - `gulpfile.js` -- for [Gulp](https://gulpjs.com/).
 - `noxfile.py` -- for [nox](https://nox.readthedocs.io/).
 - `package.json` -- for [NPM](https://npmjs.com/).
@@ -28,7 +29,7 @@ The repository layout is pretty standard for a Python project, with a few quirks
 
 ## Theme build process
 
-Furo's build process uses Gulp. Running `gulp build` in the repository root will compile the theme's CSS and JS assets (`src/furo/assets/`) into the correct final files (inside `src/furo/theme/static`).
+Furo's build process uses Gulp. Running `gulp build` in the repository root will compile the theme's CSS and JS assets (`src/furo/assets/`) into the correct final files (inside `src/furo/theme/furo/static`).
 
 When building the distributions for upload, `gulp build` is run once and the `src/furo/assets/` directory is excluded for the final distribution. Thus, _both_ the source distribution and wheel distribution do not contain the original source code for Furo and only contain the compiled SCSS and JS files.
 
@@ -56,7 +57,7 @@ The fancy bit is that Gumshoe.js is used to highlight the currently active headi
 
 ### CSS variables for customisation
 
-This is pretty much the "USP" of this theme. In `src/furo/theme/partials/_head_css_variables.html`, the user provided CSS variables are translated and written into each page's HTML. This is set up, such that these declarations overrides any other declarations made in the CSS of the theme.
+This is pretty much the "USP" of this theme. In `src/furo/theme/furo/partials/_head_css_variables.html`, the user provided CSS variables are translated and written into each page's HTML. This is set up, such that these declarations overrides any other declarations made in the CSS of the theme.
 
 This essentially allows the user to control the values of the CSS variables, and hence control how the theme looks.
 

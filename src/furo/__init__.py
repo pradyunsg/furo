@@ -115,7 +115,7 @@ def furo_asset_hash(path):
 
     partial_path = path[path.find(_static) + len(_static) :]
 
-    file_path = Path(__file__).parent / "theme/static" / partial_path
+    file_path = Path(__file__).parent / "theme/furo/static" / partial_path
     with open(file_path, "rb") as f:
         digest = hashlib.sha1(f.read()).hexdigest()
 
@@ -178,7 +178,7 @@ def setup(app):
 
     app.add_config_value("pygments_dark_style", "native", "html", [str])
 
-    theme_path = (Path(__file__).parent / "theme").resolve()
+    theme_path = (Path(__file__).parent / "theme" / "furo").resolve()
     app.add_html_theme("furo", str(theme_path))
 
     app.connect("html-page-context", _html_page_context)

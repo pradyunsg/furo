@@ -18,7 +18,7 @@ var easyImport = require("postcss-easy-import");
 
 var plugins = [easyImport(), autoprefixer(), cssnano()];
 var src_path = "./src/furo/assets/";
-var dest_path = "./src/furo/theme/static";
+var dest_path = "./src/furo/theme/furo/static";
 
 function css() {
   return gulp
