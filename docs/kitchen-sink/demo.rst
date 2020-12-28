@@ -197,7 +197,9 @@ Emphasized lines with line numbers
        print("This line is highlighted.")
        print("This one is not...")
        print("...but this one is.")
-       print("This is an intentionally very long line because I want to make sure that we're handling scrollable code blocks correctly.")
+       print(
+           "This is an intentionally very long line because I want to make sure that we're handling scrollable code blocks correctly."
+       )
 
 Sidebar
 =======
