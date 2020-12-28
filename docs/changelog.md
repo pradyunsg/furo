@@ -1,5 +1,11 @@
 # Changelog
 
+## 2020.12.28.beta23
+
+- Fix code-block overflow issue, introduced by the fix for sphinx-copybutton compatibility.
+- Tweak horizontal rules, to always be 1px tall.
+- Tweak background color for inline literals, to match code blocks.
+
 ## 2020.12.28.beta22
 
 - MAJOR: Move theme files into a "furo" folder.
