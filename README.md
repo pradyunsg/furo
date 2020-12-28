@@ -28,7 +28,7 @@ Furo is distributed on [PyPI]. To use the theme in your Sphinx project:
 
 1. Install Furo in documentation's build environment.
 
-   ```
+   ```text
    pip install furo
    ```
 
