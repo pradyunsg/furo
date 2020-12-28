@@ -8,8 +8,8 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 from pygments.token import Text
-from sphinx.highlighting import PygmentsBridge
 from sphinx.builders.html import JavaScript
+from sphinx.highlighting import PygmentsBridge
 
 from .navigation import get_navigation_tree
 
@@ -169,7 +169,7 @@ def _builder_inited(app):
 
     builder = app.builder
     assert builder.dark_highlighter is None, "this shouldn't happen."
-    builder.dark_highlighter = PygmentsBridge('html', app.config.pygments_dark_style)
+    builder.dark_highlighter = PygmentsBridge("html", app.config.pygments_dark_style)
 
 
 def setup(app):
