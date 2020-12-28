@@ -1,0 +1,92 @@
+name: Release
+on:
+  push: tags
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+
+      - name: Install dependencies
+        run: |
+          pip install nox
+          npm install
+
+      - name: Generate release assets
+        run: ./node_modules/.bin/gulp build
+      - name: Generate final distribution
+        run: flit build
+
+      - name: Get the release version
+        id: version
+        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+
+      # Upload to GitHub Actions artifacts
+      - uses: actions/upload-artifact@v2
+        with:
+          name: sdist
+          path: dist/furo-${{ steps.version.outputs.VERSION }}.tar.gz
+      - uses: actions/upload-artifact@v2
+        with:
+          name: wheel
+          path: dist/furo-${{ steps.version.outputs.VERSION }}-py3-none-any.whl
+
+  upload:
+    runs-on: ubuntu-latest
+    needs: build
+    environment: release
+
+    steps:
+      # Download everything necessary
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: sdist
+      - uses: actions/download-artifact@v2
+        with:
+          name: wheel
+
+      - name: Get the release version
+        id: version
+        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+
+      - name: Create the GitHub release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: false
+
+      - name: Upload sdist to GitHub
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/furo-${{ steps.version.outputs.VERSION }}.tar.gz
+          asset_name: furo-${{ steps.version.outputs.VERSION }}.tar.gz
+          asset_content_type: application/x-gzip
+
+      - name: Upload wheel to GitHub
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/furo-${{ steps.version.outputs.VERSION }}-py3-none-any.whl
+          asset_name: furo-${{ steps.version.outputs.VERSION }}-py3-none-any.whl
+          asset_content_type: application/zip
+
+      - name: Upload both to TestPyPI
+        uses: pypa/gh-action-pypi-publish@v1.4.1
+        with:
+          user: __token__
+          password: ${{ secrets.TESTPYPI_API_TOKEN }}
+          repository_url: https://test.pypi.org/legacy/
+          verbose: true
