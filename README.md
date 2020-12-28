@@ -73,7 +73,7 @@ I plucked this from the scientific name for [Domesticated Ferrets](https://en.wi
 
 From my perspective anyway, a ferret is a really good spirit animal for this project: cute, small, steals little things from various places, and hisses at you when you try to make it do things it doesn't like.
 
-> I'm plan on commissioning a logo for this project (or making one myself), consistenting of a cute ferret. Please reach out if you're interested!
+> I plan on commissioning a logo for this project (or making one myself), consistenting of a cute ferret. Please reach out if you're interested!
 
 ## Used By
 
