@@ -37,7 +37,11 @@ test = [
   "pytest-cov",
   "pytest-xdist",
 ]
-doc = ["myst-parser", "sphinx-inline-tabs"]
+doc = [
+  "myst-parser",
+  "sphinx-copybutton",
+  "sphinx-inline-tabs",
+]
 
 [tool.flit.entrypoints]
 "sphinx.html_themes" = {furo = "furo"}
