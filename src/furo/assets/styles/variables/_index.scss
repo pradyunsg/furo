@@ -139,6 +139,7 @@ $admonitions: (
   --color-api-pre-name: var(--color-brand-content);
   --color-api-paren: var(--color-foreground-secondary);
   --color-api-keyword: var(--color-problematic);
+  --color-api-highlight-on-target: #ffffcc;
 
   // Highlighted text (search)
   --color-highlighted-background: #ddeeff;
@@ -244,6 +245,9 @@ $admonitions: (
     // Highlighted text (search)
     --color-highlighted-background: #083563;
     --color-highlighted-text: var(--color-foreground-primary);
+
+    // API documentation
+    --color-api-highlight-on-target: #333300;
 
     // Admonitions
     --color-admonition-background: #18181a;
