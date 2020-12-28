@@ -67,6 +67,14 @@ We use [BrowserStack] to test on real devices and browsers. Shoutout to them for
 [gitbook]: https://www.gitbook.com/
 [browserstack]: https://browserstack.com/
 
+## What's with the name?
+
+I plucked this from the scientific name for [Domesticated Ferrets](https://en.wikipedia.org/wiki/Ferret): Mustela putorius **furo**.
+
+From my perspective anyway, a ferret is a really good spirit animal for this project: cute, small, steals little things from various places, and hisses at you when you try to make it do things it doesn't like.
+
+> I'm plan on commissioning a logo for this project (or making one myself), consistenting of a cute ferret. Please reach out if you're interested!
+
 ## Used By
 
 <!-- start used-by -->
