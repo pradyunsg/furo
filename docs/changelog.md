@@ -1,5 +1,21 @@
 # Changelog
 
+## 2020.12.28.beta22
+
+- MAJOR: Move theme files into a "furo" folder.
+  - This affects any users deriving from furo's templates.
+- Add (custom) support for `pygments_dark_style`.
+- Add support for `genindex` pages.
+  - Note that `html_split_index` is not supported at this time.
+- Add support for highlighting API elements, when accessed via "#hash" in URL.
+- Add `language_data.js` to search page, fixing `Stemmer` related failures in Sphinx 3.4.
+- Document how to add a site-wide announcement.
+- Fix sphinx-copybutton placement on scrollable code blocks.
+- Generate an error page, for documents using `layout.html` from Sphinx's `basic` theme.
+- Translate placeholder in sidebar's search.
+- Tweak how additional h1 headings are handled in ToC sidebar.
+- Update dependency constraints, limiting compatibility to Sphinx 3.x versions.
+
 ## 2020.12.09.beta21
 
 - Rebuild theme assets, for main release.
