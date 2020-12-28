@@ -139,6 +139,7 @@ def release(session):
     )
 
     # Build the package
+    session.run("gulp", "build", external=True)
     session.run("flit", "build")
     session.run("twine", "check", *glob.glob("dist/*"))
 
