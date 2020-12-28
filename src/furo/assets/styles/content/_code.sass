@@ -29,11 +29,10 @@ pre
   .highlight &
     font-size: var(--code-font-size)
     padding: $code-spacing-vertical $code-spacing-horizontal
+    overflow: auto
 
   // Make it look like all the other blocks.
   &.literal-block
-    overflow: auto
-
     margin-top: 1rem
     margin-bottom: 1rem
 
@@ -43,9 +42,8 @@ pre
 
 // All code is always contained in a pre
 .highlight
-  flex-grow: 1
+  width: 100%
   border-radius: 0.2rem
-  overflow: auto
 
 // Added when there's line numbers associated with a literal block.
 .highlighttable
