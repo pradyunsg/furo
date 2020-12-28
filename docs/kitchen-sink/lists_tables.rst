@@ -309,6 +309,22 @@ Giant Tables
 | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
 
+Table containing code
+---------------------
+
+==================================== ===========================================
+Version                              Installing
+==================================== ===========================================
+Pradyun's pip fork and installer     .. code-block:: bash
+
+                                        pip install "pip @ git+https://github.com/pradyunsg/pip#20.3.3" "installer @ git+https://github.com/pradyunsg/installer"
+
+PyPI                                 .. code-block:: bash
+
+                                        pip install pip installer
+
+==================================== ===========================================
+
 List Tables
 -----------
 

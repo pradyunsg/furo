@@ -144,10 +144,12 @@ Block quotes consist of indented body elements:
 Doctest Blocks
 --------------
 
->>> print 'Python-specific usage examples; begun with ">>>"'
+>>> print('Python-specific usage examples; begun with ">>>"')
 Python-specific usage examples; begun with ">>>"
->>> print '(cut and pasted from interactive Python sessions)'
+>>> print("(cut and pasted from interactive Python sessions)")
 (cut and pasted from interactive Python sessions)
+>>> print("This is an intentionally very long line because I want to make sure that we're handling scrollable code blocks correctly.")
+This is an intentionally very long line because I want to make sure that we're handling scrollable code blocks correctly.
 
 Code Blocks
 -----------
@@ -156,6 +158,7 @@ Code Blocks
 
     # parsed-literal test
     curl -O http://someurl/release-|version|.tar-gz
+    echo "This is an intentionally very long line because I want to make sure that we're handling scrollable code blocks correctly."
 
 
 .. code-block:: json
@@ -172,7 +175,7 @@ Code Blocks
             ]
             },
             {
-            "shell_command": "echo 'single commands'"
+            "shell_command": "echo 'This is an intentionally very long line because I want to make sure that we\\'re handling scrollable code blocks correctly.'"
             },
             "echo 'for panes'"
         ],
@@ -191,9 +194,10 @@ Emphasized lines with line numbers
 
    def some_function():
        interesting = False
-       print "This line is highlighted."
-       print "This one is not..."
-       print "...but this one is."
+       print("This line is highlighted.")
+       print("This one is not...")
+       print("...but this one is.")
+       print("This is an intentionally very long line because I want to make sure that we're handling scrollable code blocks correctly.")
 
 Sidebar
 =======
