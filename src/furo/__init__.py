@@ -176,7 +176,7 @@ def setup(app):
     """Entry point for sphinx theming."""
     app.require_sphinx("3.0")
 
-    app.add_config_value("pygments_dark_style", "native", "html", [str])
+    app.add_config_value("pygments_dark_style", "native", "env", [str])
 
     theme_path = (Path(__file__).parent / "theme" / "furo").resolve()
     app.add_html_theme("furo", str(theme_path))
