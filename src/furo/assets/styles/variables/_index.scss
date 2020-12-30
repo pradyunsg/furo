@@ -141,6 +141,9 @@ $admonitions: (
   --color-api-keyword: var(--color-problematic);
   --color-api-highlight-on-target: #ffffcc;
 
+  // Inline code background
+  --color-inline-code-background: var(--color-background-secondary);
+
   // Highlighted text (search)
   --color-highlighted-background: #ddeeff;
   --color-highlighted-text: var(--color-foreground-primary);
