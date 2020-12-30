@@ -1,5 +1,11 @@
 # Changelog
 
+## 2020.12.30.beta24
+
+- Disable environment caching if `pygments_dark_style` is changed.
+- Revert to earlier background color for inline literals, and allow configuring
+  it via a CSS variables.
+
 ## 2020.12.28.beta23
 
 - Fix code-block overflow issue, introduced by the fix for sphinx-copybutton compatibility.
