@@ -33,13 +33,16 @@ html_theme_options = {
 
 ## Code block styling
 
-Furo does not directly handle highlighting of the code blocks. This is done by Sphinx, and is configurable using [`pygments_style`][sphinx-pygments_style] and [`pygments_dark_style`][sphinx-pygments_dark_style] in `conf.py`.
+Furo does not directly handle highlighting of the code blocks. This is done by Sphinx, and is configurable using [`pygments_style`][sphinx-pygments_style] and `pygments_dark_style` in `conf.py`.
 
 ```py
 pygments_style = "sphinx"
 pygments_dark_style = "monokai"
 ```
 
+```{note}
+`pygments_dark_style` is Furo-specific at this time.
+```
+
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
 [sphinx-pygments_style]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-pygments_style
-[sphinx-pygments_dark_style]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-pygments_dark_style
