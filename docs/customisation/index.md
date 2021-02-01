@@ -13,6 +13,7 @@ fonts
 landing-page
 sidebar
 toc
+injecting
 ```
 
 ## Theme options
@@ -85,11 +86,8 @@ The “Contents” sidebar is automatically hidden for any pages that don’t ha
 
 ## Custom CSS files
 
-If you want more control than what is provided by the above theme options, you can add custom stylesheets to your documentation.
-
-ReadTheDocs has an excellent explanation on [how to add custom CSS files][sphinx-custom-css] to Sphinx-based documentation.
+If you want more control than what is provided by the above theme options, see {ref}`injecting-code`.
 
 [css-variables]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
-[sphinx-custom-css]: https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html
 [sphinx-file-wide-metadata]: https://www.sphinx-doc.org/en/master/usage/restructuredtext/field-lists.html#metadata
