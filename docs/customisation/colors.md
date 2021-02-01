@@ -18,7 +18,7 @@ This mechanism allows configuring nearly every facet of Furo's design, including
 Changing Furo's blue accent (used for stylising links, sidebar's content etc) to a purple one:
 
 ```py
-html_theme_config = {
+html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "#7C4DFF",
         "color-brand-content": "#7C4DFF",
