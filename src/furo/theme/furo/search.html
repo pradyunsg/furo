@@ -2,8 +2,8 @@
 
 {%- block regular_scripts -%}
 {{ super() }}
-<script defer src="{{ pathto('_static/searchtools.js', 1) }}"></script>
-<script defer src="{{ pathto('_static/language_data.js', 1) }}"></script>
+<script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+<script src="{{ pathto('_static/language_data.js', 1) }}"></script>
 {%- endblock regular_scripts-%}
 
 {%- block htmltitle -%}
@@ -24,5 +24,5 @@
 
 {% block body -%}
 {{ super() }}
-<script defer src="{{ pathto('searchindex.js', 1) }}"></script>
+<script src="{{ pathto('searchindex.js', 1) }}"></script>
 {%- endblock body %}

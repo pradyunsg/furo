@@ -126,16 +126,6 @@ def _html_page_context(app, pagename, templatename, context, doctree):
     if app.config.html_theme != "furo":
         return
 
-    # Add attributes to the scripts loaded with `js_tag`
-    sphinx_js_tag = context["js_tag"]
-
-    def furo_js_tag(js):
-        if isinstance(js, JavaScript):
-            js.attributes["defer"] = "defer"
-        return sphinx_js_tag(js)
-
-    context["js_tag"] = furo_js_tag
-
     # Basic constants
     context["furo_version"] = __version__
     context["furo_asset_hash"] = furo_asset_hash

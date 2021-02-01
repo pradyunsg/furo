@@ -85,7 +85,7 @@
 
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
-    <script defer src="{{ furo_asset_hash(pathto('_static/scripts/main.js', 1)) }}"></script>
+    <script src="{{ furo_asset_hash(pathto('_static/scripts/main.js', 1)) }}"></script>
     {%- endblock -%}
 
     {%- endblock scripts -%}
