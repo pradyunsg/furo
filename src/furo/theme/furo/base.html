@@ -72,6 +72,12 @@
 
     {%- endblock styles -%}
 
+    {#- Custom front matter #}
+    {%- block extrahead -%}{%- endblock -%}
+  </head>
+  <body dir="{{ direction }}">
+    {% block body %}{% endblock %}
+
     {%- block scripts -%}
 
     {# Custom JS #}
@@ -89,11 +95,5 @@
     {%- endblock -%}
 
     {%- endblock scripts -%}
-
-    {#- Custom front matter #}
-    {%- block extrahead -%}{%- endblock -%}
-  </head>
-  <body dir="{{ direction }}">
-    {% block body %}{% endblock %}
   </body>
 </html>

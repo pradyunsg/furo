@@ -22,7 +22,7 @@
 <div id="search-results"></div>
 {% endblock %}
 
-{% block body -%}
+{% block scripts -%}
 {{ super() }}
 <script src="{{ pathto('searchindex.js', 1) }}"></script>
-{%- endblock body %}
+{%- endblock scripts %}
