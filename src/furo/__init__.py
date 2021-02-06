@@ -8,7 +8,6 @@ from pathlib import Path
 
 from bs4 import BeautifulSoup
 from pygments.token import Text
-from sphinx.builders.html import JavaScript
 from sphinx.highlighting import PygmentsBridge
 
 from .navigation import get_navigation_tree
