@@ -17,7 +17,7 @@ Furo also supports setting different logos for light and dark mode. This can be 
 This is done by setting `light_logo` and `dark_logo` in [`html_theme_options`][sphinx-html_theme_options] in `conf.py`.
 
 ```python
-html_static_path = "_static"
+html_static_path = ["_static"]
 html_theme_options = {
     "light_logo": "logo-light-mode.png",
     "dark_logo": "logo-dark-mode.png",
