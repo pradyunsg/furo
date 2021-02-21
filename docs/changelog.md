@@ -1,5 +1,12 @@
 # Changelog
 
+## 2021.02.21.beta25
+
+- Document how to inject custom code in Sphinx documentation
+- Document that `pygments_dark_style` is Furo-specific
+- Make `sphinx-panels` respond to dark mode with Furo
+- Stop `defer`ing Javascript, which was causing search to break in some cases.
+
 ## 2020.12.30.beta24
 
 - Disable environment caching if `pygments_dark_style` is changed.
