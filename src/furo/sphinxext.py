@@ -15,13 +15,15 @@ This provides a single `furo-demo` directive, which:
 """
 
 from textwrap import indent
+from typing import Any, Tuple
 
 from docutils import nodes
 from docutils.statemachine import StringList
+from sphinx.application import Sphinx
 from sphinx.directives import SphinxDirective
 
 
-def _split_by_language(block_text):
+def _split_by_language(block_text: str) -> Tuple[str, str]:
     try:
         a, b = block_text.split("+++\n")
     except ValueError:
@@ -32,7 +34,7 @@ def _split_by_language(block_text):
         return a, b
 
 
-def _md_demo(block):
+def _md_demo(block: str) -> StringList:
     lines = []
     if not block.strip("\n"):
         return StringList()
@@ -47,7 +49,7 @@ def _md_demo(block):
     return StringList(lines)
 
 
-def _rst_demo(block):
+def _rst_demo(block: str) -> StringList:
     lines = []
     if not block.strip():
         return StringList()
@@ -65,7 +67,7 @@ def _rst_demo(block):
     return StringList(lines)
 
 
-def _translate_into_tab_demo(block_text):
+def _translate_into_tab_demo(block_text: str) -> StringList:
     md, rst = _split_by_language(block_text)
 
     string_list = StringList()
@@ -79,7 +81,7 @@ def _translate_into_tab_demo(block_text):
 class _FuroDemoDirective(SphinxDirective):
     has_content = True
 
-    def run(self):
+    def run(self) -> Any:
         self.assert_has_content()
 
         container = nodes.container()
@@ -88,6 +90,6 @@ class _FuroDemoDirective(SphinxDirective):
         return [container]
 
 
-def setup(app):
+def setup(app: Sphinx) -> None:
     """For setting up the directive."""
     app.add_directive("furo-demo", _FuroDemoDirective)

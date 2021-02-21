@@ -2,10 +2,10 @@
 
 import functools
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 
-def _get_navigation_expand_image(soup):
+def _get_navigation_expand_image(soup: BeautifulSoup) -> Tag:
     retval = soup.new_tag("i", attrs={"class": "icon"})
 
     svg_element = soup.new_tag("svg")
@@ -17,7 +17,7 @@ def _get_navigation_expand_image(soup):
 
 
 @functools.lru_cache(maxsize=None)
-def get_navigation_tree(toctree_html):
+def get_navigation_tree(toctree_html: str) -> str:
     """Modify the given navigation tree, with furo-specific elements.
 
     Adds a checkbox + corresponding label to <li>s that contain a <ul> tag, to enable

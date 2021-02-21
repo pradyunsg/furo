@@ -5,16 +5,18 @@ __version__ = "2021.02.21.dev26"
 import hashlib
 from functools import lru_cache
 from pathlib import Path
+from typing import Any, Dict
 
+import pygments
+import sphinx
 from bs4 import BeautifulSoup
-from pygments.token import Text
 from sphinx.highlighting import PygmentsBridge
 
 from .navigation import get_navigation_tree
 
 
 @lru_cache(maxsize=None)
-def has_exactly_one_list_item(toc):
+def has_exactly_one_list_item(toc: str) -> bool:
     """Check if the toc has exactly one list item."""
     assert toc
 
@@ -25,7 +27,7 @@ def has_exactly_one_list_item(toc):
     return False
 
 
-def wrap_elements_that_can_get_too_wide(content):
+def wrap_elements_that_can_get_too_wide(content: str) -> str:
     """Wrap the elements that could get too wide, with a div to allow controlling width.
 
     - <table>
@@ -47,10 +49,12 @@ def wrap_elements_that_can_get_too_wide(content):
     return str(soup)
 
 
-def get_pygments_style_colors(style, *, fallbacks):
+def get_pygments_style_colors(
+    style: pygments.style.Style, *, fallbacks: Dict[str, str]
+) -> Dict[str, str]:
     """Get background/foreground colors for given pygments style."""
     background = style.background_color
-    text_colors = style.style_for_token(Text)
+    text_colors = style.style_for_token(pygments.token.Text)
     foreground = text_colors["color"]
 
     if not background:
@@ -65,7 +69,9 @@ def get_pygments_style_colors(style, *, fallbacks):
 
 
 @lru_cache(maxsize=2)
-def get_colors_for_codeblocks(highlighter, *, fg, bg):
+def get_colors_for_codeblocks(
+    highlighter: PygmentsBridge, *, fg: str, bg: str
+) -> Dict[str, str]:
     """Get background/foreground colors for given pygments style."""
     return get_pygments_style_colors(
         highlighter.formatter_args["style"],
@@ -76,7 +82,7 @@ def get_colors_for_codeblocks(highlighter, *, fg, bg):
     )
 
 
-def _compute_navigation_tree(context):
+def _compute_navigation_tree(context: Dict[str, Any]) -> str:
     # The navigation tree, generated from the sphinx-provided ToC tree.
     if "toctree" in context:
         toctree = context["toctree"]
@@ -92,7 +98,7 @@ def _compute_navigation_tree(context):
     return get_navigation_tree(toctree_html)
 
 
-def _compute_hide_toc(context):
+def _compute_hide_toc(context: Dict[str, Any]) -> bool:
     # Should the table of contents be hidden?
     file_meta = context.get("meta", None) or {}
     if "hide-toc" in file_meta:
@@ -106,7 +112,7 @@ def _compute_hide_toc(context):
 
 
 @lru_cache(maxsize=None)
-def furo_asset_hash(path):
+def furo_asset_hash(path: str) -> str:
     """Append a `?digest=` to an url based on the file content."""
     _static = "_static/"
     if _static not in path:
@@ -121,7 +127,13 @@ def furo_asset_hash(path):
     return path + f"?digest={digest}"
 
 
-def _html_page_context(app, pagename, templatename, context, doctree):
+def _html_page_context(
+    app: sphinx.application.Sphinx,
+    pagename: str,
+    templatename: str,
+    context: Dict[str, Any],
+    doctree: Any,
+) -> None:
     if app.config.html_theme != "furo":
         return
 
@@ -152,7 +164,7 @@ def _html_page_context(app, pagename, templatename, context, doctree):
         context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
 
 
-def _builder_inited(app):
+def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if app.config.html_theme != "furo":
         return
 
@@ -161,7 +173,7 @@ def _builder_inited(app):
     builder.dark_highlighter = PygmentsBridge("html", app.config.pygments_dark_style)
 
 
-def setup(app):
+def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     """Entry point for sphinx theming."""
     app.require_sphinx("3.0")
 
