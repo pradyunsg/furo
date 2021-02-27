@@ -14,7 +14,6 @@ from sphinx.highlighting import PygmentsBridge
 
 from .navigation import get_navigation_tree
 
-
 THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
 
 
