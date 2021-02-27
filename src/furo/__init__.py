@@ -117,17 +117,10 @@ def _compute_hide_toc(context: Dict[str, Any]) -> bool:
 @lru_cache(maxsize=None)
 def furo_asset_hash(path: str) -> str:
     """Append a `?digest=` to an url based on the file content."""
-    _static = "_static/"
-    if _static not in path:
-        raise ValueError("furo_asset_hash expect a path with '_static' in it")
+    full_path = THEME_PATH / "static" / path
+    digest = hashlib.sha1(full_path.read_bytes()).hexdigest()
 
-    partial_path = path[path.find(_static) + len(_static) :]
-
-    file_path = Path(__file__).parent / "theme/furo/static" / partial_path
-    with open(file_path, "rb") as f:
-        digest = hashlib.sha1(f.read()).hexdigest()
-
-    return path + f"?digest={digest}"
+    return f"_static/{path}?digest={digest}"
 
 
 def _html_page_context(
@@ -142,7 +135,17 @@ def _html_page_context(
 
     # Basic constants
     context["furo_version"] = __version__
-    context["furo_asset_hash"] = furo_asset_hash
+
+    # Assets
+    context["furo_assets"] = {
+        "furo-extensions.css": furo_asset_hash("styles/furo-extensions.css"),
+        "main.js": furo_asset_hash("scripts/main.js"),
+    }
+
+    if context["style"] == "styles/furo.css":
+        context["furo_assets"]["style"] = furo_asset_hash("styles/furo.css")
+    else:
+        context["furo_assets"]["style"] = "_static/" + context["style"]
 
     # Values computed from page-level context.
     context["furo_navigation_tree"] = _compute_navigation_tree(context)

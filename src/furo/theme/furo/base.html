@@ -51,7 +51,7 @@
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles -%}
-    <link rel="stylesheet" href="{{ furo_asset_hash(pathto('_static/' + style, 1)) | e }}">
+    <link rel="stylesheet" href="{{ pathto(furo_assets['style']) }}">
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
     {% include "partials/_head_css_variables.html" with context %}
@@ -67,7 +67,7 @@
     {%- endblock regular_styles -%}
 
     {%- block extra_styles -%}
-    <link rel="stylesheet" href="{{ furo_asset_hash(pathto('_static/styles/furo-extensions.css', 1)) }}">
+    <link rel="stylesheet" href="{{ pathto(furo_assets['furo-extensions.css'], 1) }}">
     {%- endblock -%}
 
     {%- endblock styles -%}
@@ -91,7 +91,7 @@
 
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
-    <script src="{{ furo_asset_hash(pathto('_static/scripts/main.js', 1)) }}"></script>
+    <script src="{{ pathto(furo_assets['main.js'], 1) }}"></script>
     {%- endblock -%}
 
     {%- endblock scripts -%}
