@@ -148,6 +148,11 @@ $admonitions: (
   --color-highlighted-background: #ddeeff;
   --color-highlighted-text: var(--color-foreground-primary);
 
+  // GUI Labels
+  --color-guilabel-background: #ddeeff80;
+  --color-guilabel-border: #bedaf580;
+  --color-guilabel-text: var(--color-foreground-primary);
+
   // Admonitions!
   --color-admonition-background: transparent;
   --color-admonition-title: #{nth($admonition-default, 1)};
@@ -248,6 +253,10 @@ $admonitions: (
     // Highlighted text (search)
     --color-highlighted-background: #083563;
     --color-highlighted-text: var(--color-foreground-primary);
+
+    // GUI Labels
+    --color-guilabel-background: #08356380;
+    --color-guilabel-border: #13395f80;
 
     // API documentation
     --color-api-highlight-on-target: #333300;
