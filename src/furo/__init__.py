@@ -15,6 +15,9 @@ from sphinx.highlighting import PygmentsBridge
 from .navigation import get_navigation_tree
 
 
+THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
+
+
 @lru_cache(maxsize=None)
 def has_exactly_one_list_item(toc: str) -> bool:
     """Check if the toc has exactly one list item."""
@@ -179,8 +182,7 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
 
     app.add_config_value("pygments_dark_style", "native", "env", [str])
 
-    theme_path = (Path(__file__).parent / "theme" / "furo").resolve()
-    app.add_html_theme("furo", str(theme_path))
+    app.add_html_theme("furo", str(THEME_PATH))
 
     app.connect("html-page-context", _html_page_context)
     app.connect("builder-inited", _builder_inited)
