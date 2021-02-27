@@ -1,5 +1,12 @@
 # Changelog
 
+## 2021.02.27.beta26
+
+- Fix wrong height on wide screens, for pages with a tall sidebar but not-tall
+  content.
+- Add type annotations to the codebase! 🎉
+- Fix an instance of missing brackets in documentation.
+
 ## 2021.02.21.beta25
 
 - Document how to inject custom code in Sphinx documentation
