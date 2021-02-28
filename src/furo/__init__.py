@@ -141,11 +141,6 @@ def _html_page_context(
         "main.js": furo_asset_hash("scripts/main.js"),
     }
 
-    if context["style"] == "styles/furo.css":
-        context["furo_assets"]["style"] = furo_asset_hash("styles/furo.css")
-    else:
-        context["furo_assets"]["style"] = "_static/" + context["style"]
-
     # Values computed from page-level context.
     context["furo_navigation_tree"] = _compute_navigation_tree(context)
     context["furo_hide_toc"] = _compute_hide_toc(context)
@@ -167,6 +162,17 @@ def _html_page_context(
     # Patch the content
     if "body" in context:
         context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
+
+    should_use_own_styles = (
+        # Not using the HTML builders with Furo for some reason?
+        "style" not in context or
+        # Did not override Furo's default CSS
+        context["style"] == "styles/furo.css"
+    )
+    if should_use_own_styles:
+        context["furo_assets"]["style"] = furo_asset_hash("styles/furo.css")
+    else:
+        context["furo_assets"]["style"] = "_static/" + context["style"]
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
