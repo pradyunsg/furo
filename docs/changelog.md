@@ -1,5 +1,13 @@
 # Changelog
 
+## 2021.02.28.beta27
+
+- Center figures and legends with `margin: auto`.
+- Improve compatibility with `json` builder, by not passing functions into the
+  Jinja templates.
+- Add a friendly comment to `domainindex.html`, about it not being implemented.
+- Add styling for GUI labels.
+
 ## 2021.02.27.beta26
 
 - Fix wrong height on wide screens, for pages with a tall sidebar but not-tall
