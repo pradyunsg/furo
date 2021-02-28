@@ -62,7 +62,7 @@ def docs_live(session):
 @nox.session(reuse_venv=True)
 def docs(session):
     # Generate relevant files prior to installation
-    session.run("./node_modules/.bin/gulp", "build", external=True)
+    session.run("gulp", "build", external=True)
 
     _install_this_project_with_flit(session, extras=["doc"], editable=False)
 
