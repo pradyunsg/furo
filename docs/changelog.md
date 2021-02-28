@@ -1,5 +1,11 @@
 # Changelog
 
+## 2021.02.28.beta28
+
+- Fix a bug in how stylesheets are handled.
+- Clarify how to install directly from GitHub.
+- Document how to install from git.
+
 ## 2021.02.28.beta27
 
 - Center figures and legends with `margin: auto`.
