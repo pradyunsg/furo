@@ -165,9 +165,9 @@ def _html_page_context(
 
     should_use_own_styles = (
         # Not using the HTML builders with Furo for some reason?
-        "style" not in context or
+        "style" not in context
         # Did not override Furo's default CSS
-        context["style"] == "styles/furo.css"
+        or context["style"] == "styles/furo.css"
     )
     if should_use_own_styles:
         context["furo_assets"]["style"] = furo_asset_hash("styles/furo.css")
