@@ -92,7 +92,6 @@ npm install
 pip install .
 ```
 
-
 [github flow]: https://guides.github.com/introduction/flow/
 [nox]: https://nox.readthedocs.io/en/stable/
 [jinja2]: https://jinja.palletsprojects.com
