@@ -13,6 +13,6 @@
     "normalize.css": "^8.0.1",
     "postcss": "^7.0.32",
     "postcss-easy-import": "^3.0.0",
-    "sass": "^1.26.10"
+    "sass": "^1.32.8"
   }
 }
