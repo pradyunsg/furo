@@ -134,3 +134,43 @@ Maaa! I made it look the same by setting the class.
 ```{todo}
 Describe the CSS variables needed.
 ```
+
+## Nesting admonitions
+
+
+``````{furo-demo}
+`````{note}
+You can nest admonitions.
+
+````{warning}
+But you really should not.
+
+```{danger}
+It's distracting.
+```
+
+And can be confusing for the user to understand.
+````
+
+And, honestly, looks weird.
+`````
+
++++
+
+.. note::
+
+   You can nest admonitions.
+
+   .. warning::
+
+      But you really should not.
+
+      .. danger::
+
+         It's distracting.
+
+      And can be confusing for the user to understand.
+
+   And, honestly, looks weird.
+
+``````

@@ -54,11 +54,11 @@
   @each $type, $value in $admonitions
     &.#{$type}
       border-left-color: var(--color-admonition-title--#{$type})
-      .admonition-title
+      > .admonition-title
         background-color: var(--color-admonition-title-background--#{$type})
         &::before
           background-color: var(--color-admonition-title--#{$type})
           mask-image: var(--icon-#{nth($value, 2)})
 
-.admonition-todo .admonition-title
+.admonition-todo > .admonition-title
   text-transform: uppercase

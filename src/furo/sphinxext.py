@@ -39,12 +39,12 @@ def _md_demo(block: str) -> StringList:
     if not block.strip("\n"):
         return StringList()
 
-    lines.append("`````{tab} Markdown (MyST)")
-    lines.append("````md")
+    lines.append("````````{tab} Markdown (MyST)")
+    lines.append("```````md")
     lines.extend(block.splitlines())
-    lines.append("````")
+    lines.append("```````")
     lines.extend(block.splitlines())
-    lines.append("`````")
+    lines.append("````````")
 
     return StringList(lines)
 
@@ -54,15 +54,15 @@ def _rst_demo(block: str) -> StringList:
     if not block.strip():
         return StringList()
 
-    lines.append("`````{tab} reStructuredText")
-    lines.append("````{eval-rst}")
+    lines.append("````````{tab} reStructuredText")
+    lines.append("```````{eval-rst}")
     lines.append(".. code-block:: rest")
     lines.append("")
     lines.extend(indent(block, "    ").splitlines())
     lines.append("")
     lines.extend(block.splitlines())
-    lines.append("````")
-    lines.append("`````")
+    lines.append("```````")
+    lines.append("````````")
 
     return StringList(lines)
 
