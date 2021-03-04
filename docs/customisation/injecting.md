@@ -1,3 +1,4 @@
+(injecting-code)=
 # Injecting code
 
 Sphinx makes it fairly straightforward to add custom JS/CSS/HTML code to your pages. Furo supports the mechanisms provided by Sphinx for this.
