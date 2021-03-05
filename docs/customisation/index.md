@@ -86,7 +86,7 @@ The “Contents” sidebar is automatically hidden for any pages that don’t ha
 
 ## Custom CSS files
 
-If you want more control than what is provided by the above theme options, see {ref}`injecting-code`.
+If you want more control than what is provided by the above theme options, see {any}`customisation/injecting/#injecting-code`.
 
 [css-variables]: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
