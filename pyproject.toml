@@ -8,7 +8,7 @@ author = "Pradyun Gedam"
 author-email = "mail@pradyunsg.me"
 home-page = "https://github.com/pradyunsg/furo"
 description-file = "README.md"
-requires-python = ">=3.5"
+requires-python = ">=3.6"
 requires = [
   "beautifulsoup4",
   "sphinx ~= 3.0",
