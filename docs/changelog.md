@@ -5,7 +5,8 @@
 - Update Python-Requires to >=3.6.
 - Center align embedded-in-text images.
 - Center align figures and legends.
-- Fix a mistyped vertical-align.
+- Fix a broken internal link in documentation.
+- Fix a mistyped vertical-align style.
 - Account for nested admonitions.
 
 ## 2021.02.28.beta28
