@@ -192,10 +192,11 @@ Second list level
 
       heh heh. child. try to beat this embed:
 
-      .. literalinclude:: test_py_module/test.py
+      .. literalinclude:: ../../src/furo/__init__.py
           :language: python
           :linenos:
           :lines: 1-10
+
   - and another. `yahoo <http://www.yahoo.com>`_
   - `yahoo <http://www.yahoo.com>`_
   - ``hi``
