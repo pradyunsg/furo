@@ -1,5 +1,13 @@
 # Changelog
 
+## 2021.03.14.beta29
+
+- Update Python-Requires to >=3.6.
+- Center align embedded-in-text images.
+- Center align figures and legends.
+- Fix a mistyped vertical-align.
+- Account for nested admonitions.
+
 ## 2021.02.28.beta28
 
 - Fix a bug in how stylesheets are handled.
