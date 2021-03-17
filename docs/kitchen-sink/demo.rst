@@ -33,7 +33,7 @@ GUI labels are a useful way to indicate that :guilabel:`Some action` is to be ta
 The GUI label should not run over ``line-height`` so as not to :guilabel:`interfere` with text from adjacent lines.
 
 Key-bindings indicate that the read is to press a button on the keyboard or mouse,
-for example :kbd:`MMB` and :kbd:`Shift-MMB`. Another useful markup to indicate a user action
+for example :kbd:`MMB`, :kbd:`⌘+⇧+M` and :kbd:`Shift-MMB`. Another useful markup to indicate a user action
 is to use ``menuselection`` this can be used to show short and long menus in software.
 For example, and ``menuselection`` can be seen here that breaks is too long to fit on this line.
 :menuselection:`My --> Software --> Some menu --> Some sub menu 1 --> sub menu 2`.
