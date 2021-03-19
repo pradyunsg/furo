@@ -50,8 +50,8 @@
   overflow-y: scroll
 
 // Be very annoying when someone includes the table of contents
-.contents
+.contents:not(.this-will-duplicate-information-and-it-is-still-useful-here)
   color: var(--color-problematic)
   background: rgba(255, 0, 0, 0.25)
   &::before
-    content: "ERROR: Adding a table of contents in Furo-based documentation is unnecessary, and does not work well with existing styling."
+    content: "ERROR: Adding a table of contents in Furo-based documentation is unnecessary, and does not work well with existing styling. Add a 'this-will-duplicate-information-and-it-is-still-useful-here' class, if you want an escape hatch."
