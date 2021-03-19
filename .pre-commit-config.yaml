@@ -12,7 +12,7 @@ repos:
         files: \.py$
 
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.4
+    rev: 3.9.0
     hooks:
       - id: flake8
 
@@ -37,7 +37,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/PyCQA/pydocstyle
-    rev: 5.1.1
+    rev: 6.0.0
     hooks:
       - id: pydocstyle
         files: src/.*\.py$
