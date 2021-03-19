@@ -71,9 +71,9 @@ We use [BrowserStack] to test on real devices and browsers. Shoutout to them for
 
 I plucked this from the scientific name for [Domesticated Ferrets](https://en.wikipedia.org/wiki/Ferret): Mustela putorius **furo**.
 
-From my perspective, a ferret is a really good spirit animal for this project: cute, small, steals little things from various places, and hisses at you when you try to make it do things it doesn't like.
+A ferret is actually a really good spirit animal for this project: cute, small, steals little things from various places, and hisses at you when you try to make it do things it doesn't like.
 
-> I plan on commissioning a logo for this project (or making one myself), consistenting of a cute ferret. Please reach out if you're interested!
+> I plan on commissioning a logo for this project (or making one myself) consisting of a cute ferret. Please reach out if you're interested!
 
 ## Used By
 
