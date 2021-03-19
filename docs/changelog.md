@@ -1,13 +1,15 @@
 # Changelog
 
-## 2021.03.14.beta29
+## 2021.03.19.beta29
 
 - Update Python-Requires to >=3.6.
-- Center align embedded-in-text images.
-- Center align figures and legends.
+- Account for nested admonitions.
+- Center align items like other themes.
+- Don't stylize the compound `kbd` tags.
 - Fix a broken internal link in documentation.
 - Fix a mistyped vertical-align style.
-- Account for nested admonitions.
+- Vertically align embedded-in-text images.
+- Declare in HTML that the theme's pages support multiple color schemes.
 
 ## 2021.02.28.beta28
 
