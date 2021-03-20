@@ -1,5 +1,10 @@
 # Changelog
 
+## 2021.03.20.beta31
+
+- Get `pygments_dark_style` working.
+- Use the correct layout for domain index placeholder.
+
 ## 2021.03.20.beta30
 
 - Fix a typo in the README.
