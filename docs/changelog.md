@@ -1,5 +1,10 @@
 # Changelog
 
+## 2021.03.20.beta30
+
+- Fix a typo in the README.
+- Add an escape hatch for specific table of contents.
+
 ## 2021.03.19.beta29
 
 - Update Python-Requires to >=3.6.
