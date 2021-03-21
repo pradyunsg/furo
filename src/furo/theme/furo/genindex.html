@@ -27,10 +27,10 @@
 <section class="genindex-section">
   <h1 id="index">{{ _('Index') }}</h1>
   <div class="genindex-jumpbox">
-  {% for key, dummy in genindexentries -%}
-  <a href="#{{ key }}"><strong>{{ key }}</strong></a>
-  {%- if not loop.last %} | {% endif -%}
-  {%- endfor %}
+    {%- for key, dummy in genindexentries -%}
+    <a href="#{{ key }}"><strong>{{ key }}</strong></a>
+    {%- if not loop.last %} | {% endif -%}
+    {%- endfor -%}
   </div>
 </section>
 
