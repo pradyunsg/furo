@@ -27,7 +27,7 @@
       <a href="{{ pathto(master_doc) }}"><div class="brand">{{ docstitle }}</div></a>
     </div>
     <div class="header-right">
-      <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -46,7 +46,7 @@
   <main class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
         {% block content %}{{ body }}{% endblock %}
@@ -120,10 +120,10 @@
         {% endblock footer %}
       </footer>
     </div>
-    <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
+    <aside class="toc-drawer">
       {% block right_sidebar %}
-      {% if not furo_hide_toc %}
       <div class="toc-sticky toc-scroll">
+        {% if not furo_hide_toc %}
         <div class="toc-title-container">
           <span class="toc-title">
             {{ _("Contents") }}
@@ -134,8 +134,8 @@
             {{ toc }}
           </div>
         </div>
+        {% endif %}
       </div>
-      {% endif %}
       {% endblock right_sidebar %}
     </aside>
   </main>
