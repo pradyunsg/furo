@@ -55,6 +55,15 @@ dl.exception
       color: var(--color-api-keyword)
       padding-right: 0.25rem
 
+    // Align the [source] to the right.
+    code.sig-name.descname,  // final part of named object.
+    span.sig-paren,          // final ')' on a method definition
+    > span.pre               // return annotation, on a function definition
+      + a.reference.internal
+        width: 3.5rem
+        float: right
+        font-size: var(--font-size--small)
+
 .sig-name
   font-weight: bold
   color: var(--color-api-name)
@@ -71,13 +80,6 @@ div.versionadded, div.versionchanged, div.deprecated
   p
     margin-top: 0.125rem
     margin-bottom: 0.125rem
-
-// Align the [source] to the right.
-code.sig-name.descname, span.sig-paren
-  + a.reference.internal
-    width: 3.5rem
-    float: right
-    font-size: var(--font-size--small)
 
 // Align the [docs] to the right.
 .viewcode-link, .viewcode-back
