@@ -72,6 +72,14 @@ div.versionadded, div.versionchanged, div.deprecated
     margin-top: 0.125rem
     margin-bottom: 0.125rem
 
+// Align the [source] to the right.
+code.sig-name.descname, span.sig-paren
+  + a.reference.internal
+    width: 3.5rem
+    float: right
+    font-size: var(--font-size--small)
+
+// Align the [docs] to the right.
 .viewcode-link, .viewcode-back
   float: right
-  font-size: var(--font-size--small)
+  text-align: right
