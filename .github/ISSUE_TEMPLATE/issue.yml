@@ -5,8 +5,8 @@ title: ""
 body:
   - type: textarea
     attributes:
-      label: What's the change?
-      description: A clear and concise description of the change needed.
+      label: What's happening?
+      description: A clear and concise description of the current behaviour.
     validations:
       required: true
   - type: textarea
@@ -34,4 +34,9 @@ body:
           required: true
   - type: markdown
     attributes:
-      value: <br>Feel free to add additional context and screenshots below.
+      value: "---"
+  - type: markdown
+    attributes:
+      value: >-
+        Add additional information (like screenshots!) and description of what
+        change is needed below.
