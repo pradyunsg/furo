@@ -6,13 +6,13 @@ title: ""
 labels: "bug"
 
 body:
-  - type: input
+  - type: textarea
     attributes:
       label: What's the issue?
       description: A clear and concise description of the issue.
     validations:
       required: true
-  - type: input
+  - type: textarea
     attributes:
       label: Reproducer
       description: Steps to reproduce the issue.
@@ -21,10 +21,9 @@ body:
         2. Click on '....'
         3. Scroll down to '....'
         4. See error
-
     validations:
       required: true
-  - type: input
+  - type: textarea
     attributes:
       label: Expectation
       description: A clear and concise description of what should've happened.
@@ -38,4 +37,4 @@ body:
           required: true
   - type: markdown
     attributes:
-      value: "Feel free to add additional context and screenshots below."
+      value: <br>Feel free to add additional context and screenshots below.
