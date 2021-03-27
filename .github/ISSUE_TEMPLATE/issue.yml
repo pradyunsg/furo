@@ -1,0 +1,41 @@
+name: Issue
+about: >-
+  Please only raise an issue if you've been advised to do so after
+  discussion. Thanks! 🙏
+title: ""
+labels: "bug"
+
+body:
+  - type: input
+    attributes:
+      label: What's the issue?
+      description: A clear and concise description of the issue.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Reproducer
+      description: Steps to reproduce the issue.
+      value: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Expectation
+      description: A clear and concise description of what should've happened.
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct.
+          required: true
+  - type: markdown
+    attributes:
+      value: "Feel free to add additional context and screenshots below."
