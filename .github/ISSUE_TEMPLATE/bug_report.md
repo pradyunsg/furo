@@ -1,40 +1,42 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ""
-labels: bug
-assignees: ""
+name: Issue
+about: Please only raise an issue if you've been advised to do so after discussion. Thanks! 🙏
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+<!--
 
-**To Reproduce**
-Steps to reproduce the behavior:
+The starting point for issues should usually be a discussion.
+
+https://github.com/pradyunsg/furo/discussions
+
+Possible bugs may be raised as a "Potential Issue" discussion.
+Feature requests may be raised as an "Ideas" discussion.
+
+We can determine in the discussions, if something needs to be escalated
+into an "Issue" or not. This helps ensure that the "Issues" list
+properly reflects ongoing or needed work on the project.
+
+-->
+
+**Description**
+
+A clear and concise description of the issue.
+
+**Reproducer**
+
+Steps to reproduce the behaviour:
 
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
-
-**Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Desktop (please complete the following information):**
+**Expectation**
 
-- OS: [e.g. iOS]
-- Browser [e.g. chrome, safari]
-- Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
-
-- Device: [e.g. iPhone6]
-- OS: [e.g. iOS8.1]
-- Browser [e.g. stock browser, safari]
-- Version [e.g. 22]
+A clear and concise description of what should've happened.
 
 **Additional context**
+
 Add any other context about the problem here.
