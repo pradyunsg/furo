@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Potential Issue
+  - name: Bug Reports (and other issues)
     url: https://github.com/pradyunsg/furo/discussions/categories/potential-issue
     about: Possible bugs may be raised as a "Potential Issue" discussion.
-  - name: Ideas
+  - name: Feature Requests and ideas
     url: https://github.com/pradyunsg/furo/discussions/categories/ideas
     about: Feature requests may be raised as an "Ideas" discussion.

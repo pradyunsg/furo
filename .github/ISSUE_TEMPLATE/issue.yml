@@ -1,15 +1,13 @@
-name: Issue
+name: Trackable Change
 about: >-
-  Please only raise an issue if you've been advised to do so after
-  discussion. Thanks! 🙏
+  Please only use this, if you've been advised to do so after discussion. Thanks! 🙏
 title: ""
-labels: "bug"
 
 body:
   - type: textarea
     attributes:
-      label: What's the issue?
-      description: A clear and concise description of the issue.
+      label: What's the change?
+      description: A clear and concise description of the change needed.
     validations:
       required: true
   - type: textarea
