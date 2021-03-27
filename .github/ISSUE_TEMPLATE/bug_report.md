@@ -12,8 +12,8 @@ https://github.com/pradyunsg/furo/discussions
 Possible bugs may be raised as a "Potential Issue" discussion.
 Feature requests may be raised as an "Ideas" discussion.
 
-We can determine in the discussions, if something needs to be escalated
-into an "Issue" or not. This helps ensure that the "Issues" list
+We can determine in the discussion, if something needs to be escalated
+into an "Issue" or not. This helps ensure that the issues list
 properly reflects ongoing or needed work on the project.
 
 -->

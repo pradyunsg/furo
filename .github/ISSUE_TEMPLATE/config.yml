@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-- name: Discussions
-  url: https://github.com/pradyunsg/furo/discussions
-  about: The "Discussions" forum is where you want to start. 💖
+  - name: Potential Issue
+    url: https://github.com/pradyunsg/furo/discussions/categories/potential-issue
+    about: Possible bugs may be raised as a "Potential Issue" discussion.
+  - name: Ideas
+    url: https://github.com/pradyunsg/furo/discussions/categories/ideas
+    about: Feature requests may be raised as an "Ideas" discussion.
