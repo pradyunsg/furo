@@ -109,13 +109,7 @@
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             {%- endtrans %}
           {%- endif %}
-          {%- if show_source and has_source and sourcename %}
-            |
-            <a class="muted-link" href="{{ pathto('_sources/' + sourcename, true)|e }}"
-               rel="nofollow">
-              {{ _('Show Source') }}
-            </a>
-          {%- endif %}
+          {% include "gitedit.html" %}
         </div>
         {% endblock footer %}
       </footer>
