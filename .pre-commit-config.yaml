@@ -18,7 +18,7 @@ repos:
         additional_dependencies: [black==20.8b1]
 
   - repo: https://github.com/PyCQA/isort
-    rev: 5.7.0
+    rev: 5.8.0
     hooks:
       - id: isort
         files: \.py$
@@ -36,7 +36,7 @@ repos:
       - id: forbid-new-submodules
       - id: trailing-whitespace
 
-  - repo: https://gitlab.com/pycqa/flake8
+  - repo: https://github.com/PyCQA/flake8
     rev: 3.9.0
     hooks:
       - id: flake8
