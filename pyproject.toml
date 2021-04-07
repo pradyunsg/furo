@@ -41,6 +41,8 @@ doc = [
   "myst-parser",
   "sphinx-copybutton",
   "sphinx-inline-tabs",
+  # Broken release. https://github.com/executablebooks/MyST-Parser/issues/343
+  "docutils != 0.17",
 ]
 
 [tool.flit.entrypoints]
