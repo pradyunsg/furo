@@ -13,13 +13,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install nox
+          pip install build
           npm install
 
       - name: Generate release assets
         run: ./node_modules/.bin/gulp build
       - name: Generate final distribution
-        run: flit build
+        run: python -m build
 
       - name: Get the release version
         id: version
@@ -63,7 +63,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: true
-          prerelease: false
+          prerelease: true
 
       - name: Upload sdist to GitHub
         uses: actions/upload-release-asset@v1
