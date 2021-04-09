@@ -87,7 +87,7 @@ def get_colors_for_codeblocks(
     )
 
 
-def _compute_navigation_tree(context: Dict[str, Any], maxdepth: int=-1) -> str:
+def _compute_navigation_tree(context: Dict[str, Any], maxdepth: int = -1) -> str:
     # The navigation tree, generated from the sphinx-provided ToC tree.
     if "toctree" in context:
         toctree = context["toctree"]
