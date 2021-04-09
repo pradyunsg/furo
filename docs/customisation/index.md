@@ -56,6 +56,16 @@ html_theme_options = {
 }
 ```
 
+### `sidebar_maxdepth`
+
+Controls the maxdepth of the sidebar navigation. The default is `-1`.
+
+```python
+html_theme_options = {
+    "sidebar_maxdepth": 3,
+}
+```
+
 ### `navigation_with_keys`
 
 Controls whether the user can navigate the documentation using the keyboard’s left and right arrows. The default is `False`.

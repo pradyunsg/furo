@@ -87,14 +87,14 @@ def get_colors_for_codeblocks(
     )
 
 
-def _compute_navigation_tree(context: Dict[str, Any]) -> str:
+def _compute_navigation_tree(context: Dict[str, Any], maxdepth=-1) -> str:
     # The navigation tree, generated from the sphinx-provided ToC tree.
     if "toctree" in context:
         toctree = context["toctree"]
         toctree_html = toctree(
             collapse=False,
             titles_only=True,
-            maxdepth=-1,
+            maxdepth=maxdepth,
             includehidden=True,
         )
     else:
@@ -145,7 +145,8 @@ def _html_page_context(
     }
 
     # Values computed from page-level context.
-    context["furo_navigation_tree"] = _compute_navigation_tree(context)
+    sidebar_maxdepth = app.config.html_theme_options.get('sidebar_maxdepth', -1)
+    context["furo_navigation_tree"] = _compute_navigation_tree(context, maxdepth=sidebar_maxdepth)
     context["furo_hide_toc"] = _compute_hide_toc(context)
 
     # Inject information about styles
