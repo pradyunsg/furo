@@ -145,8 +145,10 @@ def _html_page_context(
     }
 
     # Values computed from page-level context.
-    sidebar_maxdepth = app.config.html_theme_options.get('sidebar_maxdepth', -1)
-    context["furo_navigation_tree"] = _compute_navigation_tree(context, maxdepth=sidebar_maxdepth)
+    sidebar_maxdepth = app.config.html_theme_options.get("sidebar_maxdepth", -1)
+    context["furo_navigation_tree"] = _compute_navigation_tree(
+        context, maxdepth=sidebar_maxdepth
+    )
     context["furo_hide_toc"] = _compute_hide_toc(context)
 
     # Inject information about styles
