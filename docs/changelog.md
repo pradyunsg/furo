@@ -1,5 +1,10 @@
 # Changelog
 
+## 2021.04.11.beta33
+
+- Another styling update sidebar-caption related changes in Sphinx.
+
+
 ## 2021.04.11.beta32
 
 - Add a basic domainindex page, without dedicated styling.
