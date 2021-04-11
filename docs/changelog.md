@@ -1,10 +1,5 @@
 # Changelog
 
-## 2021.04.11.beta35
-
-- Seems like I missed another variant of how Sphinx might output
-  sidebar captions. :)
-
 ## 2021.04.11.beta34
 
 - Account for even more variants of sidebar-caption HTML.
