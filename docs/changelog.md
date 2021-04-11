@@ -1,5 +1,14 @@
 # Changelog
 
+## 2021.04.11.beta32
+
+- Add a basic domainindex page, without dedicated styling.
+- Add recommendation for sphinx-opengraph.
+- Account for newer Sphinx versions changing classes for captions.
+- Account for the broken docutils release.
+- Right align viewcode links (like `[source]`) allowing wrapping of API
+  signatures gradefully.
+
 ## 2021.03.20.beta31
 
 - Get `pygments_dark_style` working.
