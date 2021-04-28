@@ -100,3 +100,11 @@ function main() {
 }
 
 document.addEventListener("DOMContentLoaded", main);
+
+// Only show currently selected subsection
+$(document).ready(function(){
+  $(".sidebar-tree").children("ul.current").each(function() {
+    $(this).css("display", "block");
+    $(this).prev("p.caption").css("display", "block");
+  });
+});

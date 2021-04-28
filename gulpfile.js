@@ -22,7 +22,8 @@ var dest_path = "./src/furo/theme/furo/static";
 
 function css() {
   return gulp
-    .src(src_path + "styles/[!_]*.sass", { since: gulp.lastRun(css) })
+    .src(
+      src_path + "styles/[!_]*.sass", { since: gulp.lastRun(css) })
     .pipe(sourcemaps.init())
     .pipe(sass({ fiber: Fiber }).on("error", sass.logError))
     .pipe(postcss(plugins))

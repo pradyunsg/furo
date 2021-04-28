@@ -11,6 +11,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "jquery": "^3.6.0",
     "node-gyp": "^3.8.0",
     "normalize.css": "^8.0.1",
     "postcss": "^7.0.32",
