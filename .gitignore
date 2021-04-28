@@ -7,6 +7,7 @@ node_modules
 /dist
 __pycache__
 
-# Generated files
-src/*/theme/*/static/scripts
-src/*/theme/*/static/styles
+# Generated files:
+# TODO: ignore these for now until we have a release workflow
+# src/*/theme/*/static/scripts
+# src/*/theme/*/static/styles
