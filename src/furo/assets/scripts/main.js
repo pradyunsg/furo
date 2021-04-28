@@ -101,10 +101,29 @@ function main() {
 
 document.addEventListener("DOMContentLoaded", main);
 
-// Only show currently selected subsection
-$(document).ready(function(){
+// Custom flyte theme logic
+var toggleCurrentSubsection = function() {
+  // only show currently selected subsection
   $(".sidebar-tree").children("ul.current").each(function() {
     $(this).css("display", "block");
     $(this).prev("p.caption").css("display", "block");
   });
+}
+
+var highlightCurrentSubsection = function() {
+  // highlight the current subsection in the main nav
+  var currentSection = $(".sidebar-tree").children("ul.current");
+  var caption = currentSection.prev("p.caption").text();
+  var mainNav = $(".sidebar-tree").children("ul").first();
+  mainNav.find("li a").each(function() {
+      if ($(this).text() === caption) {
+          $(this).css("font-weight", "bold");
+      }
+  })
+}
+
+
+$(document).ready(function(){
+  toggleCurrentSubsection();
+  highlightCurrentSubsection();
 });
