@@ -7,6 +7,11 @@ h6 {
   font-weight: bold;
 }
 
+.sidebar-scroll {
+  scroll-behavior: auto;
+  opacity: 0;
+}
+
 .sidebar-tree > :not(:first-child) {
   display: none;
 }

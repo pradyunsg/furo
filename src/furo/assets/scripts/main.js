@@ -124,8 +124,11 @@ function main() {
 
   // custom scrolling on toc
   setTimeout(function() {
-    target = document.getElementsByClassName("current-page")[0];
-    target.scrollIntoView();
+    sidebar = document.querySelector(".sidebar-scroll");
+    target = document.querySelector(".current-page");
+    sidebar.scrollTo(0, target.offsetTop + 200);
+
+    jQuery(".sidebar-scroll").animate({opacity: 1.0}, 100);
   }, 10);
 }
 
