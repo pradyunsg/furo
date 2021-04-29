@@ -90,17 +90,6 @@ function setup() {
   setupScrollSpy();
 }
 
-function main() {
-  document.body.parentNode.classList.remove("no-js");
-
-  header = document.querySelector("header");
-  tocScroll = document.querySelector(".toc-scroll");
-
-  setup();
-}
-
-document.addEventListener("DOMContentLoaded", main);
-
 // Custom flyte theme logic
 var toggleCurrentSubsection = function() {
   // only show currently selected subsection
@@ -122,8 +111,22 @@ var highlightCurrentSubsection = function() {
   })
 }
 
+function main() {
+  document.body.parentNode.classList.remove("no-js");
 
-$(document).ready(function(){
+  header = document.querySelector("header");
+  tocScroll = document.querySelector(".toc-scroll");
+
+  setup();
+
   toggleCurrentSubsection();
   highlightCurrentSubsection();
-});
+
+  // custom scrolling on toc
+  setTimeout(function() {
+    target = document.getElementsByClassName("current-page")[0];
+    target.scrollIntoView();
+  }, 10);
+}
+
+document.addEventListener("DOMContentLoaded", main);
