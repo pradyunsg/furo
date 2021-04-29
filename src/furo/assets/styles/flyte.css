@@ -96,6 +96,10 @@ p.sphx-glr-script-out {
 }
 
 @media (prefers-color-scheme: dark) {
+  .sidebar-tree > ul:not(:first-child) {
+    border-left: 1px solid #505050;
+    margin-left: 20px;
+  }
   .search__outer {
     background-color: #131416 !important;
     border: 1px solid #131416 !important;
