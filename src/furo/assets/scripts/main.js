@@ -126,7 +126,9 @@ function main() {
   setTimeout(function() {
     sidebar = document.querySelector(".sidebar-scroll");
     target = document.querySelector(".current-page");
-    sidebar.scrollTo(0, target.offsetTop + 200);
+    if (target) {
+      sidebar.scrollTo(0, target.offsetTop + 200);
+    }
 
     jQuery(".sidebar-scroll").animate({opacity: 1.0}, 100);
   }, 10);
