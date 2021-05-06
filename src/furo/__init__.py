@@ -4,6 +4,9 @@ __version__ = "2021.03.20.dev32"
 
 import hashlib
 import logging
+import re
+import os
+import warnings
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict
@@ -124,6 +127,16 @@ def furo_asset_hash(path: str) -> str:
     return f"_static/{path}?digest={digest}"
 
 
+def get_github_url(app, view, path):
+    return 'https://github.com/{username}/{repo}/{view}/{commit}/{path}'.format(
+        username=app.config.html_theme_options["github_username"],
+        repo=app.config.html_theme_options["github_repo"],
+        view=view,
+        commit=app.config.html_theme_options["github_commit"],
+        path=path
+    )
+
+
 def _html_page_context(
     app: sphinx.application.Sphinx,
     pagename: str,
@@ -175,6 +188,36 @@ def _html_page_context(
         context["furo_assets"]["style"] = furo_asset_hash("styles/furo.css")
     else:
         context["furo_assets"]["style"] = "_static/" + context["style"]
+
+    if templatename != 'page.html':
+        return
+
+    if not app.config.html_theme_options["github_repo"]:
+        warnings.warn("github_repo not specified")
+        return
+
+    if not app.config.html_theme_options["github_username"]:
+        warnings.warn("github_username not specified")
+        return
+
+    path = os.path.relpath(doctree.get('source'), app.builder.srcdir)
+    if path.startswith(app.config.html_theme_options["sphinx_gallery_dest_dir"]):
+        # sphinx gallery examples show redirect to sphinx gallery example python scripts
+        path = re.sub(
+            f"^{app.config.html_theme_options['sphinx_gallery_dest_dir']}",
+            app.config.html_theme_options["sphinx_gallery_src_dir"],
+            path
+        )
+        path = (
+            # auto-generated index files should redirect to README.rst file
+            re.sub("index.rst$", "README.rst", path)
+            if path.endswith("index.rst")
+            else re.sub(".rst$", ".py", path)
+        )
+    else:
+        path = f"{app.config.html_theme_options['docs_path']}/{path}"
+
+    context['show_on_github_url'] = get_github_url(app, 'blob', path)
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
