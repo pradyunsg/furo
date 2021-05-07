@@ -1,6 +1,7 @@
 """Generate the navigation tree from Sphinx's toctree function's output."""
 
 import functools
+import re
 
 from bs4 import BeautifulSoup, Tag
 
@@ -67,6 +68,17 @@ def get_navigation_tree(toctree_html: str) -> str:
             checkbox.attrs["checked"] = ""
 
         element.insert(1, checkbox)
+
+    # replaces toc text that follows sphinx_fontawesome substitution rules:
+    # https://github.com/fraoustin/sphinx_fontawesome
+    for element in soup.find_all("li", {"class": "toctree-l1"}, recursive=True):
+        match = re.match("\|([a-z-]+)\| ", element.text)
+        new_text = re.sub("\|[a-z-]+\| ", "", element.text)
+        if match:
+            fa_tag = soup.new_tag("i", attrs={"class": f"fa fa-{match.group(1)}"})
+            link = element.find("a")
+            link.string = new_text
+            link.insert(0, fa_tag)
 
     if last_element_with_current is not None:
         last_element_with_current["class"].append("current-page")

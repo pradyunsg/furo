@@ -28,6 +28,7 @@ h6 {
 
 .sidebar-tree ul:first-child li:not(:last-child) {
   margin-bottom: 5px;
+  padding: 3px 0px;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -42,6 +43,12 @@ h6 {
 
 .sidebar-logo {
   max-width: 30%;
+}
+
+.sidebar-tree i.fa {
+  padding-right: 15px;
+  width: 1.75em;
+  text-align: center;
 }
 
 .caption-text {
