@@ -192,11 +192,12 @@ def _html_page_context(
     if templatename != 'page.html':
         return
 
-    if not app.config.html_theme_options["github_repo"]:
+    context['show_on_github_url'] = False
+    if not app.config.html_theme_options.get("github_repo"):
         warnings.warn("github_repo not specified")
         return
 
-    if not app.config.html_theme_options["github_username"]:
+    if not app.config.html_theme_options.get("github_username"):
         warnings.warn("github_username not specified")
         return
 
