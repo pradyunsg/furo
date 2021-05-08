@@ -1,7 +1,6 @@
 name: Trackable Change
 about: >-
   Please only use this, if you've been advised to do so after discussion. Thanks! 🙏
-title: ""
 body:
   - type: textarea
     attributes:
