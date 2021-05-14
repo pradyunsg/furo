@@ -86,6 +86,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [psycopg3]
 - [pip]
 - [packaging]
+- [feincms3]
 
 I'm also a maintainer on the last two, so... that covers responsible disclosure. :)
 
@@ -94,6 +95,7 @@ I'm also a maintainer on the last two, so... that covers responsible disclosure.
 [psycopg3]: https://www.psycopg.org/psycopg3/docs/
 [pip]: https://pip.pypa.io/
 [packaging]: https://packaging.pypa.io/
+[feincms3]: https://feincms3.readthedocs.io/
 
 <!-- end used-by -->
 
