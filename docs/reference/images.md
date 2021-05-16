@@ -52,7 +52,7 @@ This is from Markdown.
 This is from reStructuredText.
 ````
 
-=(light-dark-images)
+(light-dark-images)=
 
 ## Different images for dark/light mode
 
