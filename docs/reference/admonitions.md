@@ -129,12 +129,6 @@ Maaa! I made it look the same by setting the class.
    Reader discretion is strongly advised.
    ```
 
-## Custom Admonitions
-
-```{todo}
-Describe the CSS variables needed.
-```
-
 ## Nesting admonitions
 
 
