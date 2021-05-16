@@ -8,6 +8,10 @@ Furo is in light mode by default, switching to the dark mode when requested by t
 
 As a consequence of this design, the dark mode inherits the variable definitions from the light mode, only overriding specific values to adapt the theme. While the mechanism for switching between light/dark mode is not configurable, the exact CSS variable definitions used in this process can be configured.
 
+It is possible to use different content for light and dark mode, by setting
+`only-dark` and `only-light` classes on the content. This is the
+[recommended approach](light-dark-images) for handling images with backgrounds.
+
 ## Defining overrides for defaults
 
 Furo allows defining [CSS variables that overrides its default values](css-variables). The exact variable names to use can be found in Furo's source code, where the [variable declarations](https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables) are made.
