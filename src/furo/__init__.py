@@ -202,7 +202,9 @@ def _html_page_context(
         return
 
     path = os.path.relpath(doctree.get('source'), app.builder.srcdir)
-    if path.startswith(app.config.html_theme_options["sphinx_gallery_dest_dir"]):
+    sphinx_dir = app.config.html_theme_options.get("sphinx_gallery_dest_dir")
+
+    if sphinx_dir and path.startswith(sphinx_dir):
         # sphinx gallery examples show redirect to sphinx gallery example python scripts
         path = re.sub(
             f"^{app.config.html_theme_options['sphinx_gallery_dest_dir']}",
@@ -216,7 +218,8 @@ def _html_page_context(
             else re.sub(".rst$", ".py", path)
         )
     else:
-        path = f"{app.config.html_theme_options['docs_path']}/{path}"
+        docs_path = app.config.html_theme_options.get("docs_path", "docs")
+        path = f"{docs_path}/{path}"
 
     context['show_on_github_url'] = get_github_url(app, 'blob', path)
 
