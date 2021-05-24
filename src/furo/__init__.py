@@ -201,10 +201,13 @@ def _html_page_context(
         warnings.warn("github_username not specified")
         return
 
+    if doctree is None:
+        return
+
     path = os.path.relpath(doctree.get('source'), app.builder.srcdir)
     sphinx_dir = app.config.html_theme_options.get("sphinx_gallery_dest_dir")
 
-    if sphinx_dir and path.startswith(sphinx_dir):
+    if sphinx_dir is not None and path.startswith(sphinx_dir):
         # sphinx gallery examples show redirect to sphinx gallery example python scripts
         path = re.sub(
             f"^{app.config.html_theme_options['sphinx_gallery_dest_dir']}",
