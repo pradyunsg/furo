@@ -63,7 +63,22 @@ backgrounds (eg: if the image has a white background).
 You can use the `only-light` and `only-dark` classes, to show different images
 based on the currently active colour scheme.
 
-```{eval-rst}
+````{furo-demo}
+
+```{image} https://source.unsplash.com/200x200/daily?cute+dogs
+:align: center
+:class: only-light
+```
+
+```{image} https://source.unsplash.com/200x200/daily?cute+cats
+:align: center
+:class: only-dark
+```
+
+This is from Markdown.
+
++++
+
 .. image:: https://source.unsplash.com/200x200/daily?cute+dogs
    :align: center
    :class: only-light
@@ -71,4 +86,7 @@ based on the currently active colour scheme.
 .. image:: https://source.unsplash.com/200x200/daily?cute+cats
    :align: center
    :class: only-dark
-```
+
+This is from reStructuredText.
+
+````
