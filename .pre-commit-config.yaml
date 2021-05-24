@@ -49,7 +49,7 @@ repos:
         files: src/.*\.py$
 
   - repo: https://github.com/PyCQA/pydocstyle
-    rev: 6.0.0
+    rev: 6.1.1
     hooks:
       - id: pydocstyle
         files: src/.*\.py$
