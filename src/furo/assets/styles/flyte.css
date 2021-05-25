@@ -68,16 +68,52 @@ h6 {
   border: transparent;
 }
 
+div.sphx-glr-download-link-note, p.sphx-glr-signature {
+  height: 0px;
+  visibility: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+div.sphx-glr-footer {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid var(--color-background-border);
+  border-bottom: 1px solid var(--color-background-border);
+  margin: 40px 0px 10px 0px;
+}
+
+div.sphx-glr-download {
+  margin: 0;
+  width: 50%;
+}
+
 div.sphx-glr-download a {
-  color: white;
-  background-color: #9d68e4cf;
+  color: var(--color-sidebar-link-text);
+  background: transparent;
   background-image: none;
-  border: 1px solid #9d68e4cf;
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  font-weight: lighter;
+  font-size: 0.9em;
+  padding: 30px 0px;
+  width: 100%;
 }
 
 div.sphx-glr-download a:hover {
-  background-color: #8b48e2cf;
   box-shadow: none;
+  background: var(--color-sidebar-item-background--hover);
+  border: none;
+  border-radius: 0;
+}
+
+div.sphx-glr-footer div.sphx-glr-download p {
+  margin: 0;
+}
+
+div.sphx-glr-footer div.sphx-glr-download:first-child p {
+  border-right: 1px solid var(--color-background-border);
 }
 
 div.sphx-glr-thumbcontainer a.headerlink {
