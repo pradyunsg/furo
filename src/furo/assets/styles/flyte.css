@@ -181,3 +181,31 @@ p.sphx-glr-script-out {
     color: #9ca0a5 !important;
   }
 }
+
+/* sphinx-panels custom styles */
+div.sphinx-bs .card-header {
+  border-bottom: none;
+}
+
+div.sphinx-bs .card-header .sphinx-bs.btn,
+div.sphinx-bs .card-header p.card-text {
+  font-size: 1.1rem;
+  text-decoration: none;
+  word-spacing: 2.5px;
+}
+
+div.sphinx-bs .card-header .sphinx-bs.btn:focus {
+  box-shadow: none;
+}
+
+div.sphinx-bs .card-header .sphinx-bs.btn:hover {
+  color: var(--color-link--hover);
+}
+
+div.sphinx-bs .card {
+  background-color: var(--color-content-background);
+}
+
+.center-card-content p {
+  margin: auto !important;
+}
