@@ -185,6 +185,7 @@ p.sphx-glr-script-out {
 /* sphinx-panels custom styles */
 div.sphinx-bs .card-header {
   border-bottom: none;
+  background-color: var(--color-background-primary);
 }
 
 div.sphinx-bs .card-header .sphinx-bs.btn,
@@ -192,6 +193,7 @@ div.sphinx-bs .card-header p.card-text {
   font-size: 1.1rem;
   text-decoration: none;
   word-spacing: 2.5px;
+  color: var(--color-foreground-primary);
 }
 
 div.sphinx-bs .card-header .sphinx-bs.btn:focus {
@@ -203,7 +205,8 @@ div.sphinx-bs .card-header .sphinx-bs.btn:hover {
 }
 
 div.sphinx-bs .card {
-  background-color: var(--color-content-background);
+  background-color: var(--color-background-secondary);
+  border: 1px solid var(--color-background-border);
 }
 
 .center-card-content p {
