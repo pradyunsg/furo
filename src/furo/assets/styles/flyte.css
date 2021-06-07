@@ -189,6 +189,7 @@ div.sphinx-bs .card-header {
 }
 
 div.sphinx-bs .card-header .sphinx-bs.btn,
+div.sphinx-bs .card-body .sphinx-bs.btn,
 div.sphinx-bs .card-header p.card-text {
   font-size: 1.1rem;
   text-decoration: none;
@@ -196,11 +197,24 @@ div.sphinx-bs .card-header p.card-text {
   color: var(--color-sidebar-link-text);
 }
 
-div.sphinx-bs .card-header .sphinx-bs.btn:focus {
+.sphinx-bs.btn:focus {
   box-shadow: none;
 }
 
-div.sphinx-bs .card-header .sphinx-bs.btn:hover {
+.sphinx-bs .card-body .fa {
+  color: var(--color-sidebar-link-text);
+}
+
+.sphinx-bs .card-body:hover .fa {
+  color: var(--color-link--hover);
+}
+
+.sphinx-bs .card-body .fa {
+  font-size: 2rem;
+}
+
+div.sphinx-bs .card-header .sphinx-bs.btn:hover,
+div.sphinx-bs .card-body .sphinx-bs.btn:hover {
   color: var(--color-link--hover);
 }
 
