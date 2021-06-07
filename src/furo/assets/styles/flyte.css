@@ -193,7 +193,7 @@ div.sphinx-bs .card-header p.card-text {
   font-size: 1.1rem;
   text-decoration: none;
   word-spacing: 2.5px;
-  color: var(--color-foreground-primary);
+  color: var(--color-sidebar-link-text);
 }
 
 div.sphinx-bs .card-header .sphinx-bs.btn:focus {
