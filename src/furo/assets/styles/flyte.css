@@ -60,12 +60,22 @@ h6 {
 }
 
 .sphx-glr-thumbcontainer {
-  background-color: transparent;
-  border: transparent;
+  background-color: var(--color-background-secondary);
+  border: 1px solid var(--color-background-border);
+  box-shadow: 0 .2rem .5rem rgba(0,0,0,.05),0 0 .0625rem rgba(0,0,0,.1) !important;
+  min-height: 100px;
+  width: 30%;
+  padding-top: 0px;
+  margin: 10px;
 }
 
 .sphx-glr-thumbcontainer:hover {
-  border: transparent;
+  border: 1px solid var(--color-background-border);
+  box-shadow: none !important;
+}
+
+.sphx-glr-thumbcontainer img {
+  display: none;
 }
 
 div.sphx-glr-download-link-note, p.sphx-glr-signature {
@@ -86,6 +96,24 @@ div.sphx-glr-footer {
 div.sphx-glr-download {
   margin: 0;
   width: 50%;
+}
+
+.sphx-glr-thumbcontainer a.internal {
+  padding: 30px 10px 0;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--color-sidebar-link-text);
+}
+
+.sphx-glr-thumbcontainer:hover a.internal {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+/* hide download thumbnail captions */
+.sphx-glr-thumbcontainer[tooltip]:hover:before,
+.sphx-glr-thumbcontainer[tooltip]:hover:after {
+  display: none;
 }
 
 div.sphx-glr-download a {
@@ -118,11 +146,6 @@ div.sphx-glr-footer div.sphx-glr-download:first-child p {
 
 div.sphx-glr-thumbcontainer a.headerlink {
   display: none;
-}
-
-div.sphx-glr-thumbcontainer:hover {
-  border-color: white;
-  box-shadow: none;
 }
 
 .sphx-glr-script-out .highlight pre {
