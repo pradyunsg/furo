@@ -63,7 +63,7 @@ h6 {
   background-color: var(--color-background-secondary);
   border: 1px solid var(--color-background-border);
   box-shadow: 0 .2rem .5rem rgba(0,0,0,.05),0 0 .0625rem rgba(0,0,0,.1) !important;
-  min-height: 100px;
+  min-height: 140px;
   width: 30%;
   padding-top: 0px;
   margin: 10px;
