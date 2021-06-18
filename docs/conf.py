@@ -76,3 +76,4 @@ html_theme = "furo"
 html_title = "Furo"
 
 html_static_path = ["_static"]
+html_css_files = ["pied-piper-admonition.css"]
