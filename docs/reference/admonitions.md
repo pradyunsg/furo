@@ -5,8 +5,7 @@ Admonitions are a great way to include side content, without significantly inter
 ## Basic Usage
 
 ````{furo-demo}
-```{note}
-This is what the most basic admonitions look like in Markdown.
+```{note} This is what the most basic admonitions look like.
 ```
 
 ```{note}
@@ -15,10 +14,12 @@ It is *possible* to have multiple paragraphs in the same admonition.
 If you really want, you can even have lists, or code, or tables.
 ```
 
+This is from Markdown.
 
 +++
 
-.. note:: This is what the most basic admonitions look like in reStructuredText.
+.. note:: This is what the most basic admonitions look like.
+
 
 .. note::
    It is *possible* to have multiple paragraphs in the same admonition.
@@ -26,6 +27,7 @@ If you really want, you can even have lists, or code, or tables.
    If you really want, you can even have lists, or code, or tables.
 
 
+This is from reStructuredText.
 ````
 
 ## Custom Titles
@@ -46,6 +48,7 @@ Maaa! I made it look the same by setting the class.
 .. admonition:: Look ma! A custom title.
 
    It looks different though.
+
 
 .. admonition:: Another Custom Title
    :class: note
