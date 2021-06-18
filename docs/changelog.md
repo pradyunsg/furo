@@ -1,5 +1,9 @@
 # Changelog
 
+## 2021.06.18.beta36
+
+- Fix dark mode highlighting in Sphinx 4.
+
 ## 2021.06.18.beta35
 
 - Allow use with Sphinx 4.
