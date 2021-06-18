@@ -55,13 +55,10 @@ dl.exception
       color: var(--color-api-keyword)
       padding-right: 0.25rem
 
-    // Align the [source] to the right.
-    code.sig-name.descname,  // final part of named object.
-    span.sig-paren,          // final ')' on a method definition
-    > span.pre               // return annotation, on a function definition
-      + a.reference.internal
+    // adjust the size of the [source] link on the right.
+    a.reference.internal
+      .viewcode-link
         width: 3.5rem
-        float: right
         font-size: var(--font-size--small)
 
 .sig-name
@@ -81,7 +78,7 @@ div.versionadded, div.versionchanged, div.deprecated
     margin-top: 0.125rem
     margin-bottom: 0.125rem
 
-// Align the [docs] to the right.
+// Align the [docs] and [source] to the right.
 .viewcode-link, .viewcode-back
   float: right
   text-align: right
