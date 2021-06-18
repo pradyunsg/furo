@@ -1,5 +1,11 @@
 # Changelog
 
+## 2021.06.18.beta35
+
+- Allow use with Sphinx 4.
+- Fix right alignment of viewcode links, when used with certain API
+  signatures.
+
 ## 2021.04.11.beta34
 
 - Account for even more variants of sidebar-caption HTML.
