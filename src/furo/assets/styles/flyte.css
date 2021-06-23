@@ -268,10 +268,35 @@ div.sphinx-bs .card {
 
 .sphinx-tabs-panel {
   border: 1px solid var(--color-background-border);
-  background: var( --color-background-secondary);
+  background: var(--color-background-secondary);
   border-top: 0;
 }
 
 [role="tablist"] {
   border-bottom: 1px solid var(--color-background-border);
+}
+
+/* mermaid diagrams */
+div.mermaid {
+  /* hide the div if the raw data hasn't been processed */
+  display: none;
+}
+
+div.mermaid[data-processed="true"] {
+  display: block;
+  background: var(--color-background-secondary);
+  padding: 20px 0;
+}
+
+div.mermaid svg {
+  max-height: 800px;
+}
+
+div.mermaid .messageText {
+  fill: var(--color-foreground-primary) !important;
+  stroke: var(--color-foreground-primary) !important;
+}
+
+div.mermaid line {
+  stroke: var(--color-foreground-secondary) !important;
 }
