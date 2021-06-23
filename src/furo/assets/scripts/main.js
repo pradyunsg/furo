@@ -135,3 +135,24 @@ function main() {
 }
 
 document.addEventListener("DOMContentLoaded", main);
+
+
+// Logic for handling the rendering of mermaid diagrams.
+function renderMermaid() {
+  jQuery(".mermaid").each(function(i, el) {
+    if (jQuery(el).parent()[0].getAttribute("hidden") === 'true') {
+      // don't render mermaid charts whose parent node is hidden
+    } else {
+      mermaid.init(jQuery(el));
+    }
+  });
+}
+
+jQuery(function() {
+  renderMermaid()
+
+  // listen for clicks on tab buttons
+  jQuery("button.sphinx-tabs-tab").on("click", function() {
+    renderMermaid();
+  });
+})
