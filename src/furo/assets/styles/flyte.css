@@ -115,9 +115,10 @@ div.sphx-glr-download {
   color: var(--color-link);
 }
 
-/* hide download thumbnail captions */
+/* hide download thumbnail captions and sphinx gallery script timing */
 .sphx-glr-thumbcontainer[tooltip]:hover:before,
-.sphx-glr-thumbcontainer[tooltip]:hover:after {
+.sphx-glr-thumbcontainer[tooltip]:hover:after,
+.sphx-glr-timing {
   display: none;
 }
 
