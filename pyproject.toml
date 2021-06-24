@@ -11,7 +11,7 @@ description-file = "README.md"
 requires-python = ">=3.6"
 requires = [
   "beautifulsoup4",
-  "sphinx >= 3.0, < 5.0",
+  "sphinx ~= 4.0",
 ]
 classifiers = [
   "Framework :: Sphinx",
@@ -41,8 +41,6 @@ doc = [
   "myst-parser",
   "sphinx-copybutton",
   "sphinx-inline-tabs",
-  # Broken release. https://github.com/executablebooks/MyST-Parser/issues/343
-  "docutils != 0.17",
 ]
 
 [tool.flit.entrypoints]
