@@ -1,5 +1,11 @@
 # Changelog
 
+## 2021.06.24.beta37
+
+- Require Sphinx 4.
+- Rework CSS/JS asset inclusion, to work better with Sphinx 4.
+- Document how to add a custom admonition style.
+
 ## 2021.06.18.beta36
 
 - Fix dark mode highlighting in Sphinx 4.
