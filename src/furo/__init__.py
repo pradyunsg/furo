@@ -2,7 +2,6 @@
 
 __version__ = "2021.06.18.dev37"
 
-import hashlib
 import logging
 from functools import lru_cache
 from pathlib import Path
@@ -116,15 +115,6 @@ def _compute_hide_toc(context: Dict[str, Any]) -> bool:
     return has_exactly_one_list_item(context["toc"])
 
 
-@lru_cache(maxsize=None)
-def furo_asset_hash(path: str) -> str:
-    """Append a `?digest=` to an url based on the file content."""
-    full_path = THEME_PATH / "static" / path
-    digest = hashlib.sha1(full_path.read_bytes()).hexdigest()
-
-    return f"_static/{path}?digest={digest}"
-
-
 def _html_page_context(
     app: sphinx.application.Sphinx,
     pagename: str,
@@ -137,12 +127,6 @@ def _html_page_context(
 
     # Basic constants
     context["furo_version"] = __version__
-
-    # Assets
-    context["furo_assets"] = {
-        "furo-extensions.css": furo_asset_hash("styles/furo-extensions.css"),
-        "main.js": furo_asset_hash("scripts/main.js"),
-    }
 
     # Values computed from page-level context.
     context["furo_navigation_tree"] = _compute_navigation_tree(context)
@@ -166,26 +150,21 @@ def _html_page_context(
     if "body" in context:
         context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
 
-    should_use_own_styles = (
-        # Not using the HTML builders with Furo for some reason?
-        "style" not in context
-        # Did not override Furo's default CSS
-        or context["style"] == "styles/furo.css"
-    )
-    if should_use_own_styles:
-        context["furo_assets"]["style"] = furo_asset_hash("styles/furo.css")
-    else:
-        context["furo_assets"]["style"] = "_static/" + context["style"]
-
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if app.config.html_theme != "furo":
         return
 
+    # Our `main.js` file needs to be loaded as soon as possible.
+    app.add_js_file("scripts/main.js", priority=200)
+
+    # 500 is the default priority for extensions, we want this after this.
+    app.add_css_file("styles/furo-extensions.css", priority=600)
+
     builder = app.builder
     assert builder.dark_highlighter is None, "this shouldn't happen."
 
-    # number_of_hours_spent_figuring_this_out = 4
+    # number_of_hours_spent_figuring_this_out = 7
     #
     # Hello human in the future! This next block of code needs a bit of a story, and
     # if you're going to touch it, remember to update the number above (or remove this
@@ -226,6 +205,22 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     # fall back to the original behaviour and also print a warning, so that hopefully
     # someone will report this. Maybe it'll all be fixed, and I can remove this whole
     # hack and this giant comment.
+    #
+    # But wait, this hack actually has another layer to it.
+    #
+    # This whole setup depends on an internal implementation detail in Sphinx -- that
+    # it "adds" the `pygments_dark.css` file for inclusion in output, at a different
+    # point than where it is generates the file. The dark syntax highlighting mechanism
+    # of this theme depends on that fact -- we don't actually set `pygments_dark_style`
+    # in our theme.conf file.
+    #
+    # Instead, we stick our filthy monkey hands into Sphinx's builder, to patch the
+    # builder to generate the `pygments_dark.css` file as if this theme actually sets
+    # `pygments_dark_style`. This results in Sphinx generating the file without
+    # injecting a custom CSS file for it. Then, we include that stylesheet in our HTML
+    # via a hand-crafted <link> tag. There's 2 benefits to this approach: (1) it works,
+    # (2) we can, at some point in the future, pivot to a different strategy for
+    # including the dark mode syntax highlighting styles.
 
     # HACK: begins here
     dark_style = None
@@ -248,9 +243,9 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 
     if dark_style is None:
         dark_style = app.config.pygments_dark_style
-    # HACK: ends here
 
     builder.dark_highlighter = PygmentsBridge("html", dark_style)
+    # HACK: ends here
 
 
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:

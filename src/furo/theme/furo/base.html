@@ -50,25 +50,24 @@
 
     {%- block styles -%}
 
-    {#- Theme-related stylesheets -#}
-    {%- block theme_styles -%}
-    <link rel="stylesheet" href="{{ pathto(furo_assets['style'], 1) }}">
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
-    {% include "partials/_head_css_variables.html" with context %}
-    {%- endblock -%}
-
     {# Custom stylesheets #}
     {%- block regular_styles -%}
-    {%- for path in css_files -%}
-    {% if not path.filename.startswith("pygments_dark") -%}
-      {{ css_tag(path) }}
-    {%- endif %}
+    {%- for css in css_files -%}
+    {% if css|attr("filename") -%}
+        {{ css_tag(css) }}
+      {%- else -%}
+        <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
+      {%- endif %}
     {% endfor -%}
     {%- endblock regular_styles -%}
 
+    {#- Theme-related stylesheets -#}
+    {%- block theme_styles -%}
+    {% include "partials/_head_css_variables.html" with context %}
+    {%- endblock -%}
+
     {%- block extra_styles -%}
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
-    <link rel="stylesheet" href="{{ pathto(furo_assets['furo-extensions.css'], 1) }}">
     {%- endblock -%}
 
     {%- endblock styles -%}
@@ -83,8 +82,6 @@
 
     {# Custom JS #}
     {%- block regular_scripts -%}
-    {# This is *exactly* how `basic` handles this file. #}
-    <script id="documentation_options" data-url_root="{{ pathto('', 1) }}" src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
     {% for path in script_files -%}
       {{ js_tag(path) }}
     {% endfor -%}
@@ -92,7 +89,6 @@
 
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
-    <script src="{{ pathto(furo_assets['main.js'], 1) }}"></script>
     {%- endblock -%}
 
     {%- endblock scripts -%}
