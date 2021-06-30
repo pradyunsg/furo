@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.3.1
+    rev: v2.3.2
     hooks:
       - id: prettier
         exclude: src/furo/theme/.*|docs/(recommendations|reference/admonitions).md
@@ -42,7 +42,7 @@ repos:
       - id: flake8
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.902
+    rev: v0.910
     hooks:
       - id: mypy
         args: [--disallow-untyped-defs, --ignore-missing-imports]
