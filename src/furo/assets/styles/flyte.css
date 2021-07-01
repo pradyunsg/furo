@@ -209,6 +209,13 @@ p.sphx-glr-script-out {
   .search__error__box {
     color: #9ca0a5 !important;
   }
+  details.sphinx-bs.dropdown {
+    background: var(--color-background-secondary);
+    border: 1px solid var(--color-background-border);
+  }
+  details.sphinx-bs.dropdown .card-header {
+      color: var(--color-link);
+  }
 }
 
 /* sphinx-panels custom styles */
@@ -254,6 +261,10 @@ div.sphinx-bs .card {
 
 .center-card-content p {
   margin: auto !important;
+}
+
+.sphinx-tabs{
+  padding-top: 10px;
 }
 
 .sphinx-tabs-tab {

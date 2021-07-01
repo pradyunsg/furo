@@ -77,6 +77,7 @@
     {%- block extrahead -%}{%- endblock -%}
 
     <script src="https://kit.fontawesome.com/ef4deb7d2f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
   </head>
   <body dir="{{ direction }}">
     {% block body %}{% endblock %}
@@ -97,6 +98,15 @@
     <script src="{{ pathto(furo_assets['main.js'], 1) }}"></script>
     {%- endblock -%}
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script type="text/javascript"> 
+      docsearch({
+        apiKey: 'af11c512aa92422933b48828d28dbe5f',
+        indexName: 'flyte',
+        inputSelector: '.sidebar-search',
+        debug: false // Set debug to true if you want to inspect the dropdown
+      });
+    </script>
     {%- endblock scripts -%}
   </body>
 </html>
