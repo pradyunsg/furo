@@ -44,9 +44,11 @@ h6 {
   color: var(--color-link);
 }
 
-.docutils .sphinx-bs:hover {
-  border-color: var(--color-link);
-  background-color: var(--color-link);
+.tabbed-set > input:checked + label:hover {
+  color: var(--color-link);
+}
+
+div.sphinx-bs .card-body .sphinx-bs.btn:hover {
   color: #ffffff;
 }
 
