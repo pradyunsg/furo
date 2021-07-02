@@ -1,16 +1,16 @@
 {% extends "page.html" %}
 
-<!-- {%- block regular_scripts -%}
+{%- block regular_scripts -%}
 {{ super() }}
 <script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
 <script src="{{ pathto('_static/language_data.js', 1) }}"></script>
-{%- endblock regular_scripts-%} -->
+{%- endblock regular_scripts-%}
 
 {%- block htmltitle -%}
 <title>{{ _("Search") }} - {{ docstitle }}</title>
 {%- endblock htmltitle -%}
 
-<!-- {% block content %}
+{% block content %}
 <div id="fallback" class="admonition error">
   <p class="admonition-title">{% trans %}Error{% endtrans %}</p>
   <p>
@@ -20,9 +20,9 @@
 <script>document.getElementById('fallback').hidden = true;</script>
 
 <div id="search-results"></div>
-{% endblock %} -->
+{% endblock %}
 
 {% block scripts -%}
 {{ super() }}
-<!-- <script src="{{ pathto('searchindex.js', 1) }}"></script> -->
+<script src="{{ pathto('searchindex.js', 1) }}"></script>
 {%- endblock scripts %}
