@@ -30,6 +30,10 @@ h6 {
   margin-bottom: 5px;
 }
 
+.algolia-autocomplete-left {
+  width:100% !important;
+}
+
 @media only screen and (min-width: 1200px) {
   .sidebar-drawer {
     width: 20em;
