@@ -6,6 +6,10 @@
 <script src="{{ pathto('_static/language_data.js', 1) }}"></script>
 {%- endblock regular_scripts-%}
 
+{%- block linktags %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+{%- endblock linktags %}
+
 {%- block htmltitle -%}
 <title>{{ _("Search") }} - {{ docstitle }}</title>
 {%- endblock htmltitle -%}
@@ -25,4 +29,13 @@
 {% block scripts -%}
 {{ super() }}
 <script src="{{ pathto('searchindex.js', 1) }}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> 
+  docsearch({
+    apiKey: 'af11c512aa92422933b48828d28dbe5f',
+    indexName: 'flyte',
+    inputSelector: '.sidebar-search',
+    debug: false // Set debug to true if you want to inspect the dropdown
+  });
+</script>
 {%- endblock scripts %}
