@@ -34,6 +34,22 @@ h6 {
   width:100% !important;
 }
 
+/* Highlighted text */
+.algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+  color: var(--color-link);
+}
+
+.tabbed-set > input:checked + label {
+  border-color: var(--color-link);
+  color: var(--color-link);
+}
+
+.docutils .sphinx-bs:hover {
+  border-color: var(--color-link);
+  background-color: var(--color-link);
+  color: #ffffff;
+}
+
 @media only screen and (min-width: 1200px) {
   .sidebar-drawer {
     width: 20em;
