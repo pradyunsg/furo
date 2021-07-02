@@ -49,6 +49,7 @@ h6 {
 }
 
 div.sphinx-bs .card-body .sphinx-bs.btn:hover {
+  border-color: var(--color-link);
   background-color: #9d68e4;
   color: #ffffff;
 }
