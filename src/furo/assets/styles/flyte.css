@@ -44,14 +44,8 @@ h6 {
   color: var(--color-link);
 }
 
-.tabbed-set > input:checked + label:hover {
+.tabbed-set > label:hover {
   color: var(--color-link);
-}
-
-div.sphinx-bs .card-body .sphinx-bs.btn:hover {
-  border-color: var(--color-link);
-  background-color: #9d68e4;
-  color: #ffffff;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -275,9 +269,10 @@ div.sphinx-bs .card-header p.card-text {
   font-size: 2rem;
 }
 
-div.sphinx-bs .card-header .sphinx-bs.btn:hover,
-div.sphinx-bs .card-body .sphinx-bs.btn:hover {
-  color: var(--color-link--hover);
+div.sphinx-bs .sphinx-bs.btn:hover {
+  border-color: var(--color-link);
+  background-color: #9d68e4;
+  color: #ffffff;
 }
 
 div.sphinx-bs .card {
