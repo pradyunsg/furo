@@ -31,7 +31,7 @@ h6 {
 }
 
 .algolia-autocomplete {
-  width:100% !important;
+  width: 100% !important;
 }
 
 /* Highlighted text */
@@ -49,6 +49,7 @@ h6 {
 }
 
 div.sphinx-bs .card-body .sphinx-bs.btn:hover {
+  background-color: #9d68e4;
   color: #ffffff;
 }
 
@@ -84,7 +85,8 @@ div.sphinx-bs .card-body .sphinx-bs.btn:hover {
 .sphx-glr-thumbcontainer {
   background-color: var(--color-background-secondary);
   border: 1px solid var(--color-background-border);
-  box-shadow: 0 .2rem .5rem rgba(0,0,0,.05),0 0 .0625rem rgba(0,0,0,.1) !important;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
+    0 0 0.0625rem rgba(0, 0, 0, 0.1) !important;
   min-height: 140px;
   width: 30%;
   padding-top: 0px;
@@ -100,7 +102,8 @@ div.sphinx-bs .card-body .sphinx-bs.btn:hover {
   display: none;
 }
 
-div.sphx-glr-download-link-note, p.sphx-glr-signature {
+div.sphx-glr-download-link-note,
+p.sphx-glr-signature {
   height: 0px;
   visibility: hidden;
   padding: 0;
@@ -236,7 +239,7 @@ p.sphx-glr-script-out {
     border: 1px solid var(--color-background-border);
   }
   details.sphinx-bs.dropdown .card-header {
-      color: var(--color-link);
+    color: var(--color-link);
   }
 }
 
@@ -285,7 +288,7 @@ div.sphinx-bs .card {
   margin: auto !important;
 }
 
-.sphinx-tabs{
+.sphinx-tabs {
   padding-top: 10px;
 }
 
