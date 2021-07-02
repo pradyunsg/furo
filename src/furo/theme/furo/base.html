@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="{{ pathto(furo_assets['style'], 1) }}">
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
     {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
 
@@ -69,7 +70,6 @@
 
     {%- block extra_styles -%}
     <link rel="stylesheet" href="{{ pathto(furo_assets['furo-extensions.css'], 1) }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
     {%- endblock -%}
 
     {%- endblock styles -%}
@@ -96,7 +96,6 @@
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
     <script src="{{ pathto(furo_assets['main.js'], 1) }}"></script>
-    {%- endblock -%}
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
     <script type="text/javascript"> 
       docsearch({
@@ -106,6 +105,7 @@
         debug: false // Set debug to true if you want to inspect the dropdown
       });
     </script>
+    {%- endblock -%}
     {%- endblock scripts -%}
   </body>
 </html>
