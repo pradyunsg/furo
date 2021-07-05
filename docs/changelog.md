@@ -1,5 +1,9 @@
 # Changelog
 
+## 2021.07.05.beta38
+
+- Fix image alignment in Sphinx 4.
+
 ## 2021.06.24.beta37
 
 - Require Sphinx 4.
