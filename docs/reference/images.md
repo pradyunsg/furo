@@ -30,6 +30,7 @@ This is from Markdown.
 .. image:: https://source.unsplash.com/200x200/daily?cute+animals
    :align: center
 
+
 This is from reStructuredText.
 ````
 
@@ -83,9 +84,11 @@ This is from Markdown.
    :align: center
    :class: only-light
 
+
 .. image:: https://source.unsplash.com/200x200/daily?cute+cats
    :align: center
    :class: only-dark
+
 
 This is from reStructuredText.
 
