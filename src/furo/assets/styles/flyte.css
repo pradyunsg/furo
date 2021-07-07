@@ -347,3 +347,9 @@ div.mermaid .messageText {
 div.mermaid line {
   stroke: var(--color-foreground-secondary) !important;
 }
+
+
+/* code cell styles */
+div.highlight a {
+  text-decoration-color: var(--color-content-foreground);
+}
