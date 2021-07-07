@@ -44,7 +44,7 @@ h6 {
   color: var(--color-link);
 }
 
-.tabbed-set > label:hover {
+.tabbed-set > input:checked + label:hover {
   color: var(--color-link);
 }
 
@@ -269,7 +269,21 @@ div.sphinx-bs .card-header p.card-text {
   font-size: 2rem;
 }
 
-div.sphinx-bs .sphinx-bs.btn:hover {
+div.sphinx-bs .card:hover {
+  border-color: #9d68e4;
+}
+
+div.sphinx-bs .card:hover .card-header  {
+  border-color: var(--color-link);
+  background-color: #9d68e4;
+  color: #fff;
+}
+
+div.sphinx-bs .card:hover .sphinx-bs.btn  {
+  color: #fff;
+}
+
+.getting-started-panels div.sphinx-bs .sphinx-bs.btn:hover {
   border-color: var(--color-link);
   background-color: #9d68e4;
   color: #ffffff;
