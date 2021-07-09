@@ -353,3 +353,12 @@ div.mermaid line {
 div.highlight a {
   text-decoration-color: var(--color-content-foreground);
 }
+
+div.sphx-glr-script-out .highlight {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.sphx-glr-script-out .highlight pre {
+  background-color: var(--color-background-secondary);
+}
