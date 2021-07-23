@@ -362,3 +362,8 @@ div.sphx-glr-script-out .highlight {
 .sphx-glr-script-out .highlight pre {
   background-color: var(--color-background-secondary);
 }
+
+/* Make sure autosummary table cells have left text alignment */
+.article .align-center, article .align-default {
+  text-align: left;
+}
