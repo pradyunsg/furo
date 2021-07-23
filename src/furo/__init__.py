@@ -2,6 +2,7 @@
 
 __version__ = "2021.07.05.dev39"
 
+import hashlib
 import logging
 import re
 import os
