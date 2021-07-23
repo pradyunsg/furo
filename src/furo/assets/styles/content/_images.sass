@@ -7,10 +7,10 @@ img
   height: auto
 
 article
-  .figure
+  figure, .figure
     border-radius: 0.2rem
 
-    padding: 0.5rem
+    margin: 0
     :last-child
       margin-bottom: 0
 
@@ -24,12 +24,9 @@ article
     clear: right
     margin: 0 1rem 1rem
 
+  .align-default,
   .align-center
+    display: block
     text-align: center
     margin-left: auto
     margin-right: auto
-
-  .figure.align-default,
-  .legend .align-default
-    display: block
-    @extend .align-center

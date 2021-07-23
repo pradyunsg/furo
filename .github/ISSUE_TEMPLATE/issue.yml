@@ -1,7 +1,6 @@
 name: Trackable Change
-about: >-
+description: >-
   Please only use this, if you've been advised to do so after discussion. Thanks! 🙏
-title: ""
 body:
   - type: textarea
     attributes:
@@ -12,12 +11,13 @@ body:
   - type: textarea
     attributes:
       label: Reproducer
-      description: Steps to reproduce the issue.
+      description: Steps to reproduce the issue. Please attach screenshots as well.
       value: |
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
+        1. Build Sphinx documentation at '...' (include build instructions)
+        2. Go to '...'
+        3. Click on '...'
+        4. Scroll down to '...'
+        5. See wrong thing.
     validations:
       required: true
   - type: textarea
@@ -32,11 +32,3 @@ body:
       options:
         - label: I agree to follow the [Code of Conduct](https://github.com/pradyunsg/furo/blob/main/CODE_OF_CONDUCT.md).
           required: true
-  - type: markdown
-    attributes:
-      value: "---"
-  - type: markdown
-    attributes:
-      value: >-
-        Add additional information (like screenshots!) and description of what
-        change is needed below.

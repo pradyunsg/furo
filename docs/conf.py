@@ -3,6 +3,13 @@
 # Full list of options can be found in the Sphinx documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
+import sys
+
+# add the demo python code to the path, so that it can be used to demonstrate
+# source links
+sys.path.append(os.path.abspath("./kitchen-sink/demo_py"))
+
 #
 # -- Project information -----------------------------------------------------
 #
@@ -69,3 +76,4 @@ html_theme = "furo"
 html_title = "Furo"
 
 html_static_path = ["_static"]
+html_css_files = ["pied-piper-admonition.css"]

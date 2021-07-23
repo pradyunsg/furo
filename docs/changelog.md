@@ -1,5 +1,42 @@
 # Changelog
 
+## 2021.07.05.beta38
+
+- Fix image alignment in Sphinx 4.
+
+## 2021.06.24.beta37
+
+- Require Sphinx 4.
+- Rework CSS/JS asset inclusion, to work better with Sphinx 4.
+- Document how to add a custom admonition style.
+
+## 2021.06.18.beta36
+
+- Fix dark mode highlighting in Sphinx 4.
+
+## 2021.06.18.beta35
+
+- Allow use with Sphinx 4.
+- Fix right alignment of viewcode links, when used with certain API
+  signatures.
+
+## 2021.04.11.beta34
+
+- Account for even more variants of sidebar-caption HTML.
+
+## 2021.04.11.beta33
+
+- Another styling update sidebar-caption related changes in Sphinx.
+
+## 2021.04.11.beta32
+
+- Add a basic domainindex page, without dedicated styling.
+- Add recommendation for sphinx-opengraph.
+- Account for newer Sphinx versions changing classes for captions.
+- Account for the broken docutils release.
+- Right align viewcode links (like `[source]`) allowing wrapping of API
+  signatures gradefully.
+
 ## 2021.03.20.beta31
 
 - Get `pygments_dark_style` working.

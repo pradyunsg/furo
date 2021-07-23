@@ -32,7 +32,7 @@ function css() {
     .pipe(gulp.dest(dest_path));
 }
 
-function javascript(cb) {
+function javascript() {
   return gulp
     .src(src_path + "scripts/[!_]*.js", { since: gulp.lastRun(javascript) })
     .pipe(sourcemaps.init())

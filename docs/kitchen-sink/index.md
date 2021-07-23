@@ -12,4 +12,5 @@ demo
 lists_tables
 really-long
 structure
+autodoc
 ```
