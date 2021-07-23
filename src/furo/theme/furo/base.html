@@ -50,15 +50,6 @@
 
     {%- block styles -%}
 
-    {#- Theme-related stylesheets -#}
-    {%- block theme_styles -%}
-    <link rel="stylesheet" href="{{ pathto(furo_assets['style'], 1) }}">
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}">
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
-    {% include "partials/_head_css_variables.html" with context %}
-    {%- endblock -%}
-
     {# Custom stylesheets #}
     {%- block regular_styles -%}
     {%- for css in css_files -%}
