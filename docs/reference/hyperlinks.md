@@ -18,7 +18,7 @@ Hyperlinks can take various forms, so here's a list of them:
 Hyperlinks can take various forms, so here's a list of them:
 
 - standalone hyperlink: https://python.org/
-- hyperlink using references: link_ (this is borked due to a MyST bug)
+- hyperlink using references: `link <link>`_
 - hyperlink with inline URL: `link <https://python.org/>`_
 - hyperlink to a different page: :doc:`link <../quickstart>`
 - hyperlink to a specific API element: :class:`pathlib.Path`
