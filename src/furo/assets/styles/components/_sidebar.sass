@@ -13,6 +13,7 @@
   text-decoration: none
 
 .sidebar-brand-text
+  color: var(--color-sidebar-brand-text)
   overflow-wrap: break-word
   margin: var(--sidebar-item-spacing-vertical) 0
   font-size: 1.5rem
@@ -34,6 +35,12 @@
   margin-top: var(--sidebar-search-space-above)
 
   position: relative
+
+  background: var(--color-sidebar-search-background)
+  &:hover,
+  &:focus-within
+    background: var(--color-sidebar-search-background--focus)
+
   &::before
     content: ""
     position: absolute
@@ -41,8 +48,15 @@
     width: var(--sidebar-search-icon-size)
     height: var(--sidebar-search-icon-size)
 
+    background-color: var(--color-sidebar-search-icon)
+    mask-image: var(--icon-search)
+
 .sidebar-search
   box-sizing: border-box
+
+  border: none
+  border-top: 1px solid var(--color-sidebar-search-border)
+  border-bottom: 1px solid var(--color-sidebar-search-border)
 
   padding-top: var(--sidebar-search-input-spacing-vertical)
   padding-bottom: var(--sidebar-search-input-spacing-vertical)
@@ -86,22 +100,32 @@
     > ul
       margin-left: var(--sidebar-item-spacing-horizontal)
 
+  .icon
+    color: var(--color-sidebar-link-text)
+
   .reference
     box-sizing: border-box
+    color: var(--color-sidebar-link-text)
+
     // Fill the parent.
     display: inline-block
     line-height: var(--sidebar-item-line-height)
+    text-decoration: none
 
     height: 100%
     width: 100%
 
     padding: var(--sidebar-item-spacing-vertical) var(--sidebar-item-spacing-horizontal)
 
+    &:hover
+      background: var(--color-sidebar-item-background--hover)
+
     // Add a nice little "external-link" arrow here.
     &.external::after
       content: url('data:image/svg+xml,<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23607D8B" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5" /><line x1="10" y1="14" x2="20" y2="4" /><polyline points="15 4 20 4 20 9" /></svg>')
       margin: 0 0.25rem
       vertical-align: middle
+      color: var(--color-sidebar-link-text)
 
   // Make the current page reference bold.
   .current-page > .reference
@@ -122,12 +146,12 @@
 
   .caption, :not(.caption) > .caption-text
     font-size: var(--sidebar-caption-font-size)
+    color: var(--color-sidebar-caption-text)
 
     font-weight: bold
     text-transform: uppercase
 
     margin: var(--sidebar-caption-space-above) 0 0 0
-
     padding: var(--sidebar-item-spacing-vertical) var(--sidebar-item-spacing-horizontal)
 
   // If it has children, add a bit more padding to wrap the content to avoid
@@ -135,6 +159,23 @@
   li.has-children
     > .reference
       padding-right: var(--sidebar-expander-width)
+
+  // Colorize the top-level list items and icon.
+  .toctree-l1
+    & > .reference,
+    & > label .icon
+      color: var(--color-sidebar-link-text--top-level)
+
+  // Color changes on hover
+  label
+    background: var(--color-sidebar-item-expander-background)
+    &:hover
+      background: var(--color-sidebar-item-expander-background--hover)
+
+  .current > .reference
+    background: var(--color-sidebar-item-background--current)
+    &:hover
+      background: var(--color-sidebar-item-background--hover)
 
 .toctree-checkbox
   position: absolute

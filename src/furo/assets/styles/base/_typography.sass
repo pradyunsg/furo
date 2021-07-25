@@ -70,3 +70,20 @@ hr.docutils
 
 .centered
   text-align: center
+
+// Links
+a
+  text-decoration: underline
+
+  color: var(--color-link)
+  text-decoration-color: var(--color-link-underline)
+
+  &:hover
+    color: var(--color-link--hover)
+    text-decoration-color: var(--color-link-underline--hover)
+  &.muted-link
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+      color: var(--color-link)
+      text-decoration-color: var(--color-link-underline)
