@@ -14,5 +14,10 @@
     "postcss": "^7.0.36",
     "postcss-easy-import": "^3.0.0",
     "sass": "^1.36.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "gulp-babel": "^8.0.0"
   }
 }

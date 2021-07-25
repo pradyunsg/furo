@@ -3,6 +3,7 @@
 
 var gulp = require("gulp");
 var concat = require("gulp-concat");
+var babel = require("gulp-babel");
 var postcss = require("gulp-postcss");
 var rename = require("gulp-rename");
 var sass = require("gulp-sass");
@@ -35,8 +36,13 @@ function javascript() {
   return gulp
     .src(src_path + "scripts/[!_]*.js", { since: gulp.lastRun(javascript) })
     .pipe(sourcemaps.init())
-    .pipe(concat("scripts/main.js"))
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
     .pipe(uglify())
+    .pipe(concat("scripts/main.js"))
     .pipe(sourcemaps.write(""))
     .pipe(gulp.dest(dest_path));
 }
