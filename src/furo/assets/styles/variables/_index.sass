@@ -1,0 +1,21 @@
+// This file collects all the knobs that can be tweaked by end users.
+
+@import "layout"
+@import "fonts"
+@import "spacing"
+@import "icons"
+@import "admonitions"
+@import "colors"
+
+:root
+  @include fonts()
+  @include spacing()
+  @include icons()
+  @include admonitions()
+  @include default-admonition(#651fff, "abstract")
+
+  @include colors()
+
+@media (prefers-color-scheme: dark)
+  :root
+    @include colors-dark()
