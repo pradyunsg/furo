@@ -1,0 +1,37 @@
+// Admonitions
+
+// Structure of these is:
+//    admonition-class: color "icon-name";
+//
+// The colors are translated into CSS variables below. The icons are
+// used directly in the main declarations to set the `mask-image` in
+// the title.
+
+// prettier-ignore
+$admonitions: (
+  // Each of these has an reST directives for it.
+  "caution":         #ff9100 "spark",
+  "warning":         #ff9100 "warning",
+  "danger":          #ff5252 "spark",
+  "attention":       #ff5252 "warning",
+  "error":           #ff5252 "failure",
+  "hint":            #00c852 "question",
+  "tip":             #00c852 "info",
+  "important":       #00bfa5 "flame",
+  "note":            #00b0ff "pencil",
+  "seealso":         #448aff "info",
+  "admonition-todo": #808080 "pencil"
+);
+
+@mixin admonitions($admonition-default) {
+  --color-admonition-title: #{nth($admonition-default, 1)};
+  --color-admonition-title-background: #{rgba(nth($admonition-default, 1), 0.1)};
+
+  @each $name, $values in $admonitions {
+    --color-admonition-title--#{$name}: #{nth($values, 1)};
+    --color-admonition-title-background--#{$name}: #{rgba(
+        nth($values, 1),
+        0.1
+      )};
+  }
+}
