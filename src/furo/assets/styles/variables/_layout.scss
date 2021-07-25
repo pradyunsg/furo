@@ -1,0 +1,9 @@
+// Overall Layout Variables
+//
+// Because CSS variables can't be used in media queries. The fact that this
+// makes the layout non-user-configurable is a good thing.
+$content-padding: 3em;
+$content-padding--small: 1em;
+$content-width: 46em;
+$sidebar-width: 15em;
+$full-width: $content-width + 2 * ($content-padding + $sidebar-width);
