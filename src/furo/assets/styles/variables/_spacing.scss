@@ -1,0 +1,37 @@
+// Spacing for various elements on the page
+//
+// If the user wants to tweak things in a certain way, they are permitted to.
+// They also have to deal with the consequences though!
+
+@mixin spacing() {
+  // Header!
+  --header-height: calc(
+    var(--sidebar-item-line-height) + 4 * #{var(--sidebar-item-spacing-vertical)}
+  );
+
+  // Sidebar
+  --sidebar-tree-space-above: 1.5rem;
+  --sidebar-caption-space-above: 1rem;
+
+  --sidebar-item-line-height: 1rem;
+  --sidebar-item-spacing-vertical: 0.5rem;
+  --sidebar-item-spacing-horizontal: 1rem;
+  --sidebar-item-height: calc(
+    var(--sidebar-item-line-height) + 2 *#{var(--sidebar-item-spacing-vertical)}
+  );
+
+  --sidebar-expander-width: var(--sidebar-item-height); // be square
+
+  --sidebar-search-space-above: 0.5rem;
+  --sidebar-search-input-spacing-vertical: 0.5rem;
+  --sidebar-search-input-spacing-horizontal: 0.5rem;
+  --sidebar-search-input-height: 1rem;
+  --sidebar-search-icon-size: var(--sidebar-search-input-height);
+
+  // Table of Contents
+  --toc-title-padding: 0.25rem 0;
+  --toc-spacing-vertical: 1.5rem;
+  --toc-spacing-horizontal: 1.5rem;
+  --toc-item-spacing-vertical: 0.4rem;
+  --toc-item-spacing-horizontal: 1rem;
+}
