@@ -3,6 +3,19 @@
 // This contains the bulk of the logic for handling dark mode, color scheme
 // toggling and the handling of color-scheme-specific hiding of elements.
 
+:root
+  @include fonts
+  @include spacing
+  @include icons
+  @include admonitions
+  @include default-admonition(#651fff, "abstract")
+
+  @include colors
+
+@media (prefers-color-scheme: dark)
+  :root
+    @include colors-dark
+
 // For items that need to be hidden based on the active theme.
 .only-light
   display: block !important
