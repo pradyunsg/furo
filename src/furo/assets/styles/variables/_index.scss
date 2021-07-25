@@ -1,12 +1,12 @@
-// This file defines all the knobs that can be tweaked by end users.
+// This file collects all the knobs that can be tweaked by end users.
 
 @import "fonts";
 @import "spacing";
 
 // Overall Layout Variables
 //
-// These are set here, since CSS variables can't be used in media queries,
-// which is where these would be used.
+// Because CSS variables can't be used in media queries. The fact that this
+// makes the layout non-user-configurable is a good thing.
 $content-padding: 3em;
 $content-padding--small: 1em;
 $content-width: 46em;
