@@ -35,3 +35,18 @@ body[data-theme="dark"]
       display: none !important
     .only-dark
       display: block !important
+
+//
+// Theme toggle presentation
+//
+body[data-theme="auto"]
+  .theme-toggle svg.theme-icon-when-auto
+    display: block
+
+body[data-theme="dark"]
+  .theme-toggle svg.theme-icon-when-dark
+    display: block
+
+body[data-theme="light"]
+  .theme-toggle svg.theme-icon-when-light
+    display: block
