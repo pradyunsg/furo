@@ -14,7 +14,7 @@ It is possible to use different content for light and dark mode, by setting
 
 ## Defining overrides for defaults
 
-Furo allows defining [CSS variables that overrides its default values](css-variables). The exact variable names to use can be found in Furo's source code, where the [variable declarations](https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables) are made.
+Furo allows defining [CSS variables that overrides its default values](css-variables). The exact variable names to use can be found in Furo's source code [here](https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables).
 
 This mechanism allows configuring nearly every facet of Furo's design, including spacing between various items and the colors of nearly every component.
 
