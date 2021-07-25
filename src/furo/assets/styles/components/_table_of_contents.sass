@@ -40,14 +40,14 @@
   li
     padding-top: var(--toc-item-spacing-vertical)
 
+    &.scroll-current >.reference
+      color: var(--color-toc-item-text--active)
+      font-weight: bold
+
   .reference
     color: var(--color-toc-item-text)
     text-decoration: none
     word-break: break-word
-
-  &.scroll-current >.reference
-    color: var(--color-toc-item-text--active)
-    font-weight: bold
 
 .toc-scroll
   max-height: 100vh
