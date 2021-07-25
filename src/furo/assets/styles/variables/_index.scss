@@ -2,6 +2,7 @@
 
 @import "fonts";
 @import "spacing";
+@import "icons";
 
 // Overall Layout Variables
 //
@@ -15,7 +16,7 @@ $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 
 // Admonitions
 //
-// Structure of these: (color, key-in-$icons).
+// Structure of these: (color, "icon-name").
 // The colors are translated into CSS variables below, and icons are used for
 // the declarations.
 $admonition-default: #651fff "abstract";
@@ -37,14 +38,7 @@ $admonitions: (
 :root {
   @include fonts();
   @include spacing();
-
-  //////////////////////////////////////////////////////////////////////////////
-  // Icons
-  //////////////////////////////////////////////////////////////////////////////
-  @each $name, $glyph in $icons {
-    --icon-#{$name}: #{$glyph};
-  }
-  --icon-admonition-default: var(--icon-#{nth($admonition-default, 2)});
+  @include icons(nth($admonition-default, 2));
 
   //////////////////////////////////////////////////////////////////////////////
   // Overall Colors
