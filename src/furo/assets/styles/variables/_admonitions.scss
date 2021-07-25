@@ -24,8 +24,8 @@ $admonitions: (
 );
 
 @mixin default-admonition($color, $icon-name) {
-  --color-admonition-title: $color;
-  --color-admonition-title-background: rgba($color, 0.1);
+  --color-admonition-title: #{$color};
+  --color-admonition-title-background: #{rgba($color, 0.1)};
 
   --icon-admonition-default: var(--icon-#{$icon-name});
 }

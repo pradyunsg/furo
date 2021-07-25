@@ -3,7 +3,7 @@
 // This contains the bulk of the logic for handling dark mode, color scheme
 // toggling and the handling of color-scheme-specific hiding of elements.
 
-:root
+body
   @include fonts
   @include spacing
   @include icons
@@ -12,18 +12,26 @@
 
   @include colors
 
-@media (prefers-color-scheme: dark)
-  :root
-    @include colors-dark
-
-// For items that need to be hidden based on the active theme.
 .only-light
   display: block !important
 .only-dark
   display: none !important
 
-@media (prefers-color-scheme: dark)
+// Enable dark-mode, if requested.
+body.override-as-dark
+  @include colors-dark
+
   .only-light
     display: none !important
   .only-dark
     display: block !important
+
+// Enable dark mode, unless explicitly told to avoid.
+@media (prefers-color-scheme: dark)
+  body:not(.override-as-light)
+    @include colors-dark
+
+    .only-light
+      display: none !important
+    .only-dark
+      display: block !important
