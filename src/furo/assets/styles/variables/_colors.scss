@@ -1,0 +1,150 @@
+// Colors used throughout this theme.
+//
+// The aim is to give the user more control. Thus, instead of hard-coding colors
+// in various parts of the stylesheet, the approach taken is to define all
+// colors as CSS variables and reusing them in all the places.
+//
+// `colors-dark` depends on `colors` being included at a lower specificity.
+
+@mixin colors() {
+  --color-problematic: #b30000;
+
+  // Base Colors
+  --color-foreground-primary: black; // for main text and headings
+  --color-foreground-secondary: #5a5c63; // for secondary text
+  --color-foreground-muted: #72747e; // for muted text
+  --color-foreground-border: #878787; // for content borders
+
+  --color-background-primary: white; // for content
+  --color-background-secondary: #f8f9fb; // for navigation + ToC
+  --color-background-hover: #efeff4ff; // for navigation-item hover
+  --color-background-hover--transparent: #efeff400;
+  --color-background-border: #eeebee; // for UI borders
+
+  // Announcements
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+
+  // Brand colors
+  --color-brand-primary: #2962ff;
+  --color-brand-content: #2a5adf;
+
+  // API documentation
+  --color-api-overall: var(--color-foreground-muted);
+  --color-api-name: var(--color-brand-content);
+  --color-api-pre-name: var(--color-brand-content);
+  --color-api-paren: var(--color-foreground-secondary);
+  --color-api-keyword: var(--color-problematic);
+  --color-api-highlight-on-target: #ffffcc;
+
+  // Inline code background
+  --color-inline-code-background: var(--color-background-secondary);
+
+  // Highlighted text (search)
+  --color-highlighted-background: #ddeeff;
+  --color-highlighted-text: var(--color-foreground-primary);
+
+  // GUI Labels
+  --color-guilabel-background: #ddeeff80;
+  --color-guilabel-border: #bedaf580;
+  --color-guilabel-text: var(--color-foreground-primary);
+
+  // Admonitions!
+  --color-admonition-background: transparent;
+
+  //////////////////////////////////////////////////////////////////////////////
+  // Everything below this should be one of:
+  // - var(...)
+  // - *-gradient(...)
+  // - special literal values (eg: transparent, none)
+  //////////////////////////////////////////////////////////////////////////////
+
+  // Header
+  --color-header-background: var(--color-background-primary);
+  --color-header-border: var(--color-background-border);
+  --color-header-text: var(--color-foreground-primary);
+
+  // Sidebar (left)
+  --color-sidebar-background: var(--color-background-secondary);
+  --color-sidebar-background-border: var(--color-background-border);
+
+  --color-sidebar-brand-text: var(--color-foreground-primary);
+  --color-sidebar-caption-text: var(--color-foreground-muted);
+  --color-sidebar-link-text: var(--color-foreground-secondary);
+  --color-sidebar-link-text--top-level: var(--color-brand-primary);
+
+  --color-sidebar-item-background: var(--color-sidebar-background);
+  --color-sidebar-item-background--current: var(
+    --color-sidebar-item-background
+  );
+  --color-sidebar-item-background--hover: linear-gradient(
+    90deg,
+    var(--color-background-hover--transparent) 0%,
+    var(--color-background-hover) var(--sidebar-item-spacing-horizontal),
+    var(--color-background-hover) 100%
+  );
+
+  --color-sidebar-item-expander-background: transparent;
+  --color-sidebar-item-expander-background--hover: var(
+    --color-background-hover
+  );
+
+  --color-sidebar-search-text: var(--color-foreground-primary);
+  --color-sidebar-search-background: var(--color-background-secondary);
+  --color-sidebar-search-background--focus: var(--color-background-primary);
+  --color-sidebar-search-border: var(--color-background-border);
+  --color-sidebar-search-icon: var(--color-foreground-muted);
+
+  // Table of Contents
+  --color-toc-background: var(--color-background-primary);
+  --color-toc-title-text: var(--color-foreground-muted);
+  --color-toc-item-text: var(--color-foreground-secondary);
+  --color-toc-item-text--hover: var(--color-foreground-primary);
+  --color-toc-item-text--active: var(--color-brand-primary);
+
+  // Actual page contents
+  --color-content-foreground: var(--color-foreground-primary);
+  --color-content-background: transparent;
+
+  --color-link: var(--color-brand-content);
+  --color-link--hover: var(--color-brand-content);
+  --color-link-underline: var(--color-background-border);
+  --color-link-underline--hover: var(--color-foreground-border);
+}
+
+@mixin colors-dark() {
+  --color-problematic: #e25050;
+
+  // Base Colors
+  --color-foreground-primary: #ffffffd9; // for main text and headings
+  --color-foreground-secondary: #9ca0a5; // for secondary text
+  --color-foreground-muted: #81868d; // for muted text
+  --color-foreground-border: #666666; // for content borders
+
+  --color-background-primary: #131416; // for content
+  --color-background-secondary: #1a1c1e; // for navigation + ToC
+  --color-background-hover: #1e2124ff; // for navigation-item hover
+  --color-background-hover--transparent: #1e212400;
+  --color-background-border: #303335; // for UI borders
+
+  // Announcements
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+
+  // Brand colors
+  --color-brand-primary: #2b8cee;
+  --color-brand-content: #368ce2;
+
+  // Highlighted text (search)
+  --color-highlighted-background: #083563;
+
+  // GUI Labels
+  --color-guilabel-background: #08356380;
+  --color-guilabel-border: #13395f80;
+
+  // API documentation
+  --color-api-highlight-on-target: #333300;
+
+  // Admonitions
+  --color-admonition-background: #18181a;
+}
