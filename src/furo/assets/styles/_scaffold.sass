@@ -19,7 +19,7 @@ html
   overflow-x: hidden
   overflow-y: scroll
 
-:not(html):not(body)
+.sidebar-scroll, .toc-scroll, article[role=main] *
   // Override Firefox scrollbar style
   scrollbar-width: thin
   scrollbar-color: var(--color-foreground-border) transparent
@@ -55,13 +55,13 @@ body
   // be "on top" of those.
   z-index: 10
 
+  // We don't show the header on large screens.
+  display: none
+
   // Add shadow when scrolled
   &.scrolled
     border-bottom: none
     box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2)
-
-  // We don't show the header on large screens.
-  display: none
 
 .main
   display: flex
@@ -157,6 +157,12 @@ body
   align-items: center
 
 .toc-content-icon
+  height: 1.5rem
+  width: 1.5rem
+  margin-top: 1.5rem
+  float: right
+
+.color-toggle
   height: 1.5rem
   width: 1.5rem
   margin-top: 1.5rem
