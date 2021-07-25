@@ -15,14 +15,13 @@ $content-width: 46em;
 $sidebar-width: 15em;
 $full-width: $content-width + 2 * ($content-padding + $sidebar-width);
 
-// Default admonition color
-$admonition-default: #651fff "abstract";
-
 :root {
   @include fonts();
   @include spacing();
-  @include icons(nth($admonition-default, 2));
-  @include admonitions($admonition-default);
+  @include icons();
+  @include admonitions();
+
+  @include default-admonition(#651fff, "abstract");
 
   //////////////////////////////////////////////////////////////////////////////
   // Overall Colors

@@ -23,10 +23,14 @@ $admonitions: (
   "admonition-todo": #808080 "pencil"
 );
 
-@mixin admonitions($admonition-default) {
-  --color-admonition-title: #{nth($admonition-default, 1)};
-  --color-admonition-title-background: #{rgba(nth($admonition-default, 1), 0.1)};
+@mixin default-admonition($color, $icon-name) {
+  --color-admonition-title: $color;
+  --color-admonition-title-background: rgba($color, 0.1);
 
+  --icon-admonition-default: var(--icon-#{$icon-name});
+}
+
+@mixin admonitions() {
   @each $name, $values in $admonitions {
     --color-admonition-title--#{$name}: #{nth($values, 1)};
     --color-admonition-title-background--#{$name}: #{rgba(
