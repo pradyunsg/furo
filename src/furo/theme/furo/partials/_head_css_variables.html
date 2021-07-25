@@ -15,11 +15,11 @@
   body {
     {{ declare_css_variables(theme_light_css_variables, furo_pygments.light) }}
   }
-  body.override-as-dark {
+  body[data-theme="dark"] {
     {{ declare_css_variables(theme_dark_css_variables, furo_pygments.dark) }}
   }
   @media (prefers-color-scheme: dark) {
-    body:not(.override-as-light) {
+    body:not([data-theme="light"]) {
       {{ declare_css_variables(theme_dark_css_variables, furo_pygments.dark) }}
     }
   }
