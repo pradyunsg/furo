@@ -1,0 +1,38 @@
+// Fonts used by this theme.
+//
+// There are basically two things here -- using the system font stack and
+// defining sizes for various elements in %ages. We could have also used `em`
+// but %age is easier to reason about for me.
+
+@mixin fonts() {
+  // These are adapted from https://systemfontstack.com/
+  --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  --font-stack--monospace: "SFMono-Regular", Menlo, Consolas, Monaco,
+    Liberation Mono, Lucida Console, monospace;
+
+  --font-size--normal: 100%;
+  --font-size--small: 87.5%;
+  --font-size--small--2: 81.25%;
+  --font-size--small--3: 75%;
+  --font-size--small--4: 62.5%;
+
+  // Sidebar
+  --sidebar-caption-font-size: var(--font-size--small--2);
+  --sidebar-item-font-size: var(--font-size--small);
+  --sidebar-search-input-font-size: var(--font-size--small);
+
+  // Table of Contents
+  --toc-font-size: var(--font-size--small--3);
+  --toc-font-size--mobile: var(--font-size--normal);
+  --toc-title-font-size: var(--font-size--small--4);
+
+  // Admonitions
+  //
+  // These aren't defined in terms of %ages, since nesting these is permitted.
+  --admonition-font-size: 0.8125rem;
+  --admonition-title-font-size: 0.8125rem;
+
+  // Code
+  --code-font-size: var(--font-size--small--2);
+}
