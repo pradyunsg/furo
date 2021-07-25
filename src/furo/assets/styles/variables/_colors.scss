@@ -6,7 +6,7 @@
 //
 // `colors-dark` depends on `colors` being included at a lower specificity.
 
-@mixin colors() {
+@mixin colors {
   --color-problematic: #b30000;
 
   // Base Colors
@@ -112,7 +112,7 @@
   --color-link-underline--hover: var(--color-foreground-border);
 }
 
-@mixin colors-dark() {
+@mixin colors-dark {
   --color-problematic: #e25050;
 
   // Base Colors

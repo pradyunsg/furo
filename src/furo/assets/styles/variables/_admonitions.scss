@@ -30,7 +30,7 @@ $admonitions: (
   --icon-admonition-default: var(--icon-#{$icon-name});
 }
 
-@mixin admonitions() {
+@mixin admonitions {
   @each $name, $values in $admonitions {
     --color-admonition-title--#{$name}: #{nth($values, 1)};
     --color-admonition-title-background--#{$name}: #{rgba(
