@@ -9,7 +9,6 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-import pygments
 import sphinx.application
 from bs4 import BeautifulSoup
 from pygments.formatters import HtmlFormatter
@@ -70,7 +69,7 @@ def get_pygments_style_colors(
 ) -> Dict[str, str]:
     """Get background/foreground colors for given pygments style."""
     background = style.background_color
-    text_colors = style.style_for_token(pygments.token.Text)
+    text_colors = style.style_for_token(Text)
     foreground = text_colors["color"]
 
     if not background:
@@ -188,20 +187,21 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     update_known_styles_state(app)
 
 
-def update_known_styles_state(app):
+def update_known_styles_state(app: sphinx.application.Sphinx) -> None:
+    """Update a global store of known styles of this application."""
     global _KNOWN_STYLES_IN_USE
 
     _KNOWN_STYLES_IN_USE = {
-        "light": get_light_style(app),
-        "dark": get_dark_style(app),
+        "light": _get_light_style(app),
+        "dark": _get_dark_style(app),
     }
 
 
-def get_light_style(app):
+def _get_light_style(app: sphinx.application.Sphinx) -> Style:
     return app.builder.highlighter.formatter_args["style"]
 
 
-def get_dark_style(app):
+def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
     # number_of_hours_spent_figuring_this_out = 7
     #
     # Hello human in the future! This next block of code needs a bit of a story, and
@@ -269,7 +269,11 @@ def get_dark_style(app):
     return PygmentsBridge("html", dark_style).formatter_args["style"]
 
 
-def get_pygments_stylesheet():
+def get_pygments_stylesheet() -> str:
+    """Generate the theme-specific pygments.css.
+
+    There is no way to tell Sphinx how the theme handles dark mode; at this time.
+    """
     light_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["light"])
     dark_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["dark"])
 
@@ -292,7 +296,10 @@ def get_pygments_stylesheet():
 
 # Yup, we overwrite the default pygments.css file, because it can't possibly respect
 # the needs of this theme.
-def _overwrite_pygments_css(app, exception):
+def _overwrite_pygments_css(
+    app: sphinx.application.Sphinx,
+    exception: Optional[Exception],
+) -> None:
     with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w") as f:
         f.write(get_pygments_stylesheet())
 
