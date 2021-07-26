@@ -3,13 +3,19 @@
 __version__ = "2021.07.05.dev39"
 
 import logging
+import os
+import textwrap
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 import pygments
-import sphinx
+import sphinx.application
 from bs4 import BeautifulSoup
+from pygments.formatters import HtmlFormatter
+from pygments.style import Style
+from pygments.token import Text
+from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.highlighting import PygmentsBridge
 
 from .navigation import get_navigation_tree
@@ -17,6 +23,12 @@ from .navigation import get_navigation_tree
 THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
 
 logger = logging.getLogger(__name__)
+
+# GLOBAL STATE
+_KNOWN_STYLES_IN_USE: Dict[str, Optional[Style]] = {
+    "light": None,
+    "dark": None,
+}
 
 
 @lru_cache(maxsize=None)
@@ -54,7 +66,7 @@ def wrap_elements_that_can_get_too_wide(content: str) -> str:
 
 
 def get_pygments_style_colors(
-    style: pygments.style.Style, *, fallbacks: Dict[str, str]
+    style: Style, *, fallbacks: Dict[str, str]
 ) -> Dict[str, str]:
     """Get background/foreground colors for given pygments style."""
     background = style.background_color
@@ -134,15 +146,19 @@ def _html_page_context(
 
     # Inject information about styles
     context["furo_pygments"] = {
-        "light": get_colors_for_codeblocks(
-            app.builder.highlighter,
-            fg="black",
-            bg="white",
+        "light": get_pygments_style_colors(
+            _KNOWN_STYLES_IN_USE["light"],
+            fallbacks=dict(
+                foreground="black",
+                background="white",
+            ),
         ),
-        "dark": get_colors_for_codeblocks(
-            app.builder.dark_highlighter,
-            fg="white",
-            bg="black",
+        "dark": get_pygments_style_colors(
+            _KNOWN_STYLES_IN_USE["dark"],
+            fallbacks=dict(
+                foreground="white",
+                background="black",
+            ),
         ),
     }
 
@@ -161,9 +177,31 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     # 500 is the default priority for extensions, we want this after this.
     app.add_css_file("styles/furo-extensions.css", priority=600)
 
-    builder = app.builder
-    assert builder.dark_highlighter is None, "this shouldn't happen."
+    builder: StandaloneHTMLBuilder = app.builder
+    assert builder, "what?"
+    assert (
+        builder.highlighter is not None
+    ), "there should be a default style known to Sphinx"
+    assert (
+        builder.dark_highlighter is None
+    ), "this shouldn't be a dark style known to Sphinx"
+    update_known_styles_state(app)
 
+
+def update_known_styles_state(app):
+    global _KNOWN_STYLES_IN_USE
+
+    _KNOWN_STYLES_IN_USE = {
+        "light": get_light_style(app),
+        "dark": get_dark_style(app),
+    }
+
+
+def get_light_style(app):
+    return app.builder.highlighter.formatter_args["style"]
+
+
+def get_dark_style(app):
     # number_of_hours_spent_figuring_this_out = 7
     #
     # Hello human in the future! This next block of code needs a bit of a story, and
@@ -205,22 +243,6 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     # fall back to the original behaviour and also print a warning, so that hopefully
     # someone will report this. Maybe it'll all be fixed, and I can remove this whole
     # hack and this giant comment.
-    #
-    # But wait, this hack actually has another layer to it.
-    #
-    # This whole setup depends on an internal implementation detail in Sphinx -- that
-    # it "adds" the `pygments_dark.css` file for inclusion in output, at a different
-    # point than where it is generates the file. The dark syntax highlighting mechanism
-    # of this theme depends on that fact -- we don't actually set `pygments_dark_style`
-    # in our theme.conf file.
-    #
-    # Instead, we stick our filthy monkey hands into Sphinx's builder, to patch the
-    # builder to generate the `pygments_dark.css` file as if this theme actually sets
-    # `pygments_dark_style`. This results in Sphinx generating the file without
-    # injecting a custom CSS file for it. Then, we include that stylesheet in our HTML
-    # via a hand-crafted <link> tag. There's 2 benefits to this approach: (1) it works,
-    # (2) we can, at some point in the future, pivot to a different strategy for
-    # including the dark mode syntax highlighting styles.
 
     # HACK: begins here
     dark_style = None
@@ -244,8 +266,35 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if dark_style is None:
         dark_style = app.config.pygments_dark_style
 
-    builder.dark_highlighter = PygmentsBridge("html", dark_style)
-    # HACK: ends here
+    return PygmentsBridge("html", dark_style).formatter_args["style"]
+
+
+def get_pygments_stylesheet():
+    light_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["light"])
+    dark_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["dark"])
+
+    light = light_formatter.get_style_defs(".highlight")
+    dark_one = dark_formatter.get_style_defs('body[data-theme="dark"] .highlight')
+    dark_two = dark_formatter.get_style_defs(
+        'body:not([data-theme="light"]) .highlight'
+    )
+
+    return textwrap.dedent(
+        f"""
+            {light}
+            {dark_one}
+            @media (prefers-color-scheme: dark) {{
+                {dark_two}
+            }}
+        """
+    )
+
+
+# Yup, we overwrite the default pygments.css file, because it can't possibly respect
+# the needs of this theme.
+def _overwrite_pygments_css(app, exception):
+    with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w") as f:
+        f.write(get_pygments_stylesheet())
 
 
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
@@ -260,6 +309,7 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
 
     app.connect("html-page-context", _html_page_context)
     app.connect("builder-inited", _builder_inited)
+    app.connect("build-finished", _overwrite_pygments_css)
 
     return {
         "parallel_read_safe": True,
