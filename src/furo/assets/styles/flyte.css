@@ -283,6 +283,10 @@ div.sphinx-bs .card:hover .sphinx-bs.btn  {
   color: #fff;
 }
 
+div.sphinx-bs .card:hover .card-body .sphinx-bs.btn  {
+  color: #9d68e4;
+}
+
 .getting-started-panels div.sphinx-bs .sphinx-bs.btn:hover {
   border-color: var(--color-link);
   background-color: #9d68e4;
