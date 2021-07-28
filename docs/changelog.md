@@ -2,8 +2,8 @@
 
 ## 2021.07.28.beta39
 
-- Site visitors can now force light or dark mode, independently of browser settings. 🎉
-- Rework handling of dark mode code block highlighting.
+- Site visitors can now force light theme / dark theme, independently of browser settings. 🎉
+- Rework handling of dark theme code block highlighting.
 - "Hide Search Matches" shows up in the sidebar, when the user has search matches highlighted.
 - Search term highlights are only shown in the page content.
 - Fix styling for default aligned tables.
