@@ -1,3 +1,8 @@
+```{admonition} Mimicking ReadTheDocs' PR previews
+:class: warning
+This is simulating how ReadTheDocs puts admonitions on top of previews.
+```
+
 # Really Long Page
 
 This page basically exists to show-off Furo's cool table of contents sidebar.
