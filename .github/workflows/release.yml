@@ -46,10 +46,6 @@ jobs:
         with:
           name: wheel
 
-      - name: Get the release version
-        id: version
-        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
-
       - name: Create the GitHub release
         id: create_release
         uses: actions/create-release@v1
@@ -67,8 +63,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/furo-${{ steps.version.outputs.VERSION }}.tar.gz
-          asset_name: furo-${{ steps.version.outputs.VERSION }}.tar.gz
+          asset_path: dist/furo-*.tar.gz
           asset_content_type: application/x-gzip
 
       - name: Upload wheel to GitHub
@@ -77,8 +72,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/furo-${{ steps.version.outputs.VERSION }}-py3-none-any.whl
-          asset_name: furo-${{ steps.version.outputs.VERSION }}-py3-none-any.whl
+          asset_path: dist/furo-*-py3-none-any.whl
           asset_content_type: application/zip
 
       - name: Upload both to TestPyPI
