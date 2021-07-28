@@ -1,5 +1,16 @@
 # Changelog
 
+## 2021.07.28.beta39
+
+- Site visitors can now force light or dark mode, independently of browser settings. 🎉
+- Rework handling of dark mode code block highlighting.
+- "Hide Search Matches" shows up in the sidebar, when the user has search matches highlighted.
+- Search term highlights are only shown in the page content.
+- Fix styling for default aligned tables.
+- Enable smooth scrolling.
+- meta: Upgrade NodeJS packages and start using Babel.
+- meta: Rework organisation of various user-facing CSS variables.
+
 ## 2021.07.05.beta38
 
 - Fix image alignment in Sphinx 4.
