@@ -12,6 +12,7 @@ colors
 fonts
 landing-page
 sidebar
+sidebar-title
 toc
 injecting
 ```
