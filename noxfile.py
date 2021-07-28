@@ -38,7 +38,7 @@ def docs_live(session):
         docs_dir = "docs/"
         additional_dependencies = ()
 
-    build_command = "./node_modules/.bin/gulp build"
+    build_command = "npx gulp build"
     _install_this_project_with_flit(session, extras=["doc"], editable=True)
     session.install("sphinx-autobuild", *additional_dependencies)
 
@@ -62,7 +62,7 @@ def docs_live(session):
 @nox.session(reuse_venv=True)
 def docs(session):
     # Generate relevant files prior to installation
-    session.run("gulp", "build", external=True)
+    session.run("npx", "gulp", "build", external=True)
 
     _install_this_project_with_flit(session, extras=["doc"], editable=False)
 
@@ -139,7 +139,7 @@ def release(session):
     )
 
     # Build the package
-    session.run("gulp", "build", external=True)
+    session.run("npx", "gulp", "build", external=True)
     session.run("flit", "build")
     session.run("twine", "check", *glob.glob("dist/*"))
 
