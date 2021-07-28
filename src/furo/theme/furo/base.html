@@ -62,11 +62,11 @@
     {%- endblock regular_styles -%}
 
     {#- Theme-related stylesheets -#}
-    {%- block theme_styles -%}
+    {%- block theme_styles %}
     {% include "partials/_head_css_variables.html" with context %}
     {%- endblock -%}
 
-    {%- block extra_styles -%}
+    {%- block extra_styles %}
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
     {%- endblock -%}
 
