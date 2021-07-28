@@ -1,5 +1,9 @@
 # Changelog
 
+## 2021.07.28.beta40
+
+- Add spacing around light theme / dark theme / auto theme toggle.
+
 ## 2021.07.28.beta39
 
 - Site visitors can now force light theme / dark theme, independently of browser settings. 🎉
