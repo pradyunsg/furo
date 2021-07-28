@@ -118,7 +118,7 @@ def release(session):
 
     release_version, next_version = get_release_versions(version_file)
 
-    session.install("flit", "twine", "release-helper")
+    session.install("flit", "twine", "release-helper", "keyring")
 
     # Sanity Checks
     session.run("release-helper", "version-check-validity", release_version)
