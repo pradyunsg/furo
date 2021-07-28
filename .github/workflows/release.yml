@@ -21,19 +21,15 @@ jobs:
       - name: Generate final distribution
         run: python -m build
 
-      - name: Get the release version
-        id: version
-        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
-
       # Upload to GitHub Actions artifacts
       - uses: actions/upload-artifact@v2
         with:
           name: sdist
-          path: dist/furo-${{ steps.version.outputs.VERSION }}.tar.gz
+          path: dist/furo-*.tar.gz
       - uses: actions/upload-artifact@v2
         with:
           name: wheel
-          path: dist/furo-${{ steps.version.outputs.VERSION }}-py3-none-any.whl
+          path: dist/furo-*-py3-none-any.whl
 
   upload:
     runs-on: ubuntu-latest
