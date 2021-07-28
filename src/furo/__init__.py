@@ -7,7 +7,7 @@ import os
 import textwrap
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Any, Dict, Optional, cast
 
 import sphinx.application
 from bs4 import BeautifulSoup
@@ -176,7 +176,7 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     # 500 is the default priority for extensions, we want this after this.
     app.add_css_file("styles/furo-extensions.css", priority=600)
 
-    builder: StandaloneHTMLBuilder = app.builder
+    builder = cast(StandaloneHTMLBuilder, app.builder)
     assert builder, "what?"
     assert (
         builder.highlighter is not None
@@ -300,6 +300,7 @@ def _overwrite_pygments_css(
     app: sphinx.application.Sphinx,
     exception: Optional[Exception],
 ) -> None:
+    assert app.builder
     with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w") as f:
         f.write(get_pygments_stylesheet())
 
