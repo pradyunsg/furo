@@ -42,7 +42,7 @@
     {#- Site title -#}
     {%- block htmltitle -%}
       {% if pagename == master_doc %}
-        <title>{{ _("Home") }} - {{ docstitle|striptags|e }}</title>
+        <title>{{ docstitle|striptags|e }}</title>
       {% else %}
         <title>{{ title|striptags|e }} - {{ docstitle|striptags|e }}</title>
       {% endif %}
