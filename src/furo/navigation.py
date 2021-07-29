@@ -48,8 +48,20 @@ def get_navigation_tree(toctree_html: str) -> str:
         checkbox_name = f"toctree-checkbox-{toctree_checkbox_count}"
 
         # Add the "label" for the checkbox which will get filled.
-        label = soup.new_tag("label", attrs={"for": checkbox_name})
+        label = soup.new_tag(
+            "label",
+            attrs={
+                "for": checkbox_name,
+            },
+        )
+        screen_reader_label = soup.new_tag(
+            "div",
+            attrs={"class": "visually-hidden"},
+        )
+        screen_reader_label.string = "Toggle child pages in navigation"
+        label.append(screen_reader_label)
         label.append(_get_navigation_expand_image(soup))
+
         element.insert(1, label)
 
         # Add the checkbox that's used to store expanded/collapsed state.
@@ -60,6 +72,7 @@ def get_navigation_tree(toctree_html: str) -> str:
                 "class": ["toctree-checkbox"],
                 "id": checkbox_name,
                 "name": checkbox_name,
+                "role": "switch",
             },
         )
         # if this has a "current" class, be expanded by default (by checking the checkbox)
