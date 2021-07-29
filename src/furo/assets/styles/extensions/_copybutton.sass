@@ -1,3 +1,12 @@
-button.copybtn
-  width: 1.25rem
-  height: 1.25rem
+.highlight button.copybtn
+  color: var(--color-foreground-secondary)
+  background-color: var(--color-background-secondary)
+  border: 1px solid var(--color-background-border)
+
+  &:hover
+    color: var(--color-foreground-primary)
+    background-color: var(--color-background-primary)
+
+  &::after
+    color: var(--color-foreground-secondary)
+    background: var(--color-background-primary)
