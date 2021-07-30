@@ -2,12 +2,13 @@
 
 __version__ = "2021.07.28.dev41"
 
+import hashlib
 import logging
 import os
 import textwrap
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict, Optional, cast
+from typing import Any, Dict, List, Optional, cast
 
 import sphinx.application
 from bs4 import BeautifulSoup
@@ -126,6 +127,21 @@ def _compute_hide_toc(context: Dict[str, Any]) -> bool:
     return has_exactly_one_list_item(context["toc"])
 
 
+@lru_cache(maxsize=None)
+def _asset_hash(path: str) -> str:
+    """Append a `?digest=` to an url based on the file content."""
+    full_path = THEME_PATH / "static" / path
+    digest = hashlib.sha1(full_path.read_bytes()).hexdigest()
+
+    return f"_static/{path}?digest={digest}"
+
+
+def _add_asset_hashes(static: List[str], add_digest_to: List[str]) -> None:
+    for asset in add_digest_to:
+        index = static.index("_static/" + asset)
+        static[index].filename = _asset_hash(asset)  # type: ignore
+
+
 def _html_page_context(
     app: sphinx.application.Sphinx,
     pagename: str,
@@ -135,6 +151,17 @@ def _html_page_context(
 ) -> None:
     if app.config.html_theme != "furo":
         return
+
+    if "css_files" in context:
+        _add_asset_hashes(
+            context["css_files"],
+            ["styles/furo.css", "styles/furo-extensions.css"],
+        )
+    if "scripts" in context:
+        _add_asset_hashes(
+            context["scripts"],
+            ["scripts/main.js"],
+        )
 
     # Basic constants
     context["furo_version"] = __version__
