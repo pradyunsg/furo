@@ -53,7 +53,7 @@
     {# Custom stylesheets #}
     {%- block regular_styles -%}
     {%- for css in css_files -%}
-    {% if css|attr("filename") -%}
+      {% if css|attr("filename") -%}
         {{ css_tag(css) }}
       {%- else -%}
         <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
