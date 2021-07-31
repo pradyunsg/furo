@@ -1,5 +1,11 @@
 # Changelog
 
+## 2021.07.31.beta41
+
+- Adapt for newer sphinx-copybutton design
+- Improved screen reader experience
+- Bring back asset digests, to avoid caching-related issues
+
 ## 2021.07.28.beta40
 
 - Add spacing around light theme / dark theme / auto theme toggle.
