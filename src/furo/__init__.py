@@ -327,6 +327,9 @@ def _overwrite_pygments_css(
     app: sphinx.application.Sphinx,
     exception: Optional[Exception],
 ) -> None:
+    if exception is not None:
+        return
+
     assert app.builder
     with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w") as f:
         f.write(get_pygments_stylesheet())
