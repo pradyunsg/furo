@@ -1,5 +1,10 @@
 # Changelog
 
+## 2021.08.11.beta42
+
+- Fix esoteric failure due to inability to write pygments.css.
+- Improve overscroll behaviour.
+
 ## 2021.07.31.beta41
 
 - Adapt for newer sphinx-copybutton design
