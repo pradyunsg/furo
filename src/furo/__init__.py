@@ -32,15 +32,12 @@ _KNOWN_STYLES_IN_USE: Dict[str, Optional[Style]] = {
 
 
 @lru_cache(maxsize=None)
-def has_exactly_one_list_item(toc: str) -> bool:
-    """Check if the toc has exactly one list item."""
+def has_not_enough_items_to_show_toc(toc: str) -> bool:
+    """Check if the toc has one or fewer items."""
     assert toc
 
     soup = BeautifulSoup(toc, "html.parser")
-    if len(soup.find_all("li")) == 1:
-        return True
-
-    return False
+    return len(soup.find_all("li")) <= 1
 
 
 def wrap_elements_that_can_get_too_wide(content: str) -> str:
@@ -124,7 +121,7 @@ def _compute_hide_toc(context: Dict[str, Any]) -> bool:
     elif not context["toc"]:
         return True
 
-    return has_exactly_one_list_item(context["toc"])
+    return has_not_enough_items_to_show_toc(context["toc"])
 
 
 @lru_cache(maxsize=None)
