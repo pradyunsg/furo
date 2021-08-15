@@ -40,6 +40,7 @@ test = [
 doc = [
   "myst-parser",
   "sphinx-copybutton",
+  "sphinx-design",
   "sphinx-inline-tabs",
 ]
 

@@ -1,0 +1,46 @@
+body
+  // Shadows
+  --sd-color-shadow: rgba(0, 0, 0, 0.05)
+
+  // Cards
+  --sd-color-card-border: var(--color-card-border)
+  --sd-color-card-border-hover: var(--color-brand-content)
+  --sd-color-card-background: var(--color-card-background)
+  --sd-color-card-text: var(--color-foreground-primary)
+  --sd-color-card-header: var(--color-card-marginals-background)
+  --sd-color-card-footer: var(--color-card-marginals-background)
+
+  // Tabs
+  --sd-color-tabs-label-active: var(--color-brand-content)
+  --sd-color-tabs-label-hover: var(--color-foreground-muted)
+  --sd-color-tabs-label-inactive: var(--color-foreground-muted)
+  --sd-color-tabs-underline-active: var(--color-brand-content)
+  --sd-color-tabs-underline-hover: var(--color-foreground-border)
+  --sd-color-tabs-underline-inactive: var(--color-background-border)
+  --sd-color-tabs-overline: var(--color-background-border)
+  --sd-color-tabs-underline: var(--color-background-border)
+
+// Tabs
+.sd-tab-content
+  box-shadow: 0 -2px var(--sd-color-tabs-overline), 0 1px var(--sd-color-tabs-underline)
+
+// Shadows
+.sd-card  // Have a shadow by default
+  box-shadow: 0 0.1rem 0.25rem var(--sd-color-shadow), 0 0 0.0625rem rgba(0, 0, 0, 0.1)
+
+.sd-shadow-sm
+  box-shadow: 0 0.1rem 0.25rem var(--sd-color-shadow), 0 0 0.0625rem rgba(0, 0, 0, 0.1) !important
+
+.sd-shadow-md
+  box-shadow: 0 0.3rem 0.75rem var(--sd-color-shadow), 0 0 0.0625rem rgba(0, 0, 0, 0.1) !important
+
+.sd-shadow-lg
+  box-shadow: 0 0.6rem 1.5rem var(--sd-color-shadow), 0 0 0.0625rem rgba(0, 0, 0, 0.1) !important
+
+// Cards
+.sd-card-hover:hover  // Don't change scale on hover
+  transform: none
+
+.sd-cards-carousel  // Have a bit of gap in the carousel by default
+  gap: 0.25rem
+  padding: 0.25rem

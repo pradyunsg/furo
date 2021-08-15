@@ -59,6 +59,11 @@
   // - special literal values (eg: transparent, none)
   //////////////////////////////////////////////////////////////////////////////
 
+  // Cards
+  --color-card-border: var(--color-background-secondary);
+  --color-card-background: transparent;
+  --color-card-marginals-background: var(--color-background-secondary);
+
   // Header
   --color-header-background: var(--color-background-primary);
   --color-header-border: var(--color-background-border);
@@ -147,4 +152,9 @@
 
   // Admonitions
   --color-admonition-background: #18181a;
+
+  // Cards
+  --color-card-border: var(--color-background-secondary);
+  --color-card-background: #18181a;
+  --color-card-marginals-background: var(--color-background-hover);
 }

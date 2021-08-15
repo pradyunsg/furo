@@ -13,4 +13,5 @@ lists_tables
 really-long
 structure
 autodoc
+sphinx-design
 ```
