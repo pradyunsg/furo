@@ -1,5 +1,13 @@
 # Changelog
 
+## 2021.08.17.beta43
+
+- Add support for sphinx-design.
+- Document sidebar title customization.
+- Don't show "Contents" on pages without h1 headings.
+- Add border to inline code, to improve contrast.
+- Reduce contrast on dark-mode text.
+
 ## 2021.08.11.beta42
 
 - Fix esoteric failure due to inability to write pygments.css.
