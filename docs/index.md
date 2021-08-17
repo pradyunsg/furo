@@ -26,6 +26,7 @@ recommendations
 
 contributing/index
 kitchen-sink/index
+stability
 changelog
 license
 GitHub Repository <https://github.com/pradyunsg/furo>
