@@ -19,7 +19,7 @@ Furo allows defining [CSS variables that overrides its default values](css-varia
 This mechanism allows configuring nearly every facet of Furo's design, including spacing between various items and the colors of nearly every component.
 
 ````{admonition} Example
-Changing Furo's blue accent (used for stylising links, sidebar's content etc) to a purple one:
+Changing Furo's blue accent (used for styling links, sidebar's content etc) to a purple one:
 
 ```py
 html_theme_options = {
