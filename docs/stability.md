@@ -32,6 +32,6 @@ Since there is no way to ensure all possible customisations are not affected, Fu
 
 Furo was largely motivated by "I want things to look nicer", when looking at pip's documentation in early 2021.
 
-These stability promises are aimed toward keeping it straightforward for me to maintain and improve this theme going forwatd. Any additional overhead in keeping the project moving along, would make it less likely that I'd actually continue working on this project.
+These stability promises are aimed toward keeping it straightforward for me to maintain and improve this theme going forward. Any additional overhead in keeping the project moving along, would make it less likely that I'd actually continue working on this project.
 
-Since this project is "largely aesthetics" for nearly all end users, I'd prefer to preserve the contract to just that -- it'll look the same, with minor tweaks expected based on how the Sphinx ecosystem evolves.
+Since this project is "largely aesthetics" for nearly all end users, I'd prefer to preserve the contract to just that -- it'll look the same, with minor tweaks expected based on how the Sphinx ecosystem evolves and what I feel should be included in the theme.
