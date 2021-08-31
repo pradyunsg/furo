@@ -90,23 +90,52 @@ def test(session):
     session.run("pytest", *args)
 
 
+def _determine_versions(current_version, date):
+    """Returns (version_in_release, version_after_release)"""
+    dev_num = int(current_version.rsplit(".dev", 1)[-1])
+    today_version = date.strftime("%Y.%m.%d")
+
+    if current_version.startswith(today_version):
+        # There was a release earlier today. Let's tack on another version
+        # number segment onto this to make it unique.
+        return (
+            today_version + f".{dev_num}",
+            today_version + f".dev{dev_num+1}",
+        )
+    return (
+        today_version,
+        today_version + ".dev1",
+    )
+
+
+# fmt: off
+assert (
+    _determine_versions("2021.08.17.dev44", date=datetime.date(2021, 8, 17))
+    == ("2021.08.17.44", "2021.08.17.dev45")
+), "same day 1"
+assert (
+    _determine_versions("2021.08.17.dev1", date=datetime.date(2021, 8, 17))
+    == ("2021.08.17.1", "2021.08.17.dev2")
+), "same day 2"
+assert (
+    _determine_versions("2021.08.17.dev44", date=datetime.date(2021, 8, 18))
+    == ("2021.08.18", "2021.08.18.dev1")
+), "different day"
+# fmt: on
+
+
 def get_release_versions(version_file):
     marker = "__version__ = "
 
     with open(version_file) as f:
         for line in f:
             if line.startswith(marker):
-                version = line[len(marker) + 1 : -2]
-                current_number = int(version.split(".dev")[-1])
+                current_version = line[len(marker) + 1 : -2]
                 break
         else:
             raise RuntimeError("Could not find current version.")
 
-    today = datetime.date.today()
-    release_version = today.strftime(f"%Y.%m.%d.beta{current_number}")
-    next_version = today.strftime(f"%Y.%m.%d.dev{current_number+1}")
-
-    return release_version, next_version
+    return _determine_versions(current_version, date=datetime.date.today())
 
 
 @nox.session
