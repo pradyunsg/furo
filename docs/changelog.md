@@ -1,7 +1,17 @@
 # Changelog
 
-## 2021.08.31.beta44
+<!--
 
+Version codenames style: {adjective} {colorname}
+
+https://patternbasedwriting.com/elementary_writing_success/list-4800-adjectives/
+https://en.wikipedia.org/wiki/Lists_of_colors
+
+-->
+
+## 2021.08.31 -- Aspiring Avocado
+
+- First stable release! 🎉
 - Document stability policy.
 - Tweak API styling selectors.
 - Drop reference to no-longer-used `pygments_dark.css`.
