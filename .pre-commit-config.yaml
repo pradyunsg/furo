@@ -15,7 +15,7 @@ repos:
     rev: v1.11.0
     hooks:
       - id: blacken-docs
-        additional_dependencies: [black==21.6b0]
+        additional_dependencies: [black==21.8b0]
 
   - repo: https://github.com/PyCQA/isort
     rev: 5.9.3
