@@ -1,8 +1,12 @@
-# Stability
+# Stability Policy
+
+```{note}
+This does not apply for beta releases of Furo.
+```
 
 Users that aren't using custom templates or undocumented details of Furo should not expect any breaking changes. For everyone else, I won't actively try to break things but that doesn't mean there won't be occasional breakage.
 
-## Policy
+## Specifics
 
 ### Design tweaks
 
