@@ -1,5 +1,12 @@
 # Changelog
 
+## 2021.08.31.beta44
+
+- Document stability policy.
+- Tweak API styling selectors.
+- Drop reference to no-longer-used `pygments_dark.css`.
+- Eagerly set the light/dark mode theme, when loading a page.
+
 ## 2021.08.17.beta43
 
 - Add support for sphinx-design.
