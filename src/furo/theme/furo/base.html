@@ -75,6 +75,9 @@
     {%- block extrahead -%}{%- endblock -%}
   </head>
   <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
     {% block body %}{% endblock %}
 
     {%- block scripts -%}

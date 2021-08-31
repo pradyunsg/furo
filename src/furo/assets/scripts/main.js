@@ -125,9 +125,6 @@ function setupScrollSpy() {
 }
 
 function setupTheme() {
-  // Set the current theme to auto.
-  setTheme(localStorage.getItem("theme") || "auto");
-
   // Attach event handlers for toggling themes
   const buttons = document.getElementsByClassName("theme-toggle");
   Array.from(buttons).forEach((btn) => {
