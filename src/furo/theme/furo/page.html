@@ -120,13 +120,13 @@
             {%- endif %}
           {%- endif %}
           {%- if last_updated %}
-            |
+            {%- if show_copyright %} | {%- endif %}
             {% trans last_updated=last_updated|e -%}
               Last updated on {{ last_updated }}.
             {%- endtrans %}
           {%- endif %}
           {%- if show_sphinx %}
-            |
+            {%- if show_copyright or last_updated %} | {%- endif %}
             {% trans -%}
               Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
@@ -135,7 +135,7 @@
             {%- endtrans %}
           {%- endif %}
           {%- if show_source and has_source and sourcename %}
-            |
+            {%- if show_copyright or last_updated or show_sphinx %} | {%- endif %}
             <a class="muted-link" href="{{ pathto('_sources/' + sourcename, true)|e }}"
                rel="nofollow">
               {{ _('Show Source') }}
