@@ -59,7 +59,7 @@
   </aside>
   <div class="main">
     <div class="content">
-      <article role="main">
+      <div class="article-container">
         <div class="content-icon-container">
           <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
@@ -74,8 +74,10 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        {% block content %}{{ body }}{% endblock %}
-      </article>
+        <article role="main">
+          {% block content %}{{ body }}{% endblock %}
+        </article>
+      </div>
       <footer>
         {% block footer %}
         <div class="related-pages">
