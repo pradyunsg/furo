@@ -270,7 +270,7 @@ div.sphinx-bs .card-header p.card-text {
 }
 
 div.sphinx-bs .card:hover {
-  border-color: #9d68e4;
+  border-color: var(--color-link--hover);
 }
 
 div.sphinx-bs .card:hover .card-header  {
@@ -284,7 +284,7 @@ div.sphinx-bs .card:hover .sphinx-bs.btn  {
 }
 
 div.sphinx-bs .card:hover .card-body .sphinx-bs.btn  {
-  color: #9d68e4;
+  color: var(--color-link--hover);
 }
 
 .getting-started-panels div.sphinx-bs .sphinx-bs.btn:hover {
