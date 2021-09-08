@@ -93,14 +93,7 @@
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-    <script type="text/javascript"> 
-      docsearch({
-        inputSelector: '.sidebar-search',
-        apiKey: 'af11c512aa92422933b48828d28dbe5f',
-        indexName: 'flyte',
-        debug: false // Set debug to true if you want to inspect the dropdown
-      });
-    </script>
+    <script src="algolia-search.js"></script>
     {%- endblock -%}
     {%- endblock scripts -%}
   </body>
