@@ -9,6 +9,11 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2021.09.08 -- Balmy Blue
+
+- Prevent screen-reader-only content from showing up in Sphinx search results.
+- Improve support for various footer configurations.
+
 ## 2021.08.31 -- Aspiring Avocado
 
 - First stable release! 🎉
