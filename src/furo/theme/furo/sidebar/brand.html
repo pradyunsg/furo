@@ -25,7 +25,7 @@ Hope your day's going well. :)
   </div>
   {%- endif %}
   {% if not theme_sidebar_hide_name %}
-  <span class="sidebar-brand-text">{{ docstitle }}</span>
+  <span class="sidebar-brand-text">{{ docstitle if docstitle else project }}</span>
   {%- endif %}
   {% endblock brand_content %}
 </a>
