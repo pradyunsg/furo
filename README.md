@@ -86,6 +86,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [psycopg3]
 - [pip]
 - [packaging]
+- [kornia](https://kornia.readthedocs.io/en/latest/) -- Computer Vision library for PyTorch
 
 I'm also a maintainer on the last two, so... that covers responsible disclosure. :)
 
