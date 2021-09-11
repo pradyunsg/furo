@@ -80,7 +80,7 @@
         {% block footer %}
         <div class="related-pages">
           {% if next -%}
-            <a class="next-page" href="{{ next.link }}">
+            <a class="next-page" href="{{ next.link }}" accesskey="n">
               <div class="page-info">
                 <div class="context">
                   <span>{{ _("Next") }}</span>
@@ -91,7 +91,7 @@
             </a>
           {%- endif %}
           {% if prev -%}
-            <a class="prev-page" href="{{ prev.link }}">
+            <a class="prev-page" href="{{ prev.link }}" accesskey="p">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
