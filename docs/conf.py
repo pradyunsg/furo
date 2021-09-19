@@ -79,3 +79,11 @@ language = "en"
 
 html_static_path = ["_static"]
 html_css_files = ["pied-piper-admonition.css"]
+html_theme_options = {
+    "announcement": (
+        "If you like this theme, you can "
+        '<a href="https://shoutouts.dev/projects/pradyunsg/furo">'
+        "express your gratitude"
+        "</a>!"
+    )
+}
