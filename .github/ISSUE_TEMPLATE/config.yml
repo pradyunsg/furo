@@ -6,3 +6,6 @@ contact_links:
   - name: Feature Request / Enhancement
     url: https://github.com/pradyunsg/furo/discussions/categories/ideas
     about: Feature requests may be raised as an "Ideas" discussion.
+  - name: Express Gratitude
+    url: https://shoutouts.dev/projects/pradyunsg/furo
+    about: You like the project, and would like to tell @pradyunsg that! :)
