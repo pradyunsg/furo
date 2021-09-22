@@ -59,12 +59,14 @@ Furo is inspired by (and borrows elements from) some excellent technical documen
 - [mkdocs-material] for MkDocs
 - [Just the Docs] for Jekyll
 - [GitBook]
+- [pdoc3]
 
 We use [BrowserStack] to test on real devices and browsers. Shoutout to them for supporting OSS projects!
 
 [mkdocs-material]: https://squidfunk.github.io/mkdocs-material/
 [just the docs]: https://pmarsceill.github.io/just-the-docs/
 [gitbook]: https://www.gitbook.com/
+[pdoc3]: https://pdoc3.github.io/pdoc/doc
 [browserstack]: https://browserstack.com/
 
 ## What's with the name?
