@@ -1,11 +1,13 @@
 // Inline code
 code.literal
   background: var(--color-inline-code-background)
-  border: 1px solid var(--color-background-border)
   border-radius: 0.2em
   // Make the font smaller, and use padding to recover.
   font-size: var(--font-size--small--2)
   padding: 0.1em 0.2em
+
+  p &
+    border: 1px solid var(--color-background-border)
 
 // Code and Literal Blocks
 $code-spacing-vertical: 0.625rem
