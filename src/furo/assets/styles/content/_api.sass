@@ -50,17 +50,17 @@ dl.type,
 dl.exception
   > dt
     padding-left: 3em
-    text-indent: -3em
+    text-indent: -2.5em
 
     // adjust the size of the [source] link on the right.
     a.reference.internal
       .viewcode-link
         width: 3.5rem
-        font-size: var(--font-size--small)
 
 em.property
-  color: var(--color-api-keyword)
-  padding-right: 0.25rem
+  font-style: normal
+  &:first-child
+    color: var(--color-api-keyword)
 .sig-name
   font-weight: bold
   color: var(--color-api-name)
@@ -82,3 +82,14 @@ div.versionadded, div.versionchanged, div.deprecated
 .viewcode-link, .viewcode-back
   float: right
   text-align: right
+
+.sig
+  font-size: var(--api-font-size)
+  font-family: var(--font-stack--monospace)
+  padding: 0.25rem 0.5rem
+  border-radius: 0.25rem
+
+  background: var(--color-api-background)
+
+  &:hover
+    background: var(--color-api-background-hover)

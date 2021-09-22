@@ -30,6 +30,8 @@
   --color-brand-content: #2a5adf;
 
   // API documentation
+  --color-api-background: var(--color-background-secondary);
+  --color-api-background-hover: var(--color-background-hover);
   --color-api-overall: var(--color-foreground-muted);
   --color-api-name: var(--color-brand-content);
   --color-api-pre-name: var(--color-brand-content);
