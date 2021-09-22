@@ -13,9 +13,9 @@ Hope your day's going well. :)
 -#}
 <a class="sidebar-brand{% if logo %} centered{% endif %}" href="{{ pathto(master_doc) }}">
   {% block brand_content %}
-  {%- if logo %}
+  {%- if logo_url %}
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+    <img class="sidebar-logo" src="{{ logo_url }}" alt="Logo"/>
   </div>
   {%- endif %}
   {%- if theme_light_logo and theme_dark_logo %}

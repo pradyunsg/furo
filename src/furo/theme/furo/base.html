@@ -30,8 +30,8 @@
     {%- endblock linktags %}
 
     {# Favicon #}
-    {%- if favicon -%}
-      <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+    {%- if favicon_url -%}
+      <link rel="shortcut icon" href="{{ favicon_url }}"/>
     {%- endif -%}
 
     {#- Generator banner -#}
