@@ -11,13 +11,14 @@
 {%- endblock htmltitle -%}
 
 {% block content %}
-<div id="fallback" class="admonition error">
+<noscript>
+<div class="admonition error">
   <p class="admonition-title">{% trans %}Error{% endtrans %}</p>
   <p>
     {% trans %}Please activate JavaScript to enable the search functionality.{% endtrans %}
   </p>
 </div>
-<script>document.getElementById('fallback').hidden = true;</script>
+</noscript>
 
 <div id="search-results"></div>
 {% endblock %}
