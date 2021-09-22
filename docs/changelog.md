@@ -9,6 +9,14 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2021.09.22 -- Cavalier Canary
+
+- Restyle API documentation signatures, to have a background and use monospace fonts.
+- Reduce spacing for items in API documentation.
+- Improve the presentation of links in site-wide announcement.
+- Only add a border on code inside paragraphs.
+- Use `noscript` for presenting "search needs JS" message.
+
 ## 2021.09.08 -- Balmy Blue
 
 - Prevent screen-reader-only content from showing up in Sphinx search results.
