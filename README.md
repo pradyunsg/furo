@@ -83,21 +83,17 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 
 > I'm being told that mentioning who uses `$thing` is a good way to promote `$thing`.
 
-- [urllib3] -- THE first adopter of Furo.
-- [attrs] (also one of the early adopters!)
+- [urllib3] -- THE first adopter of Furo
+- [attrs] -- one of the early adopters!
+- [pip] -- what I wrote this for
 - [psycopg3]
-- [pip]
-- [packaging]
 - [kitty terminal emulator]
-
-I'm also a maintainer on the last two, so... that covers responsible disclosure. :)
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
 [psycopg3]: https://www.psycopg.org/psycopg3/docs/
-[pip]: https://pip.pypa.io/
-[packaging]: https://packaging.pypa.io/
 [kitty terminal emulator]: https://sw.kovidgoyal.net/kitty/
+[pip]: https://pip.pypa.io/
 
 <!-- end used-by -->
 
