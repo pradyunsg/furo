@@ -88,6 +88,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [psycopg3]
 - [pip]
 - [packaging]
+- [kitty terminal emulator]
 
 I'm also a maintainer on the last two, so... that covers responsible disclosure. :)
 
@@ -96,6 +97,7 @@ I'm also a maintainer on the last two, so... that covers responsible disclosure.
 [psycopg3]: https://www.psycopg.org/psycopg3/docs/
 [pip]: https://pip.pypa.io/
 [packaging]: https://packaging.pypa.io/
+[kitty terminal emulator]: https://sw.kovidgoyal.net/kitty/
 
 <!-- end used-by -->
 
