@@ -102,7 +102,7 @@
   --color-sidebar-search-border: var(--color-background-border);
   --color-sidebar-search-icon: var(--color-foreground-muted);
 
-  // Table of Contents
+  // Table of Contents (right)
   --color-toc-background: var(--color-background-primary);
   --color-toc-title-text: var(--color-foreground-muted);
   --color-toc-item-text: var(--color-foreground-secondary);
@@ -113,6 +113,7 @@
   --color-content-foreground: var(--color-foreground-primary);
   --color-content-background: transparent;
 
+  // Links
   --color-link: var(--color-brand-content);
   --color-link--hover: var(--color-brand-content);
   --color-link-underline: var(--color-background-border);
