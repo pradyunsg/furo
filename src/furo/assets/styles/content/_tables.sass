@@ -13,19 +13,20 @@ table.docutils
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.0625rem rgba(0, 0, 0, 0.1)
 
   th
-    background: var(--color-background-secondary)
+    background: var(--color-table-header-background)
 
   td,
   th
     // Space things out properly
     padding: 0 0.25rem
-    p
-      margin: 0.25rem
 
     // Get the borders looking just-right.
-    border-left: 1px solid var(--color-background-border)
-    border-right: 1px solid var(--color-background-border)
-    border-bottom: 1px solid var(--color-background-border)
+    border-left: 1px solid var(--color-table-border)
+    border-right: 1px solid var(--color-table-border)
+    border-bottom: 1px solid var(--color-table-border)
+
+    p
+      margin: 0.25rem
 
     &:first-child
       border-left: none

@@ -61,6 +61,10 @@
   // - special literal values (eg: transparent, none)
   //////////////////////////////////////////////////////////////////////////////
 
+  // Tables
+  --color-table-header-background: var(--color-background-secondary);
+  --color-table-border: var(--color-background-border);
+
   // Cards
   --color-card-border: var(--color-background-secondary);
   --color-card-background: transparent;
