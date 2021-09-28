@@ -29,7 +29,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="{{ pathto(master_doc) }}"><div class="brand">{{ docstitle }}</div></a>
+      <a href="{{ pathto(master_doc) }}"><div class="brand">{{ docstitle if docstitle else project }}</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
