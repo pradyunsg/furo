@@ -90,8 +90,10 @@ html_theme_options = {
 }
 
 # Generate JS/CSS assets before running Sphinx
-subprocess.run([
-    'npx',
-    'gulp',
-    'build',
-])
+subprocess.run(
+    [
+        "npx",
+        "gulp",
+        "build",
+    ]
+)
