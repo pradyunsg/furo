@@ -4,6 +4,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import os
+import subprocess
 import sys
 
 # add the demo python code to the path, so that it can be used to demonstrate
@@ -87,3 +88,10 @@ html_theme_options = {
         "</a>!"
     )
 }
+
+# Generate JS/CSS assets before running Sphinx
+subprocess.run([
+    'npx',
+    'gulp',
+    'build',
+])
