@@ -90,7 +90,7 @@ html_theme_options = {
 }
 
 # Generate JS/CSS assets before running Sphinx on Read the Docs
-if os.environ.get('READTHEDOCS') == 'True':
+if os.environ.get("READTHEDOCS") == "True":
     subprocess.run(
         [
             "npx",
