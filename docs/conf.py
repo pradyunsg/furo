@@ -4,9 +4,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import os
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
 
 # add the demo python code to the path, so that it can be used to demonstrate
 # source links
