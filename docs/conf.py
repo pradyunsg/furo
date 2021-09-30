@@ -4,6 +4,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import os
+from pathlib import Path
 import subprocess
 import sys
 
@@ -91,10 +92,19 @@ html_theme_options = {
 
 # Generate JS/CSS assets before running Sphinx on Read the Docs
 if os.environ.get("READTHEDOCS") == "True":
+    root_path = Path(__file__).parent.parent
+    subprocess.run(
+        [
+            "npm",
+            "install",
+        ],
+        cwd=root_path,
+    )
     subprocess.run(
         [
             "npx",
             "gulp",
             "build",
-        ]
+        ],
+        cwd=root_path,
     )
