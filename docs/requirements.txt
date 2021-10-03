@@ -1,0 +1,5 @@
+# Required to build on Read the Docs
+# Workaround to call `pip` with `-e` option
+# See https://github.com/pradyunsg/furo/pull/275#issuecomment-932695116
+# See https://github.com/readthedocs/readthedocs.org/issues/6243#issuecomment-538079672
+-e .[doc]
