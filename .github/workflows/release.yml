@@ -1,3 +1,7 @@
+# This is mostly experimental. Right now, all it does is create a GitHub release
+# and then try to upload to TestPyPI. The second step seems to be consistently
+# failing. :)
+
 name: Release
 on:
   push:
@@ -19,42 +23,28 @@ jobs:
           pip install build
           npm install
 
-      - name: Generate release assets
+      - name: Generate release distributions
         run: ./node_modules/.bin/gulp build
       - name: Generate final distribution
         run: python -m build
 
-      # Upload to GitHub Actions artifacts
-      - uses: actions/upload-artifact@v2
+      - name: Upload source distribution as an action artifact
+        uses: actions/upload-artifact@v2
         with:
           name: sdist
           path: dist/furo-*.tar.gz
-      - uses: actions/upload-artifact@v2
+      - name: Upload wheel distribution as an action artifact
+        uses: actions/upload-artifact@v2
         with:
           name: wheel
           path: dist/furo-*-py3-none-any.whl
 
-  upload:
-    runs-on: ubuntu-latest
-    needs: build
-    environment: release
-
-    steps:
-      # Download everything necessary
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
-        with:
-          name: sdist
-      - uses: actions/download-artifact@v2
-        with:
-          name: wheel
-
-      - name: Release
+      - name: Make a GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: dist/*
 
-      - name: Upload assets
+      - name: Upload to TestPyPI
         uses: pypa/gh-action-pypi-publish@v1.4.1
         with:
           user: __token__
