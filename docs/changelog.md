@@ -9,6 +9,14 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2021.10.09 -- Delicate Dandelion
+
+- Add a bit more space below content icon container.
+- Add CSS variables for table header background and table border.
+- Fix behaviour of URL-style references in `html_logo` and `html_favicon`.
+- Improve selector for embedded-in-text images.
+- Improve the contrast ratios in API documentation.
+
 ## 2021.09.22 -- Cavalier Canary
 
 - Restyle API documentation signatures, to have a background and use monospace fonts.
