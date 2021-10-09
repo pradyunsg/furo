@@ -1,0 +1,12 @@
+// Shameful hacks, to work around bugs.
+
+// MyST parser doesn't correctly generate classes, to align table contents.
+// https://github.com/executablebooks/MyST-Parser/issues/412
+.text-align\:left > p
+  text-align: left
+
+.text-align\:center > p
+  text-align: center
+
+.text-align\:right > p
+  text-align: right
