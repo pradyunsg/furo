@@ -127,18 +127,17 @@
               Last updated on {{ last_updated }}.
             {%- endtrans %}
           {%- endif %}
-          {%- if show_sphinx %}
-            {%- if show_copyright or last_updated %} | {%- endif %}
-            {% trans -%}
-              Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            {%- endtrans %}
-          {%- endif %}
+          {%- if show_copyright or last_updated %} | {%- endif %}
+          {% trans %}Created using {% endtrans -%}
+          {%- if show_sphinx -%}
+            {% trans %}<a href="https://www.sphinx-doc.org/">Sphinx</a> and {% endtrans -%}
+          {% endif -%}
+          {%- trans -%}
+          <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+          {%- endtrans %}
           {%- if show_source and has_source and sourcename %}
-            {%- if show_copyright or last_updated or show_sphinx %} | {%- endif %}
-            <a class="muted-link" href="{{ pathto('_sources/' + sourcename, true)|e }}"
+            | <a class="muted-link" href="{{ pathto('_sources/' + sourcename, true)|e }}"
                rel="nofollow">
               {{ _('Show Source') }}
             </a>
