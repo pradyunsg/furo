@@ -86,13 +86,11 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [urllib3] -- THE first adopter of Furo
 - [attrs] -- one of the early adopters!
 - [pip] -- what I wrote this for
-- [psycopg3]
-- [manim]
+- [Python Developer’s Guide][devguide]
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
-[psycopg3]: https://www.psycopg.org/psycopg3/docs/
-[manim]: https://docs.manim.community/en/stable/
+[devguide]: https://devguide.python.org/
 [pip]: https://pip.pypa.io/
 
 <!-- end used-by -->
