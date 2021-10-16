@@ -87,12 +87,12 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [attrs] -- one of the early adopters!
 - [pip] -- what I wrote this for
 - [psycopg3]
-- [kitty terminal emulator]
+- [manim]
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
 [psycopg3]: https://www.psycopg.org/psycopg3/docs/
-[kitty terminal emulator]: https://sw.kovidgoyal.net/kitty/
+[manim]: https://docs.manim.community/en/stable/
 [pip]: https://pip.pypa.io/
 
 <!-- end used-by -->
