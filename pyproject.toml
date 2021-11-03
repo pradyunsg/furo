@@ -2,16 +2,19 @@
 requires = ["flit_core >=2,<4"]
 build-backend = "flit_core.buildapi"
 
-[tool.flit.metadata]
-module = "furo"
-author = "Pradyun Gedam"
-author-email = "mail@pradyunsg.me"
-home-page = "https://github.com/pradyunsg/furo"
-description-file = "README.md"
+[project]
+name = "furo"
+dynamic = ["version", "description"]
+readme = "README.md"
+
 requires-python = ">=3.6"
-requires = [
+dependencies = [
   "beautifulsoup4",
   "sphinx ~= 4.0",
+]
+
+authors = [
+    {name = "Pradyun Gedam", email = "mail@pradyunsg.me"},
 ]
 classifiers = [
   "Framework :: Sphinx",
@@ -31,7 +34,7 @@ classifiers = [
   "Topic :: Software Development :: Documentation",
 ]
 
-[tool.flit.metadata.requires-extra]
+[project.optional-dependencies]
 test = [
   "pytest",
   "pytest-cov",
@@ -44,7 +47,7 @@ doc = [
   "sphinx-inline-tabs",
 ]
 
-[tool.flit.entrypoints]
+[project.entry-points]
 "sphinx.html_themes" = {furo = "furo"}
 
 [tool.flit.sdist]
