@@ -5,10 +5,9 @@ __version__ = "2021.10.09.dev1"
 import hashlib
 import logging
 import os
-import textwrap
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict, List, Optional, cast
+from typing import Any, Dict, Iterator, List, Optional
 
 import sphinx.application
 from bs4 import BeautifulSoup
@@ -193,6 +192,18 @@ def _html_page_context(
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if app.config.html_theme != "furo":
         return
+    if "furo" in app.config.extensions:
+        raise Exception(
+            "Did you list it in the `extensions` in conf.py? "
+            "If so, please remove it. Furo does not work with non-HTML builders "
+            "and specifying it as an `html_theme` is sufficient."
+        )
+
+    if not isinstance(app.builder, StandaloneHTMLBuilder):
+        raise Exception(
+            "Furo is being used as an extension in a non-HTML build. "
+            "This should not happen."
+        )
 
     # Our JS file needs to be loaded as soon as possible.
     app.add_js_file("scripts/furo.js", priority=200)
@@ -200,7 +211,7 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     # 500 is the default priority for extensions, we want this after this.
     app.add_css_file("styles/furo-extensions.css", priority=600)
 
-    builder = cast(StandaloneHTMLBuilder, app.builder)
+    builder = app.builder
     assert builder, "what?"
     assert (
         builder.highlighter is not None
