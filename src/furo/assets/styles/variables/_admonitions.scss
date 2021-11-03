@@ -30,6 +30,13 @@ $admonitions: (
   --icon-admonition-default: var(--icon-#{$icon-name});
 }
 
+@mixin default-topic($color, $icon-name) {
+  --color-topic-title: #{$color};
+  --color-topic-title-background: #{rgba($color, 0.1)};
+
+  --icon-topic-default: var(--icon-#{$icon-name});
+}
+
 @mixin admonitions {
   @each $name, $values in $admonitions {
     --color-admonition-title--#{$name}: #{nth($values, 1)};

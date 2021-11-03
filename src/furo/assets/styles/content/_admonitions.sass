@@ -1,12 +1,12 @@
-// Definitely inspired by mkdocs-material.
-.admonition
+//
+// The design here is strongly inspired by mkdocs-material.
+.admonition, .topic
   margin: 1rem auto
   padding: 0 0.5rem 0.5rem 0.5rem
 
   background: var(--color-admonition-background)
 
   border-radius: 0.2rem
-  border-left: 0.2rem solid var(--color-admonition-title)
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.0625rem rgba(0, 0, 0, 0.1)
 
   font-size: var(--admonition-font-size)
@@ -22,35 +22,44 @@
   > :last-child
     margin-bottom: 0
 
+p.admonition-title, p.topic-title
+  position: relative
+  margin: 0 -0.5rem 0.5rem
+  padding: 0.5rem 0.5rem 0.5rem 2rem
 
-  // Defaults for all admonitions
-  p.admonition-title
-    position: relative
-    margin: 0 -0.5rem 0.5rem
-    padding: 0.5rem 0.5rem 0.5rem 2rem
-
-    font-weight: 500
-    font-size: var(--admonition-title-font-size)
-    background-color: var(--color-admonition-title-background)
-
-    line-height: 1.3
+  font-weight: 500
+  font-size: var(--admonition-title-font-size)
+  line-height: 1.3
 
     // Our fancy icon
-    &::before
-      content: ""
-      position: absolute
-      left: 0.5rem
-      width: 1rem
-      height: 1rem
-      // color: var(--color-admonition-title)
-      background-color: var(--color-admonition-title)
+  &::before
+    content: ""
+    position: absolute
+    left: 0.5rem
+    width: 1rem
+    height: 1rem
 
-      mask-image: var(--icon-admonition-default)
-      mask-repeat: no-repeat
+// Default styles
+p.admonition-title
+  background-color: var(--color-admonition-title-background)
+  &::before
+    background-color: var(--color-admonition-title)
+    mask-image: var(--icon-admonition-default)
+    mask-repeat: no-repeat
 
-  //
-  // Variants
-  //
+p.topic-title
+  background-color: var(--color-topic-title-background)
+  &::before
+    background-color: var(--color-topic-title)
+    mask-image: var(--icon-topic-default)
+    mask-repeat: no-repeat
+
+//
+// Variants
+//
+.admonition
+  border-left: 0.2rem solid var(--color-admonition-title)
+
   @each $type, $value in $admonitions
     &.#{$type}
       border-left-color: var(--color-admonition-title--#{$type})
