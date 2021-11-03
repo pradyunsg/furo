@@ -42,7 +42,7 @@ function javascript() {
       })
     )
     .pipe(uglify())
-    .pipe(concat("scripts/main.js"))
+    .pipe(concat("scripts/furo.js"))
     .pipe(sourcemaps.write(""))
     .pipe(gulp.dest(dest_path));
 }

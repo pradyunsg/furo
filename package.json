@@ -19,5 +19,8 @@
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
     "gulp-babel": "^8.0.0"
+  },
+  "scripts": {
+    "build": "gulp build"
   }
 }

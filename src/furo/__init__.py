@@ -157,7 +157,7 @@ def _html_page_context(
     if "scripts" in context:
         _add_asset_hashes(
             context["scripts"],
-            ["scripts/main.js"],
+            ["scripts/furo.js"],
         )
 
     # Basic constants
@@ -194,8 +194,8 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if app.config.html_theme != "furo":
         return
 
-    # Our `main.js` file needs to be loaded as soon as possible.
-    app.add_js_file("scripts/main.js", priority=200)
+    # Our JS file needs to be loaded as soon as possible.
+    app.add_js_file("scripts/furo.js", priority=200)
 
     # 500 is the default priority for extensions, we want this after this.
     app.add_css_file("styles/furo-extensions.css", priority=600)

@@ -1,4 +1,5 @@
 # npm stuff
+.nodeenv
 node_modules
 
 # Python stuff
