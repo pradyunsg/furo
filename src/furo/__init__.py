@@ -293,6 +293,14 @@ def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
     return PygmentsBridge("html", dark_style).formatter_args["style"]
 
 
+def _get_styles(formatter: HtmlFormatter, *, prefix: str) -> Iterator[str]:
+    """Get styles out of a formatter, where everything has the correct prefix."""
+    for line in formatter.get_linenos_style_defs():
+        yield f"{prefix} {line}"
+    yield from formatter.get_background_style_defs(prefix)
+    yield from formatter.get_token_style_defs(prefix)
+
+
 def get_pygments_stylesheet() -> str:
     """Generate the theme-specific pygments.css.
 
@@ -301,21 +309,19 @@ def get_pygments_stylesheet() -> str:
     light_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["light"])
     dark_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["dark"])
 
-    light = light_formatter.get_style_defs(".highlight")
-    dark_one = dark_formatter.get_style_defs('body[data-theme="dark"] .highlight')
-    dark_two = dark_formatter.get_style_defs(
-        'body:not([data-theme="light"]) .highlight'
-    )
+    lines: List[str] = []
 
-    return textwrap.dedent(
-        f"""
-            {light}
-            {dark_one}
-            @media (prefers-color-scheme: dark) {{
-                {dark_two}
-            }}
-        """
-    )
+    lines.extend(_get_styles(light_formatter, prefix=".highlight"))
+
+    dark_prefix = 'body[data-theme="dark"] .highlight'
+    lines.extend(_get_styles(dark_formatter, prefix=dark_prefix))
+
+    not_light_prefix = 'body:not([data-theme="light"]) .highlight'
+    lines.append("@media (prefers-color-scheme: dark) {")
+    lines.extend(_get_styles(dark_formatter, prefix=not_light_prefix))
+    lines.append("}")
+
+    return "\n".join(lines)
 
 
 # Yup, we overwrite the default pygments.css file, because it can't possibly respect
@@ -337,7 +343,7 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.require_sphinx("3.0")
 
     app.add_config_value(
-        "pygments_dark_style", default="material", rebuild="env", types=[str]
+        "pygments_dark_style", default="native", rebuild="env", types=[str]
     )
 
     app.add_html_theme("furo", str(THEME_PATH))
