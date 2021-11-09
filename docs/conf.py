@@ -4,7 +4,6 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import os
-import subprocess
 import sys
 
 # add the demo python code to the path, so that it can be used to demonstrate

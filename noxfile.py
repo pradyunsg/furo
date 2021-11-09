@@ -3,7 +3,6 @@
 import datetime
 import glob
 import os
-import tempfile
 
 import nox
 
