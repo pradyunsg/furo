@@ -22,22 +22,18 @@ The repository layout is pretty standard for a Python project, with a few quirks
       - `furo/` -- main Sphinx theme folder
         - `static/` -- contains compiles CSS and JS code.
         - everything else here -- the underlying HTML templates.
-- `gulpfile.js` -- for [Gulp](https://gulpjs.com/).
+- `Gruntfile.js` -- for [Grunt](https://gruntjs.com/).
 - `noxfile.py` -- for [nox](https://nox.readthedocs.io/).
 - `package.json` -- for [NPM](https://npmjs.com/).
 - `pyproject.toml` -- for Python Packaging.
 
 ## Theme build process
 
-Furo's build process uses Gulp. Running `gulp build` in the repository root will compile the theme's CSS and JS assets (`src/furo/assets/`) into the correct final files (inside `src/furo/theme/furo/static`).
+Furo's build process uses {pypi}`sphinx-theme-builder` and Grunt. Running `grunt` in the repository root will compile the theme's CSS and JS assets (`src/furo/assets/`) into the correct final files (inside `src/furo/theme/furo/static`).
 
-When building the distributions for upload, `gulp build` is run once and the `src/furo/assets/` directory is excluded for the final distribution. Thus, _both_ the source distribution and wheel distribution do not contain the original source code for Furo and only contain the compiled SCSS and JS files.
+When generating a wheel (eg: for upload, or for installing from a source distribution), `sphinx-theme-builder` will use {pypi}`nodeenv` to create an isolated NodeJS installation (using the system NodeJS version if it matches the requirements).
 
-```{note}
-It is not ideal that the version-controlled source tree is not installable using pip directly. There is a need for a `gulp build` command to be run between the clone and installation.
-
-Things are set up this way due to the lack of a "build" step support in Flit. There is [an open issue for enhancement with a proposal awaiting feedback](https://github.com/takluyver/flit/issues/119#issuecomment-687779285).
-```
+Thus, the source distribution does not contain the compiled JS artifacts and wheel distribution does. Both contain the original SASS/JS source code for Furo. Using the SASS/JS source code of Furo is consider "unstable" under the stability policy.
 
 ## How stuff works
 

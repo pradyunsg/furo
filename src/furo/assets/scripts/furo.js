@@ -1,3 +1,5 @@
+var Gumshoe = require("./gumshoe-patched.js");
+
 ////////////////////////////////////////////////////////////////////////////////
 // Scroll Handling
 ////////////////////////////////////////////////////////////////////////////////
@@ -93,8 +95,8 @@ function cycleThemeOnce() {
 ////////////////////////////////////////////////////////////////////////////////
 function setupScrollHandler() {
   // Taken from https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event
-  var last_known_scroll_position = 0;
-  var ticking = false;
+  let last_known_scroll_position = 0;
+  let ticking = false;
 
   window.addEventListener("scroll", function (e) {
     last_known_scroll_position = window.scrollY;
@@ -117,7 +119,7 @@ function setupScrollSpy() {
   }
 
   // Scrollspy -- highlight table on contents, based on scroll
-  var spy = new Gumshoe(".toc-tree a", {
+  new Gumshoe(".toc-tree a", {
     reflow: true,
     recursive: true,
     navClass: "scroll-current",

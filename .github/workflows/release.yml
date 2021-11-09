@@ -19,12 +19,8 @@ jobs:
       - uses: actions/setup-python@v2
 
       - name: Install dependencies
-        run: |
-          pip install build
-          npm install
+        run: pip install build
 
-      - name: Generate release distributions
-        run: ./node_modules/.bin/gulp build
       - name: Generate final distribution
         run: python -m build
 

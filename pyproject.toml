@@ -1,10 +1,14 @@
 [build-system]
-requires = ["flit_core >=2,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["sphinx-theme-builder >= 0.2.0a5"]
+build-backend = "sphinx_theme_builder"
+
+[tool.sphinx-theme-builder]
+node-version = "16.13.0"
 
 [project]
 name = "furo"
-dynamic = ["version", "description"]
+description = "A clean customisable Sphinx documentation theme."
+dynamic = ["version"]
 readme = "README.md"
 
 requires-python = ">=3.6"
@@ -13,6 +17,7 @@ dependencies = [
   "sphinx ~= 4.0",
 ]
 
+license = { file = "LICENSE"}
 authors = [
     {name = "Pradyun Gedam", email = "mail@pradyunsg.me"},
 ]
@@ -49,16 +54,3 @@ doc = [
 
 [project.entry-points]
 "sphinx.html_themes" = {furo = "furo"}
-
-[tool.flit.sdist]
-include = [
-  # Generated assets
-  "src/furo/theme/furo/static/*/*",
-]
-exclude = [
-  "docs/", "src/furo/assets",
-  # JS stuff
-  "gulpfile.js", "package.json", "package-lock.json",
-  # Linting stuff
-  ".flake8", ".isort.cfg", ".pre-commit-config.yaml",
-]

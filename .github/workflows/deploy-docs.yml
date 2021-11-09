@@ -12,9 +12,7 @@ jobs:
       - uses: actions/setup-python@v2
 
       - name: Install dependencies
-        run: |
-          pip install nox
-          npm install
+        run: pip install nox
 
       - name: Generate documentation
         run: nox -s docs
