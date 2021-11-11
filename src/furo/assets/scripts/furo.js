@@ -1,4 +1,4 @@
-var Gumshoe = require("./gumshoe-patched.js");
+import { Gumshoe } from "./gumshoe-patched.js";
 
 ////////////////////////////////////////////////////////////////////////////////
 // Scroll Handling
