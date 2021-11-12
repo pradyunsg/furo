@@ -7,7 +7,7 @@ This page describes the tooling used during development of this project. It also
 This project uses the [GitHub Flow] for collaboration. The codebase contains Python code, [Jinja2]-based HTML pages, [Sass] stylesheets and Javascript code.
 
 - [nox] is used for automating development tasks.
-- [Grunt]-based build pipeline is used to process the Sass and Javascript files.
+- [Webpack]-based build pipeline is used to process the Sass and Javascript files.
 - [sphinx-autobuild] is used to provide live-reloading pages when working on the theme.
 - [pre-commit] is used for running the linters.
 
@@ -93,6 +93,6 @@ pip install https://github.com/pradyunsg/furo/archive/refs/heads/main.zip
 [nox]: https://nox.readthedocs.io/en/stable/
 [jinja2]: https://jinja.palletsprojects.com
 [sass]: https://sass-lang.com
-[grunt]: https://gruntjs.com/
+[webpack]: https://webpack.js.org/
 [sphinx-autobuild]: https://github.com/executablebooks/sphinx-autobuild
 [pre-commit]: https://pre-commit.com/

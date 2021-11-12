@@ -22,14 +22,14 @@ The repository layout is pretty standard for a Python project, with a few quirks
       - `furo/` -- main Sphinx theme folder
         - `static/` -- contains compiles CSS and JS code.
         - everything else here -- the underlying HTML templates.
-- `Gruntfile.js` -- for [Grunt](https://gruntjs.com/).
 - `noxfile.py` -- for [nox](https://nox.readthedocs.io/).
 - `package.json` -- for [NPM](https://npmjs.com/).
 - `pyproject.toml` -- for Python Packaging.
+- `webpack.config.js` -- for [Webpack](https://webpack.js.org/).
 
 ## Theme build process
 
-Furo's build process uses {pypi}`sphinx-theme-builder` and Grunt. Running `grunt` in the repository root will compile the theme's CSS and JS assets (`src/furo/assets/`) into the correct final files (inside `src/furo/theme/furo/static`).
+Furo's build process uses {pypi}`sphinx-theme-builder` and Webpack. Running `webpack` in the repository root will compile the theme's CSS and JS assets (`src/furo/assets/`) into the correct final files (inside `src/furo/theme/furo/static`).
 
 When generating a wheel (eg: for upload, or for installing from a source distribution), `sphinx-theme-builder` will use {pypi}`nodeenv` to create an isolated NodeJS installation (using the system NodeJS version if it matches the requirements).
 
