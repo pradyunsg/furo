@@ -9,6 +9,17 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2021.11.12 -- Enamoured Emerald
+
+- Adopt `sphinx-theme-builder`, which runs the JS-based asset build process during the regular Python build process.
+- Rework the build pipeline to be webpack-based.
+- Tweak colours in dark mode.
+- Present better error messages on misconfiguration.
+- Tweak presentation of blockquotes, to be more visually distinct.
+- Stylize topics like admonitions, as specified in the reStructuredText spec.
+- Handle long single words in the sidebar.
+- Only hide Sphinx from the footer, when `show_sphinx` is set to `False`.
+
 ## 2021.10.09 -- Delicate Dandelion
 
 - Add a bit more space below content icon container.
