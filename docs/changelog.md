@@ -9,6 +9,10 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2021.11.12.1
+
+- Fix RECORD file contents.
+
 ## 2021.11.12 -- Enamoured Emerald
 
 - Adopt `sphinx-theme-builder`, which runs the JS-based asset build process during the regular Python build process.
