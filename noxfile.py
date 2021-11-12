@@ -73,6 +73,14 @@ def docs(session):
     session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
 
 
+@nox.session(name="docs-live", reuse_venv=True)
+def docs_live(session):
+    session.install("-e", ".[doc]", "sphinx-theme-builder[cli]")
+
+    # Generate documentation into `build/docs`
+    session.run("stb", "serve", "docs/")
+
+
 @nox.session(reuse_venv=True)
 def lint(session):
     session.install("pre-commit")
