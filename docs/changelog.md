@@ -9,7 +9,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
-## 2021.11.12.1
+## 2021.11.12.1 -- Enamoured Emerald bugfix
 
 - Fix RECORD file contents.
 
