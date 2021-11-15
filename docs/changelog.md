@@ -9,6 +9,11 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2021.11.15 -- Fearless Fawn
+
+- Tweak API documentation presentation to match pdoc3's style.
+- Bring back browser-specific prefixes, for compatibility.
+
 ## 2021.11.12.1 -- Enamoured Emerald bugfix
 
 - Fix RECORD file contents.
