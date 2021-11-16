@@ -9,6 +9,10 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2021.11.16 -- Grumpy Ghost
+
+- Fix a typo, that broke the sidebar highlight logic.
+
 ## 2021.11.15 -- Fearless Fawn
 
 - Tweak API documentation presentation to match pdoc3's style.
