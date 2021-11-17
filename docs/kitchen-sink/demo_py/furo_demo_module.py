@@ -3,7 +3,9 @@ This is a demo module included in the docs in order to exercise viewcode,
 autodoc, and other related functionality.
 """
 
-from typing import Optional, TextIO, Type, Union
+from typing import NewType, Optional, TextIO, Type, Union
+
+MagicNumber = NewType("MagicNumber", int)
 
 
 def show_warning(
@@ -38,6 +40,16 @@ class RandomNumberGenerator:
     This is hopefully useful to somebody.
     """
 
+    @staticmethod
+    def magic_number(cls) -> int:
+        """Returns a magical number."""
+        return 0
+
+    @classmethod
+    def get_seed(cls) -> MagicNumber:
+        """Returns a random seed."""
+        return cls().seed
+
     @property
     def seed(self):
         """The seed for random number generation.
@@ -47,9 +59,9 @@ class RandomNumberGenerator:
         return 4
 
     def get_random_integer(self) -> int:
-        """Return a random integer."""
+        """Returns a random integer."""
         return self.seed
 
     def get_random_float(self) -> float:
-        """Return a random float."""
+        """Returns a random float."""
         return float(self.seed)
