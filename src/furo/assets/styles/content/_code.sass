@@ -13,12 +13,15 @@ code.literal
 $code-spacing-vertical: 0.625rem
 $code-spacing-horizontal: 0.875rem
 
-article
-  // Wraps every literal block + line numbers.
-  div[class*=" highlight-"],
-  div[class^="highlight-"]
-    margin: 1em 0
-    display: flex
+// Wraps every literal block + line numbers.
+div[class*=" highlight-"],
+div[class^="highlight-"]
+  margin: 1em 0
+  display: flex
+
+  .table-wrapper
+    margin: 0
+    padding: 0
 
 pre
   margin: 0
@@ -43,12 +46,25 @@ pre
     background-color: var(--color-code-background)
     color: var(--color-code-foreground)
 
-// All code is always contained in a pre
+// All code is always contained in this.
 .highlight
   width: 100%
   border-radius: 0.2rem
 
-// Added when there's line numbers associated with a literal block.
+  // Make line numbers and prompts un-selectable.
+  .gp, span.linenos
+    user-select: none
+    pointer-events: none
+
+  // Expand the line-highlighting.
+  .hll
+    display: block
+    margin-left: -$code-spacing-horizontal
+    margin-right: -$code-spacing-horizontal
+    padding-left: $code-spacing-horizontal
+    padding-right: $code-spacing-horizontal
+
+// When `html_codeblock_linenos_style` is table.
 .highlighttable
   width: 100%
   display: block
@@ -68,11 +84,9 @@ pre
     border-bottom-left-radius: 0.2rem
 
   .linenodiv
+    padding-right: $code-spacing-horizontal
     font-size: var(--code-font-size)
-
-    padding-right: 0.5rem
-    box-shadow: -0.0625rem 0 var(--color-code-foreground) inset
-    opacity: 0.5 // I hate myself.
+    box-shadow: -0.0625rem 0 var(--color-foreground-border) inset
 
   // Actual code
   td.code
@@ -84,3 +98,12 @@ pre
     .highlight
       border-top-left-radius: 0
       border-bottom-left-radius: 0
+
+// When `html_codeblock_linenos_style` is inline.
+.highlight
+  span.linenos
+    display: inline-block
+    padding-left: 0
+    padding-right: $code-spacing-horizontal
+    margin-right: $code-spacing-horizontal
+    box-shadow: -0.0625rem 0 var(--color-foreground-border) inset
