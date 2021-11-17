@@ -18,6 +18,7 @@ requires-python = ">=3.6"
 dependencies = [
   "beautifulsoup4",
   "sphinx ~= 4.0",
+  "pygments ~= 2.7",
 ]
 
 license = { file = "LICENSE"}
