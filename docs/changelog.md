@@ -9,6 +9,14 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2021.11.23 -- Hearty Honeydew
+
+- Improve code block styling.
+- Explicitly declare compatibility constraints for pygments.
+- Break words in API documentation, when the words are too long.
+- Drop the `def ` on function and method signatures.
+- Reduce the font-weight in `sig-prename`.
+
 ## 2021.11.16 -- Grumpy Ghost
 
 - Fix a typo, that broke the sidebar highlight logic.
