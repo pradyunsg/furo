@@ -18,24 +18,26 @@ body
 html body .only-dark
   display: none !important
 
-// Enable dark-mode, if requested.
-body[data-theme="dark"]
-  @include colors-dark
-
-  html & .only-light
-    display: none !important
-  .only-dark
-    display: block !important
-
-// Enable dark mode, unless explicitly told to avoid.
-@media (prefers-color-scheme: dark)
-  body:not([data-theme="light"])
+// Ignore dark-mode hints if print media.
+@media not print
+  // Enable dark-mode, if requested.
+  body[data-theme="dark"]
     @include colors-dark
 
     html & .only-light
       display: none !important
     .only-dark
       display: block !important
+
+  // Enable dark mode, unless explicitly told to avoid.
+  @media (prefers-color-scheme: dark)
+    body:not([data-theme="light"])
+      @include colors-dark
+
+      html & .only-light
+        display: none !important
+      .only-dark
+        display: block !important
 
 //
 // Theme toggle presentation
