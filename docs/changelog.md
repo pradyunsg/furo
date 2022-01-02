@@ -9,6 +9,15 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.01.02 -- Immaculate Indigo
+
+- Improve colours for `sphinx-inline-tabs`.
+- Improve highlighting of active definition list targets.
+- Improve error message when `html_style` is set.
+- Update workflow to reflect reality.
+- Be more selective about API documentation headings.
+- Increase specificity of `pre` selector for line-height.
+
 ## 2021.11.23 -- Hearty Honeydew
 
 - Improve code block styling.
