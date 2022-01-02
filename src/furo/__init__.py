@@ -149,6 +149,12 @@ def _html_page_context(
         return
 
     if "css_files" in context:
+        if "_static/styles/furo.css" not in context["css_files"]:
+            raise Exception(
+                "This documentation is not using `furo.css` as the stylesheet. "
+                "If you have set `html_style` in your conf.py file, remove it."
+            )
+
         _add_asset_hashes(
             context["css_files"],
             ["styles/furo.css", "styles/furo-extensions.css"],
