@@ -87,11 +87,13 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [attrs] -- one of the early adopters!
 - [pip] -- what I wrote this for
 - [Python Developer’s Guide][devguide]
+- [psycopg3] -- another of the early adopters!
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
 [devguide]: https://devguide.python.org/
 [pip]: https://pip.pypa.io/
+[psycopg3]: https://www.psycopg.org/psycopg3/docs/
 
 <!-- end used-by -->
 
