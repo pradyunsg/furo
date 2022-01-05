@@ -82,8 +82,8 @@ h6 {
   border: 1px solid var(--color-background-border);
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05),
     0 0 0.0625rem rgba(0, 0, 0, 0.1) !important;
-  min-height: 140px;
-  width: 30%;
+  min-height: 60px;
+  width: 100%;
   padding-top: 0px;
   margin: 10px;
 }
@@ -94,7 +94,10 @@ h6 {
 }
 
 .sphx-glr-thumbcontainer img {
-  display: none;
+  width: 30px;
+  margin-top: 14px;
+  margin-left: 14px;
+  opacity: 0.5;
 }
 
 div.sphx-glr-download-link-note,
@@ -121,12 +124,13 @@ div.sphx-glr-download {
 .sphx-glr-thumbcontainer a.internal {
   position: absolute;
   padding: 10px;
+  padding-left: 75px;
   font-size: 0.9rem;
   text-decoration: none;
   color: var(--color-sidebar-link-text);
   /* center text in example cards */
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
