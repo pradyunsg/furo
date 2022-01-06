@@ -85,5 +85,7 @@ html_theme_options = {
         '<a href="https://shoutouts.dev/projects/pradyunsg/furo">'
         "express your gratitude"
         "</a>!"
-    )
+    ),
+    "web_base_url": "https://github.com/pradyunsg/furo/edit/main/docs",
+    "vcs_host": "Github"
 }
