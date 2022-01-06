@@ -87,5 +87,5 @@ html_theme_options = {
         "</a>!"
     ),
     "web_base_url": "https://github.com/pradyunsg/furo/edit/main/docs",
-    "vcs_host": "Github"
+    "vcs_host": "Github",
 }
