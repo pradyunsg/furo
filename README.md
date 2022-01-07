@@ -52,6 +52,8 @@ For more information, visit [Furo's documentation][quickstart-docs].
 
 Furo is a volunteer maintained open source project, and we welcome contributions of all forms. Please take a look at our [Contributing Guide](https://pradyunsg.me/furo/contributing/) for more information.
 
+If CSS changes are introduced in `flyte.css`, run ``gulp build`` to compile CSS and JS.
+
 ## Acknowledgements
 
 Furo is inspired by (and borrows elements from) some excellent technical documentation themes:

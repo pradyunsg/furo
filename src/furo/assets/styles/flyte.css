@@ -1,5 +1,5 @@
 :root {
-  --docsearch-primary-color: var(--color-foreground-primary);
+  --docsearch-primary-color: var(--color-foreground-primary) !important;
 }
 
 h1,
@@ -34,8 +34,13 @@ h6 {
   margin-bottom: 5px;
 }
 
+.docsearch {
+  width: 100% !important;
+}
+
 .DocSearch-Button {
   width: 100% !important;
+  margin: 0px !important;
 }
 
 .sidebar-search-container::before {
