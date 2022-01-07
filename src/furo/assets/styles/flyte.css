@@ -11,6 +11,11 @@ h6 {
   font-weight: bold;
 }
 
+/* hide sidebar brand by default */
+.sidebar-brand {
+  display: none;
+}
+
 .sidebar-scroll {
   scroll-behavior: auto;
   opacity: 0;

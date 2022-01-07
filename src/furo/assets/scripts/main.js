@@ -99,10 +99,16 @@ var toggleCurrentSubsection = function() {
   });
 }
 
+const ApiReferenceCaptions = ["Flytekit SDK", "FlyteIDL", "Flytectl"];
+
 var highlightCurrentSubsection = function() {
   // highlight the current subsection in the main nav
   var currentSection = $(".sidebar-tree").children("ul.current");
   var caption = currentSection.prev("p.caption").text();
+
+  if (ApiReferenceCaptions.includes(caption)) {
+    caption = "API Reference";
+  }
 
   // highlight the current subsection in the top-level nav header
   var navHeaderSections = $(".nav-header .main-sections")
