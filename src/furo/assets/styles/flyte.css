@@ -1,5 +1,5 @@
 :root {
-  --docsearch-primary-color: var(--color-foreground-primary) !important;
+  --docsearch-primary-color: var(--color-brand-primary) !important;
 }
 
 h1,
