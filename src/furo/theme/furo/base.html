@@ -68,7 +68,8 @@
 
     {%- block extra_styles -%}
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="{{ pathto('_static/pygments_dark.css', 1) }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha">
+    <link rel="preconnect" href="https://WLG0MZB58Q-dsn.algolia.net" crossorigin />
     {%- endblock -%}
 
     {%- endblock styles -%}
@@ -92,7 +93,7 @@
 
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
     <script src="{{ pathto('_static/scripts/algolia-search.js', 1) }}"></script>
     {%- endblock -%}
     {%- endblock scripts -%}
