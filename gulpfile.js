@@ -5,7 +5,7 @@ var gulp = require("gulp");
 var concat = require("gulp-concat");
 var postcss = require("gulp-postcss");
 var rename = require("gulp-rename");
-var sass = require("gulp-sass")(require('sass'));
+var sass = require("gulp-sass");
 var sourcemaps = require("gulp-sourcemaps");
 var uglify = require("gulp-uglify");
 
