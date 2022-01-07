@@ -34,8 +34,12 @@ h6 {
   margin-bottom: 5px;
 }
 
-.docsearch {
-  width: 100%;
+.DocSearch-Button {
+  width: 100% !important;
+}
+
+.sidebar-search-container::before {
+  content: none;
 }
 
 .tabbed-set > input:checked + label {
