@@ -44,6 +44,77 @@ body
   // fill the viewport for pages with little content.
   min-height: 100%
 
+// top-level navigation header
+.nav-header
+  width: 100%
+  height: fit-content
+  background-color: var(--color-sidebar-background)
+  color: var(--color-header-text)
+  border-bottom: 1px solid var(--color-header-border)
+  color: #222222
+
+  .nav-inner
+    
+    align-items: center
+    display: flex
+    padding: 20px 0
+
+    a
+      text-decoration: none
+      color: var(--color-foreground-secondary)
+
+    a:hover
+      color: var(--color-link)
+
+    .title-logo
+      display: flex
+      flex-direction: row
+      align-items: center
+      width: 20em
+      min-width: $sidebar-width
+
+      div img
+        width: 40px
+        margin-left: 20px
+
+      a div.brand
+        font-size: 1.4em
+        color: #222
+
+      a div:first-child
+        margin-left: 20px
+    
+    .nav-toggler
+      display: none
+      color: var(--color-foreground-secondary)
+      opacity: 0.7
+
+    .main-sections
+      display: flex
+      flex-direction: row
+      margin-left: 20px
+      text-align: center
+
+      div
+        margin: 0 7px
+    
+    .external-links
+      flex-direction: row
+      display: flex
+      text-align: center
+      margin-left: auto
+
+      div
+        margin-right: 15px
+        line-height: 1.75em
+
+        .link-out
+          padding-left: 5px
+          font-size: 0.9em
+
+      div i.icon
+        font-size: 1.75em
+
 .mobile-header
   width: 100%
   height: var(--header-height)
@@ -238,9 +309,16 @@ body
     border-left: none
     font-size: var(--toc-font-size--mobile)
 
+  .nav-header
+    font-size: var(--toc-font-size--mobile)
+
   // Accomodate for a changed content width.
   .sidebar-drawer
     width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width})
+
+  .nav-header
+    .nav-inner .title-logo
+      width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width})
 
 @media (max-width: $full-width - $sidebar-width)
   // Collapse "navigation".
@@ -276,6 +354,53 @@ body
       label
         height: 100%
         width: 100%
+  
+  // collapsible nav header for the main doc sections
+  .nav-header
+    .nav-inner
+      align-items: center
+      display: flex
+      flex-direction: column
+      padding: 20px 0
+
+      .title-logo
+        display: flex
+        flex-direction: column
+        align-items: center
+        min-width: $sidebar-width
+
+        div img
+          margin-left: 0
+
+        a div.brand
+          color: #333
+          font-size: 1.4em
+          margin-top: 3px
+
+        a div:first-child
+          margin-left: 0
+
+      .nav-toggler
+        display: flex
+        margin-top: 15px
+
+      .main-sections, .external-links
+        flex-direction: column
+        margin-left: 0
+        margin-top: 10px
+        width: 100%
+
+        div
+          margin: 0
+          padding: 5px 0
+          margin-right: 0
+
+      .main-sections.nav-collapsed, .external-links.nav-collapsed
+        display: none
+
+      .main-sections > div, .external-links > div
+        padding: 5px 0
+        margin: 0 30px
 
   // Add a scroll margin for the content
   :target

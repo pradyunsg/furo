@@ -11,6 +11,13 @@ h6 {
   font-weight: bold;
 }
 
+/* nav header */
+.nav-header .main-sections div.brand.current {
+  color: var(--color-sidebar-link-text--top-level);
+  font-weight: bold;
+  transition: all 10ms ease;
+}
+
 .sidebar-scroll {
   scroll-behavior: auto;
   opacity: 0;
@@ -18,16 +25,6 @@ h6 {
 
 .sidebar-tree > :not(:first-child) {
   display: none;
-}
-
-.sidebar-tree ul:first-child {
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.sidebar-tree > ul:not(:first-child) {
-  border-left: 1px solid rgb(206, 206, 206);
-  margin-left: 20px;
 }
 
 .sidebar-tree ul:first-child li:not(:last-child) {
@@ -275,6 +272,7 @@ div.sphinx-bs .card-body .sphinx-bs.btn,
 div.sphinx-bs .card-header p.card-text {
   font-size: 1rem;
   text-decoration: none;
+  word-spacing: 2.5px;
   color: var(--color-sidebar-link-text);
 }
 

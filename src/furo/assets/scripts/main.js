@@ -103,11 +103,14 @@ var highlightCurrentSubsection = function() {
   // highlight the current subsection in the main nav
   var currentSection = $(".sidebar-tree").children("ul.current");
   var caption = currentSection.prev("p.caption").text();
-  var mainNav = $(".sidebar-tree").children("ul").first();
-  mainNav.find("li a").each(function() {
-      if ($(this).text() === caption) {
-          $(this).css("font-weight", "bold");
-      }
+
+  // highlight the current subsection in the top-level nav header
+  var navHeaderSections = $(".nav-header .main-sections")
+  navHeaderSections.find("div a div.brand").each(function() {
+    var text = $(this).text()
+    if (text === caption) {
+      $(this).addClass("current")
+    }
   })
 }
 
@@ -119,8 +122,16 @@ function main() {
 
   setup();
 
-  toggleCurrentSubsection();
   highlightCurrentSubsection();
+  toggleCurrentSubsection();
+
+  // THIS IS A HACK! hide the "main nav" index in the sidebar
+  setTimeout(function() {
+    // always hide the "main nav"
+    $(".sidebar-tree").children("ul").first().css("display", "none");
+    // hide caption text for "nav subsection"
+    $(".sidebar-tree .caption-text").css("display", "none");
+  }, 10);
 
   // custom scrolling on toc
   setTimeout(function() {
@@ -154,5 +165,21 @@ jQuery(function() {
   // listen for clicks on tab buttons
   jQuery("button.sphinx-tabs-tab").on("click", function() {
     renderMermaid();
+  });
+
+  //listen for clicks in .nav-toggler to collapse/expand main-sections and external-links
+  jQuery("div.nav-toggler").on("click", function() {
+    var mainSections = jQuery(".nav-header .main-sections");
+    mainSections.toggleClass("nav-collapsed");
+    jQuery(".nav-header .external-links").toggleClass("nav-collapsed")
+
+    var navToggleIcon = jQuery(".nav-header .nav-toggler i.fas");
+    if (mainSections.hasClass("nav-collapsed")) {
+      navToggleIcon.addClass("fa-chevron-down");
+      navToggleIcon.removeClass("fa-chevron-up");
+    } else {
+      navToggleIcon.addClass("fa-chevron-up");
+      navToggleIcon.removeClass("fa-chevron-down");
+    }
   });
 })
