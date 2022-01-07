@@ -63,7 +63,7 @@ body
       text-decoration: none
       color: var(--color-foreground-secondary)
 
-    a:hover
+    a:hover, a:hover i
       color: var(--color-link)
 
     .title-logo
@@ -95,8 +95,17 @@ body
       margin-left: 20px
       text-align: center
 
-      div
-        margin: 0 7px
+    .main-sections > div
+      margin: 0 12px
+
+    .main-sections div.brand
+      padding: 10px 0
+
+    .main-sections div.brand.current
+      color: var(--color-sidebar-link-text--top-level)
+      font-weight: bold
+      transition: all 10ms ease
+      border-bottom: 2px solid var(--color-sidebar-link-text--top-level)
     
     .external-links
       flex-direction: row
@@ -112,8 +121,14 @@ body
           padding-left: 5px
           font-size: 0.9em
 
-      div i.icon
-        font-size: 1.75em
+        i
+          color: #aaa
+        
+        i.icon
+          font-size: 1.75em
+
+        a:hover i
+          color: var(--color-link)
 
 .mobile-header
   width: 100%
@@ -383,6 +398,12 @@ body
       .nav-toggler
         display: flex
         margin-top: 15px
+
+      .main-sections div.brand.current
+        color: var(--color-sidebar-link-text--top-level)
+        font-weight: bold
+        transition: all 10ms ease
+        border-bottom: none
 
       .main-sections, .external-links
         flex-direction: column
