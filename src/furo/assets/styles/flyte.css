@@ -1,3 +1,7 @@
+:root {
+  --docsearch-primary-color: var(--color-foreground-primary);
+}
+
 h1,
 h2,
 h3,
@@ -30,13 +34,8 @@ h6 {
   margin-bottom: 5px;
 }
 
-.algolia-autocomplete {
-  width: 100% !important;
-}
-
-/* Highlighted text */
-.algolia-autocomplete .algolia-docsearch-suggestion--highlight {
-  color: var(--color-link);
+.docsearch {
+  width: 100%;
 }
 
 .tabbed-set > input:checked + label {
@@ -265,7 +264,7 @@ div.sphinx-bs .card-header {
 div.sphinx-bs .card-header .sphinx-bs.btn,
 div.sphinx-bs .card-body .sphinx-bs.btn,
 div.sphinx-bs .card-header p.card-text {
-  font-size: 1.0rem;
+  font-size: 1rem;
   text-decoration: none;
   color: var(--color-sidebar-link-text);
 }
@@ -300,16 +299,16 @@ div.sphinx-bs .card:hover {
   border-color: #cca9ff;
 }
 
-div.sphinx-bs .card:hover .card-header  {
+div.sphinx-bs .card:hover .card-header {
   background-color: #f2e9ff;
   color: #fff;
 }
 
-div.sphinx-bs .card:hover .sphinx-bs.btn  {
+div.sphinx-bs .card:hover .sphinx-bs.btn {
   color: var(--color-link);
 }
 
-div.sphinx-bs .card:hover .card-body .sphinx-bs.btn  {
+div.sphinx-bs .card:hover .card-body .sphinx-bs.btn {
   color: var(--color-link--hover);
 }
 
@@ -378,7 +377,6 @@ div.mermaid line {
   stroke: var(--color-foreground-secondary) !important;
 }
 
-
 /* code cell styles */
 div.highlight a {
   text-decoration-color: var(--color-content-foreground);
@@ -394,6 +392,7 @@ div.sphx-glr-script-out .highlight {
 }
 
 /* Make sure autosummary table cells have left text alignment */
-.article .align-center, article .align-default {
+.article .align-center,
+article .align-default {
   text-align: left;
 }
