@@ -11,6 +11,11 @@ h6 {
   font-weight: bold;
 }
 
+/* hide sidebar brand by default */
+.sidebar-brand {
+  display: none;
+}
+
 .sidebar-scroll {
   scroll-behavior: auto;
   opacity: 0;
@@ -18,16 +23,6 @@ h6 {
 
 .sidebar-tree > :not(:first-child) {
   display: none;
-}
-
-.sidebar-tree ul:first-child {
-  font-weight: 400;
-  font-size: 16px;
-}
-
-.sidebar-tree > ul:not(:first-child) {
-  border-left: 1px solid rgb(206, 206, 206);
-  margin-left: 20px;
 }
 
 .sidebar-tree ul:first-child li:not(:last-child) {
@@ -39,8 +34,18 @@ h6 {
 }
 
 .DocSearch-Button {
+  height: 60px !important;
   width: 100% !important;
   margin: 0px !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--color-header-border) !important;
+  background: var(--color-sidebar-background) !important;
+  padding: 0 15px !important;
+}
+
+.DocSearch-Button:hover, .DocSearch-Button:active {
+  box-shadow: none !important;
+  background: var(--docsearch-searchbox-background) !important;
 }
 
 .sidebar-search-container::before {
@@ -275,6 +280,7 @@ div.sphinx-bs .card-body .sphinx-bs.btn,
 div.sphinx-bs .card-header p.card-text {
   font-size: 1rem;
   text-decoration: none;
+  word-spacing: 2.5px;
   color: var(--color-sidebar-link-text);
 }
 

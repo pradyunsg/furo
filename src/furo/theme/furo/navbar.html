@@ -1,0 +1,65 @@
+<header class="nav-header">
+  <div class="nav-inner">
+    <div class="title-logo">
+      <div>
+        <a href="{{ pathto(master_doc) }}"><img src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/></a>
+      </div>
+      <a href="{{ pathto(master_doc) }}"><div class="brand">{{ docstitle }}</div></a>
+    </div>
+    <div class="nav-toggler"><i class="fas fa-chevron-down"></i></div>
+    <div class="main-sections nav-collapsed">
+      <div>
+        <a href="{{ pathto('getting_started/index') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/getting_started.html'}}">
+          <div class="brand">{{ _("Getting Started") }}</div>
+        </a>
+      </div>
+      <div>
+        <a href="{{ pathto('index') if project == 'Flytesnacks' else 'https://docs.flyte.org/projects/cookbook/en/latest/index.html' }}">
+          <div class="brand">{{ _("User Guide") }}</div>
+        </a>
+      </div>
+      <div>
+        <a href="{{ pathto('tutorials') if project == 'Flytesnacks' else 'https://docs.flyte.org/projects/cookbook/en/latest/tutorials.html' }}">
+          <div class="brand">{{ _("Tutorials") }}</div>
+        </a>
+      </div>
+      <div>
+        <a href="{{ pathto('concepts/basics') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/concepts/basics.html' }}">
+          <div class="brand">{{ _("Concepts") }}</div>
+        </a>
+      </div>
+      <div>
+        <a href="{{ pathto('deployment/index') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/deployment/index.html' }}">
+          <div class="brand">{{ _("Deployment") }}</div>
+        </a>
+      </div>
+      <div>
+        <a href="{{ pathto('reference/index') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/reference/index.html' }}">
+          <div class="brand">{{ _("API Reference") }}</div>
+        </a>
+      </div>
+      <div>
+        <a href="{{ pathto('community/index') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/reference/community/index.html' }}">
+          <div class="brand">{{ _("Community") }}</div>
+        </a>
+      </div>
+    </div>
+    <div class="external-links nav-collapsed">
+      <div>
+        <a href="https://github.com/flyteorg/flyte" target="_blank" title="Github">
+          <div><i class="fab fa-github icon"></i></div>
+        </a>
+      </div>
+      <div>
+        <a href="https://slack.flyte.org" target="_blank" title="Slack">
+          <div><i class="fab fa-slack icon"></i></div>
+        </a>
+      </div>
+      <div>
+        <a href="https://www.flyte.org" target="_blank">
+          <div>flyte.org<i class="fas fa-external-link-alt link-out"></i></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

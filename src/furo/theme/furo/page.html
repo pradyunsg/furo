@@ -16,16 +16,19 @@
 </div>
 {%- endif %}
 
+{% include "navbar.html" %}
+
 <div class="page">
+  <!-- header for mobile view -->
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
         <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
-    <div class="header-center">
+    <!-- <div class="header-center">
       <a href="{{ pathto(master_doc) }}"><div class="brand">{{ docstitle }}</div></a>
-    </div>
+    </div> -->
     <div class="header-right">
       <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
