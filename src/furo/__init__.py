@@ -312,7 +312,6 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
         "pygments_dark_style", default="native", rebuild="env", types=[str]
     )
 
-    app.add_js_file("https://raw.githubusercontent.com/pingsutw/furo/rate-the-docs/src/furo/_static/rate-the-docs.min.js")
     app.add_html_theme("furo", str(THEME_PATH))
 
     app.connect("html-page-context", _html_page_context)
