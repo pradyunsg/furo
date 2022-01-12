@@ -442,3 +442,12 @@ article .align-default {
 .ratd-widget i {
   color: var(--color-content-foreground) !important;
 }
+
+/* readthedocs custom styling */
+.rst-versions.rst-badge {
+  bottom: 80px !important;
+}
+
+.rst-versions.rst-badge.shift-up .rst-current-version .fa-book {
+  padding-top: 8px !important;
+}
