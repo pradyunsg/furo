@@ -411,3 +411,24 @@ div.sphx-glr-script-out .highlight {
 article .align-default {
   text-align: left;
 }
+
+/* rate-the-docs custom styles */
+.ratd-widget {
+  z-index: 10000 !important;
+  right: 0 !important;
+  font-size: 0.85em !important;
+  background-color: white !important;
+  box-shadow: 0px 0px 10px #ddd !important;
+}
+
+.ratd-toggle.ratd-toggle-close {
+  margin: 12px 0 !important;
+}
+
+.ratd-panel-thanks {
+  padding-top: 10px !important;
+}
+
+.ratd-panel-thanks[aria-hidden="true"] {
+  padding-top: 0px !important;
+}
