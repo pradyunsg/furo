@@ -92,5 +92,4 @@ class _FuroDemoDirective(SphinxDirective):
 
 def setup(app: Sphinx) -> None:
     """For setting up the directive."""
-    app.add_js_file("rate-the-docs.min.js")
     app.add_directive("furo-demo", _FuroDemoDirective)
