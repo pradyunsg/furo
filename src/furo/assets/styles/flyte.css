@@ -411,3 +411,34 @@ div.sphx-glr-script-out .highlight {
 article .align-default {
   text-align: left;
 }
+
+/* rate-the-docs custom styles */
+.ratd-widget {
+  z-index: 10000 !important;
+  right: 0 !important;
+  font-size: 0.85em !important;
+  background-color: var(--color-sidebar-background) !important;
+  border: 1px solid var(--color-sidebar-background-border) !important;
+  color: var(--color-sidebar-link-text) !important;
+}
+
+.ratd-toggle.ratd-toggle-close {
+  margin: 12px 0 !important;
+}
+
+.ratd-panel-thanks {
+  padding-top: 10px !important;
+}
+
+.ratd-panel-thanks[aria-hidden="true"] {
+  padding-top: 0px !important;
+}
+
+.ratd-widget .ratd-panel-suggestion .btn {
+  background-color: var(--color-link);
+  border-color: var(--color-link);
+}
+
+.ratd-widget i {
+  color: var(--color-content-foreground) !important;
+}

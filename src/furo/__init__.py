@@ -214,6 +214,10 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     # Our `main.js` file needs to be loaded as soon as possible.
     app.add_js_file("scripts/main.js", priority=200)
 
+    # This adds the rate-the-docs widget directly to our theme
+    # https://github.com/medmunds/rate-the-docs
+    app.add_js_file("scripts/rate-the-docs.min.js", priority=200)
+
     # 500 is the default priority for extensions, we want this after this.
     app.add_css_file("styles/furo-extensions.css", priority=600)
 
