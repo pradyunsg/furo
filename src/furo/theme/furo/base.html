@@ -78,6 +78,21 @@
     {%- block extrahead -%}{%- endblock -%}
 
     <script src="https://kit.fontawesome.com/ef4deb7d2f.js" crossorigin="anonymous"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YQL24L5CKY', {
+        "custom_map": {
+          "dimension0": "event_category",
+          "dimension1": "event_label",
+          "dimension2": "suggestion_feedback",
+          "dimension3": "rtd_project",
+          "dimension4": "rtd_version"
+        }
+      });
+    </script>
   </head>
   <body dir="{{ direction }}">
     {% block body %}{% endblock %}
