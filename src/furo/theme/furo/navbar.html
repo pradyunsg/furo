@@ -2,9 +2,9 @@
   <div class="nav-inner">
     <div class="title-logo">
       <div>
-        <a href="{{ pathto(master_doc) }}"><img src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/></a>
+        <a href="{{ pathto('index') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/index.html' }}"><img src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/></a>
       </div>
-      <a href="{{ pathto(master_doc) }}"><div class="brand">{{ docstitle }}</div></a>
+      <a href="{{ pathto('index') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/index.html' }}"><div class="brand">{{ docstitle }}</div></a>
     </div>
     <div class="nav-toggler"><i class="fas fa-chevron-down"></i></div>
     <div class="main-sections nav-collapsed">
