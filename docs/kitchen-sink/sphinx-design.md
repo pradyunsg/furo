@@ -72,6 +72,34 @@ Footer
 The entire card can be clicked to navigate to <https://example.com>.
 ```
 
+## Grid Cards
+
+This also checks the interaction of only-dark and only-light.
+
+````{grid} 1 1 2 3
+```{grid-item-card} One
+:img-top: https://via.placeholder.com/700.png?text=One
+:link: https://example.com/
+```
+
+```{grid-item-card} Two (only-dark)
+:img-top: https://via.placeholder.com/700.png/000000/FFFFFF/?text=only-dark
+:link: https://example.com/
+:class-item: only-dark
+```
+
+```{grid-item-card} Two (only-light)
+:img-top: https://via.placeholder.com/700.png/FFFFFF/000000?text=only-light
+:link: https://example.com/
+:class-item: only-light
+```
+
+```{grid-item-card} Three
+:img-top: https://via.placeholder.com/700.png?text=Three
+:link: https://example.com/
+```
+````
+
 ## Carousels
 
 ````{card-carousel} 2
