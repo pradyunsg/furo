@@ -64,6 +64,27 @@ pre
     padding-left: $code-spacing-horizontal
     padding-right: $code-spacing-horizontal
 
+/* Make code block captions be nicely integrated */
+.code-block-caption
+  display: flex
+  padding: $code-spacing-vertical $code-spacing-horizontal
+
+  border-radius: 0.25rem
+  border-bottom-left-radius: 0
+  border-bottom-right-radius: 0
+  font-weight: 300
+  border-bottom: 1px solid
+
+  background-color: var(--color-code-background)
+  color: var(--color-code-foreground)
+  border-color: var(--color-background-border)
+
+  + div[class]
+    margin-top: 0
+    pre
+      border-top-left-radius: 0
+      border-top-right-radius: 0
+
 // When `html_codeblock_linenos_style` is table.
 .highlighttable
   width: 100%
