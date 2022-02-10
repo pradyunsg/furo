@@ -71,6 +71,8 @@ You can add a link to equations like the one above :eq:`This is a label` by usin
 Meta
 ====
 
+This just adds keywords to the doc, nothing to see here.
+
 .. meta::
    :keywords: reStructuredText, demonstration, demo, parser
    :description lang=en: A demonstration of the reStructuredText
