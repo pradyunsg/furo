@@ -1,0 +1,81 @@
+:root
+  --furo-internal-scroll-margin: 0.5rem
+
+:target
+  scroll-margin-top: var(--furo-internal-scroll-margin)
+
+@media (max-width: $full-width - $sidebar-width)
+  :root
+    --furo-internal-scroll-margin: calc(0.5rem + var(--header-height))
+
+// Permalinks
+.headerlink
+  font-weight: 100
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl dt,
+p.caption,
+figcaption p,
+table > caption,
+.code-block-caption
+  > .headerlink
+    margin-left: 0.5rem
+    visibility: hidden
+  &:hover > .headerlink
+    visibility: visible
+
+  // Don't change to link-like, if someone adds the contents directive.
+  > .toc-backref
+    color: inherit
+    text-decoration-line: none
+
+// Figure and table captions are special.
+figure:hover > figcaption > p > .headerlink,
+table:hover > caption > .headerlink
+  visibility: visible
+
+// When a heading is selected
+section > span:target
+  scroll-margin-top: calc(5.5rem + var(--furo-internal-scroll-margin))
+
+:target >,  // Regular section[id] style anchors
+span:target ~ // Non-regular span[id] style "extra" anchors
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    &:nth-of-type(1)
+      background-color: var(--color-highlight-on-target)
+      // .headerlink
+      //   visibility: visible
+
+table:target > caption,
+figure:target
+  background-color: var(--color-highlight-on-target)
+
+// Inline page contents
+.this-will-duplicate-information-and-it-is-still-useful-here li :target
+  background-color: var(--color-highlight-on-target)
+
+// Code block permalinks
+.literal-block-wrapper:target .code-block-caption
+  background-color: var(--color-highlight-on-target)
+
+// When a definition list item is selected
+//
+//   There isn't really an alternative to !important here, due to the
+//   high-specificity of API documentation's selector.
+dt:target
+  background-color: var(--color-highlight-on-target) !important
+
+// When a footnote reference is selected
+.footnote > dt:target + dd,
+.footnote-reference:target
+  background-color: var(--color-highlight-on-target)
