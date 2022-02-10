@@ -114,26 +114,55 @@ Line Blocks
 |
 | Blank lines are permitted internally, but they must begin with a "|".
 
-Take it away, Eric the Orchestra Leader!
-
-    | A one, two, a one two three four
-    |
-    | Half a bee, philosophically,
-    |     must, *ipso facto*, half not be.
-    | But half the bee has got to be,
-    |     *vis a vis* its entity.  D'you see?
-    |
-    | But can a bee be said to be
-    |     or not to be an entire bee,
-    |         when half the bee is not a bee,
-    |             due to some ancient injury?
-    |
-    | Singing...
-
 Block Quotes
 ------------
 
 Block quotes consist of indented body elements:
+
+    My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
+    as follows and begins now.  All brontosauruses are thin at one
+    end, much much thicker in the middle and then thin again at the
+    far end.  That is my theory, it is mine, and belongs to me and I
+    own it, and what it is too.
+
+    -- Anne Elk (Miss)
+
+Epigraph
+--------
+
+https://docutils.sourceforge.io/docs/ref/rst/directives.html#epigraph
+
+.. epigraph::
+
+    My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
+    as follows and begins now.  All brontosauruses are thin at one
+    end, much much thicker in the middle and then thin again at the
+    far end.  That is my theory, it is mine, and belongs to me and I
+    own it, and what it is too.
+
+    -- Anne Elk (Miss)
+
+Pull quotes
+-----------
+
+https://docutils.sourceforge.io/docs/ref/rst/directives.html#pull-quote
+
+.. pull-quote::
+
+    My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
+    as follows and begins now.  All brontosauruses are thin at one
+    end, much much thicker in the middle and then thin again at the
+    far end.  That is my theory, it is mine, and belongs to me and I
+    own it, and what it is too.
+
+    -- Anne Elk (Miss)
+
+Highlights
+----------
+
+https://docutils.sourceforge.io/docs/ref/rst/directives.html#highlights
+
+.. highlights::
 
     My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
     as follows and begins now.  All brontosauruses are thin at one

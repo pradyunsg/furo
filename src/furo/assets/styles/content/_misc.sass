@@ -26,10 +26,27 @@ kbd:not(.compound)
 blockquote
   border-left: 4px solid var(--color-background-border)
   background: var(--color-background-secondary)
-  font-style: italic
+
   margin-left: 0
   margin-right: 0
   padding: 0.5rem 1rem
+
+  .attribution
+    font-weight: 600
+    text-align: right
+
+  &.pull-quote,
+  &.highlights
+    font-size: 1.25em
+
+  &.epigraph,
+  &.pull-quote
+    border-left-width: 0
+    border-radius: 0.5rem
+
+  &.highlights
+    border-left-width: 0
+    background: transparent
 
 // Center align embedded-in-text images
 p .reference img
