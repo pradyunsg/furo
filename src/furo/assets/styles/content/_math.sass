@@ -1,3 +1,21 @@
 .math-wrapper
   width: 100%
   overflow-x: auto
+
+div.math
+  position: relative
+  text-align: center
+
+  .headerlink,
+  &:focus .headerlink
+    display: none
+
+  &:hover .headerlink
+    display: inline-block
+
+  span.eqno
+    position: absolute
+    right: 0.5rem
+    top: 50%
+    transform: translate(0, -50%)
+    z-index: 1
