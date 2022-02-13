@@ -8,8 +8,10 @@ This section serves to guide the user with customising Furo-based documentation.
 :hidden:
 
 logo
+edit-button
 colors
 fonts
+footer
 landing-page
 sidebar
 sidebar-title
@@ -76,6 +78,10 @@ html_theme_options = {
     "announcement": "<em>Important</em> announcement!",
 }
 ```
+
+### `footer_icons`
+
+Changes the icons presented in the site footer. See {doc}`./footer` for the details.
 
 ## Page specific tweaks
 
