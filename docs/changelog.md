@@ -9,6 +9,30 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## unreleased -- Jaded Jade? Jabbering Jet? Jazzy Jasmine?
+
+- ✨ Add an edit button for RTD-built pages.
+- ✨ Redesign the footer and allow footer icons.
+- ✨ Rework typography, pivoting to bold headings.
+- ✨ Better integration of Read the Docs' embed.
+- Change the default permalinks icon.
+- Treat all custom code injection as unstable.
+- Improve footnote styling.
+- Tweak how muted-links are presented.
+- Add dedicated headings for each admonition type.
+- Use the modern Firefox focus ring.
+- Use higher specificity for hiding elements. (for sphinx-design)
+- Don't set `display: block` on visible `only-*` elements. (for sphinx-design)
+- Rework how `:target:` links are handled.
+- Improve styling for `div.math` equation numbers.
+- Stylise code block captions.
+- Add the green border for `sphinx-copybutton` after copy.
+- Tweak admonition spacing.
+- Stylise various forms of blockquotes.
+- Stylise `small` tag.
+- Bump to the latest Node.js LTS.
+- Use a better color for hovered tabs (with sphinx-inline-tabs).
+
 ## 2022.01.02 -- Immaculate Indigo
 
 - Improve colours for `sphinx-inline-tabs`.
