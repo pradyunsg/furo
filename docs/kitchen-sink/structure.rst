@@ -1,4 +1,9 @@
 
+..
+   Copyright (c) 2021 Pradyun Gedam
+   Licensed under Creative Commons Attribution-ShareAlike 4.0 International License
+   SPDX-License-Identifier: CC-BY-SA-4.0
+
 *******************
 Structural Elements
 *******************
@@ -79,7 +84,7 @@ luctus efficitur arcu. Cras ut dictum mi. Nulla congue interdum lorem, semper se
 Document Subsection
 -------------------
 
-.. figure:: https://source.unsplash.com/200x200/daily?cute+animals
+.. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
     :align: right
     :figwidth: 200px
 

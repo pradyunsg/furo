@@ -1,17 +1,30 @@
-```{admonition} Mimicking Read the Docs' PR previews
+<!--
+ ~ Copyright (c) 2021 Pradyun Gedam
+ ~ Licensed under Creative Commons Attribution-ShareAlike 4.0 International License
+ ~ SPDX-License-Identifier: CC-BY-SA-4.0
+ -->
+
+```{admonition} Mimicking ReadTheDocs' PR previews
 :class: warning
-This is simulating how Read the Docs puts admonitions on top of previews.
+This is simulating how ReadTheDocs puts admonitions on top of previews.
 ```
 
-# Really Long Page
+# Really Long Page Title because we should test sidebar wrapping
 
-This page basically exists to show-off Furo's cool table of contents sidebar.
+This page basically exists to show-off the cool table of contents sidebar.
 
 ## Heading 1
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sit temporibus cupiditate in ducimus illum assumenda dolor, dignissimos laboriosam voluptate dolorem dolore eum repellendus minima, nisi sequi? Eveniet, dignissimos asperiores!
 
+<!-- prettier-ignore-start -->
+(second-heading)=
+(second-heading-again)=
+(second-heading-yet-again)=
 ## Heading 2
+<!-- prettier-ignore-end -->
+
+Let's make sure multiple permalinks work: [one](second-heading), [two](second-heading-again), [three](second-heading-yet-again).
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sit temporibus cupiditate in ducimus illum assumenda dolor, dignissimos laboriosam voluptate dolorem dolore eum repellendus minima, nisi sequi? Eveniet, dignissimos asperiores!
 
