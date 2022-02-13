@@ -1,12 +1,13 @@
-:root
-  --furo-internal-scroll-margin: 0.5rem
-
 :target
-  scroll-margin-top: var(--furo-internal-scroll-margin)
+  scroll-margin-top: 0.5rem
 
 @media (max-width: $full-width - $sidebar-width)
-  :root
-    --furo-internal-scroll-margin: calc(0.5rem + var(--header-height))
+  :target
+    scroll-margin-top: calc(0.5rem + var(--header-height))
+
+  // When a heading is selected
+  section > span:target
+    scroll-margin-top: calc(0.8rem + var(--header-height))
 
 // Permalinks
 .headerlink
@@ -38,10 +39,6 @@ table > caption,
 figure:hover > figcaption > p > .headerlink,
 table:hover > caption > .headerlink
   visibility: visible
-
-// When a heading is selected
-section > span:target
-  scroll-margin-top: calc(5.5rem + var(--furo-internal-scroll-margin))
 
 :target >,  // Regular section[id] style anchors
 span:target ~ // Non-regular span[id] style "extra" anchors
