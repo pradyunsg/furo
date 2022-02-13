@@ -79,11 +79,14 @@ html_static_path = ["_static"]
 html_css_files = ["pied-piper-admonition.css"]
 
 # -- Options for theme development -------------------------------------------
-# Make sure all the top-level booleans here are False.
+# Make sure these are all set to the default values.
 
 html_css_files = []
 html_js_files = []
 html_context: Dict[str, Any] = {}
+# html_show_sphinx = False
+# html_show_copyright = False
+# html_last_updated_fmt = ""
 
 RTD_TESTING = False
 if RTD_TESTING or "FURO_RTD_TESTING" in os.environ:
@@ -97,3 +100,9 @@ if RTD_TESTING or "FURO_RTD_TESTING" in os.environ:
     ]
     html_context["READTHEDOCS"] = True
     html_context["current_version"] = "latest"
+    html_context["conf_py_path"] = "/docs/"
+    html_context["display_github"] = True
+    html_context["github_user"] = "pradyunsg"
+    html_context["github_repo"] = "furo"
+    html_context["github_version"] = "main"
+    html_context["slug"] = "furo"
