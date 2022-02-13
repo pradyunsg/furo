@@ -23,15 +23,22 @@
   width: 100%
   background: transparent
 
+  // Make the background color fit with the theme's aesthetic.
+  .rst-versions
+    background: rgb(26, 28, 30)
+
   .rst-current-version
+    cursor: unset
     background: var(--color-sidebar-item-background)
     &:hover
-      background: var(--color-sidebar-item-background--hover)
+      background: var(--color-sidebar-item-background)
     .fa-book
       color: var(--color-foreground-primary)
 
   > .rst-other-versions
     padding: 0
+    small
+      opacity: 1
 
   .injected
     .rst-versions
@@ -39,12 +46,21 @@
 
   &:hover,
   &:focus-within
+    box-shadow: 0 0 0 1px var(--color-sidebar-background-border)
+
     .rst-current-version
+      // Undo the tweaks done in RTD's CSS
       font-size: inherit
-      background: #272525
-      &:hover
-        background: #272525
+      line-height: inherit
+      height: auto
+      text-align: right
+      padding: 12px
+
+      // Match the rest of the body
+      background: #1a1c1e
+
       .fa-book
+        float: left
         color: white
 
     .fa-caret-down
