@@ -17,3 +17,43 @@
 
   .ethical-callout a
     color: var(--color-foreground-secondary) !important
+
+#furo-readthedocs-versions
+  position: static
+  width: 100%
+  background: transparent
+
+  .rst-current-version
+    background: var(--color-sidebar-item-background)
+    &:hover
+      background: var(--color-sidebar-item-background--hover)
+    .fa-book
+      color: var(--color-foreground-primary)
+
+  > .rst-other-versions
+    padding: 0
+
+  .injected
+    .rst-versions
+      position: unset
+
+  &:hover,
+  &:focus-within
+    .rst-current-version
+      font-size: inherit
+      background: #272525
+      &:hover
+        background: #272525
+      .fa-book
+        color: white
+
+    .fa-caret-down
+      display: none
+
+    .rst-current-version,
+    .rst-other-versions,
+    .injected
+      display: block
+
+    > .rst-current-version
+      display: none
