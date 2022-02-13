@@ -2,6 +2,13 @@
 
 Sphinx makes it fairly straightforward to add custom JS/CSS/HTML code to your pages. Furo supports the mechanisms provided by Sphinx for this.
 
+```{admonition} Unstable
+:class: caution
+This customisation considered "unstable" under Furo's {doc}`../stability`.
+
+Customisations done directly with CSS/JS/HTML are unbounded. Furo is not designed to accommodate for custom CSS/JS/HTML in any meaningful way, and no effort is made to stay compatible with such customisations.
+```
+
 ## CSS or JS
 
 ReadTheDocs has an excellent explanation on [how to add custom CSS or JS files][sphinx-custom-css] to Sphinx-based documentation. No point repeating information in two places. 😄
@@ -9,10 +16,6 @@ ReadTheDocs has an excellent explanation on [how to add custom CSS or JS files][
 [sphinx-custom-css]: https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html
 
 ## HTML
-
-```{caution}
-This customisation considered "unstable" under Furo's [stability](stablity) policy.
-```
 
 This is entirely powered by Sphinx's templating mechanism, which is built upon {pypi}`Jinja2`.
 
