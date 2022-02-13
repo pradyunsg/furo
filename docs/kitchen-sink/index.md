@@ -1,7 +1,7 @@
 # Kitchen Sink
 
 This section exists as a dump of "all sorts of edge cases" in Furo's styling.
-It is built upon an excellent base provided by Sphinx-RTD-Theme, as written by the amazing folks at ReadTheDocs.
+It is built upon an excellent base provided by Sphinx-RTD-Theme, as written by the amazing folks at Read the Docs.
 
 The goal is to ensure that we're adding more content here that looks good, without breaking anything externally. :)
 

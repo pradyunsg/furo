@@ -79,7 +79,7 @@ html_sidebars = [
 ```
 
 ```{tip}
-If you're hosting your documentation on ReadTheDocs, please make sure that `sidebar/ethical-ads.html` is included in the sidebar. This helps keep ReadTheDocs sustainable.
+If you're hosting your documentation on Read the Docs, please make sure that `sidebar/ethical-ads.html` is included in the sidebar. This helps keep Read the Docs sustainable.
 ```
 
 [sphinx-templates_path]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-templates_path

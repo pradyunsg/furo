@@ -11,7 +11,7 @@ Customisations done directly with CSS/JS/HTML are unbounded. Furo is not designe
 
 ## CSS or JS
 
-ReadTheDocs has an excellent explanation on [how to add custom CSS or JS files][sphinx-custom-css] to Sphinx-based documentation. No point repeating information in two places. 😄
+Read the Docs has an excellent explanation on [how to add custom CSS or JS files][sphinx-custom-css] to Sphinx-based documentation. No point repeating information in two places. 😄
 
 [sphinx-custom-css]: https://docs.readthedocs.io/en/stable/guides/adding-custom-css.html
 

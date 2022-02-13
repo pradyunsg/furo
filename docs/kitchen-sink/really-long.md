@@ -1,6 +1,6 @@
-```{admonition} Mimicking ReadTheDocs' PR previews
+```{admonition} Mimicking Read the Docs' PR previews
 :class: warning
-This is simulating how ReadTheDocs puts admonitions on top of previews.
+This is simulating how Read the Docs puts admonitions on top of previews.
 ```
 
 # Really Long Page

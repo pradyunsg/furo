@@ -275,7 +275,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 - Tweak bottom spacing on right sidebar.
 - Tweak CSS and JS blocks in `base.html` template.
 - Tweak how captions for toctrees look.
-- Tweak spacing on sidebar ad on ReadTheDocs.
+- Tweak spacing on sidebar ad on Read the Docs.
 
 ## 2020.11.10.beta15
 
@@ -332,7 +332,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 - Add more information in the documentation (reference and customisation).
 - Add sourcemaps in the generated distribution.
 - Add support for glossary lists.
-- Drop the custom ReadTheDocs-specific CSS.
+- Drop the custom Read the Docs-specific CSS.
 - Fix bad transparency handling for sidebar hover on Safari.
 - Fix shrinking of sidebar brand image on Safari.
 - Tweak spacing in admonitions.
@@ -385,11 +385,11 @@ This release was not correctly versioned and is not installed preferentially ove
 - Fix next/prev links flowing into one-another by limiting width to 50%.
 - Fix positioning of collapsed contents sidebar icon.
 - Fix shrinking arrows in next/prev links.
-- Include `basic` theme's JS files unconditionally. This should help with compatibility with various Sphinx extensions and ReadTheDocs.
+- Include `basic` theme's JS files unconditionally. This should help with compatibility with various Sphinx extensions and Read the Docs.
 - Make `math` elements scrollable, when wider than the page.
 - Tweak images to be responsive.
 - Tweak spacing of paragraphs.
-- Tweak location of ReadTheDocs' injected version helper.
+- Tweak location of Read the Docs' injected version helper.
 
 ## 2020.9.8.beta4
 
