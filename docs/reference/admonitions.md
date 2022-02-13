@@ -59,81 +59,81 @@ Maaa! I made it look the same by setting the class.
 
 ## Supported types
 
-`admonition`
+### `admonition`
 
-:  ```{admonition} The one with the custom titles.
-   It's got a certain charm to it.
-   ```
+```{admonition} The one with the custom titles.
+It's got a certain charm to it.
+```
 
-`attention`
+### `attention`
 
-:  ```{attention}
-   Climate change is real.
-   ```
+```{attention}
+Climate change is real.
+```
 
-`caution`
+### `caution`
 
-:  ```{caution}
-   Cliff ahead: Don't drive off it.
-   ```
+```{caution}
+Cliff ahead: Don't drive off it.
+```
 
-`danger`
+### `danger`
 
-:  ```{danger}
-   Mad scientist at work!
-   ```
+```{danger}
+Mad scientist at work!
+```
 
-`error`
+### `error`
 
-:  ```{error}
-   Does not compute.
-   ```
+```{error}
+Does not compute.
+```
 
-`hint`
+### `hint`
 
-:  ```{hint}
-   Insulators insulate, until they are subject to ______ voltage.
-   ```
+```{hint}
+Insulators insulate, until they are subject to ______ voltage.
+```
 
-`important`
+### `important`
 
-:  ```{important}
-   Tech is not neutral, nor is it apolitical.
-   ```
+```{important}
+Tech is not neutral, nor is it apolitical.
+```
 
-`note`
+### `note`
 
-:  ```{note}
-   This is a note.
-   ```
+```{note}
+This is a note.
+```
 
-`seealso`
+### `seealso`
 
-:  ```{seealso}
-   Other relevant information.
-   ```
+```{seealso}
+Other relevant information.
+```
 
-`tip`
+### `tip`
 
-:  ```{tip}
-   25% if the service is good.
-   ```
+```{tip}
+25% if the service is good.
+```
 
-`todo`
+### `todo`
 
-:  This needs the `sphinx.ext.todo` extension.
-:  ```{todo}
-   Figure out why this extension uses `admonition-todo` as the class, instead of using `todo` (like every other admonition style in Sphinx).
-   ```
+: This needs the `sphinx.ext.todo` extension.
 
-`warning`
+```{todo}
+Figure out why this extension uses `admonition-todo` as the class, instead of using `todo` (like every other admonition style in Sphinx).
+```
 
-:  ```{warning}
-   Reader discretion is strongly advised.
-   ```
+### `warning`
+
+```{warning}
+Reader discretion is strongly advised.
+```
 
 ## Nesting admonitions
-
 
 ``````{furo-demo}
 `````{note}
