@@ -15,7 +15,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 - ✨ Redesign the footer and allow footer icons.
 - ✨ Rework typography, pivoting to bold headings.
 - ✨ Better integration of Read the Docs' embed.
-- Change the default permalinks icon.
+- ✨ Change the default permalinks icon.
 - Treat all custom code injection as unstable.
 - Improve footnote styling.
 - Tweak how muted-links are presented.
