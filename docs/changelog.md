@@ -29,7 +29,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 - Treat all custom code injection as unstable.
 - Tweak admonition spacing.
 - Tweak how muted-links are presented.
-- Use a better color for hovered tabs (with sphinx-inline-tabs).
+- Use a better color for hovered tabs, with sphinx-inline-tabs.
 - Use higher specificity for hiding elements. (for sphinx-design)
 - Use the modern Firefox focus ring.
 
