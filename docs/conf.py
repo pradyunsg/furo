@@ -93,6 +93,12 @@ html_theme_options: Dict[str, Any] = {
     ],
 }
 
+if "READTHEDOCS" in os.environ:
+    html_theme_options["announcement"] = (
+        "This documentation is hosted on Read the Docs only for testing. Please use "
+        "<a href='https://pradyunsg.me/furo/'>the main documentation</a> instead."
+    )
+
 # -- Options for theme development -------------------------------------------
 # Make sure these are all set to the default values.
 
