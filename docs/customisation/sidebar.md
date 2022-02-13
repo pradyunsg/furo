@@ -2,8 +2,10 @@
 
 Furo supports customising the elements that show up in the navigational sidebar (left). This is to provide documentation authors who are willing to work with HTML/CSS to change and tweak how the sidebar looks.
 
-```{caution}
-This customisation considered "unstable" under Furo's [stability](stablity) policy.
+```{admoniton} Unstable
+:class: caution
+
+This customisation considered "unstable" under Furo's {doc}`../stability`.
 
 Furo is not designed to accommodate for all potential custom sidebar designs. It is also possible to get suboptimal results (or even break the layout!) when overriding the default sidebar.
 ```
