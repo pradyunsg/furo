@@ -5,6 +5,7 @@
 
 import os
 import sys
+from typing import Any, Dict
 
 # add the demo python code to the path, so that it can be used to demonstrate
 # source links
@@ -76,3 +77,23 @@ language = "en"
 
 html_static_path = ["_static"]
 html_css_files = ["pied-piper-admonition.css"]
+
+# -- Options for theme development -------------------------------------------
+# Make sure all the top-level booleans here are False.
+
+html_css_files = []
+html_js_files = []
+html_context: Dict[str, Any] = {}
+
+RTD_TESTING = False
+if RTD_TESTING or "FURO_RTD_TESTING" in os.environ:
+    html_css_files += [
+        "https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css",
+        "https://assets.readthedocs.org/static/css/badge_only.css",
+    ]
+    html_js_files += [
+        "readthedocs-dummy.js",
+        "https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js",
+    ]
+    html_context["READTHEDOCS"] = True
+    html_context["current_version"] = "latest"
