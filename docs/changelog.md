@@ -11,11 +11,11 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 ## unreleased -- Jaded Jade? Jabbering Jet? Jazzy Jasmine?
 
+- ✨ Rework typography, pivoting to bold headings.
+- ✨ Redesign the footer and allow footer icons.
+- ✨ Change the default permalinks icon.
 - ✨ Add an edit button for RTD-built pages.
 - ✨ Better integration of Read the Docs' embed.
-- ✨ Change the default permalinks icon.
-- ✨ Redesign the footer and allow footer icons.
-- ✨ Rework typography, pivoting to bold headings.
 - Add dedicated headings for each admonition type.
 - Add the green border for `sphinx-copybutton` after copy.
 - Bump to the latest Node.js LTS.
