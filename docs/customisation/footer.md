@@ -30,9 +30,9 @@ The value for this configuration value is a list of dictionaries. Each dictionar
 - `html`: The exact raw HTML that is included as the "icon".
 - `class`: This is included as-is in the class attribute of the `a` tag.
 
-### Example
+### Using embedded SVGs
 
-As an example, this is what Furo does to include a GitHub icon in the footer of the site you're currently reading:
+This is what Furo does to include a GitHub icon in the footer of the site you're currently reading:
 
 ```python
 html_theme_options = {
@@ -51,15 +51,52 @@ html_theme_options = {
 }
 ```
 
-### Recommendations for images
-
-Since `image_html` is expected to be static HTML, you can not use relative paths to images included in the Sphinx documentation set, at least not without resorting to ugly hacks.[^1] Instead, it is recommended to either embed the image directly (eg: in an `svg` tag), or to link to images "outside" of the documentation.
+Since `html` is expected to be static HTML, you can not use relative paths to images included in the Sphinx documentation set, at least not without resorting to ugly hacks.[^1] Instead, it is recommended to either embed the image directly (eg: in an `svg` tag), or to link to images "outside" of the documentation.
 
 It is generally preferable to use SVG images, that respect `currentColor`. A decently large set of common SVG-based icons can be found on: <https://react-icons.github.io/react-icons/>[^2].
 
-### Different icons for light mode vs dark mode
+### Using icon packs
 
-You can specify `only-light` or `only-dark` as the value for `class` in the mapping. This mechanism exists primarily to help you use different `img` tags to present the same icon in a different location.
+You can use icon packs that provide icons, with the footer. Usually, icons pack have a non-negligible impact on first page load times and need more data needing to be downloaded. That said, you also get more convenient access to a well designed set of icons. :)
 
-[^1]: You need to use your browser's developer tools to get the SVG directly from the page: inspect element + copy svg element (ctrl+c) + paste + remove `height="1em" width="1em"`. The workflow is... slightly clunky.
-[^2]: Yes, I'm aware that it can be argued that embedding raw HTML in a `conf.py` file is hacky. :)
+#### Font Awesome
+
+```{note}
+With the release of Font Awesome 6, Fonticons Inc has revamped the documentation to consistently upsell their [Kits](https://fontawesome.com/v6/docs/web/setup/use-kit). These kits can help reduce load times on pages but have limited number of page views, so we'll use Font Awesome via a CDN in this example.
+```
+
+If you wish to use Font Awesome icons in the footer, it's a two step process.
+
+- Using `html_css_files`, add the CSS file(s) for Font Awesome.
+
+  ```py
+  html_css_files = [
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css",
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css",
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css",
+  ]
+  ```
+
+- Use `class` to use the relevant Font Awesome icons in `footer_icons`. You can search the [free Font Awesome icons](https://fontawesome.com/v6/search?s=solid%2Cbrands), and clicking on a specific icon shows the class you need to use. The configuration would look as follows:
+
+  ```py
+  html_theme_options = {
+      "footer_icons": [
+          {
+              "name": "GitHub",
+              "url": "https://github.com/pradyunsg/furo",
+              "html": "",
+              "class": "fa-solid fa-github fa-2x",
+          },
+      ],
+  }
+  ```
+
+  Note that the `fa-2x` is necessary to get a reasonable sized icon.
+
+## Different icons for light mode vs dark mode
+
+You can specify `only-light` or `only-dark` as the value for `class` in the dictionary. This mechanism exists primarily to help you use different `img` tags to present the same icon in a different colour.
+
+[^1]: Yes, I'm aware that it can be argued that embedding raw HTML in a `conf.py` file is... ugly. :)
+[^2]: You need to use your browser's developer tools to get the SVG directly from the page: inspect element + copy svg element (ctrl+c) + paste.

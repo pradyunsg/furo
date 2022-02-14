@@ -157,7 +157,7 @@
               {% if theme_footer_icons -%}
               {% for icon_dict in theme_footer_icons -%}
               <a class="muted-link {{ icon_dict.class }}" href="{{ icon_dict.url }}" aria-label="{{ icon_dict.name }}">
-                {{- icon_dict.html or "no html" -}}
+                {{- icon_dict.html -}}
               </a>
               {% endfor %}
               {%- else -%}

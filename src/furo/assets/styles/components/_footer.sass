@@ -26,7 +26,7 @@ footer
   @media (max-width: $content-width)
     text-align: center
     flex-direction: column-reverse
-    gap: 0.5em
+    gap: 0.25rem
 
   .left-details
     font-size: var(--font-size--small)
@@ -34,17 +34,23 @@ footer
   .right-details
     display: flex
     flex-direction: column
-    gap: 0.5em
+    gap: 0.25rem
     text-align: right
 
   .icons
     display: flex
     justify-content: flex-end
-    gap: 0.5em
+    gap: 0.25rem
+    font-size: 1rem
+
+    a
+      text-decoration: none
 
     svg,
     img
-      height: 1.25em
+      font-size: 1.125rem
+      height: 1em
+      width: 1em
 
 // Next/Prev page information
 .related-pages
