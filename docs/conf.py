@@ -102,7 +102,6 @@ if "READTHEDOCS" in os.environ:
 # -- Options for theme development -------------------------------------------
 # Make sure these are all set to the default values.
 
-html_css_files = []
 html_js_files = []
 html_context: Dict[str, Any] = {}
 # html_show_sphinx = False
