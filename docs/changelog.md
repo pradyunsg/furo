@@ -9,6 +9,10 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.02.14.1 -- Jazzy Jasmine (bugfix)
+
+- Drop a `, /` for positional-only arguments.
+
 ## 2022.02.14 -- Jazzy Jasmine
 
 - ✨ Rework typography, pivoting to bold headings.
