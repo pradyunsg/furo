@@ -9,7 +9,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
-## unreleased -- Jaded Jade? Jabbering Jet? Jazzy Jasmine?
+## unreleased -- Jazzy Jasmine
 
 - ✨ Rework typography, pivoting to bold headings.
 - ✨ Redesign the footer and allow footer icons.
