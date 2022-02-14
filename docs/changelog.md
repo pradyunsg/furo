@@ -22,7 +22,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 - Don't set `display: block` on visible `only-*` elements. (for sphinx-design)
 - Improve footnote styling.
 - Improve styling for `div.math` equation numbers.
-- Rework how `:target:` links are handled.
+- Rework how `:target` links are handled.
 - Stylise `small` tag.
 - Stylise code block captions.
 - Stylise various forms of blockquotes.
