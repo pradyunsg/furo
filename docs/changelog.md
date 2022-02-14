@@ -9,7 +9,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
-## unreleased -- Jazzy Jasmine
+## 2022.02.14 -- Jazzy Jasmine
 
 - ✨ Rework typography, pivoting to bold headings.
 - ✨ Redesign the footer and allow footer icons.
