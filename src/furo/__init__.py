@@ -227,7 +227,7 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     ), "this shouldn't be a dark style known to Sphinx"
     update_known_styles_state(app)
 
-    def _update_default(key: str, /, *, new_default: Any) -> None:
+    def _update_default(key: str, *, new_default: Any) -> None:
         app.config.values[key] = (new_default, *app.config.values[key][1:])
 
     # Change the default permalinks icon
