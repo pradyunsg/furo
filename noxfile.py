@@ -66,8 +66,8 @@ def get_release_versions(version_file):
 #
 @nox.session(reuse_venv=True)
 def docs(session):
-    # Generate relevant files prior to installation
-    session.install(".[doc]")
+    session.install("-r", "docs/requirements.txt")
+    session.install(".")
 
     # Generate documentation into `build/docs`
     session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
@@ -75,7 +75,8 @@ def docs(session):
 
 @nox.session(name="docs-live", reuse_venv=True)
 def docs_live(session):
-    session.install("-e", ".[doc]", "sphinx-theme-builder[cli]")
+    session.install("-r", "docs/requirements.txt")
+    session.install("-e", ".", "sphinx-theme-builder[cli]")
 
     # Generate documentation into `build/docs`
     session.run("stb", "serve", "docs/")

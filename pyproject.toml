@@ -43,18 +43,5 @@ classifiers = [
   "Topic :: Software Development :: Documentation",
 ]
 
-[project.optional-dependencies]
-test = [
-  "pytest",
-  "pytest-cov",
-  "pytest-xdist",
-]
-doc = [
-  "myst-parser",
-  "sphinx-copybutton",
-  "sphinx-design",
-  "sphinx-inline-tabs",
-]
-
 [project.entry-points]
 "sphinx.html_themes" = {furo = "furo"}
