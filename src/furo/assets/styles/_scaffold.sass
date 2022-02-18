@@ -284,6 +284,41 @@ article
       right: 0
 
 ////////////////////////////////////////////////////////////////////////////////
+// Back to top
+////////////////////////////////////////////////////////////////////////////////
+.back-to-top
+  text-decoration: none
+
+  display: none
+  position: fixed
+  left: 0
+  top: calc(var(--header-height) + 0.5rem)
+  padding: 0.5rem
+  padding-right: 0.75rem
+  border-radius: 1rem
+  font-size: 0.8125rem
+
+  background: var(--color-background-primary)
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), #6b728080 0px 0px 1px 0px
+
+  z-index: 1
+
+  margin-left: 50%
+  transform: translateX(-50%)
+  svg
+    height: 1rem
+    width: 1rem
+    fill: var(--color-foreground-primary)
+    display: inline-block
+
+  span
+    margin-left: 0.25rem
+
+  .show-back-to-top &
+    display: flex
+    align-items: center
+
+////////////////////////////////////////////////////////////////////////////////
 // Responsive layouting
 ////////////////////////////////////////////////////////////////////////////////
 // Make things a bit bigger on bigger screens.
