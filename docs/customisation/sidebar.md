@@ -2,7 +2,7 @@
 
 Furo supports customising the elements that show up in the navigational sidebar (left). This is to provide documentation authors who are willing to work with HTML/CSS to change and tweak how the sidebar looks.
 
-```{admoniton} Unstable
+```{admonition} Unstable
 :class: caution
 
 This customisation considered "unstable" under Furo's {doc}`../stability`.
