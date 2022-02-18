@@ -123,6 +123,9 @@ function setupScrollSpy() {
     reflow: true,
     recursive: true,
     navClass: "scroll-current",
+    offset: () => {
+      return header.getBoundingClientRect().height + 8;
+    },
   });
 }
 
