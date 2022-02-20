@@ -135,7 +135,7 @@ They can be quoted without indentation::
 >
 > Why didn't I think of that?
 
-.. literalinclude:: ../../../src/furo/__init__.py
+.. literalinclude:: ../../src/furo/__init__.py
     :language: python
     :caption: Literal includes can also have captions.
     :linenos:
