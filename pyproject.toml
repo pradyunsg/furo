@@ -45,3 +45,6 @@ classifiers = [
 
 [project.entry-points]
 "sphinx.html_themes" = {furo = "furo"}
+
+[project.urls]
+GitHub = "https://github.com/pradyunsg/furo"
