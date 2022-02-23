@@ -336,12 +336,16 @@ def get_pygments_stylesheet() -> str:
 
     lines.extend(_get_styles(light_formatter, prefix=".highlight"))
 
+    lines.append("@media not print {")
+
     dark_prefix = 'body[data-theme="dark"] .highlight'
     lines.extend(_get_styles(dark_formatter, prefix=dark_prefix))
 
     not_light_prefix = 'body:not([data-theme="light"]) .highlight'
     lines.append("@media (prefers-color-scheme: dark) {")
     lines.extend(_get_styles(dark_formatter, prefix=not_light_prefix))
+    lines.append("}")
+
     lines.append("}")
 
     return "\n".join(lines)

@@ -1,0 +1,29 @@
+// This file contains styles for managing print media.
+
+////////////////////////////////////////////////////////////////////////////////
+// Hide elements not relevant to print media.
+////////////////////////////////////////////////////////////////////////////////
+@media print
+  // Hide icon container.
+  .content-icon-container
+    display: none !important
+
+  // Hide showing header links if hovering over when printing.
+  .headerlink
+    display: none !important
+
+  // Hide mobile header.
+  .mobile-header
+    display: none !important
+
+  // Hide navigation links.
+  .related-pages
+    display: none !important
+
+////////////////////////////////////////////////////////////////////////////////
+// Tweaks related to decolorization.
+////////////////////////////////////////////////////////////////////////////////
+@media print
+  // Apply a border around code which no longer have a color background.
+  .highlight
+    border: 0.1pt solid var(--color-foreground-border)
