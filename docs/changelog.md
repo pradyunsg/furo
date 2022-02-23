@@ -9,6 +9,16 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.02.23 -- Keen Kobi
+
+- ✨ Add a "Back to Top" button that shows up when scrolling up.
+- Add a URL to GitHub in Project-URLs.
+- Break long words in the prev/next buttons.
+- Fix includes in Kitchen sink.
+- Handle external references for viewcode links.
+- Properly offset scrollspy.
+- Switch from `optional-dependencies` (AKA extras) to dedicated `requirements.txt` files.
+
 ## 2022.02.14.1 -- Jazzy Jasmine (bugfix)
 
 - Drop a `, /` for positional-only arguments.
