@@ -140,7 +140,8 @@ function setupScrollSpy() {
     recursive: true,
     navClass: "scroll-current",
     offset: () => {
-      return header.getBoundingClientRect().height + 8;
+      let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      return header.getBoundingClientRect().height + 0.5 * rem + 1;
     },
   });
 }
