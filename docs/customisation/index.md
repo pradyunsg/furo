@@ -31,7 +31,7 @@ Note that only the configuration options listed here are supported (not the ones
 
 ### `light_css_variables`/`dark_css_variables`
 
-Furo makes extensive use of [CSS variables][css-variables]. These can be overridden by the user and are used for stylizing nearly all elements of the documentation.
+Furo makes extensive use of [CSS variables][css-variables]. These can be overridden by the user and are used for stylizing nearly all elements of the documentation. {doc}`colors` contains important details of how these variables are used.
 
 Setting `*_css_variables` is the recommended mechanism to override Furo's default values for these variables.
 
