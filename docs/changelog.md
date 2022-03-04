@@ -9,6 +9,14 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.03.04 -- Lucent Lilac
+
+- Improve support for print media.
+- Reduce heading sizes for h3 and below.
+- Don't allow selecting headerlink content.
+- Improve how overflow wrapping is handled.
+- Add a reference from the configuration variables to the color customisation page.
+
 ## 2022.02.23 -- Keen Kobi
 
 - ✨ Add a "Back to Top" button that shows up when scrolling up.
