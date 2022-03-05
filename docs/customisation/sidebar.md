@@ -64,14 +64,16 @@ This is useful when you want to make drastic or major changes to the design of F
 As an example, to make the _entire_ sidebar scrollable, it is possible to set `sidebar/scroll-start.html` as the first fragment and `sidebar/scroll-end.html` as the last fragment.
 
 ```py
-html_sidebars = [
-    "sidebar/scroll-start.html",
-    "sidebar/brand.html",
-    "sidebar/search.html",
-    "sidebar/navigation.html",
-    "sidebar/ethical-ads.html",
-    "sidebar/scroll-end.html",
-]
+html_sidebars = {
+    "**": [
+        "sidebar/scroll-start.html",
+        "sidebar/brand.html",
+        "sidebar/search.html",
+        "sidebar/navigation.html",
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
+    ]
+}
 ```
 
 ```{warning}
