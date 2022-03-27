@@ -26,6 +26,10 @@ Enumerated Lists
 
    4. Four
 
+   c. c
+
+   d. d
+
    C. C
 
    D. D
@@ -33,6 +37,10 @@ Enumerated Lists
    iii. iii
 
    iv. iv
+
+   III. III
+
+   IV. IV
 
 #. List items may also be auto-enumerated.
 
