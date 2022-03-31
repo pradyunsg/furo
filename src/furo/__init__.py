@@ -361,8 +361,10 @@ def _overwrite_pygments_css(
         return
 
     assert app.builder
-    with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w") as f:
-        f.write(get_pygments_stylesheet())
+    pygments_css = Path(app.builder.outdir) / "_static" / "pygments.css"
+    if pygments_css.is_file():
+        with pygments_css.open("w") as f:
+            f.write(get_pygments_stylesheet())
 
 
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
