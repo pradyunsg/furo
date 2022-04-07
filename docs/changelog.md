@@ -9,6 +9,16 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.04.07 -- Magical Mauve
+
+- ✨ Make sphinx-copybutton look better.
+- Add margin to indentations in line blocks.
+- Add styling for non-arabic list styles
+- Add support for `html_baseurl`.
+- Improve "Edit this page" icon to be more accessible.
+- Improve `html_sidebars` example.
+- Tweak positioning of back to top on desktop.
+
 ## 2022.03.04 -- Lucent Lilac
 
 - Improve support for print media.
