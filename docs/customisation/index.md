@@ -8,6 +8,7 @@ This section serves to guide the user with customising Furo-based documentation.
 :hidden:
 
 logo
+announcement
 edit-button
 colors
 fonts
@@ -71,13 +72,7 @@ html_theme_options = {
 
 ### `announcement`
 
-Adds a site-wide announcement, to the top of every page when set. This can contain HTML and is included as-is into the page.
-
-```python
-html_theme_options = {
-    "announcement": "<em>Important</em> announcement!",
-}
-```
+Add a site-wide announcement, to the top of every page when set. See {doc}`./announcement` for the details.
 
 ### `footer_icons`
 
