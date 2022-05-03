@@ -14,10 +14,11 @@ description = "A clean customisable Sphinx documentation theme."
 dynamic = ["version"]
 readme = "README.md"
 
-requires-python = ">=3.6"
+requires-python = ">=3.7"
 dependencies = [
   "beautifulsoup4",
   "sphinx ~= 4.0",
+  "sphinx-basic-ng",
   "pygments ~= 2.7",
 ]
 
