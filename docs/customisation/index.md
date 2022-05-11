@@ -70,6 +70,17 @@ html_theme_options = {
 }
 ```
 
+(top_of_page_button)=
+### `top_of_page_button`
+
+Controls which button is shown on the top of the page. The only supported values are `"edit"` (the default) and `None`.
+
+```python
+html_theme_options = {
+    "top_of_page_button": "edit",
+}
+```
+
 ### `announcement`
 
 Add a site-wide announcement, to the top of every page when set. See {doc}`./announcement` for the details.

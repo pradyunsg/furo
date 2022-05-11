@@ -1,0 +1,27 @@
+{% from "basic-ng/components/edit-this-page.html" import determine_page_edit_link with context %}
+
+{%- macro furo_edit_button(url) -%}
+<div class="edit-this-page">
+  <a class="muted-link" href="{{ url }}" title="{{ _("Edit this page") }}">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">{{ _("Edit this page") }}</span>
+  </a>
+</div>
+{%- endmacro -%}
+
+
+{%- if theme_source_repository -%}
+  {%- if not theme_source_branch -%}
+    {{ warning("Provided `source_repository` but not `source_branch`. ")}}
+  {%- endif -%}
+  {%- if page_source_suffix -%}
+    {{ furo_edit_button(determine_page_edit_link()) }}
+  {%- endif -%}
+{%- elif READTHEDOCS and conf_py_path and page_source_suffix and github_user != "None" and github_repo != "None" and github_version %}
+  {% set url = "https://github.com/{{ github_user }}/{{ github_repo }}/edit/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ page_source_suffix }}" %}
+  {{ furo_edit_button(url) }}
+{%- endif -%}
