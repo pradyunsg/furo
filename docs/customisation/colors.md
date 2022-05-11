@@ -12,7 +12,7 @@ It is possible to use different content for light and dark mode, by setting
 `only-dark` and `only-light` classes on the content. This is the
 [recommended approach](light-dark-images) for handling images with backgrounds.
 
-## Defining overrides for defaults
+## Using your own colors
 
 Furo allows defining [CSS variables that overrides its default values](css-variables). The exact variable names to use can be found in Furo's source code [here](https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables).
 

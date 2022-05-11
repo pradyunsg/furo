@@ -1,4 +1,4 @@
-# Adding a site-wide announcement
+# Adding an announcement banner
 
 Furo makes it fairly straightforward to add a site-wide announcement (AKA top banner). The announcement is added to the top of all pages on the website.
 
