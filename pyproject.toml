@@ -19,7 +19,7 @@ dependencies = [
   "beautifulsoup4",
   "sphinx ~= 4.0",
   "sphinx-basic-ng",
-  "pygments ~= 2.7",
+  "pygments",
 ]
 
 license = { file = "LICENSE"}
