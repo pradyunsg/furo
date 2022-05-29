@@ -9,6 +9,10 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.05.29 -- Noble Nyanza
+
+- Add ability to hide previous and next buttons
+
 ## 2022.04.07 -- Magical Mauve
 
 - ✨ Make sphinx-copybutton look better.
