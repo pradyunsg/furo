@@ -6,9 +6,9 @@ This is automatically added, when the documentation is generated on Read the Doc
 
 ```python
 html_theme_options = {
-  "source_repository": "https://github.com/pradyunsg/furo/",
-  "source_branch": "main",
-  "source_directory": "docs/",
+    "source_repository": "https://github.com/pradyunsg/furo/",
+    "source_branch": "main",
+    "source_directory": "docs/",
 }
 ```
 

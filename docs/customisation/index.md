@@ -71,6 +71,7 @@ html_theme_options = {
 ```
 
 (top_of_page_button)=
+
 ### `top_of_page_button`
 
 Controls which button is shown on the top of the page. The only supported values are `"edit"` (the default) and `None`.
