@@ -2,7 +2,7 @@
 
 Furo can add a small edit button to each document.
 
-This is automatically added, when the documentation is generated on Read the Docs using a GitHub repository as the source. It is possible to provide this, outside of Read the Docs, by setting the following keys in {any}`html_theme_options`:
+This is automatically added, when the documentation is generated on Read the Docs using a GitHub repository as the source. It is possible to provide this, outside of Read the Docs, by setting the following keys in [`html_theme_options`][sphinx-html_theme_options]:
 
 ```python
 html_theme_options = {
@@ -15,3 +15,5 @@ html_theme_options = {
 ## Disabling on Read the Docs
 
 If you're building documentation on Read the Docs using a GitHub repository as the source, the edit button is enabled by default. If you wish to disable this, use {ref}`top_of_page_button`.
+
+[sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options

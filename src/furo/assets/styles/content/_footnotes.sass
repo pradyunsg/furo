@@ -4,6 +4,7 @@
   vertical-align: super
 
 // Definition list, listing the content of each note.
+// docutils <= 0.17
 dl.footnote.brackets
   font-size: var(--font-size--small)
   color: var(--color-foreground-secondary)
@@ -27,3 +28,16 @@ dl.footnote.brackets
   dd
     margin: 0
     padding: 0 1rem
+
+// docutils >= 0.18
+aside.footnote
+  font-size: var(--font-size--small)
+  color: var(--color-foreground-secondary)
+
+aside.footnote > span,
+div.citation > span
+  font-weight: 500
+
+aside.footnote > p,
+div.citation > p
+  margin-left: 2rem
