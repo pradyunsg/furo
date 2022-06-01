@@ -15,6 +15,7 @@ from pygments.formatters import HtmlFormatter
 from pygments.style import Style
 from pygments.token import Text
 from sphinx.builders.html import StandaloneHTMLBuilder
+from sphinx.environment.adapters.toctree import TocTree
 from sphinx.highlighting import PygmentsBridge
 
 from .navigation import get_navigation_tree
@@ -30,13 +31,21 @@ _KNOWN_STYLES_IN_USE: Dict[str, Optional[Style]] = {
 }
 
 
-@lru_cache(maxsize=None)
-def has_not_enough_items_to_show_toc(toc: str) -> bool:
+def has_not_enough_items_to_show_toc(
+    builder: StandaloneHTMLBuilder, docname: str
+) -> bool:
     """Check if the toc has one or fewer items."""
-    assert toc
+    assert builder.env
 
-    soup = BeautifulSoup(toc, "html.parser")
-    return len(soup.find_all("li")) <= 1
+    toctree = TocTree(builder.env).get_toc_for(docname, builder)
+    try:
+        self_toctree = toctree[0][1]
+    except IndexError:
+        val = True
+    else:
+        # There's only the page's own toctree in there.
+        val = len(self_toctree) == 1 and self_toctree[0].tagname == "toctree"
+    return val
 
 
 def wrap_elements_that_can_get_too_wide(content: str) -> str:
@@ -110,7 +119,12 @@ def _compute_navigation_tree(context: Dict[str, Any]) -> str:
     return get_navigation_tree(toctree_html)
 
 
-def _compute_hide_toc(context: Dict[str, Any]) -> bool:
+def _compute_hide_toc(
+    context: Dict[str, Any],
+    *,
+    builder: StandaloneHTMLBuilder,
+    docname: str,
+) -> bool:
     # Should the table of contents be hidden?
     file_meta = context.get("meta", None) or {}
     if "hide-toc" in file_meta:
@@ -120,7 +134,7 @@ def _compute_hide_toc(context: Dict[str, Any]) -> bool:
     elif not context["toc"]:
         return True
 
-    return has_not_enough_items_to_show_toc(context["toc"])
+    return has_not_enough_items_to_show_toc(builder, docname)
 
 
 @lru_cache(maxsize=None)
@@ -148,6 +162,8 @@ def _html_page_context(
     if app.config.html_theme != "furo":
         return
 
+    assert isinstance(app.builder, StandaloneHTMLBuilder)
+
     if "css_files" in context:
         if "_static/styles/furo.css" not in context["css_files"]:
             raise Exception(
@@ -170,7 +186,9 @@ def _html_page_context(
 
     # Values computed from page-level context.
     context["furo_navigation_tree"] = _compute_navigation_tree(context)
-    context["furo_hide_toc"] = _compute_hide_toc(context)
+    context["furo_hide_toc"] = _compute_hide_toc(
+        context, builder=app.builder, docname=pagename
+    )
 
     # Inject information about styles
     context["furo_pygments"] = {
@@ -200,7 +218,7 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
         return
     if "furo" in app.config.extensions:
         raise Exception(
-            "Did you list it in the `extensions` in conf.py? "
+            "Did you list 'furo' in the `extensions` in conf.py? "
             "If so, please remove it. Furo does not work with non-HTML builders "
             "and specifying it as an `html_theme` is sufficient."
         )
