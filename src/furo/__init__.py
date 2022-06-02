@@ -10,13 +10,14 @@ from pathlib import Path
 from typing import Any, Dict, Iterator, List, Optional
 
 import sphinx.application
-from bs4 import BeautifulSoup
+from docutils import nodes
 from pygments.formatters import HtmlFormatter
 from pygments.style import Style
 from pygments.token import Text
 from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.environment.adapters.toctree import TocTree
 from sphinx.highlighting import PygmentsBridge
+from sphinx.transforms.post_transforms import SphinxPostTransform
 
 from .navigation import get_navigation_tree
 
@@ -29,6 +30,31 @@ _KNOWN_STYLES_IN_USE: Dict[str, Optional[Style]] = {
     "light": None,
     "dark": None,
 }
+
+
+class WrapTableAndMathInAContainerTransform(SphinxPostTransform):
+    """A Sphinx post-transform that wraps `table` and `div.math` in a container `div`.
+
+    This makes it possible to handle these overflowing the content-width, which is
+    necessary in a responsive theme.
+    """
+
+    formats = ("html",)
+    default_priority = 500
+
+    def run(self, **kwargs: Any) -> None:
+        """Perform the post-transform on `self.document`."""
+        for node in list(self.document.findall(nodes.table)):
+            new_node = nodes.container(classes=["table-wrapper"])
+            new_node.update_all_atts(node)
+            node.parent.replace(node, new_node)
+            new_node.append(node)
+
+        for node in list(self.document.findall(nodes.math_block)):
+            new_node = nodes.container(classes=["math-wrapper"])
+            new_node.update_all_atts(node)
+            node.parent.replace(node, new_node)
+            new_node.append(node)
 
 
 def has_not_enough_items_to_show_toc(
@@ -46,28 +72,6 @@ def has_not_enough_items_to_show_toc(
         # There's only the page's own toctree in there.
         val = len(self_toctree) == 1 and self_toctree[0].tagname == "toctree"
     return val
-
-
-def wrap_elements_that_can_get_too_wide(content: str) -> str:
-    """Wrap the elements that could get too wide, with a div to allow controlling width.
-
-    - <table>
-    - [class=math]
-
-    """
-    soup = BeautifulSoup(content, "html.parser")
-
-    for table in soup.find_all("table"):
-        table_wrapper = soup.new_tag("div", attrs={"class": "table-wrapper"})
-        table.replace_with(table_wrapper)
-        table_wrapper.append(table)
-
-    for math in soup.find_all("div", class_="math"):
-        wrapper = soup.new_tag("div", attrs={"class": "math-wrapper"})
-        math.replace_with(wrapper)
-        wrapper.append(math)
-
-    return str(soup)
 
 
 def get_pygments_style_colors(
@@ -207,10 +211,6 @@ def _html_page_context(
             ),
         ),
     }
-
-    # Patch the content
-    if "body" in context:
-        context["body"] = wrap_elements_that_can_get_too_wide(context["body"])
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
@@ -392,6 +392,8 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     )
 
     app.add_html_theme("furo", str(THEME_PATH))
+
+    app.add_post_transform(WrapTableAndMathInAContainerTransform)
 
     app.connect("html-page-context", _html_page_context)
     app.connect("builder-inited", _builder_inited)
