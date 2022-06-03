@@ -9,6 +9,17 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.06.04 -- Naughty Nickel
+
+- ✨ Advertise Sphinx 5 compatibility.
+- ✨ Change to `basic-ng` as the base theme (from {pypi}`sphinx-basic-ng`).
+- Document site-wide announcement banners.
+- Drop the pin on pygments.
+- Improve edit button, using `basic-ng`'s `edit-this-page` component.
+- Tweak headings to better match what users expect.
+- Tweak how Sphinx's default HTML is rendered, using docutils post-transforms (this replaces parsing+modifying it with BeautifulSoup).
+- When built with docutils 0.18, footnotes are rendered differently and stylised differently in Furo.
+
 ## 2022.04.07 -- Magical Mauve
 
 - ✨ Make sphinx-copybutton look better.
