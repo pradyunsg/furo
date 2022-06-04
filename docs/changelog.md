@@ -9,6 +9,10 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.06.04.1 -- Naughty Nickel bugfix
+
+- Fix the URL used in the "Edit this page" for Read the Docs builds.
+
 ## 2022.06.04 -- Naughty Nickel
 
 - ✨ Advertise Sphinx 5 compatibility.
