@@ -44,13 +44,18 @@ class WrapTableAndMathInAContainerTransform(SphinxPostTransform):
 
     def run(self, **kwargs: Any) -> None:
         """Perform the post-transform on `self.document`."""
-        for node in list(self.document.findall(nodes.table)):
+        get_nodes = (
+            self.document.findall  # docutils 0.18+
+            if hasattr(self.document, "findall")
+            else self.document.traverse  # docutils <= 0.17.x
+        )
+        for node in list(get_nodes(nodes.table)):
             new_node = nodes.container(classes=["table-wrapper"])
             new_node.update_all_atts(node)
             node.parent.replace(node, new_node)
             new_node.append(node)
 
-        for node in list(self.document.findall(nodes.math_block)):
+        for node in list(get_nodes(nodes.math_block)):
             new_node = nodes.container(classes=["math-wrapper"])
             new_node.update_all_atts(node)
             node.parent.replace(node, new_node)
