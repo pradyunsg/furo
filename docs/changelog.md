@@ -9,7 +9,7 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
-## 2022.07.21 -- Opulent Opal
+## 2022.06.21 -- Opulent Opal
 
 - Fix `docutils <= 0.17.x` compatibility
 - Bump to the latest Node.js LTS
