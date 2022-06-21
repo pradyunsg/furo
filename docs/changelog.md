@@ -9,6 +9,11 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.07.21 -- Opulent Opal
+
+- Fix `docutils <= 0.17.x` compatibility
+- Bump to the latest Node.js LTS
+
 ## 2022.06.04.1 -- Naughty Nickel bugfix
 
 - Fix the URL used in the "Edit this page" for Read the Docs builds.
