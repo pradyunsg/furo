@@ -324,7 +324,7 @@ def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
         ):
             dark_style = app.config._raw_config["pygments_dark_style"]
     except (AttributeError, KeyError) as e:
-        logger.warn(
+        logger.warning(
             (
                 "Furo could not determine the value of `pygments_dark_style`. "
                 "Falling back to using the value provided by Sphinx.\n"
