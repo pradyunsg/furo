@@ -1,4 +1,4 @@
-# Reference
+# Markup Reference
 
 Furo supports everything you can do with standard Sphinx, as well as few recommended third-party Sphinx extensions.
 
