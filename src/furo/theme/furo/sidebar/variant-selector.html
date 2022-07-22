@@ -35,7 +35,7 @@
   <p>Versions</p>
   <ul>
   {% for version in versions -%}
-  <li{% if version.name == latest_version.name %} class="latest-version"{%- elif version.name == current_version.name %} class="current-version"{%- endif %}><a href="{{ version.url }}">{{ version.name }}</a></li>
+  <li{% if version.name == current_version.name %} class="current-version"{%- elif version.name == latest_version.name %} class="latest-version"{%- endif %}><a href="{{ version.url }}">{{ version.name }}</a></li>
   {% endfor -%}
   </ul>
 </div>
