@@ -30,4 +30,17 @@
     </dl>
   </div>
 </div>
+{% elif versions %}
+<div id="furo-versions" class="rst-versions" role="note" aria-label="{{ _('Versions') }}" tabindex="0">
+  <p>Versions</p>
+  <ul>
+  {% for version in versions -%}
+  <li {%- if version.name == latest_version.name %} class="latest-version"{%- endif %}><a href="{{ version.url }}">{{ version.name }}</a></li>
+  {% endfor -%}
+  </ul>
+</div>
 {% endif %}
+{#
+latest: {{ latest_version }}
+current: {{ current_version }}
+#}
