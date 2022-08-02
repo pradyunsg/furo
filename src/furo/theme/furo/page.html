@@ -151,6 +151,11 @@
               {%- endtrans -%}
             </div>
             {%- endif %}
+            {%- if commit -%}
+            <div class="commit">
+              {% trans %}Revision{% endtrans -%} {{ commit }}
+            </div>
+            {%- endif %}
           </div>
           <div class="right-details">
             <div class="icons">

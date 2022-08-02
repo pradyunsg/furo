@@ -82,6 +82,18 @@ html_theme_options = {
 }
 ```
 
+(commit)=
+
+### `commit`
+
+Controls whether you see the project's commit in the sidebar of the documentation.
+
+```python
+html_theme_options = {
+    "commit": get_git_revision(),
+}
+```
+
 ### `announcement`
 
 Add a site-wide announcement, to the top of every page when set. See {doc}`./announcement` for the details.
