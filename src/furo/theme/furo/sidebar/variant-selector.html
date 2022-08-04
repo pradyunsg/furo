@@ -34,8 +34,9 @@
 <div id="furo-versions" class="rst-versions" role="note" aria-label="{{ _('Versions') }}" tabindex="0">
   <p>Versions</p>
   <ul>
-  {% for version in versions -%}
-  <li{% if version.name == current_version.name %} class="current-version"{%- elif version.name == latest_version.name %} class="latest-version"{%- endif %}><a href="{{ version.url }}">{{ version.name }}</a></li>
+    <li class="latest-version">Latest: <a href="{{ latest_version.url }}">{{ latest_version.name }}</a></li>
+  {% for version in versions|reverse -%}
+  <li{% if version.name == current_version.name %} class="current-version"{%- endif %}><a href="{{ version.url }}">{{ version.name }}</a></li>
   {% endfor -%}
   </ul>
 </div>
