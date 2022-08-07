@@ -50,8 +50,8 @@ article
 
 .page
   display: flex
-  // fill the viewport for pages with little content.
-  min-height: 100%
+  height: 100vh
+  overflow-y: hidden
 
 .mobile-header
   width: 100%
@@ -79,7 +79,13 @@ article
 
 .main
   display: flex
-  flex: 1
+  overflow-y: scroll
+
+  position: relative
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
 
 // Sidebar (left) also covers the entire left portion of screen.
 .sidebar-drawer
@@ -272,7 +278,8 @@ article
     .sidebar-drawer
       top: 0
       left: 0
-      // Show the toc sidebar
+
+// Show the toc sidebar
 #__toc:checked
   & ~ .toc-overlay
     width: 100%
@@ -380,6 +387,8 @@ article
       label
         height: 100%
         width: 100%
+
+        user-select: none
 
   // Add a scroll margin for the content
   :target

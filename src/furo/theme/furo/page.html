@@ -184,24 +184,24 @@
         {% endblock footer %}
       </footer>
     </div>
-    <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
-      {% block right_sidebar %}
-      {% if not furo_hide_toc %}
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            {{ _("On this page") }}
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            {{ toc }}
-          </div>
+  </div>
+  <aside class="toc-drawer{% if furo_hide_toc %} no-toc{% endif %}">
+    {% block right_sidebar %}
+    {% if not furo_hide_toc %}
+    <div class="toc-sticky toc-scroll">
+      <div class="toc-title-container">
+        <span class="toc-title">
+          {{ _("On this page") }}
+        </span>
+      </div>
+      <div class="toc-tree-container">
+        <div class="toc-tree">
+          {{ toc }}
         </div>
       </div>
-      {% endif %}
-      {% endblock right_sidebar %}
-    </aside>
-  </div>
+    </div>
+    {% endif %}
+    {% endblock right_sidebar %}
+  </aside>
 </div>
 {%- endblock %}
