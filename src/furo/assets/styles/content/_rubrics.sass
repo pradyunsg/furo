@@ -2,3 +2,12 @@ p.rubric
   line-height: 1.25
   font-weight: bold
   font-size: 1.125em
+
+  // For Numpy-style documentation that's got rubrics within it.
+  // https://github.com/pradyunsg/furo/discussions/505
+  dd &
+    line-height: inherit
+    font-weight: inherit
+
+    font-size: var(--font-size--small)
+    text-transform: uppercase
