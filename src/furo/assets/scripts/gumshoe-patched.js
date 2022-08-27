@@ -145,7 +145,7 @@
         document.body.offsetHeight,
         document.documentElement.offsetHeight,
         document.body.clientHeight,
-        document.documentElement.clientHeight
+        document.documentElement.clientHeight,
       );
     };
 
@@ -333,7 +333,7 @@
         Array.prototype.forEach.call(navItems, function (item) {
           // Get the content for the nav item
           var content = document.getElementById(
-            decodeURIComponent(item.hash.substr(1))
+            decodeURIComponent(item.hash.substr(1)),
           );
           if (!content) return;
 
@@ -462,5 +462,5 @@
     //
 
     return Constructor;
-  }
+  },
 );
