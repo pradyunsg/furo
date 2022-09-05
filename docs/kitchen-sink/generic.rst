@@ -62,7 +62,7 @@ GUI labels should not run over line height.
 Keys / Menu labels
 ^^^^^^^^^^^^^^^^^^
 
-Key-bindings indicate that the read is to press a button on the keyboard or
+Key-bindings indicate that the reader is to press a button on the keyboard or
 mouse, for example :kbd:`MMB`, :kbd:`⌘+⇧+M` and :kbd:`Shift-MMB`. Another
 useful way is ``menuselection`` to show menus:
 :menuselection:`My --> Software --> Some menu --> Some sub menu 1 --> Some sub menu 2 --> Some sub menu 3`
