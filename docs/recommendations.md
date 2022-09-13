@@ -31,7 +31,7 @@ In addition to the above, a shoutout to the [Executable Books] project which mai
 [sphinx-autobuild]: https://github.com/executablebooks/sphinx-autobuild#readme
 [sphinx-copybutton]: https://github.com/executablebooks/sphinx-copybutton#readme
 [sphinx-inline-tabs]: https://github.com/pradyunsg/sphinx-inline-tabs#readme
-[sphinx-opengraph]: https://github.com/wpilibsuite/sphinxext-opengraph
+[sphinxext-opengraph]: https://github.com/wpilibsuite/sphinxext-opengraph
 [executable books]: https://executablebooks.org
 [ebp-extensions]: https://github.com/executablebooks/?q=sphinx
 
