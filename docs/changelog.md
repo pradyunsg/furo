@@ -2,7 +2,9 @@
 
 <!--
 
-Version codenames style: {adjective} {colorname}
+Version codenames style:
+
+date "+## %Y.%m.%d -- {adjective} {colorname}" | pbcopy
 
 https://patternbasedwriting.com/elementary_writing_success/list-4800-adjectives/
 https://en.wikipedia.org/wiki/Lists_of_colors
@@ -11,8 +13,8 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 ## 2022.06.21 -- Opulent Opal
 
-- Fix `docutils <= 0.17.x` compatibility
-- Bump to the latest Node.js LTS
+- Fix `docutils <= 0.17.x` compatibility.
+- Bump to the latest Node.js LTS.
 
 ## 2022.06.04.1 -- Naughty Nickel bugfix
 
