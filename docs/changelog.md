@@ -11,6 +11,17 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.09.15 -- Pragmatic Pistachio
+
+- Add a minimum version constraint on pygments.
+- Add an explicit dependency on `sass`.
+- Change right sidebar title from "Contents" to "On this page".
+- Correctly position sidebars on small screens.
+- Correctly select only Furo's own `svg` in related pages `nav`.
+- Make numpy-style documentation headers consistent.
+- Retitle the reference section.
+- Update npm dependencies.
+
 ## 2022.06.21 -- Opulent Opal
 
 - Fix `docutils <= 0.17.x` compatibility.
