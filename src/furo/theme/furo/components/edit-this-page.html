@@ -24,4 +24,6 @@
 {%- elif READTHEDOCS and conf_py_path and page_source_suffix and github_user != "None" and github_repo != "None" and github_version %}
   {% set url = "https://github.com/" + github_user + "/" + github_repo + "/edit/" + github_version + conf_py_path + pagename + page_source_suffix %}
   {{ furo_edit_button(url) }}
+{%- elif page_source_suffix %}
+  {{ furo_edit_button(determine_page_edit_link()) }}
 {%- endif -%}

@@ -12,6 +12,14 @@ html_theme_options = {
 }
 ```
 
+Alternatively, you can manually set an URL that will be used for the edit button link:
+
+```python
+html_theme_options = {
+    "source_edit_link": "_sources/{filename}.txt",
+}
+```
+
 ## Disabling on Read the Docs
 
 If you're building documentation on Read the Docs using a GitHub repository as the source, the edit button is enabled by default. If you wish to disable this, use {ref}`top_of_page_button`.
