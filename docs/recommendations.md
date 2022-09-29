@@ -7,7 +7,7 @@ This page lists a few opinionated recommendations for Sphinx plugins to use in y
 
   Markdown is a significantly more popular markup format than reStructuredText. This means that it's likely that potential contributors/developers on the project are significantly more familiar with Markdown than reStructuredText. MyST gives you the best of both worlds -- simplicity and familiarity of Markdown with the extensibility power of reST.
 
-[sphinx-opengraph]
+[sphinxext-opengraph]
 : This project automagically adds Open Graph meta tags to your site's generated HTML. The Open Graph protocol is used by social media websites to determine how to present a page when a link is posted, and by search engines as a criterion toward ranking.
 
 [sphinx-inline-tabs]
@@ -31,7 +31,7 @@ In addition to the above, a shoutout to the [Executable Books] project which mai
 [sphinx-autobuild]: https://github.com/executablebooks/sphinx-autobuild#readme
 [sphinx-copybutton]: https://github.com/executablebooks/sphinx-copybutton#readme
 [sphinx-inline-tabs]: https://github.com/pradyunsg/sphinx-inline-tabs#readme
-[sphinx-opengraph]: https://github.com/wpilibsuite/sphinxext-opengraph
+[sphinxext-opengraph]: https://github.com/wpilibsuite/sphinxext-opengraph
 [executable books]: https://executablebooks.org
 [ebp-extensions]: https://github.com/executablebooks/?q=sphinx
 
