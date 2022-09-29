@@ -27,3 +27,17 @@
   // Apply a border around code which no longer have a color background.
   .highlight
     border: 0.1pt solid var(--color-foreground-border)
+
+////////////////////////////////////////////////////////////////////////////////
+// Avoid page break in some relevant cases.
+////////////////////////////////////////////////////////////////////////////////
+@media print
+  ul, ol, dl, a, table, pre, blockquote
+    page-break-inside: avoid
+
+  h1, h2, h3, h4, h5, h6, img, figure, caption
+    page-break-inside: avoid
+    page-break-after: avoid
+
+  ul, ol, dl
+    page-break-before: avoid
