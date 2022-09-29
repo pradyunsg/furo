@@ -11,6 +11,11 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.09.29 -- Quaint Quartz
+
+- Add ability to set arbitrary URLs for edit button.
+- Add support for aligning text in MyST-parser generated tables.
+
 ## 2022.09.15 -- Pragmatic Pistachio
 
 - Add a minimum version constraint on pygments.
