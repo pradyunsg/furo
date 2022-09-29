@@ -121,7 +121,7 @@ Other relevant information.
 
 ### `todo`
 
-: This needs the `sphinx.ext.todo` extension.
+This needs the `sphinx.ext.todo` extension.
 
 ```{todo}
 Figure out why this extension uses `admonition-todo` as the class, instead of using `todo` (like every other admonition style in Sphinx).
