@@ -38,7 +38,7 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.
   > dt
     color: var(--color-api-overall)
 
-.sig
+.sig:not(.sig-inline)
   font-weight: bold
 
   font-size: var(--api-font-size)
@@ -82,8 +82,6 @@ em.property
   color: var(--color-api-paren)
 .sig-param
   font-style: normal
-.sig-inline
-  padding-left: 0.5rem
 
 .versionmodified
   font-style: italic

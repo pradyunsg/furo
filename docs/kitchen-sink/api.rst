@@ -27,3 +27,11 @@ Using Sphinx's :any:`sphinx.ext.autodoc` plugin, it is possible to auto-generate
 
 .. automodule:: furo._demo_module
     :members:
+
+C inline signature
+------------------
+
+.. c:type:: my_type
+
+This works :c:type:`my_type`, but I would like to point
+to a pointer of the type (:c:expr:`my_type *`).
