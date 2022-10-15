@@ -8,7 +8,7 @@
   --header-height: calc(
     var(--sidebar-item-line-height) + 4 * #{var(--sidebar-item-spacing-vertical)}
   );
-  --header-padding: 0.5rem;
+  --header-padding: 1rem;
 
   // Sidebar
   --sidebar-tree-space-above: 1.5rem;
