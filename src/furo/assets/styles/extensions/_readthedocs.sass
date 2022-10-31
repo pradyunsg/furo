@@ -3,20 +3,43 @@
 
 #furo-versions
   font-size: var(--sidebar-item-font-size)
+  margin-bottom: 4em
 
   .latest-version
     font-weight: bold
 
   .current-version
     font-weight: bold
-    //font-size: 1.5em
-    list-style-type: "⇛ "
 
   .caption
+    display: inline-block
     color: var(--color-sidebar-caption-text)
     font-weight: bold
     text-transform: uppercase
     font-size: var(--sidebar-caption-font-size)
+    padding-right: var(--sidebar-expander-width)
+    margin-top: 0
+
+  input[type=checkbox]
+    display: none
+    position: absolute
+    box-sizing: border-box
+    padding: 0
+    overflow: visible
+
+  input[type=checkbox]:checked ~ ul
+    display: inline-block
+    line-height: var(--sidebar-item-line-height)
+    margin-left: var(--sidebar-item-spacing-horizontal)
+    padding: var(--sidebar-item-spacing-vertical) var(--sidebar-item-spacing-horizontal)
+    text-decoration: none
+
+  ul
+    display: none
+
+  .versions-label
+    position: relative
+    float: right
 
 #furo-sidebar-ad-placement
   padding: var(--sidebar-item-spacing-vertical) var(--sidebar-item-spacing-horizontal)

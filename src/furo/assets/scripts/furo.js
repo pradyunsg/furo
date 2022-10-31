@@ -161,15 +161,37 @@ function setup() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// Version dropdown
+////////////////////////////////////////////////////////////////////////////////
+function versionDropdown() {
+  const checkbox = document.getElementById("versions-label");
+  checkbox.addEventListener("click", toggleDropdown);
+
+  function toggleDropdown() {
+    if (localStorage.getItem("version-dropdown-opened") === "true") {
+      localStorage.setItem("version-dropdown-opened", "false");
+    } else {
+      localStorage.setItem("version-dropdown-opened", "true");
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // Main entrypoint
 ////////////////////////////////////////////////////////////////////////////////
 function main() {
   document.body.parentNode.classList.remove("no-js");
-
   header = document.querySelector("header");
   tocScroll = document.querySelector(".toc-scroll");
 
   setup();
+
+  // Version dropdown functionality
+  const checkboxInput = document.getElementById("checkbox_toggle");
+  if (localStorage.getItem("version-dropdown-opened") === "true") {
+    checkboxInput.checked = true;
+  }
+  versionDropdown();
 }
 
 document.addEventListener("DOMContentLoaded", main);

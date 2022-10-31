@@ -31,9 +31,18 @@
   </div>
 </div>
 {% elif versions %}
-<div id="furo-versions" class="rst-versions" role="note" aria-label="{{ _('Versions') }}" tabindex="0">
+<div id="furo-versions" class="rst-versions sidebar-tree" role="note" aria-label="{{ _('Versions') }}" tabindex="0">
   <p class="caption">Versions</p>
-  <ul>
+  <input type="checkbox" id="checkbox_toggle" class="toctree-checkbox versions-checkbox" role="switch">
+  <label id="versions-label" class="versions-label" for="checkbox_toggle">
+    <div class="visually-hidden">Toggle child pages in navigation</div>
+      <i class="icon">
+        <svg>
+          <use href="#svg-arrow-right"></use>
+        </svg>
+      </i>
+    </label>
+  <ul id="versions-children">
     {#<li class="latest-version">Latest: <a href="{{ latest_version.url }}">{{ latest_version.name }}</a></li>#}
   {% for version in versions|reverse -%}
   <li{% if version.name == current_version.name %} class="current-version"{%- endif %}>{% if version.name == latest_version.name -%}<b>Latest: </b>{%- endif %}<a href="{{ version.url }}">{{ version.name }}</a></li>
