@@ -43,7 +43,7 @@ templates_path = ["_templates"]
 #
 
 extlinks = {
-    "pypi": ("https://pypi.org/project/%s/", ""),
+    "pypi": ("https://pypi.org/project/%s/", "%s"),
 }
 
 # -- Options for intersphinx -------------------------------------------------
