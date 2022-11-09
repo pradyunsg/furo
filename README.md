@@ -99,7 +99,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 [psycopg3]: https://www.psycopg.org/psycopg3/docs/
 [black]: https://black.readthedocs.io/en/stable/
 [pelican]: https://docs.getpelican.com/en/latest/
-[GCC]: https://gcc.gnu.org/onlinedocs/gcc/
+[gcc]: https://gcc.gnu.org/onlinedocs/gcc/
 
 <!-- end used-by -->
 
