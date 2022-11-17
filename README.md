@@ -90,6 +90,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [psycopg3] -- another of the early adopters!
 - [black]
 - [pelican] -- the first Python static site generator adopter!
+- [kitty]
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
@@ -98,6 +99,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 [psycopg3]: https://www.psycopg.org/psycopg3/docs/
 [black]: https://black.readthedocs.io/en/stable/
 [pelican]: https://docs.getpelican.com/en/latest/
+[kitty]: https://sw.kovidgoyal.net/kitty/
 
 <!-- end used-by -->
 
