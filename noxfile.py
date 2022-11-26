@@ -79,7 +79,7 @@ def docs_live(session):
     session.install("-e", ".", "sphinx-theme-builder[cli]")
 
     # Generate documentation into `build/docs`
-    session.run("stb", "serve", "docs/")
+    session.run("stb", "serve", "docs/", *session.posargs)
 
 
 @nox.session(reuse_venv=True)
