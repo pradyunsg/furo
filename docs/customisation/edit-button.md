@@ -1,6 +1,6 @@
 # Adding an edit button
 
-Furo can add a small edit button to each document.
+Furo can add a small edit button to each document to allow visitors to easily propose changes to that document using the repository's source control system.
 
 ## With popular VCS hosts
 
