@@ -87,9 +87,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [attrs] -- one of the early adopters!
 - [pip] -- what I wrote this for
 - [Python Developer’s Guide][devguide]
-- [psycopg3] -- another of the early adopters!
 - [black]
-- [pelican] -- the first Python static site generator adopter!
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
