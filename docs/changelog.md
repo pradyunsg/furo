@@ -11,6 +11,17 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2022.12.07 -- Reverent Raspberry
+
+- ✨ Add support for Sphinx 6.
+- ✨ Improve footnote presentation with docutils 0.18+.
+- Drop support for Sphinx 4.
+- Improve documentation about what the edit button does.
+- Improve handling of empty-flexboxes for better print experience on Chrome.
+- Improve styling for inline signatures.
+- Replace the `meta` generator tag with a comment.
+- Tweak labels with icons to prevent users selecting icons as text on touch.
+
 ## 2022.09.29 -- Quaint Quartz
 
 - Add ability to set arbitrary URLs for edit button.
