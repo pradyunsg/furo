@@ -1,0 +1,696 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="API documentation" href="../api/" /><link rel="prev" title="Text Formatting" href="../text-formatting/" />
+
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07.dev1 -->
+        <title>Admonitions - Furo</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pied-piper-admonition.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">Furo</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+  
+  
+  <span class="sidebar-brand-text">Furo</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/">Quickstart</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../customisation/">Customisation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/logo/">Adding a logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/announcement/">Adding an announcement banner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/edit-button/">Adding an edit button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/colors/">Changing colors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/fonts/">Changing fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/footer/">Changing footer icons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/landing-page/">Changing landing page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/sidebar/">Changing sidebar elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/sidebar-title/">Changing sidebar title</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/toc/">Hiding Contents sidebar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/injecting/">Injecting code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Markup Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../text-formatting/">Text Formatting</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Admonitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/">API documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code-blocks/">Code Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hyperlinks/">Hyperlinks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images/">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lists/">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tabs/">Tabs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../recommendations/">Recommendations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/workflow/">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/internals/">Internals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contributing/design/">Design Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../kitchen-sink/">Kitchen Sink</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/admonitions/">Admonitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/api/">API documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/blocks/">Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/generic/">Generic items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/images/">Images &amp; Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/lists/">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/really-long/">Really Long Page Title because we should test sidebar wrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/sphinx-design/">sphinx-design stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/structure/">Structural Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/structure/#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/tables/">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/typography/">Typography</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../stability/">Stability Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog/">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license/">License</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/pradyunsg/furo/edit/main/docs/reference/admonitions.md" title="Edit this page">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="admonitions">
+<h1>Admonitions<a class="headerlink" href="#admonitions" title="Permalink to this heading">#</a></h1>
+<p>Admonitions are a great way to include side content, without significantly interrupting the document flow. Sphinx provides several different types of admonitions and allows for the inclusion and nesting of arbitrary content.</p>
+<section id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading">#</a></h2>
+<div class="docutils container">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">reStructuredText</label><div class="tab-content docutils">
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">note</span><span class="p">::</span> This is what the most basic admonitions look like.
+
+
+<span class="p">..</span> <span class="ow">note</span><span class="p">::</span>
+   It is <span class="ge">*possible*</span> to have multiple paragraphs in the same admonition.
+
+   If you really want, you can even have lists, or code, or tables.
+
+
+This is from reStructuredText.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is what the most basic admonitions look like.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is <em>possible</em> to have multiple paragraphs in the same admonition.</p>
+<p>If you really want, you can even have lists, or code, or tables.</p>
+</div>
+<p>This is from reStructuredText.</p>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Markdown (MyST)</label><div class="tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{note} This is what the most basic admonitions look like.
+<span class="sb">```</span>
+
+<span class="sb">```{note}</span>
+<span class="sb">It is *possible* to have multiple paragraphs in the same admonition.</span>
+
+<span class="sb">If you really want, you can even have lists, or code, or tables.</span>
+<span class="sb">```</span>
+
+This is from Markdown.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is what the most basic admonitions look like.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is <em>possible</em> to have multiple paragraphs in the same admonition.</p>
+<p>If you really want, you can even have lists, or code, or tables.</p>
+</div>
+<p>This is from Markdown.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="custom-titles">
+<h2>Custom Titles<a class="headerlink" href="#custom-titles" title="Permalink to this heading">#</a></h2>
+<div class="docutils container">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">reStructuredText</label><div class="tab-content docutils">
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Look ma! A custom title.
+
+   It looks different though.
+
+
+<span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Another Custom Title
+   <span class="nc">:class:</span> note
+
+   Maaa! I made it look the same by setting the class.
+</pre></div>
+</div>
+<div class="admonition-look-ma-a-custom-title admonition">
+<p class="admonition-title">Look ma! A custom title.</p>
+<p>It looks different though.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Another Custom Title</p>
+<p>Maaa! I made it look the same by setting the class.</p>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Markdown (MyST)</label><div class="tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{admonition} Look ma! A custom title.
+It looks different though.
+<span class="sb">```</span>
+
+<span class="sb">```{admonition} Another Custom Title</span>
+<span class="sb">:class: note</span>
+
+<span class="sb">Maaa! I made it look the same by setting the class.</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+<div class="admonition-look-ma-a-custom-title admonition">
+<p class="admonition-title">Look ma! A custom title.</p>
+<p>It looks different though.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Another Custom Title</p>
+<p>Maaa! I made it look the same by setting the class.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="supported-types">
+<h2>Supported types<a class="headerlink" href="#supported-types" title="Permalink to this heading">#</a></h2>
+<section id="admonition">
+<h3><code class="docutils literal notranslate"><span class="pre">admonition</span></code><a class="headerlink" href="#admonition" title="Permalink to this heading">#</a></h3>
+<div class="admonition-the-one-with-the-custom-titles admonition">
+<p class="admonition-title">The one with the custom titles.</p>
+<p>It’s got a certain charm to it.</p>
+</div>
+</section>
+<section id="attention">
+<h3><code class="docutils literal notranslate"><span class="pre">attention</span></code><a class="headerlink" href="#attention" title="Permalink to this heading">#</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Climate change is real.</p>
+</div>
+</section>
+<section id="caution">
+<h3><code class="docutils literal notranslate"><span class="pre">caution</span></code><a class="headerlink" href="#caution" title="Permalink to this heading">#</a></h3>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Cliff ahead: Don’t drive off it.</p>
+</div>
+</section>
+<section id="danger">
+<h3><code class="docutils literal notranslate"><span class="pre">danger</span></code><a class="headerlink" href="#danger" title="Permalink to this heading">#</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Mad scientist at work!</p>
+</div>
+</section>
+<section id="error">
+<h3><code class="docutils literal notranslate"><span class="pre">error</span></code><a class="headerlink" href="#error" title="Permalink to this heading">#</a></h3>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>Does not compute.</p>
+</div>
+</section>
+<section id="hint">
+<h3><code class="docutils literal notranslate"><span class="pre">hint</span></code><a class="headerlink" href="#hint" title="Permalink to this heading">#</a></h3>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Insulators insulate, until they are subject to ______ voltage.</p>
+</div>
+</section>
+<section id="important">
+<h3><code class="docutils literal notranslate"><span class="pre">important</span></code><a class="headerlink" href="#important" title="Permalink to this heading">#</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Tech is not neutral, nor is it apolitical.</p>
+</div>
+</section>
+<section id="note">
+<h3><code class="docutils literal notranslate"><span class="pre">note</span></code><a class="headerlink" href="#note" title="Permalink to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a note.</p>
+</div>
+</section>
+<section id="seealso">
+<h3><code class="docutils literal notranslate"><span class="pre">seealso</span></code><a class="headerlink" href="#seealso" title="Permalink to this heading">#</a></h3>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Other relevant information.</p>
+</div>
+</section>
+<section id="tip">
+<h3><code class="docutils literal notranslate"><span class="pre">tip</span></code><a class="headerlink" href="#tip" title="Permalink to this heading">#</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>25% if the service is good.</p>
+</div>
+</section>
+<section id="todo">
+<h3><code class="docutils literal notranslate"><span class="pre">todo</span></code><a class="headerlink" href="#todo" title="Permalink to this heading">#</a></h3>
+<p>This needs the <code class="docutils literal notranslate"><span class="pre">sphinx.ext.todo</span></code> extension.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Figure out why this extension uses <code class="docutils literal notranslate"><span class="pre">admonition-todo</span></code> as the class, instead of using <code class="docutils literal notranslate"><span class="pre">todo</span></code> (like every other admonition style in Sphinx).</p>
+</div>
+</section>
+<section id="warning">
+<h3><code class="docutils literal notranslate"><span class="pre">warning</span></code><a class="headerlink" href="#warning" title="Permalink to this heading">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Reader discretion is strongly advised.</p>
+</div>
+</section>
+</section>
+<section id="nesting-admonitions">
+<h2>Nesting admonitions<a class="headerlink" href="#nesting-admonitions" title="Permalink to this heading">#</a></h2>
+<div class="docutils container">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">reStructuredText</label><div class="tab-content docutils">
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">note</span><span class="p">::</span>
+
+   You can nest admonitions.
+
+<span class="p">   ..</span> <span class="ow">warning</span><span class="p">::</span>
+
+      But you really should not.
+
+<span class="p">      ..</span> <span class="ow">danger</span><span class="p">::</span>
+
+         It&#39;s distracting.
+
+      And can be confusing for the user to understand.
+
+   And, honestly, looks weird.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can nest admonitions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>But you really should not.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>It’s distracting.</p>
+</div>
+<p>And can be confusing for the user to understand.</p>
+</div>
+<p>And, honestly, looks weird.</p>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Markdown (MyST)</label><div class="tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>`````{note}
+You can nest admonitions.
+
+````{warning}
+But you really should not.
+
+```{danger}
+It&#39;s distracting.
+```
+
+And can be confusing for the user to understand.
+````
+
+And, honestly, looks weird.
+`````
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can nest admonitions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>But you really should not.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>It’s distracting.</p>
+</div>
+<p>And can be confusing for the user to understand.</p>
+</div>
+<p>And, honestly, looks weird.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="custom-admonitions">
+<h2>Custom Admonitions<a class="headerlink" href="#custom-admonitions" title="Permalink to this heading">#</a></h2>
+<p>It is possible to define custom admonitions for use with Furo. This is done by
+<a class="reference internal" href="../../customisation/injecting/"><span class="doc std std-doc">including custom CSS</span></a> in the site.</p>
+<p>Borrowing from the <a class="reference external" href="https://squidfunk.github.io/mkdocs-material/reference/admonitions/#custom-admonitions">equivalent example for mkdocs-material</a>,
+the CSS would be something like:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nv">--icon--pied-piper</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="s1">&#39;data:image/svg+xml;charset=utf-8,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 576 512&quot;&gt;&lt;path d=&quot;M244 246c-3.2-2-6.3-2.9-10.1-2.9-6.6 0-12.6 3.2-19.3 3.7l1.7 4.9zm135.9 197.9c-19 0-64.1 9.5-79.9 19.8l6.9 45.1c35.7 6.1 70.1 3.6 106-9.8-4.8-10-23.5-55.1-33-55.1zM340.8 177c6.6 2.8 11.5 9.2 22.7 22.1 2-1.4 7.5-5.2 7.5-8.6 0-4.9-11.8-13.2-13.2-23 11.2-5.7 25.2-6 37.6-8.9 68.1-16.4 116.3-52.9 146.8-116.7C548.3 29.3 554 16.1 554.6 2l-2 2.6c-28.4 50-33 63.2-81.3 100-31.9 24.4-69.2 40.2-106.6 54.6l-6.3-.3v-21.8c-19.6 1.6-19.7-14.6-31.6-23-18.7 20.6-31.6 40.8-58.9 51.1-12.7 4.8-19.6 10-25.9 21.8 34.9-16.4 91.2-13.5 98.8-10zM555.5 0l-.6 1.1-.3.9.6-.6zm-59.2 382.1c-33.9-56.9-75.3-118.4-150-115.5l-.3-6c-1.1-13.5 32.8 3.2 35.1-31l-14.4 7.2c-19.8-45.7-8.6-54.3-65.5-54.3-14.7 0-26.7 1.7-41.4 4.6 2.9 18.6 2.2 36.7-10.9 50.3l19.5 5.5c-1.7 3.2-2.9 6.3-2.9 9.8 0 21 42.8 2.9 42.8 33.6 0 18.4-36.8 60.1-54.9 60.1-8 0-53.7-50-53.4-60.1l.3-4.6 52.3-11.5c13-2.6 12.3-22.7-2.9-22.7-3.7 0-43.1 9.2-49.4 10.6-2-5.2-7.5-14.1-13.8-14.1-3.2 0-6.3 3.2-9.5 4-9.2 2.6-31 2.9-21.5 20.1L15.9 298.5c-5.5 1.1-8.9 6.3-8.9 11.8 0 6 5.5 10.9 11.5 10.9 8 0 131.3-28.4 147.4-32.2 2.6 3.2 4.6 6.3 7.8 8.6 20.1 14.4 59.8 85.9 76.4 85.9 24.1 0 58-22.4 71.3-41.9 3.2-4.3 6.9-7.5 12.4-6.9.6 13.8-31.6 34.2-33 43.7-1.4 10.2-1 35.2-.3 41.1 26.7 8.1 52-3.6 77.9-2.9 4.3-21 10.6-41.9 9.8-63.5l-.3-9.5c-1.4-34.2-10.9-38.5-34.8-58.6-1.1-1.1-2.6-2.6-3.7-4 2.2-1.4 1.1-1 4.6-1.7 88.5 0 56.3 183.6 111.5 229.9 33.1-15 72.5-27.9 103.5-47.2-29-25.6-52.6-45.7-72.7-79.9zm-196.2 46.1v27.2l11.8-3.4-2.9-23.8zm-68.7-150.4l24.1 61.2 21-13.8-31.3-50.9zm84.4 154.9l2 12.4c9-1.5 58.4-6.6 58.4-14.1 0-1.4-.6-3.2-.9-4.6-26.8 0-36.9 3.8-59.5 6.3z&quot;/&gt;&lt;/svg&gt;&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">admonition</span><span class="p">.</span><span class="nc">pied-piper</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="mi">155</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">admonition</span><span class="p">.</span><span class="nc">pied-piper</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="nc">admonition-title</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="mi">155</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">border-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="mi">155</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="p">.</span><span class="nc">admonition</span><span class="p">.</span><span class="nc">pied-piper</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="nc">admonition-title</span><span class="p">::</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span><span class="w"> </span><span class="mi">155</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kp">-webkit-</span><span class="k">mask-image</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--icon--pied-piper</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">mask-image</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--icon--pied-piper</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>With this, you can now use this by setting the <code class="docutils literal notranslate"><span class="pre">:class:</span> <span class="pre">pied-piper</span></code> on an
+admonition:</p>
+<div class="docutils container">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">reStructuredText</label><div class="tab-content docutils">
+<div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">admonition</span><span class="p">::</span> Pied Piper
+   <span class="nc">:class:</span> pied-piper
+
+   This is neat, right?
+
+
+This is from reStructuredText.
+</pre></div>
+</div>
+<div class="pied-piper admonition">
+<p class="admonition-title">Pied Piper</p>
+<p>This is neat, right?</p>
+</div>
+<p>This is from reStructuredText.</p>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Markdown (MyST)</label><div class="tab-content docutils">
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{admonition} Pied Piper
+:class: pied-piper
+
+This is neat, right?
+```
+
+This is from Markdown.
+</pre></div>
+</div>
+<div class="pied-piper admonition">
+<p class="admonition-title">Pied Piper</p>
+<p>This is neat, right?</p>
+</div>
+<p>This is from Markdown.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../api/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">API documentation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../text-formatting/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Text Formatting</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2020, Pradyun Gedam
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/pradyunsg/furo" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Admonitions</a><ul>
+<li><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li><a class="reference internal" href="#custom-titles">Custom Titles</a></li>
+<li><a class="reference internal" href="#supported-types">Supported types</a><ul>
+<li><a class="reference internal" href="#admonition"><code class="docutils literal notranslate"><span class="pre">admonition</span></code></a></li>
+<li><a class="reference internal" href="#attention"><code class="docutils literal notranslate"><span class="pre">attention</span></code></a></li>
+<li><a class="reference internal" href="#caution"><code class="docutils literal notranslate"><span class="pre">caution</span></code></a></li>
+<li><a class="reference internal" href="#danger"><code class="docutils literal notranslate"><span class="pre">danger</span></code></a></li>
+<li><a class="reference internal" href="#error"><code class="docutils literal notranslate"><span class="pre">error</span></code></a></li>
+<li><a class="reference internal" href="#hint"><code class="docutils literal notranslate"><span class="pre">hint</span></code></a></li>
+<li><a class="reference internal" href="#important"><code class="docutils literal notranslate"><span class="pre">important</span></code></a></li>
+<li><a class="reference internal" href="#note"><code class="docutils literal notranslate"><span class="pre">note</span></code></a></li>
+<li><a class="reference internal" href="#seealso"><code class="docutils literal notranslate"><span class="pre">seealso</span></code></a></li>
+<li><a class="reference internal" href="#tip"><code class="docutils literal notranslate"><span class="pre">tip</span></code></a></li>
+<li><a class="reference internal" href="#todo"><code class="docutils literal notranslate"><span class="pre">todo</span></code></a></li>
+<li><a class="reference internal" href="#warning"><code class="docutils literal notranslate"><span class="pre">warning</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nesting-admonitions">Nesting admonitions</a></li>
+<li><a class="reference internal" href="#custom-admonitions">Custom Admonitions</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    </body>
+</html>
