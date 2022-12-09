@@ -24,7 +24,7 @@ print("Or disable all syntax highlighting.")
 ```
 
 There's a lot of power hidden underneath the triple backticks in MyST Markdown,
-as seen in <https://myst-parser.readthedocs.io/en/latest/using/intro.html#block-level-directives-with-myst-markdown>.
+as seen in <https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html>.
 
 +++
 
