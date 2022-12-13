@@ -6,7 +6,7 @@ repos:
         exclude: src/furo/theme/.*|docs/(recommendations|reference/admonitions).md
 
   - repo: https://github.com/psf/black
-    rev: 22.10.0
+    rev: 22.12.0
     hooks:
       - id: black
         language_version: python3.8
@@ -18,7 +18,7 @@ repos:
         additional_dependencies: [black==21.8b0]
 
   - repo: https://github.com/PyCQA/isort
-    rev: 5.10.1
+    rev: 5.11.1
     hooks:
       - id: isort
         files: \.py$
