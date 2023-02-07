@@ -105,3 +105,15 @@ List Tables
 
            This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
            Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+
+.. list-table:: This is a list table with an admonition in it.
+
+    * - List table
+      - Header 1
+    * - Stub Row 1
+      - Some information.
+
+        .. admonition:: Warning
+            :class: warning
+
+            There's something you should keep in mind!
