@@ -25,14 +25,14 @@ $admonitions: (
 
 @mixin default-admonition($color, $icon-name) {
   --color-admonition-title: #{$color};
-  --color-admonition-title-background: #{rgba($color, 0.1)};
+  --color-admonition-title-background: #{rgba($color, 0.2)};
 
   --icon-admonition-default: var(--icon-#{$icon-name});
 }
 
 @mixin default-topic($color, $icon-name) {
   --color-topic-title: #{$color};
-  --color-topic-title-background: #{rgba($color, 0.1)};
+  --color-topic-title-background: #{rgba($color, 0.2)};
 
   --icon-topic-default: var(--icon-#{$icon-name});
 }
@@ -42,7 +42,7 @@ $admonitions: (
     --color-admonition-title--#{$name}: #{nth($values, 1)};
     --color-admonition-title-background--#{$name}: #{rgba(
         nth($values, 1),
-        0.1
+        0.2
       )};
   }
 }
