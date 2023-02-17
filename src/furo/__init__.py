@@ -384,7 +384,7 @@ def _overwrite_pygments_css(
         return
 
     assert app.builder
-    with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w") as f:
+    with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w", encoding='utf-8') as f:
         f.write(get_pygments_stylesheet())
 
 
