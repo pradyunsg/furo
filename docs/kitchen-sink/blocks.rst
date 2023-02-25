@@ -187,6 +187,7 @@ This has an alias of ``code-block``.
 
     from typing import Iterator
 
+
     # This is an example
     class Math:
         @staticmethod
