@@ -37,7 +37,6 @@ extensions = [
     "sphinx_design",
     "sphinx_inline_tabs",
 ]
-templates_path = ["_templates"]
 
 # -- Options for extlinks ----------------------------------------------------
 #
