@@ -15,7 +15,7 @@ sys.path.append(os.path.abspath("./kitchen-sink/demo_py"))
 #
 
 project = "furo"
-copyright = "2020, Pradyun Gedam"
+copyright = "2020-2023, Pradyun Gedam"
 author = "Pradyun Gedam"
 
 # -- General configuration ---------------------------------------------------
