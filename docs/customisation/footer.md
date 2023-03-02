@@ -86,7 +86,7 @@ If you wish to use Font Awesome icons in the footer, it's a two step process.
               "name": "GitHub",
               "url": "https://github.com/pradyunsg/furo",
               "html": "",
-              "class": "fa-solid fa-github fa-2x",
+              "class": "fa-brands fa-solid fa-github fa-2x",
           },
       ],
   }
