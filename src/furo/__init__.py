@@ -4,7 +4,6 @@ __version__ = "2023.03.23.dev1"
 
 import hashlib
 import logging
-import os
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, Iterator, List, Optional
@@ -21,7 +20,7 @@ from sphinx.transforms.post_transforms import SphinxPostTransform
 
 from .navigation import get_navigation_tree
 
-THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
+THEME_PATH = (Path(__file__).parent / "theme/furo").resolve()
 
 logger = logging.getLogger(__name__)
 
@@ -385,7 +384,7 @@ def _overwrite_pygments_css(
 
     assert app.builder
     with open(
-        os.path.join(app.builder.outdir, "_static", "pygments.css"),
+        str(Path(app.builder.outdir) / "_static/pygments.css"),
         "w",
         encoding="utf-8",
     ) as f:
