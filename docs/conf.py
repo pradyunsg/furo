@@ -147,3 +147,13 @@ if FONT_AWESOME_TESTING:
             "class": "fa-brands fa-solid fa-github fa-2x",
         },
     ]
+
+
+def setup(app):
+    # See https://github.com/sphinx-doc/sphinx/issues/5562#issuecomment-434296574
+    app.add_object_type(
+        "confval",
+        "confval",
+        objname="configuration value",
+        indextemplate="pair: %s; configuration value",
+    )

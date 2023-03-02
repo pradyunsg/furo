@@ -45,3 +45,8 @@ If you're building documentation on Read the Docs using a github.com-hosted repo
 If you wish to disable this, use {ref}`top_of_page_button` and set it to `None`.
 
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
+
+## Source link
+
+Sphinx configuration option {confval}`sphinx:html_show_sourcelink` is ignored by this theme.
+The only supported link to the sources is through the edit button.
