@@ -88,7 +88,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [pip] -- what I wrote this for
 - [Python Developer’s Guide][devguide]
 - [black]
-- [LearnWebGPU]
+- [LearnWebGPU C++ Guide][learnwebgpu]
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
