@@ -88,7 +88,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sit temporibus c
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sit temporibus cupiditate in ducimus illum assumenda dolor, dignissimos laboriosam voluptate dolorem dolore eum repellendus minima, nisi sequi? Eveniet, dignissimos asperiores!
 
-## Heading 14
+## `Heading_14_is_a_really_long_heading_that_is_also_code_and_should_wrap_when_it_reaches_the_sidebar`
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sit temporibus cupiditate in ducimus illum assumenda dolor, dignissimos laboriosam voluptate dolorem dolore eum repellendus minima, nisi sequi? Eveniet, dignissimos asperiores!
 
