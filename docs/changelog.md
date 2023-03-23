@@ -11,6 +11,17 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2023.03.23 -- Sassy Saffron
+
+- Regenerate with newer version of sphinx-theme-builder, to fix RECORD hashes.
+- Update Python version classifiers.
+- Increase the icon size in mobile header.
+- Increase admonition title bg opacity.
+- Change the default API background to transparent.
+- Transition the API background change.
+- Remove the "indent" of API entries which have a background.
+- Break long inline code literals.
+
 ## 2022.12.07 -- Reverent Raspberry
 
 - ✨ Add support for Sphinx 6.
