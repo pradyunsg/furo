@@ -144,6 +144,6 @@ if FONT_AWESOME_TESTING:
             "name": "GitHub",
             "url": "https://github.com/pradyunsg/furo",
             "html": "",
-            "class": "fa-solid fa-github fa-2x",
+            "class": "fa-brands fa-solid fa-github fa-2x",
         },
     ]
