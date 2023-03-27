@@ -3,7 +3,7 @@ requires = ["sphinx-theme-builder >= 0.2.0a10"]
 build-backend = "sphinx_theme_builder"
 
 [tool.sphinx-theme-builder]
-node-version = "16.15.1"
+node-version = "16.19.1"
 additional-compiled-static-assets = [
   "styles/furo-extensions.css",
 ]
