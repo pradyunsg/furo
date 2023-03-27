@@ -11,9 +11,13 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
-## 2023.03.23 -- Sassy Saffron
+## 2023.03.27 -- Tasty Tangerine
 
 - Regenerate with newer version of sphinx-theme-builder, to fix RECORD hashes.
+- Add missing class to Font Awesome examples
+
+## 2023.03.23 -- Sassy Saffron
+
 - Update Python version classifiers.
 - Increase the icon size in mobile header.
 - Increase admonition title bg opacity.
