@@ -94,12 +94,17 @@ def lint(session):
     session.run("pre-commit", "run", *args)
 
 
-@nox.session
-def test(session):
-    session.install("-e", ".[test]")
-
-    args = session.posargs or ["-n", "auto", "--cov", PACKAGE_NAME]
-    session.run("pytest", *args)
+@nox.session(name="inherited-theme", reuse_venv=True)
+def inherited_theme(session):
+    session.install(".")
+    session.install("./theme_inheritance_test")
+    session.run(
+        "sphinx-build",
+        "-b",
+        "html",
+        "theme_inheritance_test/docs/",
+        "theme_inheritance_test/docs/_build/html",
+    )
 
 
 @nox.session

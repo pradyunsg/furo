@@ -7,3 +7,7 @@ node_modules
 /build
 /dist
 __pycache__
+
+theme_inheritance_test/build
+theme_inheritance_test/docs/_build
+theme_inheritance_test/src/*.egg-info
