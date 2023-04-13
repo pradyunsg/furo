@@ -58,7 +58,7 @@ def get_navigation_tree(toctree_html: str) -> str:
             "div",
             attrs={"class": "visually-hidden"},
         )
-        screen_reader_label.string = "Toggle child pages in navigation"
+        screen_reader_label.string = f"Toggle navigation of {element.find('a').text}"
         label.append(screen_reader_label)
         label.append(_get_navigation_expand_image(soup))
 
