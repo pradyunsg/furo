@@ -167,10 +167,11 @@ def _html_page_context(
     templatename: str,
     context: Dict[str, Any],
     doctree: Any,
+    *,
+    validate_furo: bool = True,
 ) -> None:
-    if app.config.html_theme != "furo":
+    if validate_furo and app.config.html_theme != "furo":
         return
-
     assert isinstance(app.builder, StandaloneHTMLBuilder)
 
     if "css_files" in context:
@@ -218,8 +219,10 @@ def _html_page_context(
     }
 
 
-def _builder_inited(app: sphinx.application.Sphinx) -> None:
-    if app.config.html_theme != "furo":
+def _builder_inited(
+    app: sphinx.application.Sphinx, *, validate_furo: bool = True
+) -> None:
+    if validate_furo and app.config.html_theme != "furo":
         return
     if "furo" in app.config.extensions:
         raise Exception(
