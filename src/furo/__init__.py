@@ -167,12 +167,13 @@ def _html_page_context(
     templatename: str,
     context: Dict[str, Any],
     doctree: Any,
-    *,
-    validate_furo: bool = True,
 ) -> None:
-    if validate_furo and app.config.html_theme != "furo":
-        return
-    assert isinstance(app.builder, StandaloneHTMLBuilder)
+    if not isinstance(app.builder, StandaloneHTMLBuilder):
+        raise Exception(
+            "Furo is being used with a non-HTML builder. "
+            "If you're seeing this error, it is a symptom of a mistake in your "
+            "configuration."
+        )
 
     if "css_files" in context:
         if "_static/styles/furo.css" not in context["css_files"]:
@@ -219,11 +220,7 @@ def _html_page_context(
     }
 
 
-def _builder_inited(
-    app: sphinx.application.Sphinx, *, validate_furo: bool = True
-) -> None:
-    if validate_furo and app.config.html_theme != "furo":
-        return
+def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if "furo" in app.config.extensions:
         raise Exception(
             "Did you list 'furo' in the `extensions` in conf.py? "
