@@ -32,7 +32,7 @@ This is different from how `html_logo` works, which copies the given filename in
 
 ## Related Information
 
-It is also possible to [hide the name of the project in the sidebar](customisation/index.md#sidebar_hide_name), which might be desirable if the logo contains the project name.
+It is also possible to [hide the name of the project in the sidebar](sidebar_hide_name), which might be desirable if the logo contains the project name.
 
 [sphinx-html_logo]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_logo
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options

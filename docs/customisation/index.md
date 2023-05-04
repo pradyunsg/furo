@@ -50,6 +50,8 @@ html_theme_options = {
 Typos in the `*_css_variables` dictionary are silently ignored, and do not raise any errors or warnings. Double check that your spellings and values are correct and valid.
 ```
 
+(sidebar_hide_name)=
+
 ### `sidebar_hide_name`
 
 Controls whether you see the project's name in the sidebar of the documentation. This is useful when you only want to show your documentation's logo in the sidebar. The default is `False`.
