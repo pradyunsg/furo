@@ -352,8 +352,8 @@ def get_pygments_stylesheet() -> str:
 
     There is no way to tell Sphinx how the theme handles dark mode; at this time.
     """
-    light_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["light"])
-    dark_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["dark"])
+    light_formatter = PygmentsBridge.html_formatter(style=_KNOWN_STYLES_IN_USE["light"])
+    dark_formatter = PygmentsBridge.html_formatter(style=_KNOWN_STYLES_IN_USE["dark"])
 
     lines: List[str] = []
 
