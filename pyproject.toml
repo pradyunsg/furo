@@ -17,7 +17,7 @@ readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
   "beautifulsoup4",
-  "sphinx >= 5.0,<7.0",
+  "sphinx >= 6.0,<8.0",
   "sphinx-basic-ng",
   "pygments >= 2.7",
 ]
