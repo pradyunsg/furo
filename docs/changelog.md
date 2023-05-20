@@ -11,6 +11,14 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2023.05.20 -- Unassuming Ultramarine
+
+- ✨ Add support for Sphinx 7.
+- Drop support for Sphinx 5.
+- Improve the screen-reader label for sidebar collapse.
+- Make it easier to create derived themes from Furo.
+- Bump all JS dependencies (NodeJS and npm packages).
+
 ## 2023.03.27 -- Tasty Tangerine
 
 - Regenerate with newer version of sphinx-theme-builder, to fix RECORD hashes.
