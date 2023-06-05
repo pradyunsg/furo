@@ -1,15 +1,23 @@
 {
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "http-server build/docs",
+    "test": "npm run _docker-build && npm run _docker-run",
+    "_docker-build": "docker build -t furo-snapshots -f snapshot_tests/Dockerfile .",
+    "_docker-run": "docker run --rm --init -v $(pwd)/snapshot_results:/app/snapshot_results -v $(pwd)/snapshot_tests/snapshots.test.js-snapshots:/app/snapshot_tests/snapshots.test.js-snapshots furo-snapshots",
+    "_run-tests": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.34.3",
     "autoprefixer": "^10.4.14",
-    "sass": "^1.60.0",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^4.2.2",
+    "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.7.5",
     "normalize.css": "^8.0.1",
+    "playwright": "^1.34.3",
     "postcss-loader": "^7.1.0",
+    "sass": "^1.60.0",
     "sass-loader": "^13.2.1",
     "style-loader": "^3.3.2",
     "webpack": "^5.76.3",

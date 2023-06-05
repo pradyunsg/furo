@@ -1,0 +1,28 @@
+name: Tests
+on: [pull_request]
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'pradyunsg'
+    container:
+      # Keep in sync with snapshot_tests/Dockerfile's base image.
+      image: mcr.microsoft.com/playwright:v1.34.0-jammy
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - uses: actions/setup-node@v3
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Build docs
+        run: pipx run nox -s docs
+
+      - name: Run visual regression tests
+        run: npm run _run-tests
+      - name: Upload snapshot results
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: snapshot_results
+          path: snapshot_results/

@@ -1,9 +1,11 @@
 # npm stuff
 .nodeenv
 node_modules
+/snapshot_results
 
 # Python stuff
 .nox
 /build
 /dist
 __pycache__
+.mypy_cache

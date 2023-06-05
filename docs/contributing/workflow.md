@@ -72,6 +72,32 @@ nox -s docs
 
 Generate the documentation for Furo into the `build/docs` folder. This (mostly) does the same thing as `nox -s docs-live`, except it invokes `sphinx-build` instead of [sphinx-autobuild].
 
+### Visual regression testing
+
+We use visual regression testing via [Playwright](https://playwright.dev/docs/test-snapshots) to take screenshots of the site and check that every change we make is intentional. If a screenshot has changed, the test will fail. You can inspect the folder `snapshot_results` to compare the before and after. If the change was intentional, then we update the expected screenshot:
+
+1. Find the "actual" snapshot for the failing test, such as `footer-snapshot-has-not-changed-1-actual.png`.
+2. Copy that snapshot into the folder `snapshot_tests/snapshots.test.js-snapshots`. Rename the `-actual.png` file ending to be `-linux.png` and overwrite the prior file.
+
+We upload `snapshot_results` in CI. So, you can get the changed snapshot from GitHub Actions:
+
+1. Navigate to the GitHub Actions page for the "Tests" action.
+2. Open the "Summary" page with the house icon.
+3. Under the "Artifacts" section, there should be a "snapshot_results" entry. Download it.
+
+You can also run the tests locally. First, you need to install:
+
+1. [Node.js](https://nodejs.org/en). If you expect to use JavaScript in other projects, consider using [NVM](https://github.com/nvm-sh/nvm). Otherwise, consider using [Homebrew](https://formulae.brew.sh/formula/node) or installing [Node.js directly](https://nodejs.org/en).
+2. [Docker](https://www.docker.com). You must also ensure that it is running.
+
+Then, to run the tests locally:
+
+1. `npm install`
+2. Build the docs, `nox -e docs`
+3. `npm test`
+
+You must rebuild the docs with `nox -e docs` whenever you make changes to the theme or docs folder. The docs will not automatically rebuild and `nox -e docs-live` will not work properly.
+
 ## Release process
 
 - Update the changelog

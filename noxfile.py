@@ -7,7 +7,7 @@ import os
 import nox
 
 PACKAGE_NAME = "furo"
-nox.options.sessions = ["lint", "test"]
+nox.options.sessions = ["lint"]
 
 
 #
@@ -78,7 +78,6 @@ def docs_live(session):
     session.install("-r", "docs/requirements.txt")
     session.install("-e", ".", "sphinx-theme-builder[cli]")
 
-    # Generate documentation into `build/docs`
     session.run("stb", "serve", "docs/", *session.posargs)
 
 
@@ -92,14 +91,6 @@ def lint(session):
         args.append("--show-diff-on-failure")
 
     session.run("pre-commit", "run", *args)
-
-
-@nox.session
-def test(session):
-    session.install("-e", ".[test]")
-
-    args = session.posargs or ["-n", "auto", "--cov", PACKAGE_NAME]
-    session.run("pytest", *args)
 
 
 @nox.session
