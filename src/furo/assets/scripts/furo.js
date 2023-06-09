@@ -140,7 +140,9 @@ function setupScrollSpy() {
     recursive: true,
     navClass: "scroll-current",
     offset: () => {
-      const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const rem = parseFloat(
+        getComputedStyle(document.documentElement).fontSize,
+      );
       const headerRect = header.getBoundingClientRect();
       return headerRect.top + headerRect.height + 0.5 * rem + 1;
     },
