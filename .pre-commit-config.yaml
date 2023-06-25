@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.0-alpha.6
+    rev: v3.0.0-alpha.9-for-vscode
     hooks:
       - id: prettier
         exclude: src/furo/theme/.*|docs/(recommendations|reference/admonitions).md
@@ -11,7 +11,7 @@ repos:
       - id: black
 
   - repo: https://github.com/asottile/blacken-docs
-    rev: 1.13.0
+    rev: 1.14.0
     hooks:
       - id: blacken-docs
 
@@ -40,7 +40,7 @@ repos:
       - id: flake8
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.2.0
+    rev: v1.3.0
     hooks:
       - id: mypy
         args: [--disallow-untyped-defs, --ignore-missing-imports]
