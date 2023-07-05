@@ -1,6 +1,6 @@
 # Changing sidebar depth
 
-By default, Furo includes your full site in the left sidebar's table of contents. This is intentional to have a good user experience: 
+By default, Furo includes your full site in the left sidebar's table of contents. This is intentional to have a good user experience:
 
 - users can easily navigate your whole site with fewer clicks, and
 - they can easily see where they are in the site hierarchy.
@@ -33,7 +33,5 @@ For example:
 ```python
 import os
 
-html_theme_options = {
-   "navigation_depth": os.getenv("NAVIGATION_DEPTH", -1)
-}
+html_theme_options = {"navigation_depth": os.getenv("NAVIGATION_DEPTH", -1)}
 ```
