@@ -16,6 +16,7 @@ footer
 landing-page
 sidebar
 sidebar-title
+sidebar-depth
 toc
 injecting
 ```
