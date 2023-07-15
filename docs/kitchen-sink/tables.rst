@@ -64,6 +64,10 @@ Pradyun's pip fork and installer     .. code-block:: bash
 
                                         pip install "pip @ git+https://github.com/pradyunsg/pip#20.3.3" "installer @ git+https://github.com/pradyunsg/installer"
 
+                                     .. note::
+
+                                        This is only reasonable if you're Pradyun.
+
 PyPI                                 .. code-block:: bash
 
                                         pip install pip installer
