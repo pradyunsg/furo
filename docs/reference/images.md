@@ -76,6 +76,16 @@ based on the currently active colour scheme.
 :class: only-dark
 ```
 
+```{figure} https://source.unsplash.com/200x200/daily?cute+cats
+:align: center
+:figclass: only-light
+```
+
+```{figure} https://source.unsplash.com/200x200/daily?cute+dogs
+:align: center
+:figclass: only-dark
+```
+
 This is from Markdown.
 
 +++
@@ -88,6 +98,16 @@ This is from Markdown.
 .. image:: https://source.unsplash.com/200x200/daily?cute+cats
    :align: center
    :class: only-dark
+
+
+.. figure:: https://source.unsplash.com/200x200/daily?cute+cats
+   :align: center
+   :figclass: only-light
+
+
+.. figure:: https://source.unsplash.com/200x200/daily?cute+dogs
+   :align: center
+   :figclass: only-dark
 
 
 This is from reStructuredText.
