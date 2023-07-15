@@ -172,6 +172,21 @@ https://docutils.sourceforge.io/docs/ref/rst/directives.html#parsed-literal-bloc
     curl -O http://someurl/release-0.1.0.tar-gz
     echo "This is an intentionally very long line because I want to make sure that we are handling scrollable code blocks correctly."
 
+    asyncio.set_event_loop_policy(
+        asyncio.WindowsSelectorEventLoopPolicy()
+    )
+
+With inline code
+~~~~~~~~~~~~~~~~
+
+Here's a parsed literal containing nested inline code:
+
+.. parsed-literal::
+
+    :obj:`asyncio.set_event_loop_policy`\ (
+        :obj:`asyncio.WindowsSelectorEventLoopPolicy`\ ()
+    )
+
 Code Block
 ----------
 
