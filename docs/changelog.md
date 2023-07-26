@@ -11,6 +11,12 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2023.07.26 -- Vigilant Volt
+
+- Fix compatiblity with Sphinx 7.1.
+- Improve how content overflow is handled.
+- Improve how literal blocks containing inline code are handled.
+
 ## 2023.05.20 -- Unassuming Ultramarine
 
 - ✨ Add support for Sphinx 7.
