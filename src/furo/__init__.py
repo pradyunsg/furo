@@ -173,13 +173,6 @@ def _html_page_context(
     context: Dict[str, Any],
     doctree: Any,
 ) -> None:
-    if not isinstance(app.builder, StandaloneHTMLBuilder):
-        raise Exception(
-            "Furo is being used with a non-HTML builder. "
-            "If you're seeing this error, it is a symptom of a mistake in your "
-            "configuration."
-        )
-
     if "css_files" in context:
         if "_static/styles/furo.css" not in [c.filename for c in context["css_files"]]:
             raise Exception(
