@@ -246,7 +246,6 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     app.add_css_file("styles/furo-extensions.css", priority=600)
 
     builder = app.builder
-    assert builder, "what?"
     assert (
         builder.highlighter is not None
     ), "there should be a default style known to Sphinx"
