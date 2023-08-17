@@ -80,12 +80,6 @@
     {%- block extrahead -%}{%- endblock -%}
   </head>
   <body>
-    {% block body %}
-    <script>
-      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
-    </script>
-    {% endblock %}
-
     {%- block scripts -%}
 
     {# Custom JS #}
@@ -100,5 +94,11 @@
     {%- endblock -%}
 
     {%- endblock scripts -%}
+
+    {% block body %}
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    {% endblock %}
   </body>
 </html>
