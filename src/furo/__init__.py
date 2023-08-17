@@ -399,7 +399,7 @@ def _overwrite_pygments_css(
 
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     """Entry point for sphinx theming."""
-    app.require_sphinx("3.0")
+    app.require_sphinx("6.0")
 
     app.add_config_value(
         "pygments_dark_style", default="native", rebuild="env", types=[str]
