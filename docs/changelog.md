@@ -11,6 +11,10 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2023.08.17 -- Wonderous White
+
+- Fix compatiblity with Sphinx 7.2.0 and 7.2.1.
+
 ## 2023.07.26 -- Vigilant Volt
 
 - Fix compatiblity with Sphinx 7.1.
