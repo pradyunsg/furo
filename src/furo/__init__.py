@@ -277,70 +277,7 @@ def _get_light_style(app: sphinx.application.Sphinx) -> Style:
 
 
 def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
-    # number_of_hours_spent_figuring_this_out = 7
-    #
-    # Hello human in the future! This next block of code needs a bit of a story, and
-    # if you're going to touch it, remember to update the number above (or remove this
-    # comment entirely).
-    #
-    # Hopefully, you know that Sphinx allows extensions and themes to add configuration
-    # values via `app.add_config_value`. This usually lets users set those values from
-    # `conf.py` while allowing the extension to read from it and utilise that information.
-    # As any reasonable person who's written a Sphinx extension before, you would
-    # expect the following to work:
-    #
-    #     dark_style = app.config.pygments_dark_style
-    #
-    # Turns out, no. How dare you expect things to just work!? That stuff just returns
-    # the default value provided when calling `app.add_config_value`. Yes, even if you
-    # set it in `conf.py`. Why? Good question. :)
-    #
-    # The logic in Sphinx literally looks it up in the same mapping as what was
-    # manipulated by `add_config_value`, and there's no other spot where that value
-    # gets manipulated. I spent a bunch of time debugging how that class works, and...
-    # yea, I can't figure it out. There's multiple mappings floating around and bunch
-    # of manipulation being done for all kinds of things.
-    #
-    # The only place on the config object where I was able to find the user-provided
-    # value from `conf.py` is a private variable `self._raw_config`. Those values are
-    # supposed to get added to self.__dict__[...], and generally be accessible through
-    # the object's custom `__getattr__`.
-    #
-    # Anyway, after giving up on figuring out how to file a PR to fix this upstream, I
-    # started looking for hacky ways to get this without reaching into private
-    # variables. That quest led to a very simple conclusion: no, you can't do that.
-    #
-    # So, here we are: with the only option being to reach into the guts of the beast,
-    # and pull out the specific thing that's needed. This is obviously fragile though,
-    # so this is written with the assumption that any changes to Sphinx's config
-    # object's internals would correspond to the originally expected behaviour working.
-    # This is so that when any of Sphinx's internals change, this logic would basically
-    # fall back to the original behaviour and also print a warning, so that hopefully
-    # someone will report this. Maybe it'll all be fixed, and I can remove this whole
-    # hack and this giant comment.
-
-    # HACK: begins here
-    dark_style = None
-    try:
-        if (
-            hasattr(app.config, "_raw_config")
-            and isinstance(app.config._raw_config, dict)
-            and "pygments_dark_style" in app.config._raw_config
-        ):
-            dark_style = app.config._raw_config["pygments_dark_style"]
-    except (AttributeError, KeyError) as e:
-        logger.warning(
-            (
-                "Furo could not determine the value of `pygments_dark_style`. "
-                "Falling back to using the value provided by Sphinx.\n"
-                "Caused by %s"
-            ),
-            e,
-        )
-
-    if dark_style is None:
-        dark_style = app.config.pygments_dark_style
-
+    dark_style = app.config.pygments_dark_style
     return PygmentsBridge("html", dark_style).formatter_args["style"]
 
 
