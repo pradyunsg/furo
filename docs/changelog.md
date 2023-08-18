@@ -11,6 +11,13 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2023.08.19 -- Xenolithic Xanadu
+
+- Fix missing search context with Sphinx 7.2, for dirhtml builds.
+- Drop support for Python 3.7.
+- Present configuration errors in a better format -- thanks @AA-Turner!
+- Bump `require_sphinx()` to Sphinx 6.0, in line with dependency changes in Unassuming Ultramarine.
+
 ## 2023.08.17 -- Wonderous White
 
 - Fix compatiblity with Sphinx 7.2.0 and 7.2.1.
