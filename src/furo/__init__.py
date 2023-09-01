@@ -163,7 +163,17 @@ def _add_asset_hashes(static: List[str], add_digest_to: List[str]) -> None:
         return
 
     for asset in add_digest_to:
-        index = static.index("_static/" + asset)
+        try:
+            index = static.index("_static/" + asset)
+        except ValueError:
+            raise ConfigError(
+                "Furo is trying to add a digest to an asset that is not in the "
+                f"static files: {asset}. Please check conf.py for overrides of "
+                "theme-provide assets such as `html_style`."
+            )
+
+        if "?digest=" in static[index].filename:  # make this idempotent
+            continue
         static[index].filename = _asset_hash(asset)  # type: ignore
 
 
@@ -175,12 +185,6 @@ def _html_page_context(
     doctree: Any,
 ) -> None:
     if "css_files" in context:
-        if "_static/styles/furo.css" not in [c.filename for c in context["css_files"]]:
-            raise ConfigError(
-                "This documentation is not using `furo.css` as the stylesheet. "
-                "If you have set `html_style` in your conf.py file, remove it."
-            )
-
         _add_asset_hashes(
             context["css_files"],
             ["styles/furo.css", "styles/furo-extensions.css"],
