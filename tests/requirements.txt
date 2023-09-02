@@ -1,0 +1,7 @@
+pytest
+pytest-cov
+pytest-xdist
+
+httpx
+tomli
+packaging
