@@ -98,7 +98,12 @@ def lint(session):
 def test(session):
     session.install("-e", ".", "-r", "tests/requirements.txt")
 
-    args = session.posargs or ["-n", "auto", "--cov", PACKAGE_NAME]
+    args = session.posargs or [
+        "-n=auto",
+        "--cov=src/",
+        "--cov-report=term-missing",
+        "--verbose",
+    ]
     session.run("pytest", *args)
 
 
