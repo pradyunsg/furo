@@ -7,7 +7,7 @@ import logging
 import os
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict, Iterator, List, Optional
+from typing import Any, Dict, Iterator, List, Optional, cast
 
 import sphinx.application
 from docutils import nodes
@@ -71,7 +71,7 @@ def has_not_enough_items_to_show_toc(
 
     toctree = TocTree(builder.env).get_toc_for(docname, builder)
     try:
-        self_toctree = toctree[0][1]
+        self_toctree = toctree[0][1]  # type: ignore[index]
     except IndexError:
         val = True
     else:
@@ -84,8 +84,8 @@ def get_pygments_style_colors(
     style: Style, *, fallbacks: Dict[str, str]
 ) -> Dict[str, str]:
     """Get background/foreground colors for given pygments style."""
-    background = style.background_color
-    text_colors = style.style_for_token(Text)
+    background = style.background_color  # type: ignore[attr-defined]
+    text_colors = style.style_for_token(Text)  # type: ignore[attr-defined]
     foreground = text_colors["color"]
 
     if not background:
@@ -172,9 +172,10 @@ def _add_asset_hashes(static: List[str], add_digest_to: List[str]) -> None:
                 "theme-provide assets such as `html_style`."
             )
 
-        if "?digest=" in static[index].filename:  # make this idempotent
+        # Make this idempotent
+        if "?digest=" in static[index].filename:  # type: ignore[attr-defined]
             continue
-        static[index].filename = _asset_hash(asset)  # type: ignore
+        static[index].filename = _asset_hash(asset)  # type: ignore[attr-defined]
 
 
 def _html_page_context(
@@ -201,9 +202,11 @@ def _html_page_context(
     # Values computed from page-level context.
     context["furo_navigation_tree"] = _compute_navigation_tree(context)
     context["furo_hide_toc"] = _compute_hide_toc(
-        context, builder=app.builder, docname=pagename
+        context, builder=cast(StandaloneHTMLBuilder, app.builder), docname=pagename
     )
 
+    assert _KNOWN_STYLES_IN_USE["light"]
+    assert _KNOWN_STYLES_IN_USE["dark"]
     # Inject information about styles
     context["furo_pygments"] = {
         "light": get_pygments_style_colors(
@@ -248,10 +251,10 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 
     builder = app.builder
     assert (
-        builder.highlighter is not None
+        builder.highlighter is not None  # type: ignore[attr-defined]
     ), "there should be a default style known to Sphinx"
     assert (
-        builder.dark_highlighter is None
+        builder.dark_highlighter is None  # type: ignore[attr-defined]
     ), "this shouldn't be a dark style known to Sphinx"
     update_known_styles_state(app)
 
@@ -273,17 +276,25 @@ def update_known_styles_state(app: sphinx.application.Sphinx) -> None:
 
 
 def _get_light_style(app: sphinx.application.Sphinx) -> Style:
-    return app.builder.highlighter.formatter_args["style"]
+    # fmt: off
+    # For https://github.com/psf/black/issues/3869
+    return (
+        app  # type: ignore[no-any-return]
+            .builder
+            .highlighter # type: ignore[attr-defined]
+            .formatter_args["style"]
+        )
+    # fmt: on
 
 
 def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
     dark_style = app.config.pygments_dark_style
-    return PygmentsBridge("html", dark_style).formatter_args["style"]
+    return cast(Style, PygmentsBridge("html", dark_style).formatter_args["style"])
 
 
-def _get_styles(formatter: HtmlFormatter, *, prefix: str) -> Iterator[str]:
+def _get_styles(formatter: HtmlFormatter[str], *, prefix: str) -> Iterator[str]:
     """Get styles out of a formatter, where everything has the correct prefix."""
-    for line in formatter.get_linenos_style_defs():
+    for line in formatter.get_linenos_style_defs():  # type: ignore[no-untyped-call]
         yield f"{prefix} {line}"
     yield from formatter.get_background_style_defs(prefix)
     yield from formatter.get_token_style_defs(prefix)

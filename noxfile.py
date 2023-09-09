@@ -84,6 +84,12 @@ def docs_live(session):
 
 @nox.session(reuse_venv=True)
 def lint(session):
+    session.notify("lint-pre-commit")
+    session.notify("lint-mypy")
+
+
+@nox.session(reuse_venv=True, name="lint-pre-commit")
+def lint_pre_commit(session):
     session.install("pre-commit")
 
     args = list(session.posargs)
@@ -92,6 +98,14 @@ def lint(session):
         args.append("--show-diff-on-failure")
 
     session.run("pre-commit", "run", *args)
+
+
+@nox.session(reuse_venv=True, name="lint-mypy")
+def lint_mypy(session):
+    session.install(
+        "-e", ".", "mypy", "types-docutils", "types-Pygments", "types-beautifulsoup4"
+    )
+    session.run("mypy", "src")
 
 
 @nox.session

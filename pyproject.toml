@@ -4,9 +4,7 @@ build-backend = "sphinx_theme_builder"
 
 [tool.sphinx-theme-builder]
 node-version = "18.16.0"
-additional-compiled-static-assets = [
-  "styles/furo-extensions.css",
-]
+additional-compiled-static-assets = ["styles/furo-extensions.css"]
 
 [project]
 name = "furo"
@@ -22,10 +20,8 @@ dependencies = [
   "pygments >= 2.7",
 ]
 
-license = { file = "LICENSE"}
-authors = [
-    {name = "Pradyun Gedam", email = "mail@pradyunsg.me"},
-]
+license = { file = "LICENSE" }
+authors = [{ name = "Pradyun Gedam", email = "mail@pradyunsg.me" }]
 classifiers = [
   "Framework :: Sphinx",
   "Framework :: Sphinx :: Theme",
@@ -45,7 +41,13 @@ classifiers = [
 ]
 
 [project.entry-points]
-"sphinx.html_themes" = {furo = "furo"}
+"sphinx.html_themes" = { furo = "furo" }
 
 [project.urls]
 GitHub = "https://github.com/pradyunsg/furo"
+
+[tool.mypy]
+strict = true
+
+[tool.ruff]
+ignore = ["E501"]
