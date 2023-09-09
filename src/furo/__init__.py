@@ -231,10 +231,10 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
             "and specifying it as an `html_theme` is sufficient."
         )
 
-    if not isinstance(app.builder, StandaloneHTMLBuilder) or app.builder.name not in {
-        "html",
-        "dirhtml",
-    }:
+    looks_like_html_builder = isinstance(app.builder, StandaloneHTMLBuilder) or (
+        app.builder.name in {"html", "dirhtml"}
+    )
+    if not looks_like_html_builder:
         raise ConfigError(
             "Furo is being used as an extension in a non-HTML build. "
             "This should not happen."
