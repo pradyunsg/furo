@@ -292,7 +292,7 @@ def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
     return cast(Style, PygmentsBridge("html", dark_style).formatter_args["style"])
 
 
-def _get_styles(formatter: HtmlFormatter[str], *, prefix: str) -> Iterator[str]:
+def _get_styles(formatter: "HtmlFormatter[str]", *, prefix: str) -> Iterator[str]:
     """Get styles out of a formatter, where everything has the correct prefix."""
     for line in formatter.get_linenos_style_defs():  # type: ignore[no-untyped-call]
         yield f"{prefix} {line}"
