@@ -1,6 +1,5 @@
 # Copyright (c) 2021 Pradyun Gedam
-# Licensed under the Open Software License version 3.0
-# SPDX-License-Identifier: OSL-3.0
+# SPDX-License-Identifier: MIT
 
 """This is a demo module included in the docs in order to exercise autodoc."""
 
