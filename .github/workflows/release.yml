@@ -15,8 +15,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
 
       - name: Install dependencies
         run: pip install build
@@ -25,12 +25,12 @@ jobs:
         run: python -m build
 
       - name: Upload source distribution as an action artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: sdist
           path: dist/furo-*.tar.gz
       - name: Upload wheel distribution as an action artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: wheel
           path: dist/furo-*-py3-none-any.whl
@@ -43,7 +43,5 @@ jobs:
       - name: Upload to TestPyPI
         uses: pypa/gh-action-pypi-publish@v1.4.1
         with:
-          user: __token__
-          password: ${{ secrets.TESTPYPI_API_TOKEN }}
           repository_url: https://test.pypi.org/legacy/
           verbose: true
