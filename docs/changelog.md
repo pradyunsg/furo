@@ -11,6 +11,11 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2023.09.10 -- Zesty Zaffre
+
+- Make asset hash injection idempotent, fixing Sphinx 6 compatibility.
+- Fix the check for HTML builders, fixing non-HTML Read the Docs builds.
+
 ## 2023.08.19 -- Xenolithic Xanadu
 
 - Fix missing search context with Sphinx 7.2, for dirhtml builds.
