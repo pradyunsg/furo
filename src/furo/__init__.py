@@ -14,6 +14,7 @@ from docutils import nodes
 from pygments.formatters import HtmlFormatter
 from pygments.style import Style
 from pygments.token import Text
+from sphinx.builders.dirhtml import DirectoryHTMLBuilder
 from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.environment.adapters.toctree import TocTree
 from sphinx.errors import ConfigError
@@ -178,6 +179,27 @@ def _add_asset_hashes(static: List[str], add_digest_to: List[str]) -> None:
         static[index].filename = _asset_hash(asset)  # type: ignore[attr-defined]
 
 
+def _fix_canonical_url(
+    app: sphinx.application.Sphinx, pagename: str, context: Dict[str, Any]
+) -> None:
+    """Fix the canonical URL when using the dirhtml builder.
+
+    Sphinx builds a canonical URL if ``html_baseurl`` config is set. However,
+    it builds a URL ending with ".html" when using the dirhtml builder, which is
+    incorrect. Detect this and generate the correct URL for each page.
+    """
+    if (
+        not app.config.html_baseurl
+        or not isinstance(app.builder, DirectoryHTMLBuilder)
+        or not context["pageurl"]
+        or not context["pageurl"].endswith(".html")
+    ):
+        return
+
+    target = app.builder.get_target_uri(pagename)
+    context["pageurl"] = app.config.html_baseurl + target
+
+
 def _html_page_context(
     app: sphinx.application.Sphinx,
     pagename: str,
@@ -195,6 +217,8 @@ def _html_page_context(
             context["scripts"],
             ["scripts/furo.js"],
         )
+
+    _fix_canonical_url(app, pagename, context)
 
     # Basic constants
     context["furo_version"] = __version__
