@@ -197,7 +197,7 @@ def _fix_canonical_url(
         return
 
     target = app.builder.get_target_uri(pagename)
-    context["pageurl"] = app.config.html_baseurl + target
+    context["pageurl"] = app.config.html_baseurl + app.config.language + "/" + app.config.version + "/" + target
 
 
 def _html_page_context(
