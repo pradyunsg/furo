@@ -90,7 +90,7 @@ Monospace Blocks
 ================
 
 Sphinx supports many kinds of monospace blocks. This section is meant to
-showcase *all* of them that as known to the author of this page, at the time of
+showcase *all* of them that are known to the author of this page, at the time of
 writing.
 
 Production List
