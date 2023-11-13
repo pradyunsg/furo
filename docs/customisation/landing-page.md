@@ -4,9 +4,7 @@ It is possible to have a custom landing page in Sphinx documentation. This is ac
 
 ```py
 templates_path = ["_templates"]
-html_additional_pages = {
-    "index": "your-custom-landing-page.html"
-}
+html_additional_pages = {"index": "your-custom-landing-page.html"}
 ```
 
 ```{note}

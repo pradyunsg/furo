@@ -20,8 +20,8 @@
   typeof global !== "undefined"
     ? global
     : typeof window !== "undefined"
-    ? window
-    : this,
+      ? window
+      : this,
   function (window) {
     "use strict";
 
