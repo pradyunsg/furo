@@ -50,6 +50,18 @@ html_theme_options = {
 Typos in the `*_css_variables` dictionary are silently ignored, and do not raise any errors or warnings. Double check that your spellings and values are correct and valid.
 ```
 
+(collapse_navbar)=
+
+### `collapse_navbar`
+
+Whether to collapse the navbar, stopping the tree from being expanded. (False is default)
+
+```python
+html_theme_options = {
+    "collapse_navbar": True,
+}
+```
+
 (sidebar_hide_name)=
 
 ### `sidebar_hide_name`
