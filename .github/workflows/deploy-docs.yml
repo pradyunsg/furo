@@ -18,11 +18,6 @@ jobs:
         with:
           path: ./build/docs/
 
-      - run: npm install @percy/cli
-      - run: npx percy snapshot ./build/docs/
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-
   deploy:
     needs: build
     permissions:
