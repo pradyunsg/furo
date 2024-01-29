@@ -6,7 +6,7 @@
     "autoprefixer": "^10.4.14",
     "sass": "^1.60.0",
     "css-loader": "^6.7.3",
-    "css-minimizer-webpack-plugin": "^4.2.2",
+    "css-minimizer-webpack-plugin": "^6.0.0",
     "mini-css-extract-plugin": "^2.7.5",
     "normalize.css": "^8.0.1",
     "postcss-loader": "^8.0.0",
