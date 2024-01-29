@@ -11,6 +11,11 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2024.01.29 -- Amazing Amethyst
+
+- Fix canonical url when building with `dirhtml`.
+- Relicense the demo module.
+
 ## 2023.09.10 -- Zesty Zaffre
 
 - Make asset hash injection idempotent, fixing Sphinx 6 compatibility.
