@@ -51,3 +51,17 @@ class RandomNumberGenerator:
     def get_random_float(self) -> float:
         """Return a random float."""
         return float(self.seed)
+
+
+def annoying_function_name_length_aa(one: int, two: int) -> str:
+    """A function that adds two numbers as strings.
+
+    Because I needed a placeholder function."""
+    return str(one) + str(two)
+
+
+def annoying_function_name_length_aaa(one: int, two: int) -> str:
+    """A function that adds two numbers as strings.
+
+    Because I needed a placeholder function."""
+    return str(one) + str(two)
