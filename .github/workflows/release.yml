@@ -26,12 +26,12 @@ jobs:
         run: python -m build
 
       - name: Upload source distribution as an action artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sdist
           path: dist/furo-*.tar.gz
       - name: Upload wheel distribution as an action artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: wheel
           path: dist/furo-*-py3-none-any.whl
