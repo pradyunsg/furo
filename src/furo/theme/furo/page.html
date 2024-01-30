@@ -13,6 +13,12 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
+<a class="skip-to-content muted-link" href="#furo-main-content">
+  {%- trans -%}
+  Skip to content
+  {%- endtrans -%}
+</a>
+
 {% if theme_announcement -%}
 <div class="announcement">
   <aside class="announcement-content">
@@ -87,7 +93,7 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           {% block content %}{{ body }}{% endblock %}
         </article>
       </div>

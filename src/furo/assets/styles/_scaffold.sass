@@ -44,6 +44,22 @@ body
   color: var(--color-foreground-primary)
   background: var(--color-background-primary)
 
+.skip-to-content
+  position: fixed
+  padding: 1rem
+  border-radius: 1rem
+  left: 0.25rem
+  top: 0.25rem
+  z-index: 40
+  background: var(--color-background-primary)
+  color: var(--color-foreground-primary)
+
+  transform: translateY(-200%)
+  transition: transform 300ms ease-in-out
+
+  &:focus-within
+    transform: translateY(0%)
+
 article
   color: var(--color-content-foreground)
   background: var(--color-content-background)
