@@ -9,7 +9,7 @@
     "css-minimizer-webpack-plugin": "^6.0.0",
     "mini-css-extract-plugin": "^2.7.5",
     "normalize.css": "^8.0.1",
-    "postcss-loader": "^8.0.0",
+    "postcss-loader": "^8.1.0",
     "sass-loader": "^14.0.0",
     "style-loader": "^3.3.2",
     "webpack": "^5.76.3",
