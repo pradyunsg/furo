@@ -88,6 +88,8 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [pip] -- what I wrote this for
 - [Python Developer’s Guide][devguide]
 - [black]
+- [Manim Community Edition]
+- [Manim maintained by 3Blue1Brown]
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
@@ -96,6 +98,8 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 [psycopg3]: https://www.psycopg.org/psycopg3/docs/
 [black]: https://black.readthedocs.io/en/stable/
 [pelican]: https://docs.getpelican.com/en/latest/
+[Manim Community Edition]: https://docs.manim.community/en/stable/
+[Manim maintained by 3Blue1Brown]: https://3b1b.github.io/manim/
 
 <!-- end used-by -->
 
