@@ -27,3 +27,8 @@
 {{ super() }}
 <script src="{{ pathto('searchindex.js', 1) }}"></script>
 {%- endblock scripts %}
+
+{% block site_meta %}
+{{ super() }}
+<meta name="robots" content="noindex" />
+{% endblock site_meta %}
