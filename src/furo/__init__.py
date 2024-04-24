@@ -289,7 +289,7 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
             pass  # Sphinx's config has changed.
         else:
             if key not in conf_py_settings:
-                app.config.__dict__[key] = new_default
+                app.config._raw_config.setdefault(key, new_default)
 
     # Change the default permalinks icon
     _update_default("html_permalinks_icon", new_default="#")
