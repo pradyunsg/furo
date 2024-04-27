@@ -52,6 +52,7 @@ def get_navigation_tree(toctree_html: str) -> str:
             "label",
             attrs={
                 "for": checkbox_name,
+                "tabindex": "0",
             },
         )
         screen_reader_label = soup.new_tag(
