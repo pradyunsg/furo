@@ -11,6 +11,19 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2024.04.27 -- Bold Burgundy
+
+- Add a skip to content link.
+- Add `--font-stack--headings`.
+- Add `:visited` colour and enforce uniform contrast between light/dark.
+- Add an offset of `:target` to reduce back-to-top overlap.
+- Improve dark mode colours.
+- Fix outstanding colour contrast warnings on Firefox.
+- Fix bad indent in footnotes.
+- Tweak handling of default configuration options in a more resilient manner.
+- Tweak length and sizing of API `source` links.
+- Stop search engine indexing on search page.
+
 ## 2024.01.29 -- Amazing Amethyst
 
 - Fix canonical url when building with `dirhtml`.
