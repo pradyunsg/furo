@@ -17,6 +17,8 @@
 // causing the content to stutter horizontally between taller-than-viewport and
 // not-taller-than-viewport pages.
 
+$icon-size: 1.25rem
+
 html
   overflow-x: hidden
   overflow-y: scroll
@@ -203,8 +205,8 @@ article
 
 .theme-toggle svg
   vertical-align: middle
-  height: 1rem
-  width: 1rem
+  height: $icon-size
+  width: $icon-size
   color: var(--color-foreground-primary)
   display: none
 
@@ -221,8 +223,8 @@ article
 
   .icon
     color: var(--color-foreground-secondary)
-    height: 1rem
-    width: 1rem
+    height: $icon-size
+    width: $icon-size
 
 .toc-header-icon, .nav-overlay-icon
   // for when we set display: flex
@@ -243,8 +245,8 @@ article
 
   .edit-this-page svg
     color: inherit
-    height: 1rem
-    width: 1rem
+    height: $icon-size
+    width: $icon-size
 
 .sidebar-toggle
   position: absolute
@@ -401,8 +403,8 @@ article
 
   .nav-overlay-icon .icon,
   .theme-toggle svg
-    height: 1.25rem
-    width: 1.25rem
+    height: $icon-size
+    width: $icon-size
 
   // Add a scroll margin for the content
   :target
