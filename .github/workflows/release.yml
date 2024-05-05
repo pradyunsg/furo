@@ -82,17 +82,17 @@ jobs:
         with:
           inputs: ./dist/*.tar.gz ./dist/*.whl
 
-      # - name: Create a GitHub release
-      #   run: >-
-      #     gh release create --repo '${{ github.repository }}'
-      #     '${{ github.ref_name }}'
-      #   env:
-      #     GITHUB_TOKEN: ${{ github.token }}
+      - name: Create a GitHub release
+        run: >-
+          gh release create --repo '${{ github.repository }}'
+          '${{ github.ref_name }}'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
-      # - name: Upload signed release files to GitHub release
-      #   run: >-
-      #     gh release upload --repo '${{ github.repository }}'
-      #     '${{ github.ref_name }}'
-      #     dist/**
-      #   env:
-      #     GITHUB_TOKEN: ${{ github.token }}
+      - name: Upload signed release files to GitHub release
+        run: >-
+          gh release upload --repo '${{ github.repository }}'
+          '${{ github.ref_name }}'
+          dist/**
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
