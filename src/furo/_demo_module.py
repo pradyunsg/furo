@@ -40,6 +40,17 @@ class RandomNumberGenerator:
     def seed(self) -> int:
         """Get seed for random number generation.
 
+        .. versionadded:: 1.0
+
+        .. versionchanged:: 1.1
+            Use ``random`` to create the seed.
+
+        .. deprecated:: 1.2
+            ``random`` raises security concerns.
+
+        .. versionremoved:: 1.3
+            ``random`` replaced with a random number.
+
         .. seealso:: https://xkcd.com/221/
         """
         return self._seed

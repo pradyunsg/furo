@@ -38,6 +38,15 @@ extensions = [
     "sphinx_inline_tabs",
 ]
 
+# -- Options for Autodoc --------------------------------------------------------------
+
+autodoc_member_order = "bysource"
+autodoc_preserve_defaults = True
+
+# Keep the type hints outside the function signature, moving them to the
+# descriptions of the relevant function/methods.
+autodoc_typehints = "description"
+
 # -- Options for extlinks ----------------------------------------------------
 #
 
