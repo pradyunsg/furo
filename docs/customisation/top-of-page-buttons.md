@@ -43,16 +43,37 @@ The `{filename}` component will be replaced with the full path to the file, as k
 Furo does not enforce that the `source_edit_link` / `source_view_link` contain `{filename}` or any sort of correctness check on these URLs. Make sure to manually confirm that the link works.
 ```
 
+## Linking to copied sources
+
+If [`html_show_sourcelink`](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_show_sourcelink) and [`html_copy_source`](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_copy_source) are `True` (which are the defaults), and the documentation does not configure any of the above variables, the view button will link to the raw sources copied in by Sphinx.
+
 ## Read the Docs support
 
-```{versionchanged} 2024.05.06
-This feature has been tentatively removed (but the removal has not been released), as a better approach is investigated. See [this discussion](https://github.com/pradyunsg/furo/discussions/785) for more details.
+```{note}
+This feature is only available for projects hosted on GitHub.
 ```
 
-If you're building documentation on Read the Docs using a github.com-hosted repository as the source, the edit button is enabled by default.
+Furo has built-in support for inferring details from Read the Docs' environment for GitHub projects and enabling these buttons.
+
+For such projects, Furo will try to automatically infer the source repository, branch, and directory from the Read the Docs build environment unless the above configuration variable are set.
+
+### Edit button on Read the Docs
+
+The _edit_ button will link to GitHub's edit view for the document.
+
+### View button on Read the Docs
+
+The _view_ button will link to the raw sources copied in by Sphinx, if available, [as noted above](#linking-to-copied-sources). If raw sources are not copied, it will link to GitHub's plain view for the document.
+
+If you do not want to link to copied sources, you can set the following in the `conf.py`:
+
+```python
+html_copy_source = False
+html_show_sourcelink = False
+```
 
 ### Disabling on Read the Docs
 
-If you wish to disable this, use {ref}`top_of_page_button` and set it to `None`.
+If you wish to disable these default buttons, use {ref}`top_of_page_buttons` and set it to `[]`.
 
 [sphinx-html_theme_options]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_theme_options
