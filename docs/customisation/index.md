@@ -74,7 +74,11 @@ html_theme_options = {
 
 (top_of_page_button)=
 
-### `top_of_page_button` (deprecated, due to be removed after 2024-11-01)
+### `top_of_page_button`
+
+```{deprecated} 2024.05.06
+This will be removed after 2024-11-01. Use `top_of_page_buttons` instead.
+```
 
 Controls which button is shown on the top of the page. The only supported values are `"edit"` (the default) and `None`.
 
