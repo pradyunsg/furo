@@ -22,11 +22,7 @@ injecting
 
 ## Theme options
 
-[`html_theme_options`][sphinx-html_theme_options] in `conf.py` is used for customisations that affect the entire documentation. This is for stuff like fonts and colors.
-
-```{note}
-Note that only the configuration options listed here are supported (not the ones inherited from the built-in `basic` Sphinx theme).
-```
+[`html_theme_options`][sphinx-html_theme_options] in `conf.py` is used for customisations that affect the entire documentation. This is for stuff like fonts and colors. While this theme inherits some options from the built-in `basic` Sphinx theme, only the ones documented here are supported.
 
 (css-variables)=
 
