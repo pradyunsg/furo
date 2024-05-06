@@ -16,7 +16,7 @@ requires-python = ">=3.8"
 dependencies = [
   "beautifulsoup4",
   "sphinx >= 6.0,<8.0",
-  "sphinx-basic-ng",
+  "sphinx-basic-ng >= 1.0.0.beta2",
   "pygments >= 2.7",
 ]
 

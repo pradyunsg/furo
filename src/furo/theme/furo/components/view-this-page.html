@@ -1,0 +1,15 @@
+{% extends "basic-ng/components/view-this-page.html" %}
+{% from "basic-ng/components/view-this-page.html" import determine_page_view_link with context %}
+
+{%- macro furo_view_button(url) -%}
+<div class="view-this-page">
+  <a class="muted-link" href="{{ url }}" title="{{ _("View this page") }}">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">{{ _("View this page") }}</span>
+  </a>
+</div>
+{%- endmacro -%}
+
+{% block link_available -%}
+{{ furo_view_button(determine_page_view_link()) }}
+{%- endblock %}

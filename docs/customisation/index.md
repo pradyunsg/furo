@@ -9,7 +9,7 @@ This section serves to guide the user with customising Furo-based documentation.
 
 logo
 announcement
-edit-button
+top-of-page-buttons
 colors
 fonts
 footer
@@ -74,13 +74,28 @@ html_theme_options = {
 
 (top_of_page_button)=
 
-### `top_of_page_button`
+### `top_of_page_button` (deprecated, due to be removed after 2024-11-01)
 
 Controls which button is shown on the top of the page. The only supported values are `"edit"` (the default) and `None`.
 
 ```python
 html_theme_options = {
     "top_of_page_button": "edit",
+}
+```
+
+(top_of_page_buttons)=
+
+### `top_of_page_buttons`
+
+Controls which buttons are shown on the top of the page. This is a list which can be empty or contain one-or-more of the following values:
+
+- `"edit"`
+- `"view"`
+
+```python
+html_theme_options = {
+    "top_of_page_buttons": ["view", "edit"],
 }
 ```
 
