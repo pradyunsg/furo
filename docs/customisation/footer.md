@@ -1,5 +1,9 @@
 # Changing footer icons
 
+```{versionadded} 2022.02.14
+
+```
+
 Furo allows customising the icons that are presented in the page footer. These icons can be used to link to relevant resources for your project and documentation.
 
 ```{admonition} Unstable, seeking feedback

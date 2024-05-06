@@ -1,5 +1,9 @@
 # Changing sidebar elements
 
+```{versionadded} 2020.11.15.beta17
+
+```
+
 Furo supports customising the elements that show up in the navigational sidebar (left). This is to provide documentation authors who are willing to work with HTML/CSS to change and tweak how the sidebar looks.
 
 ```{admonition} Unstable

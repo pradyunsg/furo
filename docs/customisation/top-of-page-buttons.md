@@ -1,4 +1,8 @@
-# Adding source code buttons
+# Changing buttons on page
+
+```{versionadded} 2022.02.14
+Support for "edit this page" link.
+```
 
 ```{versionadded} 2024.05.06
 Support for "view this page" link.
@@ -25,7 +29,11 @@ This model supports github.com, gitlab.com and bitbucket.org as domain names for
 ## With arbitrary URLs
 
 ```{versionadded} 2022.09.29
+`source_edit_link`
+```
 
+```{versionadded} 2024.05.06
+`source_view_link`
 ```
 
 Use arbitrary URLs for the view/edit buttons, by setting the following keys in [`html_theme_options`][sphinx-html_theme_options]:
@@ -48,6 +56,10 @@ Furo does not enforce that the `source_edit_link` / `source_view_link` contain `
 If [`html_show_sourcelink`](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_show_sourcelink) and [`html_copy_source`](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_copy_source) are `True` (which are the defaults), and the documentation does not configure any of the above variables, the view button will link to the raw sources copied in by Sphinx.
 
 ## Read the Docs support
+
+```{versionadded} 2022.02.14
+
+```
 
 ```{note}
 This feature is only available for projects hosted on GitHub.
@@ -73,6 +85,14 @@ html_show_sourcelink = False
 ```
 
 ### Disabling on Read the Docs
+
+```{versionadded} 2022.06.04
+
+```
+
+```{versionchanged} 2024.05.06
+`top_of_page_buttons` replaces the singular `top_of_page_button`.
+```
 
 If you wish to disable these default buttons, use {ref}`top_of_page_buttons` and set it to `[]`.
 
