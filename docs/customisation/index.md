@@ -73,7 +73,7 @@ html_theme_options = {
 ### `navigation_with_keys`
 
 ```{versionadded} 2020.11.01.beta14
-This is functionality [supported by Sphinx's `basic` theme](https://www.sphinx-doc.org/en/master/usage/theming.html#builtin-themes).
+
 ```
 
 Controls whether the user can navigate the documentation using the keyboard’s left and right arrows. The default is `False`.
