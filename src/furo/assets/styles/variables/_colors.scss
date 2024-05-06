@@ -39,6 +39,16 @@
   --color-api-pre-name: var(--color-problematic);
   --color-api-paren: var(--color-foreground-secondary);
   --color-api-keyword: var(--color-foreground-primary);
+
+  --color-api-added: #21632c;
+  --color-api-added-border: #38a84d;
+  --color-api-changed: #09635b;
+  --color-api-changed-border: #0ea498;
+  --color-api-deprecated: #605706;
+  --color-api-deprecated-border: #f0d90f;
+  --color-api-removed: #b30000;
+  --color-api-removed-border: #ff5c5c;
+
   --color-highlight-on-target: #ffffcc;
 
   // Inline code background
@@ -166,6 +176,15 @@
   // API documentation
   --color-api-keyword: var(--color-foreground-secondary);
   --color-highlight-on-target: #333300;
+
+  --color-api-added: #3db854;
+  --color-api-added-border: #267334;
+  --color-api-changed: #b1a10b;
+  --color-api-changed-border: #6e6407;
+  --color-api-deprecated: #ff7575;
+  --color-api-deprecated-border: #c70000;
+  --color-api-removed: #ff7575;
+  --color-api-removed-border: #c70000;
 
   // Admonitions
   --color-admonition-background: #18181a;
