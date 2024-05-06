@@ -11,6 +11,14 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2024.05.06 -- Cheerful Cerulean
+
+- ✨ Add new custom icons for auto mode, reflecting the currently active theme.
+- ✨ Add a view this page button.
+- ✨ Add colours and highlighting to "version modified" API helpers.
+- ✨ Add release information to various customisation knobs.
+- Make all icons bigger and use a thinner stroke with them.
+
 ## 2024.04.27 -- Bold Burgundy
 
 - Add a skip to content link.
