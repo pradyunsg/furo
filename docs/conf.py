@@ -129,7 +129,6 @@ if RTD_TESTING or "FURO_RTD_TESTING" in os.environ:
         # JSON when hitting `/_/addons/`
         # https://furo.readthedocs.io/_/addons/?client-version=0.12.0&api-version=1&project-slug=furo&version-slug=latest
         # "readthedocs-addons-mocked-response.js",
-
         # NOTE: pinning to 0.12.0 for now, but we can use `main` if we want to
         "https://raw.githubusercontent.com/readthedocs/addons/0.12.0/dist/readthedocs-addons.js",
     ]
