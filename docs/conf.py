@@ -123,22 +123,40 @@ RTD_TESTING = False
 if RTD_TESTING or "FURO_RTD_TESTING" in os.environ:
     del html_theme_options["footer_icons"]
 
-    html_css_files += [
-        "https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css",
-        "https://assets.readthedocs.org/static/css/badge_only.css",
-    ]
     html_js_files += [
-        "readthedocs-dummy.js",
-        "https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js",
+        # NOTE: I'm not including this file here yet. Are we mocking any HTTP
+        # response somehow in the tests? In that case, we need to return this
+        # JSON when hitting `/_/addons/`
+        # https://furo.readthedocs.io/_/addons/?client-version=0.12.0&api-version=1&project-slug=furo&version-slug=latest
+        # "readthedocs-addons-mocked-response.js",
+
+        # NOTE: pinning to 0.12.0 for now, but we can use `main` if we want to
+        "https://raw.githubusercontent.com/readthedocs/addons/0.12.0/dist/readthedocs-addons.js",
     ]
     html_context["READTHEDOCS"] = True
-    html_context["current_version"] = "latest"
-    html_context["conf_py_path"] = "/docs/"
-    html_context["display_github"] = True
-    html_context["github_user"] = "pradyunsg"
-    html_context["github_repo"] = "furo"
-    html_context["github_version"] = "main"
-    html_context["slug"] = "furo"
+
+    # All of these won't be injected anymore.
+    # They are not going to be used by Read the Docs Sphinx's theme either,
+    # we should probably talk if they are required for furo.
+    html_context["current_version"] = os.environ.get("READTHEDOCS_VERSION")
+    html_context["slug"] = os.environ.get("READTHEDDOCS_PROJECT")
+
+    # These cannot be replaced with environment variables. My understanding is
+    # that these are used here to build the "Edit on GitHub" buttons. We don't
+    # have a good way to replace this feature yet. There are some Git
+    # environment variables that could be used to here to parse and get the
+    # final URL. Example:
+    # https://docs.readthedocs.io/en/stable/reference/environment-variables.html#envvar-READTHEDOCS_GIT_CLONE_URL
+    # For now, Read the Docs is not including "View/Edit on GitHub" links
+    # because of this reason. See
+    # https://github.com/readthedocs/readthedocs.org/issues/10742 for a more
+    # complete description of the issue and potential solutions
+    #
+    # html_context["conf_py_path"] = "/docs/"
+    # html_context["display_github"] = True
+    # html_context["github_user"] = "pradyunsg"
+    # html_context["github_repo"] = "furo"
+    # html_context["github_version"] = "main"
 
 FONT_AWESOME_TESTING = False
 if FONT_AWESOME_TESTING:
