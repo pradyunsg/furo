@@ -17,8 +17,6 @@
 // causing the content to stutter horizontally between taller-than-viewport and
 // not-taller-than-viewport pages.
 
-$icon-size: 1.25rem
-
 html
   overflow-x: hidden
   overflow-y: scroll
@@ -195,24 +193,25 @@ article
   display: none
 
 .theme-toggle-container
-  vertical-align: middle
+  display: flex
 
 .theme-toggle
+  display: flex
   cursor: pointer
   border: none
   padding: 0
   background: transparent
 
 .theme-toggle svg
-  vertical-align: middle
-  height: $icon-size
-  width: $icon-size
+  height: 1.25rem
+  width: 1.25rem
   color: var(--color-foreground-primary)
   display: none
 
 .theme-toggle-header
-  float: left
-  padding: 1rem 0.5rem
+  display: flex
+  align-items: center
+  justify-content: center
 
 ////////////////////////////////////////////////////////////////////////////////
 // Toggles for elements
@@ -223,8 +222,8 @@ article
 
   .icon
     color: var(--color-foreground-secondary)
-    height: $icon-size
-    width: $icon-size
+    height: 1.5rem
+    width: 1.5rem
 
 .toc-header-icon, .nav-overlay-icon
   // for when we set display: flex
@@ -246,8 +245,8 @@ article
   .edit-this-page, .view-this-page
     svg
       color: inherit
-      height: $icon-size
-      width: $icon-size
+      height: 1.25rem
+      width: 1.25rem
 
 .sidebar-toggle
   position: absolute
@@ -377,12 +376,10 @@ article
     left: -$sidebar-width
 
   // Swap which icon is visible.
-  .toc-header-icon
+  .toc-header-icon, .theme-toggle-header
     display: flex
   .toc-content-icon, .theme-toggle-content
     display: none
-  .theme-toggle-header
-    display: block
 
   // Show the header.
   .mobile-header
@@ -404,8 +401,8 @@ article
 
   .nav-overlay-icon .icon,
   .theme-toggle svg
-    height: $icon-size
-    width: $icon-size
+    height: 1.5rem
+    width: 1.5rem
 
   // Add a scroll margin for the content
   :target
