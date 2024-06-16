@@ -103,4 +103,5 @@ If you wish to use Font Awesome icons in the footer, it's a two step process.
 You can specify `only-light` or `only-dark` as the value for `class` in the dictionary. This mechanism exists primarily to help you use different `img` tags to present the same icon in a different colour.
 
 [^1]: Yes, I'm aware that it can be argued that embedding raw HTML in a `conf.py` file is... ugly. :)
+
 [^2]: You need to use your browser's developer tools to get the SVG directly from the page: inspect element + copy svg element (ctrl+c) + paste.
