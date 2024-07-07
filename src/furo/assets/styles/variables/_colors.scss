@@ -29,6 +29,7 @@
   // Brand colors
   --color-brand-primary: #0a4bff;
   --color-brand-content: #2757dd;
+  --color-brand-highlight: #4f76e3;
   --color-brand-visited: #872ee0;
 
   // API documentation
@@ -139,6 +140,10 @@
   --color-link-underline--visited: var(--color-background-border);
   --color-link--visited--hover: var(--color-brand-visited);
   --color-link-underline--visited--hover: var(--color-foreground-border);
+
+  --color-permalink-hover: var(--color-brand-highlight);
+  --color-permalink--visited: var(--color-brand-content);
+  --color-permalink--visited-hover: var(--color-brand-highlight);
 }
 
 @mixin colors-dark {
@@ -164,6 +169,7 @@
   // Brand colors
   --color-brand-primary: #3d94ff;
   --color-brand-content: #5ca5ff;
+  --color-brand-highlight: #99c7ff;
   --color-brand-visited: #b27aeb;
 
   // Highlighted text (search)
