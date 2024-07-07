@@ -308,8 +308,8 @@ def update_known_styles_state(app: sphinx.application.Sphinx) -> None:
 def _get_light_style(app: sphinx.application.Sphinx) -> Style:
     # fmt: off
     # For https://github.com/psf/black/issues/3869
-    return (
-        app  # type: ignore[no-any-return]
+    return (  # type: ignore[no-any-return]
+        app
             .builder
             .highlighter # type: ignore[attr-defined]
             .formatter_args["style"]
