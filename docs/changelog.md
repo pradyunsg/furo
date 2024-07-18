@@ -11,6 +11,14 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2024.07.18 -- Dull Denim
+
+- Improve how icons are handled and aligned.
+- Improve scroll event handler.
+- Hide the copybutton by default.
+- Fix `source_view_link` configuration handling.
+- Fix close tag on pencil icon.
+
 ## 2024.05.06 -- Cheerful Cerulean
 
 - ✨ Add new custom icons for auto mode, reflecting the currently active theme.
