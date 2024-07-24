@@ -114,7 +114,7 @@ Sidebar
 
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
-    .. image:: https://source.unsplash.com/200x200/daily?cute+puppy
+    .. image:: https://picsum.photos/id/237/200/200
 
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
@@ -272,4 +272,4 @@ voluptatem officia culpa optio atque. Quaerat sed quibusdam ratione nam.
 Download Links
 ==============
 
-:download:`This long long long long long long long long long long long long long long long download link should wrap white-spaces <https://source.unsplash.com/200x200/daily?cute+puppy>`
+:download:`This long long long long long long long long long long long long long long long download link should wrap white-spaces <https://picsum.photos/id/237/200/200>`

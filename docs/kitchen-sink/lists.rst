@@ -254,11 +254,11 @@ Hlists
 .. hlist::
     :columns: 2
 
-    - .. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
+    - .. figure:: https://picsum.photos/id/237/200/200
 
          This is a short caption for a figure.
 
-    - .. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
+    - .. figure:: https://picsum.photos/id/237/200/200
 
          This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
          Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
