@@ -363,7 +363,14 @@ article
   .sidebar-drawer
     width: calc((100% - #{$full-width - $sidebar-width}) / 2 + #{$sidebar-width})
 
-@media (max-width: $full-width - $sidebar-width)
+@media (max-width: $content-padded-width + $sidebar-width)
+  // Center the page
+  .content
+    margin-left: auto
+    margin-right: auto
+    padding: 0 $content-padding--small
+
+@media (max-width: $content-padded-width--small + $sidebar-width)
   // Collapse "navigation".
   .nav-overlay-icon
     display: flex
@@ -412,15 +419,12 @@ article
   .back-to-top
     top: calc(var(--header-height) + 0.5rem)
 
-  // Center the page, and accommodate for the header.
+  // Accommodate for the header.
   .page
     flex-direction: column
     justify-content: center
-  .content
-    margin-left: auto
-    margin-right: auto
 
-@media (max-width: $content-width + 2* $content-padding)
+@media (max-width: $content-width + 2* $content-padding--small)
   // Content should respect window limits.
   .content
     width: 100%
@@ -428,7 +432,6 @@ article
 
 @media (max-width: $content-width)
   .content
-    padding: 0 $content-padding--small
     // Don't float sidebars to the right.
   article aside.sidebar
     float: none
