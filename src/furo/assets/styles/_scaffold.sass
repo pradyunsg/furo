@@ -431,9 +431,7 @@ article
     overflow-x: auto
 
 @media (max-width: $content-width)
-  .content
-    // Don't float sidebars to the right.
-  article aside.sidebar
+  article[role=main] aside.sidebar
     float: none
     width: 100%
     margin: 1rem 0
