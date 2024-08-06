@@ -11,6 +11,13 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2024.08.06 -- Energetic Eminence
+
+- ✨ Add support for Sphinx 8
+- ✨ Add smoother transitions between breakpoints
+- Increase specificity of table-wrapper selector
+- Avoid page breaks inside paragraphs
+
 ## 2024.07.18 -- Dull Denim
 
 - Improve how icons are handled and aligned.
