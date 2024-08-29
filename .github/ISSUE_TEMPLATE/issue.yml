@@ -27,8 +27,8 @@ body:
     validations:
       required: true
   - type: checkboxes
-    label: This was requested by a maintainer.
     attributes:
+      label: This was requested by a maintainer.
       options:
         - label: I was asked to open an issue in a [discussion](https://github.com/pradyunsg/furo/discussions) by a maintainer.
           required: true
