@@ -125,9 +125,11 @@ def _compute_navigation_tree(context: Dict[str, Any]) -> str:
             includehidden=True,
         )
         if "titles_only" in inspect.getfullargspec(toctree).args:
-            kwargs.update(dict(
-                titles_only=True,
-            ))
+            kwargs.update(
+                dict(
+                    titles_only=True,
+                )
+            )
         toctree_html = toctree(
             **kwargs,
         )
