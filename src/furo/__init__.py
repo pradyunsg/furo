@@ -3,6 +3,7 @@
 __version__ = "2024.08.06.dev1"
 
 import hashlib
+import inspect
 import logging
 import os
 from functools import lru_cache
@@ -118,11 +119,17 @@ def _compute_navigation_tree(context: Dict[str, Any]) -> str:
     # The navigation tree, generated from the sphinx-provided ToC tree.
     if "toctree" in context:
         toctree = context["toctree"]
-        toctree_html = toctree(
+        kwargs = dict(
             collapse=False,
-            titles_only=True,
             maxdepth=-1,
             includehidden=True,
+        )
+        if "titles_only" in inspect.getfullargspec(toctree).args:
+            kwargs.update(dict(
+                titles_only=True,
+            ))
+        toctree_html = toctree(
+            **kwargs,
         )
     else:
         toctree_html = ""
