@@ -99,7 +99,6 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 [pelican]: https://docs.getpelican.com/en/latest/
 [kolo]: https://docs.kolo.app/
 
-
 <!-- end used-by -->
 
 ## License
