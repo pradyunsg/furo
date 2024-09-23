@@ -88,6 +88,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [pip] -- what I wrote this for
 - [Python Developer’s Guide][devguide]
 - [black]
+- [Kolo][kolo]
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
@@ -96,6 +97,8 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 [psycopg3]: https://www.psycopg.org/psycopg3/docs/
 [black]: https://black.readthedocs.io/en/stable/
 [pelican]: https://docs.getpelican.com/en/latest/
+[kolo]: https://docs.kolo.app/
+
 
 <!-- end used-by -->
 
