@@ -11,7 +11,6 @@ const GO_TO_TOP_OFFSET = 64;
 function scrollHandlerForHeader(positionY) {
   const headerTop = Math.floor(header.getBoundingClientRect().top);
 
-  console.log(`headerTop: ${headerTop}`);
   if (headerTop == 0 && positionY != headerTop) {
     header.classList.add("scrolled");
   } else {
