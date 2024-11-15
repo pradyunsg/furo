@@ -43,8 +43,14 @@ html body .only-dark
 // Theme toggle presentation
 //
 body[data-theme="auto"]
-  .theme-toggle svg.theme-icon-when-auto
+  .theme-toggle svg.theme-icon-when-auto-light
     display: block
+
+  @media (prefers-color-scheme: dark)
+    .theme-toggle svg.theme-icon-when-auto-dark
+      display: block
+    .theme-toggle svg.theme-icon-when-auto-light
+      display: none
 
 body[data-theme="dark"]
   .theme-toggle svg.theme-icon-when-dark

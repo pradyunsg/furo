@@ -3,16 +3,16 @@
     "build": "webpack"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "sass": "^1.60.0",
-    "css-loader": "^6.7.3",
-    "css-minimizer-webpack-plugin": "^4.2.2",
-    "mini-css-extract-plugin": "^2.7.5",
+    "autoprefixer": "^10.4.19",
+    "sass": "^1.77.6",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "mini-css-extract-plugin": "^2.9.0",
     "normalize.css": "^8.0.1",
-    "postcss-loader": "^7.1.0",
-    "sass-loader": "^13.2.1",
-    "style-loader": "^3.3.2",
-    "webpack": "^5.76.3",
+    "postcss-loader": "^8.1.1",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.92.1",
     "webpack-cli": "^5.0.1"
   }
 }

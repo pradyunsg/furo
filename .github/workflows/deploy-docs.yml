@@ -7,21 +7,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
           node-version: "14"
 
       - run: pipx run nox -s docs
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./build/docs/
-
-      - run: npm install @percy/cli
-      - run: npx percy snapshot ./build/docs/
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
   deploy:
     needs: build
@@ -35,4 +30,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4

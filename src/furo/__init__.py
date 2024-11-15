@@ -1,6 +1,6 @@
 """A clean customisable Sphinx documentation theme."""
 
-__version__ = "2023.09.10.dev1"
+__version__ = "2024.08.06.dev1"
 
 import hashlib
 import logging
@@ -76,8 +76,8 @@ def has_not_enough_items_to_show_toc(
     except IndexError:
         val = True
     else:
-        # There's only the page's own toctree in there.
-        val = len(self_toctree) == 1 and self_toctree[0].tagname == "toctree"
+        # There's only the page's own toctree(s) in there.
+        val = all(entry.tagname == "toctree" for entry in self_toctree)
     return val
 
 
@@ -268,7 +268,13 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     update_known_styles_state(app)
 
     def _update_default(key: str, *, new_default: Any) -> None:
-        app.config.values[key] = (new_default, *app.config.values[key][1:])
+        try:
+            conf_py_settings = app.config._raw_config
+        except AttributeError:
+            pass  # Sphinx's config has changed.
+        else:
+            if key not in conf_py_settings:
+                app.config._raw_config.setdefault(key, new_default)
 
     # Change the default permalinks icon
     _update_default("html_permalinks_icon", new_default="#")
@@ -287,8 +293,8 @@ def update_known_styles_state(app: sphinx.application.Sphinx) -> None:
 def _get_light_style(app: sphinx.application.Sphinx) -> Style:
     # fmt: off
     # For https://github.com/psf/black/issues/3869
-    return (
-        app  # type: ignore[no-any-return]
+    return (  # type: ignore[no-any-return]
+        app
             .builder
             .highlighter # type: ignore[attr-defined]
             .formatter_args["style"]

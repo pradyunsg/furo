@@ -28,6 +28,7 @@ h4,
 h5,
 h6
   line-height: 1.25
+  font-family: var(--font-stack--headings)
   font-weight: bold
 
   border-radius: 0.5rem
@@ -84,11 +85,21 @@ a
   color: var(--color-link)
   text-decoration-color: var(--color-link-underline)
 
+  &:visited
+    color: var(--color-link--visited)
+    text-decoration-color: var(--color-link-underline--visited)
+    &:hover
+      color: var(--color-link--visited--hover)
+      text-decoration-color: var(--color-link-underline--visited--hover)
+
   &:hover
     color: var(--color-link--hover)
     text-decoration-color: var(--color-link-underline--hover)
   &.muted-link
     color: inherit
     &:hover
-      color: var(--color-link)
+      color: var(--color-link--hover)
       text-decoration-color: var(--color-link-underline--hover)
+      &:visited
+        color: var(--color-link--visited--hover)
+        text-decoration-color: var(--color-link-underline--visited--hover)

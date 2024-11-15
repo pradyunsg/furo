@@ -1,5 +1,6 @@
 """Development automation
 """
+
 import datetime
 import glob
 import os
@@ -64,7 +65,7 @@ def get_release_versions(version_file):
 #
 # Development Sessions
 #
-@nox.session(reuse_venv=True)
+@nox.session
 def docs(session):
     session.install("-r", "docs/requirements.txt")
     session.install(".")
@@ -73,7 +74,7 @@ def docs(session):
     session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
 
 
-@nox.session(name="docs-live", reuse_venv=True)
+@nox.session(name="docs-live")
 def docs_live(session):
     session.install("-r", "docs/requirements.txt")
     session.install("-e", ".", "sphinx-theme-builder[cli]")
@@ -82,13 +83,13 @@ def docs_live(session):
     session.run("stb", "serve", "docs/", *session.posargs)
 
 
-@nox.session(reuse_venv=True)
+@nox.session
 def lint(session):
     session.notify("lint-pre-commit")
     session.notify("lint-mypy")
 
 
-@nox.session(reuse_venv=True, name="lint-pre-commit")
+@nox.session(name="lint-pre-commit")
 def lint_pre_commit(session):
     session.install("pre-commit")
 
@@ -100,7 +101,7 @@ def lint_pre_commit(session):
     session.run("pre-commit", "run", *args)
 
 
-@nox.session(reuse_venv=True, name="lint-mypy")
+@nox.session(name="lint-mypy")
 def lint_mypy(session):
     session.install(
         "-e", ".", "mypy", "types-docutils", "types-Pygments", "types-beautifulsoup4"
