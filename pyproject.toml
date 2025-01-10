@@ -18,6 +18,7 @@ dependencies = [
   "sphinx >= 6.0,<9.0",
   "sphinx-basic-ng >= 1.0.0.beta2",
   "pygments >= 2.7",
+  "accessible-pygments >= 0.0.5",
 ]
 
 license = { file = "LICENSE" }
