@@ -6,7 +6,8 @@
 @mixin spacing {
   // Header!
   --header-height: calc(
-    var(--sidebar-item-line-height) + 4 * #{var(--sidebar-item-spacing-vertical)}
+    var(--sidebar-item-line-height) + 4 *
+      #{var(--sidebar-item-spacing-vertical)}
   );
   --header-padding: 0.5rem;
 
