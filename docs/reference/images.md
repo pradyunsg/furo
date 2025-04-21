@@ -66,22 +66,22 @@ based on the currently active colour scheme.
 
 ````{furo-demo}
 
-```{image} https://picsum.photos/id/237/200/200
+```{image} https://picsum.photos/seed/image-only-light/200/300
 :align: center
 :class: only-light
 ```
 
-```{image} https://picsum.photos/id/237/200/200
+```{image} https://picsum.photos/seed/image-only-dark/200/300
 :align: center
 :class: only-dark
 ```
 
-```{figure} https://picsum.photos/id/237/200/200
+```{figure} https://picsum.photos/seed/figure-only-light/200/300
 :align: center
 :figclass: only-light
 ```
 
-```{figure} https://picsum.photos/id/237/200/200
+```{figure} https://picsum.photos/seed/figure-only-dark/200/300
 :align: center
 :figclass: only-dark
 ```
@@ -90,22 +90,22 @@ This is from Markdown.
 
 +++
 
-.. image:: https://picsum.photos/id/237/200/200
+.. image:: https://picsum.photos/seed/image-only-light/200/300
    :align: center
    :class: only-light
 
 
-.. image:: https://picsum.photos/id/237/200/200
+.. image:: https://picsum.photos/seed/image-only-dark/200/300
    :align: center
    :class: only-dark
 
 
-.. figure:: https://picsum.photos/id/237/200/200
+.. figure:: https://picsum.photos/seed/figure-only-light/200/300
    :align: center
    :figclass: only-light
 
 
-.. figure:: https://picsum.photos/id/237/200/200
+.. figure:: https://picsum.photos/seed/figure-only-dark/200/300
    :align: center
    :figclass: only-dark
 
