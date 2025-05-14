@@ -3,7 +3,7 @@
 
 {%- macro furo_edit_button(url) -%}
 <div class="edit-this-page">
-  <a class="muted-link" href="{{ url }}" title="{{ _("Edit this page") }}">
+  <a class="muted-link" href="{{ url }}" rel="edit" title="{{ _("Edit this page") }}">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">{{ _("Edit this page") }}</span>
   </a>
