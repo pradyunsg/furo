@@ -9,9 +9,7 @@ var lastScrollTop = document.documentElement.scrollTop;
 const GO_TO_TOP_OFFSET = 64;
 
 function scrollHandlerForHeader(positionY) {
-  const headerTop = Math.floor(header.getBoundingClientRect().top);
-
-  if (headerTop == 0 && positionY != headerTop) {
+  if (positionY > 0) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
