@@ -84,7 +84,7 @@ luctus efficitur arcu. Cras ut dictum mi. Nulla congue interdum lorem, semper se
 Document Subsection
 -------------------
 
-.. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
+.. figure:: https://picsum.photos/id/237/200/200
     :align: right
     :figwidth: 200px
 

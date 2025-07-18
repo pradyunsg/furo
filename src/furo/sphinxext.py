@@ -20,7 +20,7 @@ from typing import Any, Tuple
 from docutils import nodes
 from docutils.statemachine import StringList
 from sphinx.application import Sphinx
-from sphinx.directives import SphinxDirective
+from sphinx.directives import SphinxDirective  # type: ignore[attr-defined]
 
 
 def _split_by_language(block_text: str) -> Tuple[str, str]:

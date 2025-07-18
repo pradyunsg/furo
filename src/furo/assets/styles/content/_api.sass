@@ -66,11 +66,7 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.
   a.reference
     .viewcode-link
       font-weight: normal
-      width: 3.5rem
-
-  // Break words when they're too long
-  span.pre
-    overflow-wrap: anywhere
+      width: 4.25rem
 
 em.property
   font-style: normal
@@ -86,12 +82,38 @@ em.property
 .sig-param
   font-style: normal
 
-.versionmodified
-  font-style: italic
-div.versionadded, div.versionchanged, div.deprecated
+div.versionadded,
+div.versionchanged,
+div.deprecated,
+div.versionremoved
+  border-left: 0.1875rem solid
+  border-radius: 0.125rem
+
+  padding-left: 0.75rem
+
   p
     margin-top: 0.125rem
     margin-bottom: 0.125rem
+
+div.versionadded
+  border-color: var(--color-api-added-border)
+  .versionmodified
+    color: var(--color-api-added)
+
+div.versionchanged
+  border-color: var(--color-api-changed-border)
+  .versionmodified
+    color: var(--color-api-changed)
+
+div.deprecated
+  border-color: var(--color-api-deprecated-border)
+  .versionmodified
+    color: var(--color-api-deprecated)
+
+div.versionremoved
+  border-color: var(--color-api-removed-border)
+  .versionmodified
+    color: var(--color-api-removed)
 
 // Align the [docs] and [source] to the right.
 .viewcode-link, .viewcode-back

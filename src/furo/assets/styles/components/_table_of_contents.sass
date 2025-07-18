@@ -40,11 +40,11 @@
   li
     padding-top: var(--toc-item-spacing-vertical)
 
-    &.scroll-current >.reference
+    &.scroll-current > .reference
       color: var(--color-toc-item-text--active)
       font-weight: bold
 
-  .reference
+  a.reference
     color: var(--color-toc-item-text)
     text-decoration: none
     overflow-wrap: anywhere
@@ -58,4 +58,4 @@
   color: var(--color-problematic)
   background: rgba(255, 0, 0, 0.25)
   &::before
-    content: "ERROR: Adding a table of contents in Furo-based documentation is unnecessary, and does not work well with existing styling.Add a 'this-will-duplicate-information-and-it-is-still-useful-here' class, if you want an escape hatch."
+    content: "ERROR: Adding a table of contents in Furo-based documentation is unnecessary, and does not work well with existing styling. Add a 'this-will-duplicate-information-and-it-is-still-useful-here' class, if you want an escape hatch."

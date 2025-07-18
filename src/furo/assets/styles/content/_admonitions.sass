@@ -1,3 +1,4 @@
+@use "sass:list"
 //
 // The design here is strongly inspired by mkdocs-material.
 .admonition, .topic
@@ -22,7 +23,8 @@
   > :last-child
     margin-bottom: 0
 
-p.admonition-title, p.topic-title
+.admonition p.admonition-title,
+p.topic-title
   position: relative
   margin: 0 -0.5rem 0.5rem
   padding-left: 2rem
@@ -70,7 +72,7 @@ p.topic-title
         background-color: var(--color-admonition-title-background--#{$type})
         &::before
           background-color: var(--color-admonition-title--#{$type})
-          mask-image: var(--icon-#{nth($value, 2)})
+          mask-image: var(--icon-#{list.nth($value, 2)})
 
 .admonition-todo > .admonition-title
   text-transform: uppercase

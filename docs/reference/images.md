@@ -5,13 +5,13 @@ Images can be a great supplement to technical documentation text. Sphinx provide
 ## Basic Usage
 
 ```{furo-demo}
-![](https://source.unsplash.com/200x200/daily?cute+animals)
+![](https://picsum.photos/id/237/200/200)
 
 This is from Markdown.
 
 +++
 
-.. image:: https://source.unsplash.com/200x200/daily?cute+animals
+.. image:: https://picsum.photos/id/237/200/200
 
 This is from reStructuredText.
 ```
@@ -19,7 +19,7 @@ This is from reStructuredText.
 ## Alignment
 
 ````{furo-demo}
-```{image} https://source.unsplash.com/200x200/daily?cute+animals
+```{image} https://picsum.photos/id/237/200/200
 :align: center
 ```
 
@@ -27,7 +27,7 @@ This is from Markdown.
 
 +++
 
-.. image:: https://source.unsplash.com/200x200/daily?cute+animals
+.. image:: https://picsum.photos/id/237/200/200
    :align: center
 
 
@@ -38,7 +38,7 @@ This is from reStructuredText.
 
 ````{furo-demo}
 
-```{figure} https://source.unsplash.com/200x200/daily?cute+animals
+```{figure} https://picsum.photos/id/237/200/200
 This is a captioned image, which needs the "figure" directive.
 ```
 
@@ -46,7 +46,7 @@ This is from Markdown.
 
 +++
 
-.. figure:: https://source.unsplash.com/200x200/daily?cute+animals
+.. figure:: https://picsum.photos/id/237/200/200
 
     This is a captioned image, which needs the "figure" directive.
 
@@ -66,28 +66,48 @@ based on the currently active colour scheme.
 
 ````{furo-demo}
 
-```{image} https://source.unsplash.com/200x200/daily?cute+dogs
+```{image} https://picsum.photos/id/237/200/200
 :align: center
 :class: only-light
 ```
 
-```{image} https://source.unsplash.com/200x200/daily?cute+cats
+```{image} https://picsum.photos/id/237/200/200
 :align: center
 :class: only-dark
+```
+
+```{figure} https://picsum.photos/id/237/200/200
+:align: center
+:figclass: only-light
+```
+
+```{figure} https://picsum.photos/id/237/200/200
+:align: center
+:figclass: only-dark
 ```
 
 This is from Markdown.
 
 +++
 
-.. image:: https://source.unsplash.com/200x200/daily?cute+dogs
+.. image:: https://picsum.photos/id/237/200/200
    :align: center
    :class: only-light
 
 
-.. image:: https://source.unsplash.com/200x200/daily?cute+cats
+.. image:: https://picsum.photos/id/237/200/200
    :align: center
    :class: only-dark
+
+
+.. figure:: https://picsum.photos/id/237/200/200
+   :align: center
+   :figclass: only-light
+
+
+.. figure:: https://picsum.photos/id/237/200/200
+   :align: center
+   :figclass: only-dark
 
 
 This is from reStructuredText.

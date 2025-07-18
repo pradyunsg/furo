@@ -6,4 +6,6 @@ $content-padding: 3em;
 $content-padding--small: 1em;
 $content-width: 46em;
 $sidebar-width: 15em;
-$full-width: $content-width + 2 * ($content-padding + $sidebar-width);
+$content-padded-width: $content-width + 2 * $content-padding;
+$content-padded-width--small: $content-width + 2 * $content-padding--small;
+$full-width: $content-padded-width + 2 * $sidebar-width;

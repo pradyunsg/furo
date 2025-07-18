@@ -1,5 +1,13 @@
 # Adding a logo
 
+```{versionadded} 2020.08.14.beta5
+
+```
+
+```{versionchanged} 2020.11.10.beta15
+Support for different logos for light and dark mode.
+```
+
 Logos are a point of recognition and an important part of branding. Furo supports adding your project's logo at the top of the navigational (left) sidebar, like most other Sphinx themes.
 
 ## Same logo for light and dark mode

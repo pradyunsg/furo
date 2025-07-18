@@ -11,6 +11,69 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2024.08.06 -- Energetic Eminence
+
+- ✨ Add support for Sphinx 8
+- ✨ Add smoother transitions between breakpoints
+- Increase specificity of table-wrapper selector
+- Avoid page breaks inside paragraphs
+
+## 2024.07.18 -- Dull Denim
+
+- Improve how icons are handled and aligned.
+- Improve scroll event handler.
+- Hide the copybutton by default.
+- Fix `source_view_link` configuration handling.
+- Fix close tag on pencil icon.
+
+## 2024.05.06 -- Cheerful Cerulean
+
+- ✨ Add new custom icons for auto mode, reflecting the currently active theme.
+- ✨ Add a view this page button.
+- ✨ Add colours and highlighting to "version modified" API helpers.
+- ✨ Add release information to various customisation knobs.
+- Make all icons bigger and use a thinner stroke with them.
+
+## 2024.04.27 -- Bold Burgundy
+
+- Add a skip to content link.
+- Add `--font-stack--headings`.
+- Add `:visited` colour and enforce uniform contrast between light/dark.
+- Add an offset of `:target` to reduce back-to-top overlap.
+- Improve dark mode colours.
+- Fix outstanding colour contrast warnings on Firefox.
+- Fix bad indent in footnotes.
+- Tweak handling of default configuration options in a more resilient manner.
+- Tweak length and sizing of API `source` links.
+- Stop search engine indexing on search page.
+
+## 2024.01.29 -- Amazing Amethyst
+
+- Fix canonical url when building with `dirhtml`.
+- Relicense the demo module.
+
+## 2023.09.10 -- Zesty Zaffre
+
+- Make asset hash injection idempotent, fixing Sphinx 6 compatibility.
+- Fix the check for HTML builders, fixing non-HTML Read the Docs builds.
+
+## 2023.08.19 -- Xenolithic Xanadu
+
+- Fix missing search context with Sphinx 7.2, for dirhtml builds.
+- Drop support for Python 3.7.
+- Present configuration errors in a better format -- thanks @AA-Turner!
+- Bump `require_sphinx()` to Sphinx 6.0, in line with dependency changes in Unassuming Ultramarine.
+
+## 2023.08.17 -- Wonderous White
+
+- Fix compatiblity with Sphinx 7.2.0 and 7.2.1.
+
+## 2023.07.26 -- Vigilant Volt
+
+- Fix compatiblity with Sphinx 7.1.
+- Improve how content overflow is handled.
+- Improve how literal blocks containing inline code are handled.
+
 ## 2023.05.20 -- Unassuming Ultramarine
 
 - ✨ Add support for Sphinx 7.

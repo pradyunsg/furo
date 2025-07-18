@@ -90,7 +90,7 @@ Monospace Blocks
 ================
 
 Sphinx supports many kinds of monospace blocks. This section is meant to
-showcase *all* of them that as known to the author of this page, at the time of
+showcase *all* of them that are known to the author of this page, at the time of
 writing.
 
 Production List
@@ -171,6 +171,21 @@ https://docutils.sourceforge.io/docs/ref/rst/directives.html#parsed-literal-bloc
     # parsed-literal test
     curl -O http://someurl/release-0.1.0.tar-gz
     echo "This is an intentionally very long line because I want to make sure that we are handling scrollable code blocks correctly."
+
+    asyncio.set_event_loop_policy(
+        asyncio.WindowsSelectorEventLoopPolicy()
+    )
+
+With inline code
+~~~~~~~~~~~~~~~~
+
+Here's a parsed literal containing nested inline code:
+
+.. parsed-literal::
+
+    :obj:`asyncio.set_event_loop_policy`\ (
+        :obj:`asyncio.WindowsSelectorEventLoopPolicy`\ ()
+    )
 
 Code Block
 ----------

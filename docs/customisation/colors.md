@@ -1,5 +1,9 @@
 # Changing colors
 
+```{versionadded} 2020.11.14.beta16
+
+```
+
 Furo allows customising colors to fit your brand's identity, by using CSS variables. These can be declared directly in [`html_theme_options`][sphinx-html_theme_options], in your `conf.py`.
 
 ## How light and dark mode work

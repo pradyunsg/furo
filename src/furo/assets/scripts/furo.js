@@ -5,11 +5,11 @@ import Gumshoe from "./gumshoe-patched.js";
 ////////////////////////////////////////////////////////////////////////////////
 var tocScroll = null;
 var header = null;
-var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+var lastScrollTop = document.documentElement.scrollTop;
 const GO_TO_TOP_OFFSET = 64;
 
-function scrollHandlerForHeader() {
-  if (Math.floor(header.getBoundingClientRect().top) == 0) {
+function scrollHandlerForHeader(positionY) {
+  if (positionY > 0) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
@@ -62,7 +62,7 @@ function scrollHandlerForTOC(positionY) {
 }
 
 function scrollHandler(positionY) {
-  scrollHandlerForHeader();
+  scrollHandlerForHeader(positionY);
   scrollHandlerForBackToTop(positionY);
   scrollHandlerForTOC(positionY);
 }
@@ -140,11 +140,9 @@ function setupScrollSpy() {
     recursive: true,
     navClass: "scroll-current",
     offset: () => {
-      const rem = parseFloat(
-        getComputedStyle(document.documentElement).fontSize,
-      );
+      let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
       const headerRect = header.getBoundingClientRect();
-      return headerRect.top + headerRect.height + 0.5 * rem + 1;
+      return headerRect.top + headerRect.height + 2.5 * rem + 1;
     },
   });
 }

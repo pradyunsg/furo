@@ -3,10 +3,8 @@ requires = ["sphinx-theme-builder >= 0.2.0a10"]
 build-backend = "sphinx_theme_builder"
 
 [tool.sphinx-theme-builder]
-node-version = "18.16.0"
-additional-compiled-static-assets = [
-  "styles/furo-extensions.css",
-]
+node-version = "18.20.5"
+additional-compiled-static-assets = ["styles/furo-extensions.css"]
 
 [project]
 name = "furo"
@@ -14,18 +12,17 @@ description = "A clean customisable Sphinx documentation theme."
 dynamic = ["version"]
 readme = "README.md"
 
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 dependencies = [
   "beautifulsoup4",
-  "sphinx >= 6.0,<8.0",
-  "sphinx-basic-ng",
+  "sphinx >= 6.0,<9.0",
+  "sphinx-basic-ng >= 1.0.0.beta2",
   "pygments >= 2.7",
+  "accessible-pygments >= 0.0.5",
 ]
 
-license = { file = "LICENSE"}
-authors = [
-    {name = "Pradyun Gedam", email = "mail@pradyunsg.me"},
-]
+license = { file = "LICENSE" }
+authors = [{ name = "Pradyun Gedam", email = "mail@pradyunsg.me" }]
 classifiers = [
   "Framework :: Sphinx",
   "Framework :: Sphinx :: Theme",
@@ -34,18 +31,24 @@ classifiers = [
   "Environment :: Web Environment",
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   "Operating System :: OS Independent",
   "Topic :: Documentation",
   "Topic :: Software Development :: Documentation",
 ]
 
 [project.entry-points]
-"sphinx.html_themes" = {furo = "furo"}
+"sphinx.html_themes" = { furo = "furo" }
 
 [project.urls]
 GitHub = "https://github.com/pradyunsg/furo"
+
+[tool.mypy]
+strict = true
+
+[tool.ruff]
+ignore = ["E501"]

@@ -1,5 +1,9 @@
 # Adding an announcement banner
 
+```{versionadded} 2020.12.28.beta22
+
+```
+
 Furo makes it fairly straightforward to add a site-wide announcement (AKA top banner). The announcement is added to the top of all pages on the website.
 
 This is done by setting `announcement` key in [`html_theme_options`][sphinx-html_theme_options] in your `conf.py` file. The value of this key is HTML, which is included as-is into the page.

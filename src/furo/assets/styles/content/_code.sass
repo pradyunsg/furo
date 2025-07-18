@@ -6,7 +6,9 @@ code.literal, .sig-inline
   font-size: var(--font-size--small--2)
   padding: 0.1em 0.2em
 
-  overflow-wrap: break-word
+  pre.literal-block &
+    font-size: inherit
+    padding: 0
 
   p &
     border: 1px solid var(--color-background-border)
@@ -86,7 +88,7 @@ pre
 
   + div[class]
     margin-top: 0
-    pre
+    > .highlight
       border-top-left-radius: 0
       border-top-right-radius: 0
 

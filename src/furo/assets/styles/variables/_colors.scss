@@ -12,7 +12,7 @@
   // Base Colors
   --color-foreground-primary: black; // for main text and headings
   --color-foreground-secondary: #5a5c63; // for secondary text
-  --color-foreground-muted: #646776; // for muted text
+  --color-foreground-muted: #6b6f76; // for muted text
   --color-foreground-border: #878787; // for content borders
 
   --color-background-primary: white; // for content
@@ -27,8 +27,9 @@
   --color-announcement-text: #eeebee;
 
   // Brand colors
-  --color-brand-primary: #2962ff;
-  --color-brand-content: #2a5adf;
+  --color-brand-primary: #0a4bff;
+  --color-brand-content: #2757dd;
+  --color-brand-visited: #872ee0;
 
   // API documentation
   --color-api-background: var(--color-background-hover--transparent);
@@ -38,6 +39,16 @@
   --color-api-pre-name: var(--color-problematic);
   --color-api-paren: var(--color-foreground-secondary);
   --color-api-keyword: var(--color-foreground-primary);
+
+  --color-api-added: #21632c;
+  --color-api-added-border: #38a84d;
+  --color-api-changed: #046172;
+  --color-api-changed-border: #06a1bc;
+  --color-api-deprecated: #605706;
+  --color-api-deprecated-border: #f0d90f;
+  --color-api-removed: #b30000;
+  --color-api-removed-border: #ff5c5c;
+
   --color-highlight-on-target: #ffffcc;
 
   // Inline code background
@@ -120,16 +131,21 @@
 
   // Links
   --color-link: var(--color-brand-content);
-  --color-link--hover: var(--color-brand-content);
   --color-link-underline: var(--color-background-border);
+  --color-link--hover: var(--color-brand-content);
   --color-link-underline--hover: var(--color-foreground-border);
+
+  --color-link--visited: var(--color-brand-visited);
+  --color-link-underline--visited: var(--color-background-border);
+  --color-link--visited--hover: var(--color-brand-visited);
+  --color-link-underline--visited--hover: var(--color-foreground-border);
 }
 
 @mixin colors-dark {
   --color-problematic: #ee5151;
 
   // Base Colors
-  --color-foreground-primary: #ffffffcc; // for main text and headings
+  --color-foreground-primary: #cfd0d0; // for main text and headings
   --color-foreground-secondary: #9ca0a5; // for secondary text
   --color-foreground-muted: #81868d; // for muted text
   --color-foreground-border: #666666; // for content borders
@@ -146,8 +162,9 @@
   --color-announcement-text: #eeebee;
 
   // Brand colors
-  --color-brand-primary: #2b8cee;
-  --color-brand-content: #368ce2;
+  --color-brand-primary: #3d94ff;
+  --color-brand-content: #5ca5ff;
+  --color-brand-visited: #b27aeb;
 
   // Highlighted text (search)
   --color-highlighted-background: #083563;
@@ -159,6 +176,15 @@
   // API documentation
   --color-api-keyword: var(--color-foreground-secondary);
   --color-highlight-on-target: #333300;
+
+  --color-api-added: #3db854;
+  --color-api-added-border: #267334;
+  --color-api-changed: #09b0ce;
+  --color-api-changed-border: #056d80;
+  --color-api-deprecated: #b1a10b;
+  --color-api-deprecated-border: #6e6407;
+  --color-api-removed: #ff7575;
+  --color-api-removed-border: #b03b3b;
 
   // Admonitions
   --color-admonition-background: #18181a;

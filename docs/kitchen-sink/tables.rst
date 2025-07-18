@@ -64,6 +64,10 @@ Pradyun's pip fork and installer     .. code-block:: bash
 
                                         pip install "pip @ git+https://github.com/pradyunsg/pip#20.3.3" "installer @ git+https://github.com/pradyunsg/installer"
 
+                                     .. note::
+
+                                        This is only reasonable if you're Pradyun.
+
 PyPI                                 .. code-block:: bash
 
                                         pip install pip installer
@@ -97,11 +101,11 @@ List Tables
 
 .. list-table:: This is a list table with images in it.
 
-    * - .. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
+    * - .. figure:: https://picsum.photos/id/237/200/200
 
            This is a short caption for a figure.
 
-      - .. figure:: https://source.unsplash.com/200x200/daily?cute+puppy
+      - .. figure:: https://picsum.photos/id/237/200/200
 
            This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
            Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.

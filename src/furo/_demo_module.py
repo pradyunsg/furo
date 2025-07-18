@@ -1,6 +1,5 @@
 # Copyright (c) 2021 Pradyun Gedam
-# Licensed under the Open Software License version 3.0
-# SPDX-License-Identifier: OSL-3.0
+# SPDX-License-Identifier: MIT
 
 """This is a demo module included in the docs in order to exercise autodoc."""
 
@@ -41,6 +40,17 @@ class RandomNumberGenerator:
     def seed(self) -> int:
         """Get seed for random number generation.
 
+        .. versionadded:: 1.0
+
+        .. versionchanged:: 1.1
+            Use ``random`` to create the seed.
+
+        .. deprecated:: 1.2
+            ``random`` raises security concerns.
+
+        .. versionremoved:: 1.3
+            ``random`` replaced with a random number.
+
         .. seealso:: https://xkcd.com/221/
         """
         return self._seed
@@ -52,3 +62,19 @@ class RandomNumberGenerator:
     def get_random_float(self) -> float:
         """Return a random float."""
         return float(self.seed)
+
+
+def annoying_function_name_length_aa(one: int, two: int) -> str:
+    """Add two numbers as strings.
+
+    Because I needed a placeholder function.
+    """
+    return str(one) + str(two)
+
+
+def annoying_function_name_length_aaa(one: int, two: int) -> str:
+    """Add two numbers as strings.
+
+    Because I needed a placeholder function.
+    """
+    return str(one) + str(two)
