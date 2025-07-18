@@ -88,6 +88,17 @@ This can be done by directly telling pip to install from Furo from GitHub. You l
 pip install https://github.com/pradyunsg/furo/archive/refs/heads/main.zip
 ```
 
+## Dependency management
+
+This project has dependencies managed via [pre-commit], Python and NodeJS. We regularly update these dependencies to ensure that the project's development workflow is up-to-date. Aside from the risks of functional behavior changes in dependencies, the updates for pre-commit and NodeJS can be done by running:
+
+```sh
+pre-commit autoupdate
+npm update
+```
+
+The Python dependencies are un-pinned, other than Sphinx which requires manual intervention to investigate the updates.
+
 [github flow]: https://guides.github.com/introduction/flow/
 [nox]: https://nox.readthedocs.io/en/stable/
 [jinja2]: https://jinja.palletsprojects.com
