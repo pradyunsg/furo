@@ -71,7 +71,7 @@ based on the currently active colour scheme.
 :class: only-light
 ```
 
-```{image} https://picsum.photos/id/237/200/200
+```{image} https://picsum.photos/id/1025/200/200
 :align: center
 :class: only-dark
 ```
@@ -81,7 +81,7 @@ based on the currently active colour scheme.
 :figclass: only-light
 ```
 
-```{figure} https://picsum.photos/id/237/200/200
+```{figure} https://picsum.photos/id/1025/200/200
 :align: center
 :figclass: only-dark
 ```
@@ -95,7 +95,7 @@ This is from Markdown.
    :class: only-light
 
 
-.. image:: https://picsum.photos/id/237/200/200
+.. image:: https://picsum.photos/id/1025/200/200
    :align: center
    :class: only-dark
 
@@ -105,7 +105,7 @@ This is from Markdown.
    :figclass: only-light
 
 
-.. figure:: https://picsum.photos/id/237/200/200
+.. figure:: https://picsum.photos/id/1025/200/200
    :align: center
    :figclass: only-dark
 
