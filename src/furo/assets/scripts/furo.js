@@ -141,7 +141,8 @@ function setupScrollSpy() {
     navClass: "scroll-current",
     offset: () => {
       let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-      return header.getBoundingClientRect().height + 2.5 * rem + 1;
+      const headerRect = header.getBoundingClientRect();
+      return headerRect.top + headerRect.height + 2.5 * rem + 1;
     },
   });
 }
