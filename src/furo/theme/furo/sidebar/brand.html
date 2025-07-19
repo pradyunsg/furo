@@ -12,7 +12,8 @@ Hope your day's going well. :)
 
 -#}
 <a class="sidebar-brand{% if logo %} centered{% endif %}" href="{{ pathto(master_doc) }}">
-  {% block brand_content %}
+  {%- block brand_content %}
+  {#- Remember to update the prefetch logic in `block logo_prefetch_links` in base.html #}
   {%- if logo_url %}
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="{{ logo_url }}" alt="Logo"/>

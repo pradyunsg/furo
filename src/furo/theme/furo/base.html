@@ -31,6 +31,16 @@
         {%- if pageurl %}
         <link rel="canonical" href="{{ pageurl|e }}" />
         {%- endif %}
+
+        {%- block logo_prefetch_links %}
+        {%- if logo_url %}
+        <link rel="prefetch" href="{{ logo_url }}" as="image" />
+        {%- endif %}
+        {%- if theme_light_logo and theme_dark_logo %}
+        <link rel="prefetch" href="{{ pathto('_static/' + theme_light_logo, 1) }}" as="image" />
+        <link rel="prefetch" href="{{ pathto('_static/' + theme_dark_logo, 1) }}" as="image" />
+        {%- endif %}
+        {%- endblock logo_prefetch_links %}
     {%- endblock linktags %}
 
     {# Favicon #}
