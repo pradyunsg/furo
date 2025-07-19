@@ -3,17 +3,17 @@
 // This contains the bulk of the logic for handling dark mode, color scheme
 // toggling and the handling of color-scheme-specific hiding of elements.
 
-@use "../variables"
+@use "../variables" as *
 
 body
-  @include variables.fonts
-  @include variables.spacing
-  @include variables.icons
-  @include variables.admonitions
-  @include variables.default-admonition(#651fff, "abstract")
-  @include variables.default-topic(#14B8A6, "pencil")
+  @include fonts
+  @include spacing
+  @include icons
+  @include admonitions
+  @include default-admonition(#651fff, "abstract")
+  @include default-topic(#14B8A6, "pencil")
 
-  @include variables.colors
+  @include colors
 
 .only-light
   display: block !important
@@ -24,7 +24,7 @@ html body .only-dark
 @media not print
   // Enable dark-mode, if requested.
   body[data-theme="dark"]
-    @include variables.colors-dark
+    @include colors-dark
 
     html & .only-light
       display: none !important
@@ -34,7 +34,7 @@ html body .only-dark
   // Enable dark mode, unless explicitly told to avoid.
   @media (prefers-color-scheme: dark)
     body:not([data-theme="light"])
-      @include variables.colors-dark
+      @include colors-dark
 
       html & .only-light
         display: none !important

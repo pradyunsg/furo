@@ -1,9 +1,9 @@
-@use "../variables"
+@use "../variables" as *
 
 :target
   scroll-margin-top: 2.5rem
 
-@media (max-width: variables.$full-width - variables.$sidebar-width)
+@media (max-width: $full-width - $sidebar-width)
   :target
     scroll-margin-top: calc(2.5rem + var(--header-height))
 

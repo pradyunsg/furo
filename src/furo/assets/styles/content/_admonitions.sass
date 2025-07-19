@@ -1,5 +1,5 @@
 @use "sass:list"
-@use "../variables"
+@use "../variables" as *
 
 // The design here is strongly inspired by mkdocs-material.
 .admonition, .topic
@@ -66,7 +66,7 @@ p.topic-title
 .admonition
   border-left: 0.2rem solid var(--color-admonition-title)
 
-  @each $type, $value in variables.$admonitions
+  @each $type, $value in $admonitions
     &.#{$type}
       border-left-color: var(--color-admonition-title--#{$type})
       > .admonition-title
