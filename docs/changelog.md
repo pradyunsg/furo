@@ -11,6 +11,21 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2025.07.19 -- Frozen Flame
+
+- ✨ Switch to accessible-pygments themes
+- ✨ Prefetch the sidebar logos
+- ✨ Fix flickering header drop shadow on Safari
+- Add `rel=edit` attribute to "Edit this page" link/icon
+- Bump NodeJS and npm dependency versions
+- Bump Saas & Webpack major versions
+- Improve current page detection to be resilient to sticky elements above header
+- Modernise Sass and use `@use` + `@forward`
+- Remove top of code `border-radius` with captions
+- Remove "debug printf" for headerTop value
+- Use distinct images for light and dark mode in the documentation
+- Use the modern Saas Modules
+
 ## 2024.08.06 -- Energetic Eminence
 
 - ✨ Add support for Sphinx 8
