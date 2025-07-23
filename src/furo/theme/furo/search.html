@@ -7,7 +7,7 @@
 {%- endblock regular_scripts-%}
 
 {%- block htmltitle -%}
-<title>{{ _("Search") }} - {{ docstitle }}</title>
+<title>{{ _("Search") }} - {{ docstitle|striptags|e }}</title>
 {%- endblock htmltitle -%}
 
 {% block content %}
