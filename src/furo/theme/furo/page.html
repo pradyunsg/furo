@@ -30,7 +30,7 @@
 <div class="page">
   <header class="mobile-header">
     <div class="header-left">
-      <label class="nav-overlay-icon" for="__navigation">
+      <label class="nav-overlay-icon" for="__navigation" id="nav-menu-open" tabindex="0">
         <div class="visually-hidden">Toggle site navigation sidebar</div>
         <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
@@ -48,7 +48,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc" id="toc-menu-open-sm" tabindex="0">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -111,7 +111,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc" id="toc-menu-open-md" tabindex="0">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -219,6 +219,12 @@
       {% block right_sidebar %}
       {% if not furo_hide_toc %}
       <div class="toc-sticky toc-scroll">
+        <div class="sidebar-div show-div-md justify-content-left">
+          <label class="nav-close-icon" id="toc-menu-close" for="__toc" tabindex="0">
+              <div class="visually-hidden">Toggle site table of content right sidebar</div>
+              <i class="icon"><svg><use href="#svg-close"></use></svg></i>
+          </label>
+        </div>
         <div class="toc-title-container">
           <span class="toc-title">
             {{ _("On this page") }}
