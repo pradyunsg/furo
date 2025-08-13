@@ -46,6 +46,7 @@ def get_navigation_tree(toctree_html: str) -> str:
         # We're gonna add a checkbox.
         toctree_checkbox_count += 1
         checkbox_name = f"toctree-checkbox-{toctree_checkbox_count}"
+        accessible_name = f"Toggle navigation of {element.find('a').text}"
 
         # Add the "label" for the checkbox which will get filled.
         label = soup.new_tag(
@@ -54,12 +55,6 @@ def get_navigation_tree(toctree_html: str) -> str:
                 "for": checkbox_name,
             },
         )
-        screen_reader_label = soup.new_tag(
-            "div",
-            attrs={"class": "visually-hidden"},
-        )
-        screen_reader_label.string = f"Toggle navigation of {element.find('a').text}"
-        label.append(screen_reader_label)
         label.append(_get_navigation_expand_image(soup))
 
         element.insert(1, label)
@@ -73,6 +68,7 @@ def get_navigation_tree(toctree_html: str) -> str:
                 "id": checkbox_name,
                 "name": checkbox_name,
                 "role": "switch",
+                "aria-label": accessible_name,
             },
         )
         # if this has a "current" class, be expanded by default (by checking the checkbox)
