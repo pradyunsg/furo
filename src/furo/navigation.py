@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup, Tag
 
 
 def _get_navigation_expand_image(soup: BeautifulSoup) -> Tag:
-    retval = soup.new_tag("i", attrs={"class": "icon"})
+    retval = soup.new_tag("span", attrs={"class": "icon"})
 
     svg_element = soup.new_tag("svg")
     svg_use_element = soup.new_tag("use", href="#svg-arrow-right")
