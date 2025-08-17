@@ -2,50 +2,50 @@
 <html class="no-js"{% if language is not none %} lang="{{ language }}"{% endif %} data-content_root="{{ content_root }}">
   <head>
     {%- block site_meta -%}
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
 
     {%- if metatags %}{{ metatags }}{% endif -%}
 
     {%- block linktags %}
         {%- if hasdoc('about') -%}
-          <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+          <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}">
         {%- endif -%}
         {%- if hasdoc('genindex') -%}
-          <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+          <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}">
         {%- endif -%}
         {%- if hasdoc('search') -%}
-          <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+          <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}">
         {%- endif -%}
         {%- if hasdoc('copyright') -%}
-          <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+          <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}">
         {%- endif -%}
         {%- if next -%}
-          <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+          <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}">
         {%- endif -%}
         {%- if prev -%}
-          <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+          <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}">
         {%- endif -%}
         {#- rel="canonical" (set by html_baseurl) -#}
         {%- if pageurl %}
-        <link rel="canonical" href="{{ pageurl|e }}" />
+        <link rel="canonical" href="{{ pageurl|e }}">
         {%- endif %}
 
         {%- block logo_prefetch_links %}
         {%- if logo_url %}
-        <link rel="prefetch" href="{{ logo_url }}" as="image" />
+        <link rel="prefetch" href="{{ logo_url }}" as="image">
         {%- endif %}
         {%- if theme_light_logo and theme_dark_logo %}
-        <link rel="prefetch" href="{{ pathto('_static/' + theme_light_logo, 1) }}" as="image" />
-        <link rel="prefetch" href="{{ pathto('_static/' + theme_dark_logo, 1) }}" as="image" />
+        <link rel="prefetch" href="{{ pathto('_static/' + theme_light_logo, 1) }}" as="image">
+        <link rel="prefetch" href="{{ pathto('_static/' + theme_dark_logo, 1) }}" as="image">
         {%- endif %}
         {%- endblock logo_prefetch_links %}
     {%- endblock linktags %}
 
     {# Favicon #}
     {%- if favicon_url -%}
-      <link rel="shortcut icon" href="{{ favicon_url }}"/>
+      <link rel="shortcut icon" href="{{ favicon_url }}">
     {%- endif -%}
 
     <!-- Generated with Sphinx {{ sphinx_version }} and Furo {{ furo_version }} -->
@@ -71,7 +71,7 @@
       {% if css|attr("filename") -%}
         {{ css_tag(css) }}
       {%- else -%}
-        <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
+        <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css">
       {%- endif %}
     {% endfor -%}
     {%- endblock regular_styles -%}
