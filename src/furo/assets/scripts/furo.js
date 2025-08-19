@@ -64,7 +64,7 @@ function scrollHandlerForTOC(positionY) {
 function setupTOC() {
   function loadFold() {
     const states = JSON.parse(
-      sessionStorage.getItem("toc-fold-states") || "{}"
+      sessionStorage.getItem("toc-fold-states") || "{}",
     );
     document.querySelectorAll("input.toctree-checkbox").forEach((cb) => {
       if (states.hasOwnProperty(cb.id)) {
@@ -86,7 +86,7 @@ function setupTOC() {
 
     let storedScrollTop = parseInt(
       sessionStorage.getItem("toc-scroll-top"),
-      10
+      10,
     );
 
     if (!isNaN(storedScrollTop)) {
