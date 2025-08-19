@@ -61,6 +61,55 @@ function scrollHandlerForTOC(positionY) {
   }
 }
 
+function setupTOC() {
+  function loadFold() {
+    const states = JSON.parse(
+      sessionStorage.getItem("toc-fold-states") || "{}",
+    );
+    document.querySelectorAll("input.toctree-checkbox").forEach((cb) => {
+      if (states.hasOwnProperty(cb.id)) {
+        cb.checked = states[cb.id];
+      }
+    });
+  }
+  function saveFold() {
+    const states = {};
+    document.querySelectorAll("input.toctree-checkbox").forEach((cb) => {
+      states[cb.id] = cb.checked;
+    });
+    sessionStorage.setItem("toc-fold-states", JSON.stringify(states));
+  }
+
+  function loadScroll() {
+    var sidebar = document.querySelector(".sidebar-scroll");
+    if (!sidebar) return;
+
+    let storedScrollTop = parseInt(
+      sessionStorage.getItem("toc-scroll-top"),
+      10,
+    );
+
+    if (!isNaN(storedScrollTop)) {
+      sidebar.scrollTop = storedScrollTop;
+    }
+  }
+
+  function saveScroll() {
+    var sidebar = document.querySelector(".sidebar-scroll");
+    if (!sidebar) return;
+
+    sessionStorage.setItem("toc-scroll-top", sidebar.scrollTop);
+  }
+
+  loadFold();
+  loadScroll();
+
+  window.addEventListener("beforeunload", () => {
+    saveFold();
+    saveScroll();
+  });
+}
+
 function scrollHandler(positionY) {
   scrollHandlerForHeader(positionY);
   scrollHandlerForBackToTop(positionY);
@@ -159,6 +208,7 @@ function setup() {
   setupTheme();
   setupScrollHandler();
   setupScrollSpy();
+  setupTOC();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
