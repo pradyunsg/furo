@@ -11,6 +11,10 @@ https://en.wikipedia.org/wiki/Lists_of_colors
 
 -->
 
+## 2025.09.25 -- Gleaming Green
+
+- Change the dark mode code back to `native`.
+
 ## 2025.07.19 -- Frozen Flame
 
 - ✨ Switch to accessible-pygments themes
