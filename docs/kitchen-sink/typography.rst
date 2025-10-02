@@ -11,7 +11,7 @@ This is quite important, for a website where the majority of the content is goin
 
 Notice the font family being used for the prose, as well as the font family being used for the heading. Think about the spacing between the lines, as well as the spacing between various paragraphs. Also keep the font weight in mind, and consider if/how you want antialiasing and font-smoothing to work.
 
-Multiple paragraphs are a common occurance, because you often need more than a single paragraph to describe a thing. The rest of this paragraph is gonna be the famous lorem-ipsum: Lorem ipsum **dolor** sit amet consectetur adipisicing elit. Accusamus, sunt voluptatum tenetur libero nulla esse veritatis accusantium earum commodi hic voluptatem officia culpa optio atque. Quaerat sed quibusdam ratione nam.
+Multiple paragraphs are a common occurrence, because you often need more than a single paragraph to describe a thing. The rest of this paragraph is gonna be the famous lorem-ipsum: Lorem ipsum **dolor** sit amet consectetur adipisicing elit. Accusamus, sunt voluptatum tenetur libero nulla esse veritatis accusantium earum commodi hic voluptatem officia culpa optio atque. Quaerat sed quibusdam ratione nam.
 
 Headings
 ========

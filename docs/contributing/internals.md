@@ -66,6 +66,6 @@ This directive was written to make it easier to write the examples used in the [
 - For both of these, it renders a tab that has a code block containing the snippet followed by the actual code itself.
   - This is carefully crafted to ensure that things are evaluated correctly.
 
-This approach has significant limitations however, since the A/B comparision format means that it is not directly usable to showcase functionality that is different between the two.
+This approach has significant limitations however, since the A/B comparison format means that it is not directly usable to showcase functionality that is different between the two.
 
 For that, we keep one of the snippets empty, which thanks to a conditional, results in the tab for that language (MyST or reST) not being rendered.
