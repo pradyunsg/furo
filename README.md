@@ -88,8 +88,8 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [pip] -- what I wrote this for
 - [Python Developer’s Guide][devguide]
 - [Blender][blender] -- the popular 3D suite
-- [black] -- The uncompromising Python code formatter 
-- [picologging] -- An optimized logging library for Python 
+- [black] -- The uncompromising Python code formatter
+- [picologging] -- An optimized logging library for Python
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
@@ -100,6 +100,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 [blender]: https://docs.blender.org/manual/en/latest/index.html
 [pelican]: https://docs.getpelican.com/en/latest/
 [picologging]: https://microsoft.github.io/picologging/
+
 <!-- end used-by -->
 
 ## License
