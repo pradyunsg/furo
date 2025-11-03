@@ -9,10 +9,7 @@ var lastScrollTop = document.documentElement.scrollTop;
 const GO_TO_TOP_OFFSET = 64;
 
 function scrollHandlerForHeader(positionY) {
-  const headerTop = Math.floor(header.getBoundingClientRect().top);
-
-  console.log(`headerTop: ${headerTop}`);
-  if (headerTop == 0 && positionY != headerTop) {
+  if (positionY > 0) {
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
@@ -144,7 +141,8 @@ function setupScrollSpy() {
     navClass: "scroll-current",
     offset: () => {
       let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-      return header.getBoundingClientRect().height + 2.5 * rem + 1;
+      const headerRect = header.getBoundingClientRect();
+      return headerRect.top + headerRect.height + 2.5 * rem + 1;
     },
   });
 }

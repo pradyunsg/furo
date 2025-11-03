@@ -1,3 +1,4 @@
+@use "sass:list";
 // Admonitions
 
 // Structure of these is:
@@ -39,9 +40,9 @@ $admonitions: (
 
 @mixin admonitions {
   @each $name, $values in $admonitions {
-    --color-admonition-title--#{$name}: #{nth($values, 1)};
+    --color-admonition-title--#{$name}: #{list.nth($values, 1)};
     --color-admonition-title-background--#{$name}: #{rgba(
-        nth($values, 1),
+        list.nth($values, 1),
         0.2
       )};
   }

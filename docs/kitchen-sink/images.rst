@@ -19,7 +19,7 @@ An image:
 A clickable image:
 
 .. image:: https://picsum.photos/id/237/200/200
-   :target: https://unsplash.com/
+   :target: https://picsum.photos/
    :height: 200
    :width: 200
 

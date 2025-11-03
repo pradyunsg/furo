@@ -1,4 +1,6 @@
-//
+@use "sass:list"
+@use "../variables" as *
+
 // The design here is strongly inspired by mkdocs-material.
 .admonition, .topic
   margin: 1rem auto
@@ -71,7 +73,7 @@ p.topic-title
         background-color: var(--color-admonition-title-background--#{$type})
         &::before
           background-color: var(--color-admonition-title--#{$type})
-          mask-image: var(--icon-#{nth($value, 2)})
+          mask-image: var(--icon-#{list.nth($value, 2)})
 
 .admonition-todo > .admonition-title
   text-transform: uppercase
