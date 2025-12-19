@@ -3,7 +3,7 @@
  * A simple, framework-agnostic scrollspy script.
  * (c) 2019 Chris Ferdinandi
  * MIT License
- * http://github.com/cferdinandi/gumshoe
+ * https://github.com/cferdinandi/gumshoe
  */
 
 (function (root, factory) {
