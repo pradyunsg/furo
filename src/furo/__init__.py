@@ -114,22 +114,6 @@ def get_colors_for_codeblocks(
     )
 
 
-def _compute_navigation_tree(context: Dict[str, Any]) -> str:
-    # The navigation tree, generated from the sphinx-provided ToC tree.
-    if "toctree" in context:
-        toctree = context["toctree"]
-        toctree_html = toctree(
-            collapse=False,
-            titles_only=True,
-            maxdepth=-1,
-            includehidden=True,
-        )
-    else:
-        toctree_html = ""
-
-    return get_navigation_tree(toctree_html)
-
-
 def _compute_hide_toc(
     context: Dict[str, Any],
     *,
@@ -224,7 +208,8 @@ def _html_page_context(
     context["furo_version"] = __version__
 
     # Values computed from page-level context.
-    context["furo_navigation_tree"] = _compute_navigation_tree(context)
+    context["toctree"] = context.get("toctree", None)
+    context["get_navigation_tree"] = get_navigation_tree
     context["furo_hide_toc"] = _compute_hide_toc(
         context, builder=cast(StandaloneHTMLBuilder, app.builder), docname=pagename
     )
