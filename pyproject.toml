@@ -15,7 +15,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
   "beautifulsoup4",
-  "sphinx >= 6.0,<9.0",
+  "sphinx >= 7.0,<10.0",
   "sphinx-basic-ng >= 1.0.0.beta2",
   "pygments >= 2.7",
   "accessible-pygments >= 0.0.5",
@@ -36,6 +36,8 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Operating System :: OS Independent",
   "Topic :: Documentation",
   "Topic :: Software Development :: Documentation",
@@ -50,5 +52,9 @@ GitHub = "https://github.com/pradyunsg/furo"
 [tool.mypy]
 strict = true
 
-[tool.ruff]
-ignore = ["E501"]
+[tool.ruff.lint]
+extend-select = ["D"]
+ignore = ["E501", "D203", "D213"]
+
+[tool.ruff.lint.per-file-ignores]
+"noxfile.py" = ["D"]

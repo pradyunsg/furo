@@ -1,7 +1,7 @@
 # Copyright (c) 2021 Pradyun Gedam
 # SPDX-License-Identifier: MIT
 
-"""This is a demo module included in the docs in order to exercise autodoc."""
+"""A demo module included in the docs in order to exercise autodoc."""
 
 from typing import Optional, TextIO, Type, Union
 
