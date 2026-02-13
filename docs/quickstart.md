@@ -1,6 +1,6 @@
 # Quickstart
 
 ```{include} ../README.md
-:start-after: <!-- start quickstart -->
-:end-before: <!-- end quickstart -->
+:start-after: 1<!-- start quickstart -->
+:end-before: 9<!-- end quickstart -->
 ```
