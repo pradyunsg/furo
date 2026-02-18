@@ -107,6 +107,7 @@
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
+        {% include "basic-ng/components/breadcrumbs.html" %}
         <article role="main" id="furo-main-content">
           {% block content %}{{ body }}{% endblock %}
         </article>
