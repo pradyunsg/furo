@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterator, List, Optional, cast
 
 import sphinx.application
+import sphinx.config
 from docutils import nodes
 from pygments.formatters import HtmlFormatter
 from pygments.style import Style
@@ -114,14 +115,16 @@ def get_colors_for_codeblocks(
     )
 
 
-def _compute_navigation_tree(context: Dict[str, Any]) -> str:
+def _compute_navigation_tree(
+    config: sphinx.config.Config, context: Dict[str, Any]
+) -> str:
     # The navigation tree, generated from the sphinx-provided ToC tree.
     if "toctree" in context:
         toctree = context["toctree"]
         toctree_html = toctree(
             collapse=False,
             titles_only=True,
-            maxdepth=-1,
+            maxdepth=config.html_theme_options.get("navigation_depth", -1),
             includehidden=True,
         )
     else:
@@ -224,7 +227,7 @@ def _html_page_context(
     context["furo_version"] = __version__
 
     # Values computed from page-level context.
-    context["furo_navigation_tree"] = _compute_navigation_tree(context)
+    context["furo_navigation_tree"] = _compute_navigation_tree(app.config, context)
     context["furo_hide_toc"] = _compute_hide_toc(
         context, builder=cast(StandaloneHTMLBuilder, app.builder), docname=pagename
     )
