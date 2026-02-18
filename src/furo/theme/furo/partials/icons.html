@@ -1,13 +1,49 @@
 {# Adapted from Just the Docs #}
+<!-- These icons originate from
+
+  * Ant Design Icons 4.0.0 (https://github.com/ant-design/ant-design-icons/tree/%40ant-design/icons-svg%404.0.0)
+  * Feather Icons 4.29.2 (https://github.com/feathericons/feather/tree/v4.29.2)
+  * Tabler Icons 3.36.0 (https://github.com/tabler/tabler-icons/tree/v3.36.0)
+
+They have been modified for our use cases.
+
+The MIT License
+
+Copyright (c) 2018-present Ant UED, https://xtech.antfin.com/
+Copyright (c) 2013-2023 Cole Bemis
+Copyright (c) 2020-2025 Paweł Kuna
+Copyright (c) 2020 Pradyun Gedam <mail@pradyunsg.me>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-->
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
+    {# https://github.com/ant-design/ant-design-icons/blob/%40ant-design/icons-svg%404.0.0/packages/icons-svg/svg/outlined/menu-unfold.svg, triangle has been rotated #}
     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
       <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
+    {# https://github.com/feathericons/feather/blob/v4.29.2/icons/menu.svg #}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -17,6 +53,7 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
+    {# https://github.com/feathericons/feather/blob/v4.29.2/icons/chevron-right.svg #}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
@@ -24,6 +61,7 @@
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
+    {# https://github.com/feathericons/feather/blob/v4.29.2/icons/sun.svg #}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
@@ -39,6 +77,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
+    {# https://github.com/tabler/tabler-icons/blob/v3.36.0/icons/outline/moon.svg #}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -47,6 +86,7 @@
   </symbol>
   <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
     <title>Auto light/dark, in light mode</title>
+    {# Derived from https://github.com/feathericons/feather/blob/v4.29.2/icons/sun.svg and https://github.com/tabler/tabler-icons/blob/v3.36.0/icons/outline/moon.svg #}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
       class="icon-custom-derived-from-feather-sun-and-tabler-moon">
@@ -64,6 +104,7 @@
   </symbol>
   <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
     <title>Auto light/dark, in dark mode</title>
+    {# Derived from https://github.com/feathericons/feather/blob/v4.29.2/icons/sun.svg and https://github.com/tabler/tabler-icons/blob/v3.36.0/icons/outline/moon.svg #}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
       class="icon-custom-derived-from-feather-sun-and-tabler-moon">
@@ -80,6 +121,7 @@
     </svg>
   </symbol>
   <symbol id="svg-pencil" viewBox="0 0 24 24">
+    {# https://github.com/tabler/tabler-icons/blob/v3.36.0/icons/outline/pencil-code.svg #}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
       <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
@@ -89,6 +131,7 @@
     </svg>
   </symbol>
   <symbol id="svg-eye" viewBox="0 0 24 24">
+    {# https://github.com/tabler/tabler-icons/blob/v3.36.0/icons/outline/eye-code.svg #}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />

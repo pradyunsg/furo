@@ -21,13 +21,16 @@ dependencies = [
   "accessible-pygments >= 0.0.5",
 ]
 
-license = { file = "LICENSE" }
+license = "MIT"
+license-files = [
+  "LICENSE",
+  "LICENSE.icons",
+]
 authors = [{ name = "Pradyun Gedam", email = "mail@pradyunsg.me" }]
 classifiers = [
   "Framework :: Sphinx",
   "Framework :: Sphinx :: Theme",
   "Development Status :: 5 - Production/Stable",
-  "License :: OSI Approved :: MIT License",
   "Environment :: Web Environment",
   "Intended Audience :: Developers",
   "Programming Language :: Python :: 3",
