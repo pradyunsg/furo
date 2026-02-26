@@ -77,12 +77,13 @@ Sphinx provides semantic markup roles that convey meaning beyond plain bold,
 italic, or inline code. Each group below has a distinct visual style.
 
 **CLI commands and build variables:**
-Use :command:`curl` or :program:`python3` to run commands. Build variables like
+Use :command:`curl -sSL` or :program:`python3` to run commands. Build variables like
 :makevar:`CFLAGS` are also styled distinctly.
 
 **File paths, samples, and patterns:**
-Edit :file:`/etc/hosts` or :file:`conf.py`. A sample like :samp:`print({name})`
-uses replaceable parts. Regular expressions: :regexp:`^foo.*bar$`.
+Edit :file:`/etc/hosts`, :file:`conf.py`, or :file:`/usr/bin/python3.{x}`. A sample
+like :samp:`print({name})` uses replaceable parts. Regular expressions:
+:regexp:`^foo.*bar$`.
 
 **Environment variables and options:**
 Set :envvar:`PATH` or :envvar:`HOME` in your shell. Pass :option:`--verbose` or
