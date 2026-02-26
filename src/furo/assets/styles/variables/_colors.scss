@@ -63,6 +63,22 @@
   --color-guilabel-border: #bedaf580;
   --color-guilabel-text: var(--color-foreground-primary);
 
+  // Semantic roles - CLI/Commands
+  --color-cli-background: #f0f7eec0;
+  --color-cli-border: #c1dbb9c0;
+
+  // Semantic roles - Paths/Patterns
+  --color-path-background: #fef8eec0;
+  --color-path-border: #f0deb4c0;
+
+  // Semantic roles - Environment/Options
+  --color-envvar-background: #f0eeffc0;
+  --color-envvar-border: #c7c0f0c0;
+
+  // Semantic roles - Metadata
+  --color-metadata-background: #f0f0f0c0;
+  --color-metadata-border: #d5d5d5c0;
+
   // Admonitions!
   --color-admonition-background: transparent;
 
@@ -172,6 +188,22 @@
   // GUI Labels
   --color-guilabel-background: #08356380;
   --color-guilabel-border: #13395f80;
+
+  // Semantic roles - CLI/Commands
+  --color-cli-background: #1a2e1a80;
+  --color-cli-border: #2d4a2d80;
+
+  // Semantic roles - Paths/Patterns
+  --color-path-background: #2e2a1a80;
+  --color-path-border: #4a402080;
+
+  // Semantic roles - Environment/Options
+  --color-envvar-background: #1f1a2e80;
+  --color-envvar-border: #342d4a80;
+
+  // Semantic roles - Metadata
+  --color-metadata-background: #1e1e2080;
+  --color-metadata-border: #3a3a3e80;
 
   // API documentation
   --color-api-keyword: var(--color-foreground-secondary);

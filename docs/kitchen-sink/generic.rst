@@ -70,6 +70,30 @@ useful way is ``menuselection`` to show menus:
 For example, ``menuselection`` should break when it is too long to fit on a
 single line.
 
+Semantic roles
+^^^^^^^^^^^^^^
+
+Sphinx provides semantic markup roles that convey meaning beyond plain bold,
+italic, or inline code. Each group below has a distinct visual style.
+
+**CLI commands and build variables:**
+Use :command:`curl -sSL` or :program:`python3` to run commands. Build variables like
+:makevar:`CFLAGS` are also styled distinctly.
+
+**File paths, samples, and patterns:**
+Edit :file:`/etc/hosts`, :file:`conf.py`, or :file:`/usr/bin/python3.{x}`. A sample
+like :samp:`print({name})` uses replaceable parts. Regular expressions:
+:regexp:`^foo.*bar$`.
+
+**Environment variables and options:**
+Set :envvar:`PATH` or :envvar:`HOME` in your shell. Pass :option:`--verbose` or
+:option:`-O2` on the command line.
+
+**Reference metadata:**
+See :manpage:`grep(1)` or :manpage:`stdio(3)` for details. Content types like
+:mimetype:`text/plain` and :mimetype:`application/json`, mail headers like
+:mailheader:`Content-Type`, and newsgroups like :newsgroup:`comp.lang.python`.
+
 Long inline code wrapping
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
