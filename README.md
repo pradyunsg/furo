@@ -89,6 +89,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [Python Developer’s Guide][devguide]
 - [Blender][blender] -- the popular 3D suite
 - [black]
+- [docs.linuxfabrik.ch] -- A German-language Open Source admin handbook.
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
@@ -98,6 +99,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 [black]: https://black.readthedocs.io/en/stable/
 [blender]: https://docs.blender.org/manual/en/latest/index.html
 [pelican]: https://docs.getpelican.com/en/latest/
+[docs.linuxfabrik.ch]: https://docs.linuxfabrik.ch
 
 <!-- end used-by -->
 
