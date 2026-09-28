@@ -138,11 +138,7 @@ def _compute_hide_toc(
 ) -> bool:
     # Should the table of contents be hidden?
     file_meta = context.get("meta", None) or {}
-    if "hide-toc" in file_meta:
-        return True
-    elif "toc" not in context:
-        return True
-    elif not context["toc"]:
+    if "hide-toc" in file_meta or "toc" not in context or not context["toc"]:
         return True
 
     return has_not_enough_items_to_show_toc(builder, docname)
