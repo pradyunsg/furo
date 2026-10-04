@@ -4,7 +4,6 @@ from __future__ import annotations
 
 __version__ = "2025.12.19.dev1"
 
-import hashlib
 import logging
 import os
 from functools import lru_cache
@@ -146,37 +145,6 @@ def _compute_hide_toc(
     return has_not_enough_items_to_show_toc(builder, docname)
 
 
-@lru_cache(maxsize=None)
-def _asset_hash(path: str) -> str:
-    """Append a `?digest=` to an url based on the file content."""
-    full_path = THEME_PATH / "static" / path
-    digest = hashlib.sha1(full_path.read_bytes()).hexdigest()
-
-    return f"_static/{path}?digest={digest}"
-
-
-def _add_asset_hashes(static: list[str], add_digest_to: list[str]) -> None:
-    if sphinx.version_info >= (7, 1):
-        # https://github.com/sphinx-doc/sphinx/pull/11415 added the relevant
-        # functionality to Sphinx, so we don't need to do anything.
-        return
-
-    for asset in add_digest_to:
-        try:
-            index = static.index("_static/" + asset)
-        except ValueError:
-            raise ConfigError(
-                "Furo is trying to add a digest to an asset that is not in the "
-                f"static files: {asset}. Please check conf.py for overrides of "
-                "theme-provide assets such as `html_style`."
-            )
-
-        # Make this idempotent
-        if "?digest=" in static[index].filename:  # type: ignore[attr-defined]
-            continue
-        static[index].filename = _asset_hash(asset)  # type: ignore[attr-defined]
-
-
 def _fix_canonical_url(
     app: sphinx.application.Sphinx, pagename: str, context: dict[str, Any]
 ) -> None:
@@ -205,17 +173,6 @@ def _html_page_context(
     context: dict[str, Any],
     doctree: Any,
 ) -> None:
-    if "css_files" in context:
-        _add_asset_hashes(
-            context["css_files"],
-            ["styles/furo.css", "styles/furo-extensions.css"],
-        )
-    if "scripts" in context:
-        _add_asset_hashes(
-            context["scripts"],
-            ["scripts/furo.js"],
-        )
-
     _fix_canonical_url(app, pagename, context)
 
     # Basic constants
@@ -375,7 +332,7 @@ def _overwrite_pygments_css(
 
 def setup(app: sphinx.application.Sphinx) -> dict[str, Any]:
     """Entry point for sphinx theming."""
-    app.require_sphinx("6.0")
+    app.require_sphinx("7.1")
 
     app.add_config_value(
         "pygments_dark_style", default="native", rebuild="env", types=[str]
