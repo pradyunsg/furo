@@ -16,7 +16,7 @@ def _get_navigation_expand_image(soup: BeautifulSoup) -> Tag:
     return retval
 
 
-@functools.lru_cache(maxsize=None)
+@functools.cache
 def get_navigation_tree(toctree_html: str) -> str:
     """Modify the given navigation tree, with furo-specific elements.
 
