@@ -17,12 +17,14 @@ This provides a single `furo-demo` directive, which:
 from __future__ import annotations
 
 from textwrap import indent
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from docutils import nodes
 from docutils.statemachine import StringList
-from sphinx.application import Sphinx
 from sphinx.directives import SphinxDirective  # type: ignore[attr-defined]
+
+if TYPE_CHECKING:
+    from sphinx.application import Sphinx
 
 
 def _split_by_language(block_text: str) -> tuple[str, str]:

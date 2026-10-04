@@ -52,8 +52,8 @@ GitHub = "https://github.com/pradyunsg/furo"
 strict = true
 
 [tool.ruff.lint]
-extend-select = ["D"]
-ignore = ["E501", "D203", "D213"]
+extend-select = ["D", "TC"]
+ignore = ["D203", "D213"]
 
 [tool.ruff.lint.per-file-ignores]
 "noxfile.py" = ["D"]

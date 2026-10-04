@@ -6,15 +6,11 @@ __version__ = "2025.12.19.dev1"
 
 import logging
 import os
-from collections.abc import Iterator
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, cast
+from typing import TYPE_CHECKING, Any, cast
 
-import sphinx.application
 from docutils import nodes
-from pygments.formatters import HtmlFormatter
-from pygments.style import Style
 from pygments.token import Text
 from sphinx.builders.dirhtml import DirectoryHTMLBuilder
 from sphinx.builders.html import StandaloneHTMLBuilder
@@ -24,6 +20,13 @@ from sphinx.highlighting import PygmentsBridge
 from sphinx.transforms.post_transforms import SphinxPostTransform
 
 from .navigation import get_navigation_tree
+
+if TYPE_CHECKING:
+    from collections.abc import Iterator
+
+    import sphinx.application
+    from pygments.formatters import HtmlFormatter
+    from pygments.style import Style
 
 THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
 
@@ -177,7 +180,7 @@ def _html_page_context(
     # Values computed from page-level context.
     context["furo_navigation_tree"] = _compute_navigation_tree(context)
     context["furo_hide_toc"] = _compute_hide_toc(
-        context, builder=cast(StandaloneHTMLBuilder, app.builder), docname=pagename
+        context, builder=cast("StandaloneHTMLBuilder", app.builder), docname=pagename
     )
 
     assert _KNOWN_STYLES_IN_USE["light"]
@@ -270,7 +273,7 @@ def _get_light_style(app: sphinx.application.Sphinx) -> Style:
 
 def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
     dark_style = app.config.pygments_dark_style
-    return cast(Style, PygmentsBridge("html", dark_style).formatter_args["style"])
+    return cast("Style", PygmentsBridge("html", dark_style).formatter_args["style"])
 
 
 def _get_styles(formatter: HtmlFormatter[str], *, prefix: str) -> Iterator[str]:
