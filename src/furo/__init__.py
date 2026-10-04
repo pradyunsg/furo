@@ -16,16 +16,18 @@ from pygments.style import Style
 from pygments.token import Text
 from sphinx.builders.dirhtml import DirectoryHTMLBuilder
 from sphinx.builders.html import StandaloneHTMLBuilder
-from sphinx.environment.adapters.toctree import TocTree
+from sphinx.environment.adapters.toctree import TocTree, global_toctree_for_doc
 from sphinx.errors import ConfigError
 from sphinx.highlighting import PygmentsBridge
 from sphinx.transforms.post_transforms import SphinxPostTransform
 
-from .navigation import get_navigation_tree
+from .navigation import _NavigationTree, get_navigation_tree
 
 THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
 
 logger = logging.getLogger(__name__)
+
+_NAVIGATION_TREE_DOCNAME = "__furo_navigation_tree__"
 
 # GLOBAL STATE
 _KNOWN_STYLES_IN_USE: Dict[str, Optional[Style]] = {
@@ -114,20 +116,94 @@ def get_colors_for_codeblocks(
     )
 
 
-def _compute_navigation_tree(context: Dict[str, Any]) -> str:
-    # The navigation tree, generated from the sphinx-provided ToC tree.
-    if "toctree" in context:
-        toctree = context["toctree"]
-        toctree_html = toctree(
-            collapse=False,
-            titles_only=True,
-            maxdepth=-1,
-            includehidden=True,
-        )
-    else:
-        toctree_html = ""
+class _NavigationTreeBuilder:
+    """A small builder adapter used to build one canonical navigation tree.
 
-    return get_navigation_tree(toctree_html)
+    Sphinx asks the active HTML builder for relative links while resolving a
+    toctree.  If those links are computed for a real page, the generated HTML is
+    tied to that page and cannot be shared with the next page.  This adapter
+    gives ``global_toctree_for_doc`` just the builder surface it needs: the
+    shared tag set and a ``get_relative_uri`` implementation.
+
+    Instead of returning page-relative paths, ``get_relative_uri`` returns stable
+    placeholder tokens and records the docname each token represents.  The
+    placeholders make the canonical HTML independent of any one page.  The
+    compiled navigation tree later turns those tokens back into real relative
+    links for each page that is being written.
+    """
+
+    def __init__(self, builder: StandaloneHTMLBuilder) -> None:
+        self.tags = builder.tags
+        self.token_to_docname: Dict[str, str] = {}
+        self._docname_to_token: Dict[str, str] = {}
+
+    def get_relative_uri(self, _from: str, to: str) -> str:
+        try:
+            return self._docname_to_token[to]
+        except KeyError:
+            token = f"__furo_navigation_doc_{len(self._docname_to_token)}__"
+            self._docname_to_token[to] = token
+            self.token_to_docname[token] = to
+            return token
+
+
+def _get_cached_navigation_tree(builder: StandaloneHTMLBuilder) -> _NavigationTree:
+    """Return the per-builder cached Furo navigation tree.
+
+    The ``html-page-context`` event runs once for every standalone page that the
+    HTML builder writes.  Before this cache, Furo used that hook to call
+    ``context["toctree"]`` for every page.  For large projects that meant each
+    page recomputed Sphinx's global toctree, copied a large docutils tree, and
+    then parsed the resulting HTML with BeautifulSoup.
+
+    Furo asks Sphinx for the same structural tree on every page: no collapsing,
+    titles only, unlimited depth, and hidden toctrees included.  The only
+    page-specific parts are the relative ``href`` values and the state used to
+    mark the current page and open ancestors.  Cache that structural tree on the
+    shared ``StandaloneHTMLBuilder`` instance so all page writes in this builder
+    process reuse it.  Parallel Sphinx writes use separate builder processes, so
+    each process builds its own cache and no cross-build global state is needed.
+    """
+    cached = getattr(builder, "_furo_navigation_tree", None)
+    if isinstance(cached, _NavigationTree):
+        return cached
+
+    placeholder_builder = _NavigationTreeBuilder(builder)
+    # Use a sentinel docname that is not one of the project's documents.  That
+    # gives us a canonical tree with no real page marked current; current-page
+    # state is restored later by _NavigationTree.render().
+    toctree = global_toctree_for_doc(
+        builder.env,
+        _NAVIGATION_TREE_DOCNAME,
+        placeholder_builder,  # type: ignore[arg-type]
+        collapse=False,
+        titles_only=True,
+        maxdepth=-1,
+        includehidden=True,
+    )
+    toctree_html = builder.render_partial(toctree)["fragment"]
+    navigation_tree = _NavigationTree(
+        get_navigation_tree(toctree_html),
+        token_to_docname=placeholder_builder.token_to_docname,
+    )
+    setattr(builder, "_furo_navigation_tree", navigation_tree)
+    return navigation_tree
+
+
+def _compute_navigation_tree(
+    app: sphinx.application.Sphinx, context: Dict[str, Any], pagename: str
+) -> str:
+    # The navigation tree, generated from the sphinx-provided ToC tree.
+    if "toctree" not in context:
+        return ""
+
+    builder = cast(StandaloneHTMLBuilder, app.builder)
+    # Render the shared structural tree for this page by patching only the
+    # per-page HTML state: relative hrefs, current/current-page classes, and
+    # toctree checkbox expansion.
+    return _get_cached_navigation_tree(builder).render(
+        builder=builder, pagename=pagename
+    )
 
 
 def _compute_hide_toc(
@@ -224,7 +300,7 @@ def _html_page_context(
     context["furo_version"] = __version__
 
     # Values computed from page-level context.
-    context["furo_navigation_tree"] = _compute_navigation_tree(context)
+    context["furo_navigation_tree"] = _compute_navigation_tree(app, context, pagename)
     context["furo_hide_toc"] = _compute_hide_toc(
         context, builder=cast(StandaloneHTMLBuilder, app.builder), docname=pagename
     )
