@@ -3,33 +3,6 @@
   font-size: var(--font-size--small--4)
   vertical-align: super
 
-// Definition list, listing the content of each note.
-// docutils <= 0.17
-dl.footnote.brackets
-  font-size: var(--font-size--small)
-  color: var(--color-foreground-secondary)
-
-  display: grid
-  grid-template-columns: max-content auto
-  dt
-    margin: 0
-    > .fn-backref
-      margin-left: 0.25rem
-
-    &:after
-      content: ":"
-
-    .brackets
-      &:before
-        content: "["
-      &:after
-        content: "]"
-
-  dd
-    margin: 0
-    padding: 0 1rem
-
-// docutils >= 0.18
 aside.footnote
   font-size: var(--font-size--small)
   color: var(--color-foreground-secondary)
