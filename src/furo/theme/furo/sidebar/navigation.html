@@ -1,3 +1,8 @@
 <div class="sidebar-tree">
-  {{ furo_navigation_tree }}
+  {% if toctree is defined %}
+  {% set toctree_html = toctree(collapse=theme_collapse_navbar, titles_only=True, maxdepth=-1, includehidden=True) %}
+  {% else %}
+  {% set toctree_html = "" %}
+  {% endif %}
+  {{ get_navigation_tree(toctree_html) }}
 </div>
