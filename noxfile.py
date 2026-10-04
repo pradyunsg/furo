@@ -58,7 +58,10 @@ def get_release_versions(version_file):
         else:
             raise RuntimeError("Could not find current version.")
 
-    return _determine_versions(current_version, date=datetime.date.today())
+    return _determine_versions(
+        current_version,
+        date=datetime.datetime.now(tz=datetime.UTC).date(),
+    )
 
 
 #

@@ -4,9 +4,11 @@ Full list of options can be found in the Sphinx documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
 
+from __future__ import annotations
+
 import os
 import sys
-from typing import Any, Dict
+from typing import Any
 
 # add the demo python code to the path, so that it can be used to demonstrate
 # source links
@@ -87,7 +89,7 @@ language = "en"
 html_static_path = ["_static"]
 html_css_files = ["pied-piper-admonition.css"]
 
-html_theme_options: Dict[str, Any] = {
+html_theme_options: dict[str, Any] = {
     "footer_icons": [
         {
             "name": "GitHub",
@@ -115,7 +117,7 @@ if "READTHEDOCS" in os.environ:
 # Make sure these are all set to the default values.
 
 html_js_files = []
-html_context: Dict[str, Any] = {}
+html_context: dict[str, Any] = {}
 # html_show_sphinx = False
 # html_show_copyright = False
 # html_last_updated_fmt = ""

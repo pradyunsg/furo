@@ -3,16 +3,18 @@
 
 """A demo module included in the docs in order to exercise autodoc."""
 
-from typing import Optional, TextIO, Type, Union
+from __future__ import annotations
+
+from typing import TextIO
 
 
 def show_warning(
-    message: Union[Warning, str],
-    category: Type[Warning],
+    message: Warning | str,
+    category: type[Warning],
     filename: str,
     lineno: int,
-    file: Optional[TextIO] = None,
-    line: Optional[str] = None,
+    file: TextIO | None = None,
+    line: str | None = None,
 ) -> None:
     """Show a warning to the end user.
 
