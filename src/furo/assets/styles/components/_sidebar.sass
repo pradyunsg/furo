@@ -44,7 +44,7 @@
   &::before
     content: ""
     position: absolute
-    left: var(--sidebar-item-spacing-horizontal)
+    inset-inline-start: var(--sidebar-item-spacing-horizontal)
     width: var(--sidebar-search-icon-size)
     height: var(--sidebar-search-icon-size)
 
@@ -60,8 +60,8 @@
 
   padding-top: var(--sidebar-search-input-spacing-vertical)
   padding-bottom: var(--sidebar-search-input-spacing-vertical)
-  padding-right: var(--sidebar-search-input-spacing-horizontal)
-  padding-left: calc(var(--sidebar-item-spacing-horizontal) + var(--sidebar-search-input-spacing-horizontal) + var(--sidebar-search-icon-size))
+  padding-inline-end: var(--sidebar-search-input-spacing-horizontal)
+  padding-inline-start: calc(var(--sidebar-item-spacing-horizontal) + var(--sidebar-search-input-spacing-horizontal) + var(--sidebar-search-icon-size))
 
   width: 100%
 
@@ -110,7 +110,7 @@
     margin: 0
 
     > ul
-      margin-left: var(--sidebar-item-spacing-horizontal)
+      margin-inline-start: var(--sidebar-item-spacing-horizontal)
 
   .icon
     color: var(--color-sidebar-link-text)
@@ -150,7 +150,7 @@
   label
     position: absolute
     top: 0
-    right: 0
+    inset-inline-end: 0
     height: var(--sidebar-item-height)
     width: var(--sidebar-expander-width)
 
@@ -175,7 +175,7 @@
   // overlapping with the <label>
   li.has-children
     > .reference
-      padding-right: var(--sidebar-expander-width)
+      padding-inline-end: var(--sidebar-expander-width)
 
   // Colorize the top-level list items and icon.
   .toctree-l1

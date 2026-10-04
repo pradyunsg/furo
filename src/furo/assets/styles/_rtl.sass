@@ -1,0 +1,32 @@
+// Technical expressions retain their own direction inside RTL prose.
+html[dir="rtl"]
+  pre,
+  code,
+  .highlight,
+  .highlighttable,
+  div[class*=" highlight-"],
+  div[class^="highlight-"],
+  .sig,
+  .sig-param,
+  .math,
+  .math-wrapper
+    direction: ltr
+    unicode-bidi: isolate
+
+  pre,
+  .highlight
+    text-align: start
+
+  .sig:not(.sig-inline)
+    text-align: end
+
+  .related-pages
+    .next-page svg.furo-related-icon
+      transform: rotate(180deg)
+    .prev-page svg.furo-related-icon
+      transform: none
+
+  #search-results
+    direction: rtl
+    text-align: start
+    unicode-bidi: isolate

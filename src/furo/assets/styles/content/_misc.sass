@@ -24,16 +24,16 @@ kbd:not(.compound)
 
 // Blockquote
 blockquote
-  border-left: 4px solid var(--color-background-border)
+  border-inline-start: 4px solid var(--color-background-border)
   background: var(--color-background-secondary)
 
-  margin-left: 0
-  margin-right: 0
+  margin-inline-start: 0
+  margin-inline-end: 0
   padding: 0.5rem 1rem
 
   .attribution
     font-weight: 600
-    text-align: right
+    text-align: end
 
   &.pull-quote,
   &.highlights
@@ -41,11 +41,11 @@ blockquote
 
   &.epigraph,
   &.pull-quote
-    border-left-width: 0
+    border-inline-start-width: 0
     border-radius: 0.5rem
 
   &.highlights
-    border-left-width: 0
+    border-inline-start-width: 0
     background: transparent
 
 // Center align embedded-in-text images

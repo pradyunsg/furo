@@ -66,10 +66,10 @@ pre
   // Expand the line-highlighting.
   .hll
     display: block
-    margin-left: -$code-spacing-horizontal
-    margin-right: -$code-spacing-horizontal
-    padding-left: $code-spacing-horizontal
-    padding-right: $code-spacing-horizontal
+    margin-inline-start: -$code-spacing-horizontal
+    margin-inline-end: -$code-spacing-horizontal
+    padding-inline-start: $code-spacing-horizontal
+    padding-inline-end: $code-spacing-horizontal
 
 /* Make code block captions be nicely integrated */
 .code-block-caption
@@ -77,8 +77,8 @@ pre
   padding: $code-spacing-vertical $code-spacing-horizontal
 
   border-radius: 0.25rem
-  border-bottom-left-radius: 0
-  border-bottom-right-radius: 0
+  border-end-start-radius: 0
+  border-end-end-radius: 0
   font-weight: 300
   border-bottom: 1px solid
 
@@ -89,8 +89,8 @@ pre
   + div[class]
     margin-top: 0
     > .highlight
-      border-top-left-radius: 0
-      border-top-right-radius: 0
+      border-start-start-radius: 0
+      border-start-end-radius: 0
 
 // When `html_codeblock_linenos_style` is table.
 .highlighttable
@@ -107,12 +107,12 @@ pre
     background-color: var(--color-code-background)
     color: var(--color-code-foreground)
     padding: $code-spacing-vertical $code-spacing-horizontal
-    padding-right: 0
-    border-top-left-radius: 0.2rem
-    border-bottom-left-radius: 0.2rem
+    padding-inline-end: 0
+    border-start-start-radius: 0.2rem
+    border-end-start-radius: 0.2rem
 
   .linenodiv
-    padding-right: $code-spacing-horizontal
+    padding-inline-end: $code-spacing-horizontal
     font-size: var(--code-font-size)
     box-shadow: -0.0625rem 0 var(--color-foreground-border) inset
 
@@ -124,14 +124,14 @@ pre
     overflow: hidden
 
     .highlight
-      border-top-left-radius: 0
-      border-bottom-left-radius: 0
+      border-start-start-radius: 0
+      border-end-start-radius: 0
 
 // When `html_codeblock_linenos_style` is inline.
 .highlight
   span.linenos
     display: inline-block
-    padding-left: 0
-    padding-right: $code-spacing-horizontal
-    margin-right: $code-spacing-horizontal
+    padding-inline-start: 0
+    padding-inline-end: $code-spacing-horizontal
+    margin-inline-end: $code-spacing-horizontal
     box-shadow: -0.0625rem 0 var(--color-foreground-border) inset

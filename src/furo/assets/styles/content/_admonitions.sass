@@ -28,8 +28,8 @@
 p.topic-title
   position: relative
   margin: 0 -0.5rem 0.5rem
-  padding-left: 2rem
-  padding-right: .5rem
+  padding-inline-start: 2rem
+  padding-inline-end: .5rem
   padding-top: .4rem
   padding-bottom: .4rem
 
@@ -41,7 +41,7 @@ p.topic-title
   &::before
     content: ""
     position: absolute
-    left: 0.5rem
+    inset-inline-start: 0.5rem
     width: 1rem
     height: 1rem
 
@@ -64,11 +64,11 @@ p.topic-title
 // Variants
 //
 .admonition
-  border-left: 0.2rem solid var(--color-admonition-title)
+  border-inline-start: 0.2rem solid var(--color-admonition-title)
 
   @each $type, $value in $admonitions
     &.#{$type}
-      border-left-color: var(--color-admonition-title--#{$type})
+      border-inline-start-color: var(--color-admonition-title--#{$type})
       > .admonition-title
         background-color: var(--color-admonition-title-background--#{$type})
         &::before
