@@ -203,6 +203,9 @@
             {%- endif %}
           </div>
         </div>
+        {%- if READTHEDOCS -%}
+          <readthedocs-flyout position="bottom-left"></readthedocs-flyout>
+        {%- endif -%}
         {% endblock footer %}
       </footer>
     </div>
