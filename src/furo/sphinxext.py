@@ -14,8 +14,10 @@ This provides a single `furo-demo` directive, which:
 
 """
 
+from __future__ import annotations
+
 from textwrap import indent
-from typing import Any, Tuple
+from typing import Any
 
 from docutils import nodes
 from docutils.statemachine import StringList
@@ -23,7 +25,7 @@ from sphinx.application import Sphinx
 from sphinx.directives import SphinxDirective  # type: ignore[attr-defined]
 
 
-def _split_by_language(block_text: str) -> Tuple[str, str]:
+def _split_by_language(block_text: str) -> tuple[str, str]:
     try:
         a, b = block_text.split("+++\n")
     except ValueError:

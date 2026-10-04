@@ -1,5 +1,7 @@
 """A clean customisable Sphinx documentation theme."""
 
+from __future__ import annotations
+
 __version__ = "2025.12.19.dev1"
 
 import hashlib
@@ -7,7 +9,7 @@ import logging
 import os
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict, Iterator, List, Optional, cast
+from typing import Any, Iterator, cast
 
 import sphinx.application
 from docutils import nodes
@@ -28,7 +30,7 @@ THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
 logger = logging.getLogger(__name__)
 
 # GLOBAL STATE
-_KNOWN_STYLES_IN_USE: Dict[str, Optional[Style]] = {
+_KNOWN_STYLES_IN_USE: dict[str, Style | None] = {
     "light": None,
     "dark": None,
 }
@@ -82,8 +84,8 @@ def has_not_enough_items_to_show_toc(
 
 
 def get_pygments_style_colors(
-    style: Style, *, fallbacks: Dict[str, str]
-) -> Dict[str, str]:
+    style: Style, *, fallbacks: dict[str, str]
+) -> dict[str, str]:
     """Get background/foreground colors for given pygments style."""
     background = style.background_color  # type: ignore[attr-defined]
     text_colors = style.style_for_token(Text)  # type: ignore[attr-defined]
@@ -103,7 +105,7 @@ def get_pygments_style_colors(
 @lru_cache(maxsize=2)
 def get_colors_for_codeblocks(
     highlighter: PygmentsBridge, *, fg: str, bg: str
-) -> Dict[str, str]:
+) -> dict[str, str]:
     """Get background/foreground colors for given pygments style."""
     return get_pygments_style_colors(
         highlighter.formatter_args["style"],
@@ -114,7 +116,7 @@ def get_colors_for_codeblocks(
     )
 
 
-def _compute_navigation_tree(context: Dict[str, Any]) -> str:
+def _compute_navigation_tree(context: dict[str, Any]) -> str:
     # The navigation tree, generated from the sphinx-provided ToC tree.
     if "toctree" in context:
         toctree = context["toctree"]
@@ -131,18 +133,14 @@ def _compute_navigation_tree(context: Dict[str, Any]) -> str:
 
 
 def _compute_hide_toc(
-    context: Dict[str, Any],
+    context: dict[str, Any],
     *,
     builder: StandaloneHTMLBuilder,
     docname: str,
 ) -> bool:
     # Should the table of contents be hidden?
     file_meta = context.get("meta", None) or {}
-    if "hide-toc" in file_meta:
-        return True
-    elif "toc" not in context:
-        return True
-    elif not context["toc"]:
+    if "hide-toc" in file_meta or "toc" not in context or not context["toc"]:
         return True
 
     return has_not_enough_items_to_show_toc(builder, docname)
@@ -157,7 +155,7 @@ def _asset_hash(path: str) -> str:
     return f"_static/{path}?digest={digest}"
 
 
-def _add_asset_hashes(static: List[str], add_digest_to: List[str]) -> None:
+def _add_asset_hashes(static: list[str], add_digest_to: list[str]) -> None:
     if sphinx.version_info >= (7, 1):
         # https://github.com/sphinx-doc/sphinx/pull/11415 added the relevant
         # functionality to Sphinx, so we don't need to do anything.
@@ -180,7 +178,7 @@ def _add_asset_hashes(static: List[str], add_digest_to: List[str]) -> None:
 
 
 def _fix_canonical_url(
-    app: sphinx.application.Sphinx, pagename: str, context: Dict[str, Any]
+    app: sphinx.application.Sphinx, pagename: str, context: dict[str, Any]
 ) -> None:
     """Fix the canonical URL when using the dirhtml builder.
 
@@ -204,7 +202,7 @@ def _html_page_context(
     app: sphinx.application.Sphinx,
     pagename: str,
     templatename: str,
-    context: Dict[str, Any],
+    context: dict[str, Any],
     doctree: Any,
 ) -> None:
     if "css_files" in context:
@@ -235,17 +233,17 @@ def _html_page_context(
     context["furo_pygments"] = {
         "light": get_pygments_style_colors(
             _KNOWN_STYLES_IN_USE["light"],
-            fallbacks=dict(
-                foreground="black",
-                background="white",
-            ),
+            fallbacks={
+                "foreground": "black",
+                "background": "white",
+            },
         ),
         "dark": get_pygments_style_colors(
             _KNOWN_STYLES_IN_USE["dark"],
-            fallbacks=dict(
-                foreground="white",
-                background="black",
-            ),
+            fallbacks={
+                "foreground": "white",
+                "background": "black",
+            },
         ),
     }
 
@@ -322,7 +320,7 @@ def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
     return cast(Style, PygmentsBridge("html", dark_style).formatter_args["style"])
 
 
-def _get_styles(formatter: "HtmlFormatter[str]", *, prefix: str) -> Iterator[str]:
+def _get_styles(formatter: HtmlFormatter[str], *, prefix: str) -> Iterator[str]:
     """Get styles out of a formatter, where everything has the correct prefix."""
     for line in formatter.get_linenos_style_defs():  # type: ignore[no-untyped-call]
         yield f"{prefix} {line}"
@@ -338,7 +336,7 @@ def get_pygments_stylesheet() -> str:
     light_formatter = PygmentsBridge.html_formatter(style=_KNOWN_STYLES_IN_USE["light"])
     dark_formatter = PygmentsBridge.html_formatter(style=_KNOWN_STYLES_IN_USE["dark"])
 
-    lines: List[str] = []
+    lines: list[str] = []
 
     lines.extend(_get_styles(light_formatter, prefix=".highlight"))
 
@@ -361,7 +359,7 @@ def get_pygments_stylesheet() -> str:
 # the needs of this theme.
 def _overwrite_pygments_css(
     app: sphinx.application.Sphinx,
-    exception: Optional[Exception],
+    exception: Exception | None,
 ) -> None:
     if exception is not None:
         return
@@ -375,7 +373,7 @@ def _overwrite_pygments_css(
         f.write(get_pygments_stylesheet())
 
 
-def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
+def setup(app: sphinx.application.Sphinx) -> dict[str, Any]:
     """Entry point for sphinx theming."""
     app.require_sphinx("6.0")
 
