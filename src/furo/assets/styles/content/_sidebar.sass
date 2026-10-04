@@ -1,21 +1,21 @@
 article .sidebar
-  float: right
-  clear: right
+  float: inline-end
+  clear: inline-end
   width: 30%
 
-  margin-left: 1rem
-  margin-right: 0
+  margin-inline-start: 1rem
+  margin-inline-end: 0
 
   border-radius: 0.2rem
   background-color: var(--color-background-secondary)
   border: var(--color-background-border) 1px solid
 
   > *
-    padding-left: 1rem
-    padding-right: 1rem
+    padding-inline-start: 1rem
+    padding-inline-end: 1rem
 
   > ul, > ol  // lists need additional padding, because bullets.
-    padding-left: 2.2rem
+    padding-inline-start: 2.2rem
 
   .sidebar-title
     margin: 0
