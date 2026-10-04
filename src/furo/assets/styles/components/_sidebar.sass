@@ -194,9 +194,28 @@
     &:hover
       background: var(--color-sidebar-item-background--hover)
 
+// This checkbox holds the expanded/collapsed state, and the <label> above is the
+// visible affordance for it. It has to stay in the accessibility tree and in the
+// tab order: `display: none` removes it from both, which leaves the expander
+// operable with a pointer but not with a keyboard, and hides its accessible name
+// from assistive technology. Visually hidden is what was wanted here, not `none`.
 .toctree-checkbox
   position: absolute
-  display: none
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  border: 0
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  clip-path: inset(50%)
+  white-space: nowrap
+
+  // The input has no painted box of its own, so its focus ring has to be drawn
+  // on the label that stands in for it.
+  &:focus-visible ~ label .icon
+    outline: 2px solid var(--color-foreground-primary)
+    outline-offset: -2px
 
 ////////////////////////////////////////////////////////////////////////////////
 // Togglable expand/collapse
