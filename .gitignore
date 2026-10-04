@@ -7,3 +7,6 @@ node_modules
 /build
 /dist
 __pycache__
+env/
+
+*.sw[a-p]
