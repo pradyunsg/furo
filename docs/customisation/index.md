@@ -18,6 +18,7 @@ sidebar
 sidebar-title
 toc
 injecting
+right-to-left
 ```
 
 ## Theme options
@@ -138,6 +139,20 @@ Add a site-wide announcement, to the top of every page when set. See {doc}`./ann
 ```
 
 Changes the icons presented in the site footer. See {doc}`./footer` for the details.
+
+(is_rtl)=
+
+### `is_rtl`
+
+Enables right-to-left layout for languages such as Arabic, Persian, and Hebrew. The default is `False`. Set this option independently of Sphinx's `language` setting.
+
+```python
+html_theme_options = {
+    "is_rtl": True,
+}
+```
+
+See {doc}`right-to-left` for configuration and details of how content is displayed.
 
 ## Page specific tweaks
 

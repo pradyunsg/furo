@@ -6,7 +6,7 @@
 dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
   // Tweak the spacing of all the things!
   dd
-    margin-left: 2rem
+    margin-inline-start: 2rem
     > :first-child
       margin-top: 0.125rem
     > :last-child
@@ -24,7 +24,7 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.
     dd:empty
       margin-bottom: 0.5rem
     dd > ul
-      margin-left: -1.2rem
+      margin-inline-start: -1.2rem
       > li
         > p:nth-child(2)
           margin-top: 0
@@ -44,14 +44,14 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.
   font-size: var(--api-font-size)
   font-family: var(--font-stack--monospace)
 
-  margin-left: -0.25rem
-  margin-right: -0.25rem
+  margin-inline-start: -0.25rem
+  margin-inline-end: -0.25rem
   padding-top: 0.25rem
   padding-bottom: 0.25rem
-  padding-right: 0.5rem
+  padding-inline-end: 0.5rem
 
   // These are intentionally em, to properly match the font size.
-  padding-left: 3em
+  padding-inline-start: 3em
   text-indent: -2.5em
 
   border-radius: 0.25rem
@@ -86,10 +86,10 @@ div.versionadded,
 div.versionchanged,
 div.deprecated,
 div.versionremoved
-  border-left: 0.1875rem solid
+  border-inline-start: 0.1875rem solid
   border-radius: 0.125rem
 
-  padding-left: 0.75rem
+  padding-inline-start: 0.75rem
 
   p
     margin-top: 0.125rem
@@ -117,5 +117,5 @@ div.versionremoved
 
 // Align the [docs] and [source] to the right.
 .viewcode-link, .viewcode-back
-  float: right
-  text-align: right
+  float: inline-end
+  text-align: end
