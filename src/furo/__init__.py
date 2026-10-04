@@ -6,9 +6,10 @@ __version__ = "2025.12.19.dev1"
 
 import logging
 import os
+from collections.abc import Iterator
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Iterator, cast
+from typing import Any, cast
 
 import sphinx.application
 from docutils import nodes
