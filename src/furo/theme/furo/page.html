@@ -27,7 +27,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+        <span class="icon"><svg><use href="#svg-menu"/></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -36,14 +36,14 @@
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
-          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"/></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"/></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"/></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"/></svg>
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
-        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+        <span class="icon"><svg><use href="#svg-toc"/></svg></span>
       </label>
     </div>
   </header>
@@ -62,9 +62,7 @@
     <div class="content">
       <div class="article-container">
         <a href="#" class="back-to-top muted-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-          </svg>
+          <svg><use href="#svg-top"/></svg>
           <span>{% trans %}Back to top{% endtrans %}</span>
         </a>
         <div class="content-icon-container">
@@ -97,14 +95,14 @@
           {#- Theme toggle -#}
           <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
-              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
-              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
-              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
-              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"/></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"/></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"/></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"/></svg>
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon{% if furo_hide_toc %} no-toc{% endif %}" for="__toc">
-            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+            <span class="icon"><svg><use href="#svg-toc"/></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
@@ -122,12 +120,12 @@
                 </div>
                 <div class="title">{{ next.title }}</div>
               </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"/></svg>
             </a>
           {%- endif %}
           {% if prev -%}
             <a class="prev-page" href="{{ prev.link }}">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"/></svg>
               <div class="page-info">
                 <div class="context">
                   <span>{{ _("Previous") }}</span>
