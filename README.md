@@ -89,6 +89,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 - [Python Developer’s Guide][devguide]
 - [Blender][blender] -- the popular 3D suite
 - [black]
+- [Kolo][kolo]
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
@@ -98,6 +99,7 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 [black]: https://black.readthedocs.io/en/stable/
 [blender]: https://docs.blender.org/manual/en/latest/index.html
 [pelican]: https://docs.getpelican.com/en/latest/
+[kolo]: https://docs.kolo.app/
 
 <!-- end used-by -->
 
