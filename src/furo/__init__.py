@@ -33,7 +33,7 @@ THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
 logger = logging.getLogger(__name__)
 
 # GLOBAL STATE
-_KNOWN_STYLES_IN_USE: dict[str, Style | None] = {
+_KNOWN_STYLES_IN_USE: dict[str, type[Style] | None] = {
     "light": None,
     "dark": None,
 }
@@ -82,11 +82,11 @@ def has_not_enough_items_to_show_toc(
 
 
 def get_pygments_style_colors(
-    style: Style, *, fallbacks: dict[str, str]
+    style: type[Style], *, fallbacks: dict[str, str]
 ) -> dict[str, str]:
     """Get background/foreground colors for given pygments style."""
-    background = style.background_color  # type: ignore[attr-defined]
-    text_colors = style.style_for_token(Text)  # type: ignore[attr-defined]
+    background = style.background_color
+    text_colors = style.style_for_token(Text)
     foreground = text_colors["color"]
 
     if not background:
@@ -259,7 +259,7 @@ def update_known_styles_state(app: sphinx.application.Sphinx) -> None:
     }
 
 
-def _get_light_style(app: sphinx.application.Sphinx) -> Style:
+def _get_light_style(app: sphinx.application.Sphinx) -> type[Style]:
     # fmt: off
     # For https://github.com/psf/black/issues/3869
     return (  # type: ignore[no-any-return]
@@ -271,9 +271,11 @@ def _get_light_style(app: sphinx.application.Sphinx) -> Style:
     # fmt: on
 
 
-def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
+def _get_dark_style(app: sphinx.application.Sphinx) -> type[Style]:
     dark_style = app.config.pygments_dark_style
-    return cast("Style", PygmentsBridge("html", dark_style).formatter_args["style"])
+    return cast(
+        "type[Style]", PygmentsBridge("html", dark_style).formatter_args["style"]
+    )
 
 
 def _get_styles(formatter: HtmlFormatter[str], *, prefix: str) -> Iterator[str]:
@@ -289,8 +291,12 @@ def get_pygments_stylesheet() -> str:
 
     There is no way to tell Sphinx how the theme handles dark mode; at this time.
     """
-    light_formatter = PygmentsBridge.html_formatter(style=_KNOWN_STYLES_IN_USE["light"])
-    dark_formatter = PygmentsBridge.html_formatter(style=_KNOWN_STYLES_IN_USE["dark"])
+    light_style = _KNOWN_STYLES_IN_USE["light"]
+    dark_style = _KNOWN_STYLES_IN_USE["dark"]
+    assert light_style is not None
+    assert dark_style is not None
+    light_formatter = PygmentsBridge.html_formatter(style=light_style)
+    dark_formatter = PygmentsBridge.html_formatter(style=dark_style)
 
     lines: list[str] = []
 
