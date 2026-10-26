@@ -29,42 +29,41 @@ function scrollHandlerForBackToTop(positionY) {
   lastScrollTop = positionY;
 }
 
-function scrollHandlerForTOC(positionY) {
-  if (tocScroll === null) {
+function revealActiveTocLink(link) {
+  if (!link || !tocScroll.clientHeight) {
     return;
   }
 
-  // top of page.
-  if (positionY == 0) {
-    tocScroll.scrollTo(0, 0);
-  } else if (
-    // bottom of page.
-    Math.ceil(positionY) >=
-    Math.floor(document.documentElement.scrollHeight - window.innerHeight)
-  ) {
-    tocScroll.scrollTo(0, tocScroll.scrollHeight);
-  } else {
-    // somewhere in the middle.
-    const current = document.querySelector(".scroll-current");
-    if (current == null) {
-      return;
-    }
-
-    // https://github.com/pypa/pip/issues/9159 This breaks scroll behaviours.
-    // // scroll the currently "active" heading in toc, into view.
-    // const rect = current.getBoundingClientRect();
-    // if (0 > rect.top) {
-    //   current.scrollIntoView(true); // the argument is "alignTop"
-    // } else if (rect.bottom > window.innerHeight) {
-    //   current.scrollIntoView(false);
-    // }
+  const viewport = tocScroll.getBoundingClientRect();
+  const row = link.getBoundingClientRect();
+  const bottom = Math.min(viewport.bottom, window.innerHeight);
+  const hidden = !link.getClientRects().length;
+  if (hidden || row.top < viewport.top || row.bottom > bottom) {
+    tocScroll.scrollTo({
+      top: hidden
+        ? 0
+        : tocScroll.scrollTop +
+          row.top -
+          viewport.top -
+          (bottom - viewport.top - row.height) / 2,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    });
   }
 }
 
 function scrollHandler(positionY) {
   scrollHandlerForHeader(positionY);
   scrollHandlerForBackToTop(positionY);
-  scrollHandlerForTOC(positionY);
+  if (positionY === 0 && tocScroll !== null) {
+    tocScroll.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    });
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -133,6 +132,18 @@ function setupScrollSpy() {
   if (tocScroll === null) {
     return;
   }
+
+  let activeLink = null;
+  tocScroll.addEventListener("gumshoeActivate", (event) => {
+    activeLink = event.detail.link;
+    revealActiveTocLink(activeLink);
+  });
+  tocScroll.addEventListener("gumshoeDeactivate", () => {
+    activeLink = null;
+  });
+
+  // Recheck when resizing or opening the mobile table of contents.
+  new ResizeObserver(() => revealActiveTocLink(activeLink)).observe(tocScroll);
 
   // Scrollspy -- highlight table on contents, based on scroll
   new Gumshoe(".toc-tree a", {
