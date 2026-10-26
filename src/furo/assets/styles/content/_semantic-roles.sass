@@ -1,0 +1,48 @@
+// Semantic roles
+//
+// Styling for Sphinx semantic markup roles that would otherwise be
+// indistinguishable from plain bold, italic, or inline code.
+// Reference: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html
+
+// CLI commands and build variables
+// :command:, :program:, :makevar:
+strong.command,
+strong.program,
+strong.makevar
+  background-color: var(--color-cli-background)
+  border: 1px solid var(--color-cli-border)
+  padding: 0.1em 0.3em
+  border-radius: 0.2em
+  font-size: 0.9em
+  font-family: var(--font-stack--monospace)
+
+// File paths, samples, and patterns
+// :file:, :samp:, :regexp:
+code.file,
+code.samp,
+code.regexp
+  background: var(--color-path-background)
+
+  p &
+    border-color: var(--color-path-border)
+
+// Environment variables and options (cross-references)
+// :envvar:, :option:
+code.std-envvar,
+code.std-option
+  background: var(--color-envvar-background)
+
+  p &
+    border-color: var(--color-envvar-border)
+
+// Reference metadata
+// :manpage:, :mimetype:, :mailheader:, :newsgroup:
+em.manpage,
+em.mimetype,
+em.mailheader,
+em.newsgroup
+  background-color: var(--color-metadata-background)
+  border: 1px solid var(--color-metadata-border)
+  padding: 0.1em 0.3em
+  border-radius: 0.2em
+  font-size: 0.9em
