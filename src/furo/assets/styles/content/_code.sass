@@ -21,8 +21,7 @@ $code-spacing-vertical: 0.625rem
 $code-spacing-horizontal: 0.875rem
 
 // Wraps every literal block + line numbers.
-div[class*=" highlight-"],
-div[class^="highlight-"]
+div:has(>div.highlight)
   margin: 1em 0
   display: flex
 
