@@ -41,6 +41,18 @@ html body .only-dark
       .only-dark
         display: block !important
 
+// Scrollbars and native form controls follow the `color-scheme` of the root
+// element, while the theme state lives on <body>. Browsers without :has()
+// keep their default, which follows the OS.
+@supports selector(:has(*))
+  @media not print
+    :root:has(> body[data-theme="light"])
+      color-scheme: light
+    :root:has(> body[data-theme="dark"])
+      color-scheme: dark
+    :root:has(> body:not([data-theme="light"]):not([data-theme="dark"]))
+      color-scheme: light dark
+
 //
 // Theme toggle presentation
 //
