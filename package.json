@@ -9,10 +9,10 @@
     "mini-css-extract-plugin": "^2.10.2",
     "normalize.css": "^8.0.1",
     "postcss-loader": "^8.2.1",
-    "sass": "^1.105.1",
+    "sass": "^1.106.1",
     "sass-loader": "^17.0.1",
     "style-loader": "^4.0.0",
-    "webpack": "^5.111.1",
+    "webpack": "^5.112.2",
     "webpack-cli": "^7.2.3"
   }
 }
