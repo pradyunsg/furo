@@ -2,6 +2,8 @@
 
 Tables can be the best way to organize sets of related pieces of data. Sphinx supports including tables inline, although the exact syntax and capabilities depend on the markup language used.
 
+The [`:align:` option on a list table](https://docutils.sourceforge.io/docs/ref/rst/directives.html#list-table) positions the whole table, not the text within its cells. For [MyST column alignment](https://myst-parser.readthedocs.io/en/latest/syntax/tables.html), use `:` in the pipe table's separator row.
+
 ````{furo-demo}
 
 MyST supports tables like [GitHub Flavoured Markdown][1].
